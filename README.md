@@ -77,3 +77,49 @@ Harbor 报告 cost_usd=0.0036796；
 Plus 配额及参考美元成本的报告方式尚待课程方确认。
 
 尚未完成固定至少 40 个任务上的正式对照实验。
+
+# PE6203 Group Project 5: Cost-Aware Harness Optimization
+
+This repository contains the deliverables and project codebase contributed by group members (Member 1, Member 2, and Member 3).
+
+---
+
+## 📂 Project Structure & Deliverables
+
+- **`Member1_.../`**: Contains Member 1's experimental code, baseline implementations, and handoff documentation.
+- **`member2/`**: Contains Member 2's pipeline components, provenance tracking, and results data.
+- **`member3/`**: Contains Member 3's code framework and configuration files. *(Note: Due to GitHub's individual file size limit of 100 MB, Member 3's large backup datasets/archives are hosted externally; see details below).*
+
+---
+
+## 🔗 Member 3 Large Files / Backups (Google Drive)
+
+Due to GitHub's 100 MB file size restriction, Member 3's heavy backup archive (`.tar.gz`) cannot be stored directly in this repository. 
+
+You can access and download Member 3's full backup files via the Google Drive link below:
+👉 **[Member 3 Google Drive Backup Link](https://drive.google.com/drive/folders/1bnT5GMjU-AJYVaadGYep-IYZGY4D6sb6?usp=drive_link)**
+
+---
+
+# 项目说明文档（中文对照）
+
+# PE6203 小组项目 5：成本感知测试框架优化
+
+本仓库包含了小组成员（Member 1、Member 2 和 Member 3）各自的交付物与项目代码。
+
+---
+
+## 📂 项目结构与交付物
+
+- **`Member1_.../`**: 包含 Member 1 的实验代码、基线实现以及交接文档。
+- **`member2/`**: 包含 Member 2 的流水线组件、来源追踪及运行结果数据。
+- **`member3/`**: 包含 Member 3 的代码框架与配置文件。*（注：由于 GitHub 单个文件 100MB 的大小限制，Member 3 的大容量备份数据集/压缩包已存放在外部，详情见下方）。*
+
+---
+
+## 🔗 Member 3 大文件备份（谷歌网盘）
+
+由于超过了 GitHub 的文件大小限制（100MB），Member 3 的完整大型备份压缩包无法直接上传至本仓库。
+
+你可以通过以下 Google Drive 链接访问并下载 Member 3 的所有备份文件：
+👉 **[Member 3 谷歌网盘备份链接](https://drive.google.com/drive/folders/1bnT5GMjU-AJYVaadGYep-IYZGY4D6sb6?usp=drive_link)**
