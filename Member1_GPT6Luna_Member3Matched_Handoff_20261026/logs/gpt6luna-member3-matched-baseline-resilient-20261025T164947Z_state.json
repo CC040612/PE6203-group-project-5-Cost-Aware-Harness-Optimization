@@ -1,0 +1,260 @@
+{
+  "status": "finished_with_task_errors",
+  "started_utc": "2026-10-25T16:50:00.395973+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z.json",
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z",
+  "job_directory": "/home/member2/experiments/member1/jobs",
+  "planned_trials": 19,
+  "completed_trial_results": 19,
+  "automatic_reruns": false,
+  "execution_policy": "Per-task isolation: record errors/timeouts and continue to the next task; no automatic retry.",
+  "trial_summaries": [
+    {
+      "trial": "093-merge-txt-document__A5YEKcL",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-093-merge-txt-document/093-merge-txt-document__A5YEKcL/result.json",
+      "child_status": "finished",
+      "task": "093-merge-txt-document",
+      "task_index": 1,
+      "timed_out": false
+    },
+    {
+      "trial": "098-extract-email-doc-image__TSXVZjL",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image/098-extract-email-doc-image__TSXVZjL/result.json",
+      "child_status": "finished",
+      "task": "098-extract-email-doc-image",
+      "task_index": 2,
+      "timed_out": false
+    },
+    {
+      "trial": "099-professor-contact-info__wczkULQ",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-099-professor-contact-info/099-professor-contact-info__wczkULQ/result.json",
+      "child_status": "finished",
+      "task": "099-professor-contact-info",
+      "task_index": 3,
+      "timed_out": false
+    },
+    {
+      "trial": "100-name-mountain-photos",
+      "rewards": null,
+      "exception_type": "TaskTimeoutError",
+      "infrastructure_fault": false,
+      "result_file": null,
+      "child_status": "skipped",
+      "task": "100-name-mountain-photos",
+      "task_index": 4,
+      "timed_out": true
+    },
+    {
+      "trial": "101-rearrange-warm-tiles__QEN7mon",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles/101-rearrange-warm-tiles__QEN7mon/result.json",
+      "child_status": "finished",
+      "task": "101-rearrange-warm-tiles",
+      "task_index": 5,
+      "timed_out": false
+    },
+    {
+      "trial": "102-daily-email-report__mzBHsxF",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-102-daily-email-report/102-daily-email-report__mzBHsxF/result.json",
+      "child_status": "finished",
+      "task": "102-daily-email-report",
+      "task_index": 6,
+      "timed_out": false
+    },
+    {
+      "trial": "103-download-blog-pdfs__mWf3Mbh",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs/103-download-blog-pdfs__mWf3Mbh/result.json",
+      "child_status": "finished",
+      "task": "103-download-blog-pdfs",
+      "task_index": 7,
+      "timed_out": false
+    },
+    {
+      "trial": "106-create-charles-ssh-user__E8JEtNz",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-106-create-charles-ssh-user/106-create-charles-ssh-user__E8JEtNz/result.json",
+      "child_status": "finished",
+      "task": "106-create-charles-ssh-user",
+      "task_index": 8,
+      "timed_out": false
+    },
+    {
+      "trial": "107-attach-aws-bill__nbmaNaK",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-107-attach-aws-bill/107-attach-aws-bill__nbmaNaK/result.json",
+      "child_status": "finished",
+      "task": "107-attach-aws-bill",
+      "task_index": 9,
+      "timed_out": false
+    },
+    {
+      "trial": "108-create-mail-folders__pdCniZj",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-108-create-mail-folders/108-create-mail-folders__pdCniZj/result.json",
+      "child_status": "finished",
+      "task": "108-create-mail-folders",
+      "task_index": 10,
+      "timed_out": false
+    },
+    {
+      "trial": "109-setup-outlook-account__chj3b4m",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-109-setup-outlook-account/109-setup-outlook-account__chj3b4m/result.json",
+      "child_status": "finished",
+      "task": "109-setup-outlook-account",
+      "task_index": 11,
+      "timed_out": false
+    },
+    {
+      "trial": "110-rotate-macintosh-video__53UJmVu",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-110-rotate-macintosh-video/110-rotate-macintosh-video__53UJmVu/result.json",
+      "child_status": "finished",
+      "task": "110-rotate-macintosh-video",
+      "task_index": 12,
+      "timed_out": false
+    },
+    {
+      "trial": "111-set-video-wallpaper",
+      "rewards": null,
+      "exception_type": "TaskTimeoutError",
+      "infrastructure_fault": false,
+      "result_file": null,
+      "child_status": "skipped",
+      "task": "111-set-video-wallpaper",
+      "task_index": 13,
+      "timed_out": true
+    },
+    {
+      "trial": "112-capture-video-frame__WFVhkAr",
+      "rewards": {
+        "reward": 0.750595692951772
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-112-capture-video-frame/112-capture-video-frame__WFVhkAr/result.json",
+      "child_status": "finished",
+      "task": "112-capture-video-frame",
+      "task_index": 14,
+      "timed_out": false
+    },
+    {
+      "trial": "113-add-folders-workspace__YsFuH7J",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace/113-add-folders-workspace__YsFuH7J/result.json",
+      "child_status": "finished",
+      "task": "113-add-folders-workspace",
+      "task_index": 15,
+      "timed_out": false
+    },
+    {
+      "trial": "115-remove-explorer-find-key__c5USB4V",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-115-remove-explorer-find-key/115-remove-explorer-find-key__c5USB4V/result.json",
+      "child_status": "finished",
+      "task": "115-remove-explorer-find-key",
+      "task_index": 16,
+      "timed_out": false
+    },
+    {
+      "trial": "117-comma-text-to-table__PAazgBT",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-117-comma-text-to-table/117-comma-text-to-table__PAazgBT/result.json",
+      "child_status": "finished",
+      "task": "117-comma-text-to-table",
+      "task_index": 17,
+      "timed_out": false
+    },
+    {
+      "trial": "118-set-times-new-roman__qMyJxai",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-118-set-times-new-roman/118-set-times-new-roman__qMyJxai/result.json",
+      "child_status": "finished",
+      "task": "118-set-times-new-roman",
+      "task_index": 18,
+      "timed_out": false
+    },
+    {
+      "trial": "119-tabstop-sentence-split__baFTMY4",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-119-tabstop-sentence-split/119-tabstop-sentence-split__baFTMY4/result.json",
+      "child_status": "finished",
+      "task": "119-tabstop-sentence-split",
+      "task_index": 19,
+      "timed_out": false
+    }
+  ],
+  "current_task": null,
+  "task_timeout_sec": 2400,
+  "updated_utc": "2026-10-25T19:25:40.678072+00:00",
+  "finished_utc": "2026-10-25T19:25:40.678051+00:00"
+}

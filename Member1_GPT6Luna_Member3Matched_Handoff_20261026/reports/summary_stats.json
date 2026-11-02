@@ -1,0 +1,19 @@
+{
+  "task_count": 40,
+  "attempt_records": 45,
+  "scored_tasks": 36,
+  "unscored_tasks": 4,
+  "reward_sum": 15.870346166251215,
+  "mean_reward": 0.44084294906253374,
+  "attempt_error_records": 9,
+  "final_run_status": "finished_with_task_errors",
+  "final_run_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z",
+  "scored_mean_denominator": "36 scored tasks only; 4 unscored tasks excluded",
+  "token_usage_status": "aggregated_from_42_raw_trajectories_plus_one_15-token_preflight",
+  "credentials_included": false,
+  "monetary_cost": "unknown; upstream billing/credits are not captured by the local gateway logs",
+  "prompt_tokens_observed": 40467089,
+  "completion_tokens_observed": 285543,
+  "cached_prompt_tokens_observed": 34704896,
+  "trajectory_files": 42
+}

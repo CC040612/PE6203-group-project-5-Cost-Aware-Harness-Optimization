@@ -1,0 +1,84 @@
+{
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-109-setup-outlook-account",
+  "jobs_dir": "/home/member2/experiments/member1/jobs",
+  "n_attempts": 1,
+  "timeout_multiplier": 1.0,
+  "agent_timeout_multiplier": null,
+  "verifier_timeout_multiplier": null,
+  "agent_setup_timeout_multiplier": null,
+  "environment_build_timeout_multiplier": null,
+  "debug": false,
+  "n_concurrent_trials": 1,
+  "quiet": false,
+  "retry": {
+    "max_retries": 0,
+    "include_exceptions": null,
+    "exclude_exceptions": [
+      "VerifierOutputParseError",
+      "RewardFileNotFoundError",
+      "VerifierTimeoutError",
+      "RewardFileEmptyError",
+      "AgentTimeoutError"
+    ],
+    "wait_multiplier": 1.0,
+    "min_wait_sec": 1.0,
+    "max_wait_sec": 60.0
+  },
+  "environment": {
+    "type": null,
+    "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+    "force_build": false,
+    "delete": true,
+    "override_cpus": null,
+    "override_memory_mb": null,
+    "override_storage_mb": null,
+    "override_gpus": null,
+    "suppress_override_warnings": false,
+    "mounts_json": null,
+    "env": {},
+    "kwargs": {}
+  },
+  "verifier": {
+    "override_timeout_sec": null,
+    "max_timeout_sec": null,
+    "env": {},
+    "disable": false
+  },
+  "metrics": [],
+  "agents": [
+    {
+      "name": "terminus-2",
+      "import_path": null,
+      "model_name": "openai/gpt-6-luna",
+      "override_timeout_sec": null,
+      "override_setup_timeout_sec": null,
+      "max_timeout_sec": null,
+      "kwargs": {
+        "temperature": 0.7,
+        "api_base": "http://127.0.0.1:58429/v1",
+        "llm_kwargs": {
+          "max_tokens": 2048
+        },
+        "model_info": {
+          "max_input_tokens": 272000,
+          "max_output_tokens": 2048
+        }
+      },
+      "env": {}
+    }
+  ],
+  "datasets": [],
+  "tasks": [
+    {
+      "path": "/home/member2/TUA-Bench/tasks/109-setup-outlook-account",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    }
+  ],
+  "artifacts": []
+}

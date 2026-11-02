@@ -1,0 +1,24 @@
+  1/1 Mean: 0.751 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:06:18 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.751 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Reward            ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ 0.750595692951772 │     1 │
+└───────────────────┴───────┘
+
+Job Info
+Total runtime: 6m 28s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-112-capture-video-frame/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-112-capture-video-frame`
+

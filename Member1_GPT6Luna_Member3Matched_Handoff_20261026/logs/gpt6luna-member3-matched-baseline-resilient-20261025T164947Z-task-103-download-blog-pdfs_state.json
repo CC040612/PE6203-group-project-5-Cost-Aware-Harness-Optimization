@@ -1,0 +1,26 @@
+{
+  "status": "finished",
+  "started_utc": "2026-10-25T17:58:40.743192+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs.json",
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs",
+  "planned_trials": 1,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T18:00:44.176562+00:00",
+  "completed_trial_results": 1,
+  "trial_summaries": [
+    {
+      "trial": "103-download-blog-pdfs__mWf3Mbh",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs/103-download-blog-pdfs__mWf3Mbh/result.json"
+    }
+  ],
+  "harbor_process_pid": 124379,
+  "exit_code": 0,
+  "finished_utc": "2026-10-25T18:00:44.176538+00:00"
+}

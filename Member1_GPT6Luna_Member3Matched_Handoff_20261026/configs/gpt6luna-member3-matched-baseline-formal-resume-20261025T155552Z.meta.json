@@ -1,0 +1,98 @@
+{
+  "prepared_utc": "2026-10-25T15:55:52.7571661Z",
+  "status": "prepared_not_executed",
+  "model_calls": 0,
+  "config_id": "gpt6luna_member3_matched_baseline",
+  "mode": "formal",
+  "model_requested": "gpt-6-luna",
+  "litellm_model": "openai/gpt-6-luna",
+  "benchmark_commit": "3497fd320abcafaf4797424192c891a593fd7964",
+  "taskset_sha256": "07f474182d54a6ba08ce46693e13ddaf7dcd5ff7b07d53713ea2f98d172d6cfd",
+  "adapter_sha256": "163632ee25e55524e9a666dfa8f295b5413e6aa0e2d075266bce7babf22bd14a",
+  "reference_file": "/mnt/d/夏嫣然/6203/group project/member1/config/member2_reference.json",
+  "reference_sha256": "001c277d568c418e8cc61eda72ac5c24d5d234e7b6eceb68693f897a4f1d8198",
+  "reference_differences": [
+    "job_name",
+    "jobs_dir",
+    "agents[0].kwargs decoding and model limits",
+    "n_concurrent_trials",
+    "agent_timeout_multiplier"
+  ],
+  "task_count": 22,
+  "attempts_per_task": 1,
+  "total_trials": 22,
+  "concurrency": 1,
+  "agent_timeout_sec": 2400,
+  "max_turns": "original default, not overridden",
+  "loop_recovery_added": false,
+  "original_summarization_retained": true,
+  "job_retries": 0,
+  "internal_llm_retries": "original defaults retained",
+  "agent_kwargs": {
+    "temperature": 0.7,
+    "api_base": "http://127.0.0.1:58429/v1",
+    "llm_kwargs": {
+      "max_tokens": 2048
+    },
+    "model_info": {
+      "max_input_tokens": 272000,
+      "max_output_tokens": 2048
+    }
+  },
+  "config": "member1\\config\\generated\\gpt6luna-member3-matched-baseline-formal-resume-20261025T155552Z.json",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-resume-20261025T155552Z",
+  "python": "3.12.15",
+  "packages": {
+    "harbor": "0.6.3",
+    "litellm": "1.83.14",
+    "openai": "2.24.0"
+  },
+  "uv_lock_sha256": "9c5253773e0bc0745afde62ecd35abb57e59e0c3395985ecaca4f99d0aa2e473",
+  "installed_terminus_source": "/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/agents/terminus_2/terminus_2.py",
+  "installed_terminus_sha256": "23b46827ef2e37842cf7a05655f14d53e8e5b3f56732ecd91948726d233e2932",
+  "live_generation_verified": false,
+  "accounting_note": "Harbor/gateway cost estimates are not observed subscription cash charges. Keep unknown amounts null; record returned model and upstream route when available.",
+  "parameter_match_source": "Member3 methods ZIP and PE6203_backups.zip: combined_v1, ablation_repeat_only, ablation_idle_only run configs",
+  "parameter_match": {
+    "temperature": 0.7,
+    "reasoning_effort": "not sent",
+    "max_tokens": 2048,
+    "max_input_tokens": 272000,
+    "max_output_tokens": 2048,
+    "concurrency": 1,
+    "attempts_per_task": 1,
+    "job_retries": 0
+  },
+  "compatibility_note": "Official GPT-6 guidance currently says to omit temperature when reasoning effort is not none; because reasoning_effort is omitted and may default to medium on the official endpoint, the exact Member3 parameter combination may be rejected or transformed upstream. Cockpit route/transform behavior is not verified. This config is prepared only and has not been run.",
+  "member3_wire_observation": {
+    "temperature": 0.7,
+    "max_tokens": 2048,
+    "reasoning_effort": "absent",
+    "response_model": "gpt-6-luna",
+    "sampled_variants": [
+      "combined_v1",
+      "ablation_repeat_only",
+      "ablation_idle_only"
+    ]
+  },
+  "member3_declared_model_info": {
+    "max_input_tokens": 272000,
+    "max_output_tokens": 2048,
+    "verification": "declared in run configs; sampled debug litellm_params.model_info was None, so effective application of this metadata is unverified"
+  },
+  "member3_api_base": "http://172.26.240.1:64915/v1 (Member3 WSL network endpoint; not copied because Member1 requires its own local bridge endpoint)",
+  "generation_preflight": {
+    "ok": true,
+    "max_tokens": 8,
+    "requested_model": "gpt-6-luna",
+    "model_call": "single minimal verification request"
+  },
+  "continuation_of": "gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z",
+  "completed_prior_trials_preserved": 14,
+  "incomplete_task_retried": "089-install-recommended-exts",
+  "recovery_reason": "Previous supervisor interrupted while atomically replacing the live status file; guard now retries transient PermissionError and continues if a snapshot remains locked.",
+  "actual_run_status": "interrupted",
+  "actual_completed_trial_results": 1,
+  "actual_planned_trials": 22,
+  "actual_finished_utc": "2026-10-26T00:41:32.351348+08:00"
+}

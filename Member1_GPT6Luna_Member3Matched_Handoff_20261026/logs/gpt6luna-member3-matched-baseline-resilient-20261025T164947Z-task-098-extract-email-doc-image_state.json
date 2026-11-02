@@ -1,0 +1,26 @@
+{
+  "status": "finished",
+  "started_utc": "2026-10-25T16:53:25.270177+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image.json",
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image",
+  "planned_trials": 1,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T16:55:36.916342+00:00",
+  "completed_trial_results": 1,
+  "trial_summaries": [
+    {
+      "trial": "098-extract-email-doc-image__TSXVZjL",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image/098-extract-email-doc-image__TSXVZjL/result.json"
+    }
+  ],
+  "harbor_process_pid": 90968,
+  "exit_code": 0,
+  "finished_utc": "2026-10-25T16:55:36.916327+00:00"
+}

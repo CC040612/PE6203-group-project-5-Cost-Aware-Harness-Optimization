@@ -1,0 +1,26 @@
+{
+  "status": "finished",
+  "started_utc": "2026-10-25T17:46:43.953906+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles.json",
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles",
+  "planned_trials": 1,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T17:48:31.317000+00:00",
+  "completed_trial_results": 1,
+  "trial_summaries": [
+    {
+      "trial": "101-rearrange-warm-tiles__QEN7mon",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles/101-rearrange-warm-tiles__QEN7mon/result.json"
+    }
+  ],
+  "harbor_process_pid": 120567,
+  "exit_code": 0,
+  "finished_utc": "2026-10-25T17:48:31.316976+00:00"
+}

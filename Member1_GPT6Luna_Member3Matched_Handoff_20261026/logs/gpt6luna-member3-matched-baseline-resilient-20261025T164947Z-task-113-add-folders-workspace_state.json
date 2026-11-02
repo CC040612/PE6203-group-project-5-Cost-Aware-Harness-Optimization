@@ -1,0 +1,26 @@
+{
+  "status": "finished",
+  "started_utc": "2026-10-25T19:11:29.556990+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace.json",
+  "job_name": "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace",
+  "planned_trials": 1,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T19:12:29.502691+00:00",
+  "completed_trial_results": 1,
+  "trial_summaries": [
+    {
+      "trial": "113-add-folders-workspace__YsFuH7J",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace/113-add-folders-workspace__YsFuH7J/result.json"
+    }
+  ],
+  "harbor_process_pid": 170612,
+  "exit_code": 0,
+  "finished_utc": "2026-10-25T19:12:29.502676+00:00"
+}

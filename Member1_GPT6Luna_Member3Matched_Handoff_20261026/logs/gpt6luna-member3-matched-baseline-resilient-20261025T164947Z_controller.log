@@ -1,0 +1,467 @@
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-093-merge-txt-document.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:03:14 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 3m 15s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-093-merge-txt-document/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-093-merge-txt-document`
+
+[1/19] 093-merge-txt-document: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:02:05 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 2m 5s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-098-extract-email-doc-image/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-098-extract-email-doc-image`
+
+[2/19] 098-extract-email-doc-image: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-099-professor-contact-info.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:10:39 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 10m 42s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-099-professor-contact-info/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-099-professor-contact-info`
+
+[3/19] 099-professor-contact-info: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-100-name-mountain-photos.json
+29.8.2
+Task 100-name-mountain-photos exceeded 2400s; interrupting this task and continuing.
+[4/19] 100-name-mountain-photos: TaskTimeoutError
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:01:43 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 1m 44s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-101-rearrange-warm-tiles/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-101-rearrange-warm-tiles`
+
+[5/19] 101-rearrange-warm-tiles: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-102-daily-email-report.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:09:54 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 9m 57s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-102-daily-email-report/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-102-daily-email-report`
+
+[6/19] 102-daily-email-report: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:01:58 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 1m 59s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-103-download-blog-pdfs/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-103-download-blog-pdfs`
+
+[7/19] 103-download-blog-pdfs: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-106-create-charles-ssh-user.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:01:34 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 1m 35s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-106-create-charles-ssh-user/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-106-create-charles-ssh-user`
+
+[8/19] 106-create-charles-ssh-user: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-107-attach-aws-bill.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:04:53 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 4m 54s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-107-attach-aws-bill/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-107-attach-aws-bill`
+
+[9/19] 107-attach-aws-bill: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-108-create-mail-folders.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:02:56 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 2m 57s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-108-create-mail-folders/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-108-create-mail-folders`
+
+[10/19] 108-create-mail-folders: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-109-setup-outlook-account.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:05:59 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 6m 3s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-109-setup-outlook-account/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-109-setup-outlook-account`
+
+[11/19] 109-setup-outlook-account: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-110-rotate-macintosh-video.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:06:53 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 7m 1s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-110-rotate-macintosh-video/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-110-rotate-macintosh-video`
+
+[12/19] 110-rotate-macintosh-video: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-111-set-video-wallpaper.json
+29.8.2
+Task 111-set-video-wallpaper exceeded 2400s; interrupting this task and continuing.
+[13/19] 111-set-video-wallpaper: TaskTimeoutError
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-112-capture-video-frame.json
+29.8.2
+  1/1 Mean: 0.751 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:06:18 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.751 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Reward            ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ 0.750595692951772 │     1 │
+└───────────────────┴───────┘
+
+Job Info
+Total runtime: 6m 28s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-112-capture-video-frame/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-112-capture-video-frame`
+
+[14/19] 112-capture-video-frame: {'reward': 0.750595692951772}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:53 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 55s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-113-add-folders-workspace/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-113-add-folders-workspace`
+
+[15/19] 113-add-folders-workspace: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-115-remove-explorer-find-key.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:46 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 47s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-115-remove-explorer-find-key/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-115-remove-explorer-find-key`
+
+[16/19] 115-remove-explorer-find-key: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-117-comma-text-to-table.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:05:38 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 5m 48s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-117-comma-text-to-table/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-117-comma-text-to-table`
+
+[17/19] 117-comma-text-to-table: {'reward': 0.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-118-set-times-new-roman.json
+29.8.2
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:02:38 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 2m 42s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-118-set-times-new-roman/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-118-set-times-new-roman`
+
+[18/19] 118-set-times-new-roman: {'reward': 1.0}
+Prepared: /mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-119-tabstop-sentence-split.json
+29.8.2
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:03:19 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 3m 24s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-119-tabstop-sentence-split/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-119-tabstop-sentence-split`
+
+[19/19] 119-tabstop-sentence-split: {'reward': 0.0}

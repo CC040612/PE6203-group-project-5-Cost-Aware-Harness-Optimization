@@ -1,0 +1,42 @@
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+Unknown Error in LLM interaction: litellm.ServiceUnavailableError: ServiceUnavailableError: OpenAIException - No compatible account is available for this model
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+Unknown Error in LLM interaction: litellm.ServiceUnavailableError: ServiceUnavailableError: OpenAIException - No compatible account is available for this model
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+[1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+Unknown Error in LLM interaction: litellm.ServiceUnavailableError: ServiceUnavailableError: OpenAIException - No compatible account is available for this model
+Structured API fault: ServiceUnavailableError; retaining all records and stopping without reruns.
+Cleanup interrupted for 026-sales-cogs-column-chart__sAAu4mn, but environment stop is shielded and will complete
+⠋  2/40 Mean: 0.000 ━━                                       0:03:52 0:00:51

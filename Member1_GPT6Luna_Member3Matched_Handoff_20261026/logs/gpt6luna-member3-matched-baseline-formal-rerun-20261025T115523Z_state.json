@@ -1,0 +1,74 @@
+{
+  "status": "stopped_api_fault",
+  "started_utc": "2026-10-25T11:56:07.484218+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z.json",
+  "job_name": "gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z",
+  "planned_trials": 40,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T12:15:40.687738+00:00",
+  "completed_trial_results": 6,
+  "trial_summaries": [
+    {
+      "trial": "020-calculate-period-rate__8cBTrsz",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/020-calculate-period-rate__8cBTrsz/result.json"
+    },
+    {
+      "trial": "026-sales-cogs-column-chart__HCpJJnw",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/026-sales-cogs-column-chart__HCpJJnw/result.json"
+    },
+    {
+      "trial": "035-super-bowl-score__Q6wtSsV",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/035-super-bowl-score__Q6wtSsV/result.json"
+    },
+    {
+      "trial": "038-zurich-rental-car__72MePdd",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/038-zurich-rental-car__72MePdd/result.json"
+    },
+    {
+      "trial": "052-vignette-filter-window__UK5cAGW",
+      "rewards": null,
+      "exception_type": "ServiceUnavailableError",
+      "infrastructure_fault": true,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/052-vignette-filter-window__UK5cAGW/result.json"
+    },
+    {
+      "trial": "056-move-textbox-left__nUeJHNB",
+      "rewards": null,
+      "exception_type": "CancelledError",
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/056-move-textbox-left__nUeJHNB/result.json"
+    }
+  ],
+  "harbor_process_pid": 2816,
+  "infrastructure_fault": {
+    "trial": "052-vignette-filter-window__UK5cAGW",
+    "rewards": null,
+    "exception_type": "ServiceUnavailableError",
+    "infrastructure_fault": true,
+    "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z/052-vignette-filter-window__UK5cAGW/result.json"
+  },
+  "exit_code": 130,
+  "finished_utc": "2026-10-25T12:15:40.687708+00:00"
+}
