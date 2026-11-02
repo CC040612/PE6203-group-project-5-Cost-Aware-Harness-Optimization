@@ -1,0 +1,23 @@
+Cleanup interrupted for 092-fix-tetris-bug__9AFNR3F, but environment stop is shielded and will complete
+⠋  2/21 Mean: 0.000 ━━━╸                                     0:06:30 -:--:--Exception ignored in: <function BaseSubprocessTransport.__del__ at 0x781792735ee0>
+Traceback (most recent call last):
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_subprocess.py", line 126, in __del__
+    self.close()
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_subprocess.py", line 104, in close
+    proto.pipe.close()
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/unix_events.py", line 568, in close
+    self._close(None)
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/unix_events.py", line 592, in _close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Traceback (most recent call last):
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 147, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 129, in main
+    time.sleep(2)
+KeyboardInterrupt

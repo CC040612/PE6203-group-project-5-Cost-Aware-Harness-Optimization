@@ -1,0 +1,150 @@
+{
+  "status": "interrupted",
+  "started_utc": "2026-10-25T12:25:10.825650+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z.json",
+  "job_name": "gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z",
+  "planned_trials": 36,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T15:01:57.659758+00:00",
+  "completed_trial_results": 15,
+  "trial_summaries": [
+    {
+      "trial": "052-vignette-filter-window__uTZ73DT",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/052-vignette-filter-window__uTZ73DT/result.json"
+    },
+    {
+      "trial": "056-move-textbox-left__cY99YfL",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/056-move-textbox-left__cY99YfL/result.json"
+    },
+    {
+      "trial": "062-add-baseball-audio__hfKHX62",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/062-add-baseball-audio__hfKHX62/result.json"
+    },
+    {
+      "trial": "068-strike-first-two-lines__Sb5s2ES",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/068-strike-first-two-lines__Sb5s2ES/result.json"
+    },
+    {
+      "trial": "070-edit-friend-image__86NJL4e",
+      "rewards": {
+        "reward": 0.7042385867939513
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/070-edit-friend-image__86NJL4e/result.json"
+    },
+    {
+      "trial": "073-force-quit-frozen-doc__NGzohVA",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/073-force-quit-frozen-doc__NGzohVA/result.json"
+    },
+    {
+      "trial": "074-apa-references-review__uRAfaBw",
+      "rewards": {
+        "reward": 0.7865727781415768
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/074-apa-references-review__uRAfaBw/result.json"
+    },
+    {
+      "trial": "076-make-src-gif-clip__JWu5LcP",
+      "rewards": {
+        "reward": 0.837405623146351
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/076-make-src-gif-clip__JWu5LcP/result.json"
+    },
+    {
+      "trial": "078-add-wednesday-lecture__CBfoW8V",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/078-add-wednesday-lecture__CBfoW8V/result.json"
+    },
+    {
+      "trial": "080-convert-novel-epub__XNMV8hp",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/080-convert-novel-epub__XNMV8hp/result.json"
+    },
+    {
+      "trial": "081-video-frame-slide-bg__PutuTaG",
+      "rewards": {
+        "reward": 0.7915334852175638
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/081-video-frame-slide-bg__PutuTaG/result.json"
+    },
+    {
+      "trial": "082-brighten-slide-image__n6N56ut",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/082-brighten-slide-image__n6N56ut/result.json"
+    },
+    {
+      "trial": "083-gemini-responses-docx__bzwptzR",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/083-gemini-responses-docx__bzwptzR/result.json"
+    },
+    {
+      "trial": "088-extract-presenter-photos__Jb5s2Q3",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/088-extract-presenter-photos__Jb5s2Q3/result.json"
+    },
+    {
+      "trial": "089-install-recommended-exts__5dw53Ck",
+      "rewards": null,
+      "exception_type": "CancelledError",
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z/089-install-recommended-exts__5dw53Ck/result.json"
+    }
+  ],
+  "harbor_process_pid": 15899,
+  "exit_code": 130,
+  "finished_utc": "2026-10-25T15:01:57.659726+00:00"
+}

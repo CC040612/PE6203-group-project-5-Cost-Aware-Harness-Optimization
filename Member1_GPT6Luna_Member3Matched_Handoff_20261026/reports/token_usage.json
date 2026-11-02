@@ -1,0 +1,195 @@
+{
+  "scope": "All matched-baseline attempts in listed run segments, including failed and cancelled attempts.",
+  "trajectory_count": 42,
+  "trajectory_parse_failures": [],
+  "trajectory_totals": {
+    "prompt_tokens": 40467079,
+    "completion_tokens": 285538,
+    "cached_tokens": 34704896
+  },
+  "diagnostic_generation_preflight": {
+    "prompt_tokens": 10,
+    "completion_tokens": 5,
+    "requests": 1
+  },
+  "observed_total_including_preflight": {
+    "prompt_tokens": 40467089,
+    "completion_tokens": 285543,
+    "cached_tokens": 34704896
+  },
+  "per_job": {
+    "gpt6luna-member3-matched-baseline-formal-20261025T113533Z": {
+      "trajectory_count": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-formal-rerun-20261025T115523Z": {
+      "trajectory_count": 5,
+      "prompt_tokens": 1660032,
+      "completion_tokens": 17356,
+      "cached_tokens": 770048,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z": {
+      "trajectory_count": 14,
+      "prompt_tokens": 4750932,
+      "completion_tokens": 101587,
+      "cached_tokens": 3264128,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-formal-resume-20261025T155552Z": {
+      "trajectory_count": 1,
+      "prompt_tokens": 10695012,
+      "completion_tokens": 46259,
+      "cached_tokens": 9574144,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z": {
+      "trajectory_count": 2,
+      "prompt_tokens": 140821,
+      "completion_tokens": 5768,
+      "cached_tokens": 28288,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-093-merge-txt-document": {
+      "trajectory_count": 1,
+      "prompt_tokens": 45678,
+      "completion_tokens": 2601,
+      "cached_tokens": 9216,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-098-extract-email-doc-image": {
+      "trajectory_count": 1,
+      "prompt_tokens": 22236,
+      "completion_tokens": 1278,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-099-professor-contact-info": {
+      "trajectory_count": 1,
+      "prompt_tokens": 73727,
+      "completion_tokens": 3160,
+      "cached_tokens": 12544,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-100-name-mountain-photos": {
+      "trajectory_count": 1,
+      "prompt_tokens": 13142222,
+      "completion_tokens": 56207,
+      "cached_tokens": 12142464,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-101-rearrange-warm-tiles": {
+      "trajectory_count": 1,
+      "prompt_tokens": 5565,
+      "completion_tokens": 1118,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-102-daily-email-report": {
+      "trajectory_count": 1,
+      "prompt_tokens": 12747,
+      "completion_tokens": 1840,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-103-download-blog-pdfs": {
+      "trajectory_count": 1,
+      "prompt_tokens": 38542,
+      "completion_tokens": 1758,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-106-create-charles-ssh-user": {
+      "trajectory_count": 1,
+      "prompt_tokens": 5010,
+      "completion_tokens": 609,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-107-attach-aws-bill": {
+      "trajectory_count": 1,
+      "prompt_tokens": 67645,
+      "completion_tokens": 3291,
+      "cached_tokens": 3200,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-108-create-mail-folders": {
+      "trajectory_count": 1,
+      "prompt_tokens": 6198,
+      "completion_tokens": 923,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-109-setup-outlook-account": {
+      "trajectory_count": 1,
+      "prompt_tokens": 135306,
+      "completion_tokens": 6365,
+      "cached_tokens": 54272,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-110-rotate-macintosh-video": {
+      "trajectory_count": 1,
+      "prompt_tokens": 19977,
+      "completion_tokens": 747,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-111-set-video-wallpaper": {
+      "trajectory_count": 1,
+      "prompt_tokens": 9589635,
+      "completion_tokens": 29218,
+      "cached_tokens": 8840064,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-112-capture-video-frame": {
+      "trajectory_count": 1,
+      "prompt_tokens": 6527,
+      "completion_tokens": 350,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-113-add-folders-workspace": {
+      "trajectory_count": 1,
+      "prompt_tokens": 3044,
+      "completion_tokens": 423,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-115-remove-explorer-find-key": {
+      "trajectory_count": 1,
+      "prompt_tokens": 9681,
+      "completion_tokens": 921,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-117-comma-text-to-table": {
+      "trajectory_count": 1,
+      "prompt_tokens": 19239,
+      "completion_tokens": 1352,
+      "cached_tokens": 4992,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-118-set-times-new-roman": {
+      "trajectory_count": 1,
+      "prompt_tokens": 4628,
+      "completion_tokens": 803,
+      "cached_tokens": 0,
+      "fallback_trajectory_count": 0
+    },
+    "gpt6luna-member3-matched-baseline-resilient-20261025T164947Z-task-119-tabstop-sentence-split": {
+      "trajectory_count": 1,
+      "prompt_tokens": 12675,
+      "completion_tokens": 1604,
+      "cached_tokens": 1536,
+      "fallback_trajectory_count": 0
+    }
+  },
+  "limitations": [
+    "Provider-side usage for failed requests that never produced a trajectory response is unavailable.",
+    "The 10 prompt and 5 completion tokens from the minimal API preflight are included separately.",
+    "This is token usage, not a verified monetary charge."
+  ]
+}

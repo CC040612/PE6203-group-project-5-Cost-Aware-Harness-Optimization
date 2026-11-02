@@ -1,0 +1,33 @@
+{
+  "status": "interrupted",
+  "started_utc": "2026-10-25T16:42:37.075092+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z.json",
+  "job_name": "gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z",
+  "planned_trials": 21,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T16:49:13.106281+00:00",
+  "completed_trial_results": 2,
+  "trial_summaries": [
+    {
+      "trial": "091-add-receipts-bookkeeping__W7VFsVC",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null,
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z/091-add-receipts-bookkeeping__W7VFsVC/result.json"
+    },
+    {
+      "trial": "092-fix-tetris-bug__9AFNR3F",
+      "rewards": null,
+      "exception_type": "CancelledError",
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-resume-20261025T164228Z/092-fix-tetris-bug__9AFNR3F/result.json"
+    }
+  ],
+  "harbor_process_pid": 83893,
+  "exit_code": 130,
+  "finished_utc": "2026-10-25T16:49:13.106261+00:00"
+}

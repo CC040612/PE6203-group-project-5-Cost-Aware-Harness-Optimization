@@ -1,0 +1,38 @@
+{
+  "status": "stopped_api_fault",
+  "started_utc": "2026-10-25T11:46:22.219018+00:00",
+  "config": "/mnt/d/夏嫣然/6203/group project/member1/config/generated/gpt6luna-member3-matched-baseline-formal-20261025T113533Z.json",
+  "job_name": "gpt6luna-member3-matched-baseline-formal-20261025T113533Z",
+  "job_directory": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-20261025T113533Z",
+  "planned_trials": 40,
+  "automatic_reruns": false,
+  "stop_rule": "Known structured API exception types only; never traceback text. AgentTimeoutError never stops the round.",
+  "updated_utc": "2026-10-25T11:50:23.965496+00:00",
+  "completed_trial_results": 2,
+  "trial_summaries": [
+    {
+      "trial": "020-calculate-period-rate__vGhRydE",
+      "rewards": null,
+      "exception_type": "ServiceUnavailableError",
+      "infrastructure_fault": true,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-20261025T113533Z/020-calculate-period-rate__vGhRydE/result.json"
+    },
+    {
+      "trial": "026-sales-cogs-column-chart__sAAu4mn",
+      "rewards": null,
+      "exception_type": "CancelledError",
+      "infrastructure_fault": false,
+      "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-20261025T113533Z/026-sales-cogs-column-chart__sAAu4mn/result.json"
+    }
+  ],
+  "harbor_process_pid": 982,
+  "infrastructure_fault": {
+    "trial": "020-calculate-period-rate__vGhRydE",
+    "rewards": null,
+    "exception_type": "ServiceUnavailableError",
+    "infrastructure_fault": true,
+    "result_file": "/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-formal-20261025T113533Z/020-calculate-period-rate__vGhRydE/result.json"
+  },
+  "exit_code": 130,
+  "finished_utc": "2026-10-25T11:50:23.965476+00:00"
+}

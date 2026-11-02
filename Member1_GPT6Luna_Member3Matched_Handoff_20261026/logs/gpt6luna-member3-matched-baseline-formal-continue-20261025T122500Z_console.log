@@ -1,0 +1,17 @@
+Cleanup interrupted for 089-install-recommended-exts__5dw53Ck, but environment stop is shielded and will complete
+⠋ 15/36 Mean: 0.541 ━━━━━━━━━━━━━━━━╸                        2:35:10 -:--:--Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x752fff8595e0>
+Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x753001def860>
+Traceback (most recent call last):
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 131, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 103, in main
+    records = save()
+              ^^^^^^
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 94, in save
+    temporary.replace(state_path)
+  File "/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [Errno 13] Permission denied: '/mnt/d/夏嫣然/6203/group project/member1/logs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z_state.tmp' -> '/mnt/d/夏嫣然/6203/group project/member1/logs/gpt6luna-member3-matched-baseline-formal-continue-20261025T122500Z_state.json'

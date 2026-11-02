@@ -1,0 +1,24 @@
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:04:53 0:00:00
+adhoc • terminus-2 • gpt-6-luna
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 4m 54s
+Results written to 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-107-attach-aws-bill/result.json
+Inspect results by running `harbor view /home/member2/experiments/member1/jobs`
+Share results by running `harbor upload 
+/home/member2/experiments/member1/jobs/gpt6luna-member3-matched-baseline-resilie
+nt-20261025T164947Z-task-107-attach-aws-bill`
+

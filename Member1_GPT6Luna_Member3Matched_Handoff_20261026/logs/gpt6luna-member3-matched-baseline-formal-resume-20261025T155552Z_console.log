@@ -1,0 +1,7 @@
+⠋  1/22 Mean: 0.000 ━╸                                       0:45:13 -:--:--Traceback (most recent call last):
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 147, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/d/夏嫣然/6203/group project/member1/scripts/guard_run.py", line 129, in main
+    time.sleep(2)
+KeyboardInterrupt
