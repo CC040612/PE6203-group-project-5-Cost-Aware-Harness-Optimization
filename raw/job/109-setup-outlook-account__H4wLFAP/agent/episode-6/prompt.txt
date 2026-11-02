@@ -1,0 +1,28 @@
+New Terminal Output:
+
+> PY
+Email filled:
+Password filled; length: 0
+agent@4f49ca72fb28:/app$ /usr/bin/python3 - <<'PY'
+> import pyatspi,time
+> for attempt in range(10):
+>  found={}
+>  def walk(o):
+>   try:
+>    if o.getRoleName() in ('entry','password text') and o.name in ('Email address','Password'): found[o.name]=o
+>    for c in o: walk(c)
+>   except Exception: pass
+>  walk(pyatspi.Registry.getDesktop(0))
+>  if len(found)==2:
+>   found['Email address'].queryEditableText().setTextContents('anonym-x2024@outlook.com')
+>   found['Password'].queryEditableText().setTextContents('password')
+>   found['Email address'].queryComponent().grabFocus()
+>   print('Verified email:',found['Email address'].queryText().getText(0,-1))
+>   print('Password characters:',found['Password'].queryText().characterCount)
+>   break
+>  time.sleep(0.5)
+> else: print('Fields not found')
+> PY
+Verified email:
+Password characters: 0
+agent@4f49ca72fb28:/app$

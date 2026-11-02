@@ -1,0 +1,21 @@
+New Terminal Output:
+
+agent@f10abcb9fc3e:/app$ python - <<'PY'
+> import zipfile, os
+> import xml.etree.ElementTree as E
+> p='/app/Robotic_Workshop_Infographics.pptx'
+> for prefix,uri in {'p':'http://schemas.openxmlformats.org/presentationml/2006/main','a':'http://schemas.openxmlformats.org/drawingml/2006/main','r':'http://sc
+hemas.openxmlformats.org/officeDocument/2006/relationships','p14':'http://schemas.microsoft.com/office/powerpoint/2010/main','mc':'http://schemas.openxmlformats
+.org/markup-compatibility/2006'}.items(): E.register_namespace(prefix,uri)
+> with zipfile.ZipFile(p) as z:
+>  root=E.fromstring(z.read('ppt/slides/slide2.xml'))
+>  data=E.tostring(root,encoding='UTF-8',xml_declaration=True)
+>  assert b'xmlns:p14=' in data
+>  with zipfile.ZipFile(p+'.tmp','w',zipfile.ZIP_DEFLATED) as out:
+>   for item in z.infolist(): out.writestr(item,data if item.filename=='ppt/slides/slide2.xml' else z.read(item.filename))
+> with zipfile.ZipFile(p+'.tmp') as z: assert z.testzip() is None
+> os.replace(p+'.tmp',p)
+> print('Verified and saved presentation in place.')
+> PY
+Verified and saved presentation in place.
+agent@f10abcb9fc3e:/app$

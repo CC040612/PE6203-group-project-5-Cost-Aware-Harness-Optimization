@@ -1,0 +1,99 @@
+New Terminal Output:
+
+agent@632bb3a92d9f:/app$ cd /home/agent/Desktop/tetris
+rsect():
+                            continue
+                        self.game.rotate()
+                        self.assertFalse(self.game.intersect())
+
+    def test_no_active_block(self):
+        self.game.block = None
+        self.game.rotate()
+
+
+if __name__ == '__main__':
+    unittest.main()
+PY
+python3 -m unittest -v test_rotation
+agent@632bb3a92d9f:~/Desktop/tetris$ python3 - <<'PY'
+> from pathlib import Path
+> p = Path('tetris.py')
+> s = p.read_text()
+> s = s.replace('        self.block.rotate()\n', '        old_rotation = self.block.rotation\n        self.block.rotate()\n        if self.intersect():\n
+     self.block.rotation = old_rotation\n')
+> p.write_text(s)
+> PY
+agent@632bb3a92d9f:~/Desktop/tetris$ cat > test_rotation.py <<'PY'
+> import unittest
+>
+> from block import Block, shapes
+> from tetris import Tetris
+>
+>
+> class RotationTests(unittest.TestCase):
+>     def setUp(self):
+>         self.game = Tetris(20, 10)
+>         self.game.block = Block(shapes[0])
+>
+>     def test_valid_rotation(self):
+>         self.game.rotate()
+>         self.assertEqual(self.game.block.rotation, 1)
+>         self.game.rotate()
+>         self.assertEqual(self.game.block.rotation, 0)
+>
+>     def test_rotation_at_right_wall(self):
+>         self.game.block.rotation = 1
+>         self.game.block.x = 9
+>         self.game.rotate()
+>         self.assertEqual(self.game.block.rotation, 1)
+>         self.assertFalse(self.game.intersect())
+>         self.game.go_space()  # Previously crashed while freezing outside the board.
+>
+>     def test_rotation_at_floor(self):
+>         self.game.block.y = 19
+>         self.game.rotate()
+>         self.assertEqual(self.game.block.rotation, 0)
+>         self.assertFalse(self.game.intersect())
+>         self.game.go_down()  # Previously crashed while freezing below the board.
+>
+>     def test_rotation_into_settled_blocks(self):
+>         self.game.board[1][5] = 1
+>         self.game.rotate()
+>         self.assertEqual(self.game.block.rotation, 0)
+>         self.assertFalse(self.game.intersect())
+>         self.assertEqual(self.game.board[1][5], 1)
+>
+>     def test_all_shapes_at_edges(self):
+>         for shape in shapes:
+>             for rotation in range(len(shape)):
+>                 for x in range(10):
+>                     for y in range(20):
+>                         block = Block(shape)
+>                         block.rotation, block.x, block.y = rotation, x, y
+>                         self.game.block = block
+>                         if self.game.intersect():
+>                             continue
+>                         self.game.rotate()
+>                         self.assertFalse(self.game.intersect())
+>
+>     def test_no_active_block(self):
+>         self.game.block = None
+>         self.game.rotate()
+>
+>
+> if __name__ == '__main__':
+>     unittest.main()
+> PY
+agent@632bb3a92d9f:~/Desktop/tetris$ python3 -m unittest -v test_rotation
+test_all_shapes_at_edges (test_rotation.RotationTests.test_all_shapes_at_edges) ... ok
+test_no_active_block (test_rotation.RotationTests.test_no_active_block) ... ok
+test_rotation_at_floor (test_rotation.RotationTests.test_rotation_at_floor) ... ok
+test_rotation_at_right_wall (test_rotation.RotationTests.test_rotation_at_right_wall) ... ok
+test_rotation_into_settled_blocks (test_rotation.RotationTests.test_rotation_into_settled_blocks) ... ok
+test_valid_rotation (test_rotation.RotationTests.test_valid_rotation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.017s
+
+OK
+agent@632bb3a92d9f:~/Desktop/tetris$

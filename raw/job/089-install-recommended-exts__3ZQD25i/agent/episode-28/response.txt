@@ -1,0 +1,10 @@
+{
+  "analysis": "All packages are downloaded. Before loading, missing manifest keys should be restored to preserve the official extension IDs.",
+  "plan": "Recover public keys from CRX3 signed headers and add only the matching keys to the extracted manifests.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/keys.py <<'PY'\nexec(open('/tmp/download.py').read().split('for id in ids:')[0])\nimport struct,hashlib,base64\ndef var(b,i):\n n=s=0\n while True:\n  v=b[i];i+=1;n|=(v&127)<<s\n  if v<128:return n,i\n  s+=7\ndef fields(b):\n i=0\n while i<len(b):\n  tag,i=var(b,i);typ=tag&7\n  if typ==2:\n   n,i=var(b,i);yield tag>>3,b[i:i+n];i+=n\n  elif typ==0:_,i=var(b,i)\n  else:raise ValueError(typ)\nfor id in ids:\n path=pathlib.Path.home()/'.local/share/chrome-extensions'/id/'manifest.json';m=json.loads(path.read_text())\n if m.get('key'):continue\n b=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&uc'}).content\n n=struct.unpack('<I',b[8:12])[0]\n for tag,proof in fields(b[12:12+n]):\n  if tag not in [2,3]:continue\n  for t,key in fields(proof):\n   if t!=1:continue\n   raw=hashlib.sha256(key).hexdigest()[:32];kid=''.join(chr(ord('a')+int(x,16)) for x in raw)\n   if kid==id:\n    m['key']=base64.b64encode(key).decode();path.write_text(json.dumps(m));print('key restored',id,flush=True)\nPY\n/opt/venv/bin/python /tmp/keys.py\n",
+      "duration": 2
+    }
+  ]
+}

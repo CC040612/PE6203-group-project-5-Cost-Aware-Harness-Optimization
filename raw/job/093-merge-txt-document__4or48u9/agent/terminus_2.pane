@@ -1,0 +1,265 @@
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ pwd; ls -la; ls -la /home/user; find /app /home/user /workspace -type f -iname '*.txt' 2>/dev/null | head -150; which libreoffice; python -c "import docx; print('python-docx available')"
+[?2004l/app
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:38 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 21 16:43 [01;34m..[0m
+lrwxrwxrwx 1 root root 11 Oct 21 16:38 [0m[01;36m/home/user[0m -> [01;34m/home/agent[0m
+/usr/bin/libreoffice
+bash: python: command not found
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ ls -la /home/agent; find /home/agent /mnt /tmp /opt -type f \( -iname '*.txt' -o -name '*.code-workspace' \) 2>/dev/null | head -180; python3 -c "import docx; print('python-docx available')"
+[?2004ltotal 60
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:43 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 21 16:38 [01;34m..[0m
+-rw-r--r-- 1 agent agent    0 Oct 21 16:43 .bash_history
+-rw-r--r-- 1 agent agent  220 May  7 20:33 .bash_logout
+-rw-r--r-- 1 agent agent 3526 May  7 20:33 .bashrc
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:43 [01;34m.config[0m
+-rw-r--r-- 1 agent agent  807 May  7 20:33 .profile
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mCode[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:38 [01;34mDesktop[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mDocuments[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mDownloads[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mDrive[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mMusic[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34mProjects[0m
+/home/agent/Desktop/doc_proc/3.txt
+/home/agent/Desktop/doc_proc/__MACOSX/._4.txt
+/home/agent/Desktop/doc_proc/__MACOSX/._2.txt
+/home/agent/Desktop/doc_proc/__MACOSX/._5.txt
+/home/agent/Desktop/doc_proc/__MACOSX/._1.txt
+/home/agent/Desktop/doc_proc/__MACOSX/._3.txt
+/home/agent/Desktop/doc_proc/1.txt
+/home/agent/Desktop/doc_proc/5.txt
+/home/agent/Desktop/doc_proc/4.txt
+/home/agent/Desktop/doc_proc/2.txt
+/opt/venv/lib/python3.11/site-packages/regex-2026.9.29.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/regex-2026.9.29.dist-info/licenses/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/skimage/data/README.txt
+/opt/venv/lib/python3.11/site-packages/skimage/feature/orb_descriptor_positions.txt
+/opt/venv/lib/python3.11/site-packages/fastdtw-0.3.4.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/tzdata-2026.5.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pytest-8.4.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pytest-8.4.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/pip/_vendor/urllib3/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/pip/_vendor/distlib/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/pip/_vendor/vendor.txt
+/opt/venv/lib/python3.11/site-packages/pip/_vendor/cachecontrol/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/python_dateutil-2.9.0.post0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/numpy/ma/API_CHANGES.txt
+/opt/venv/lib/python3.11/site-packages/numpy/_core/include/numpy/random/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/numpy/_core/tests/data/umath-validation-set-README.txt
+/opt/venv/lib/python3.11/site-packages/requests_file-3.0.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/certifi-2026.10.19.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/rapidfuzz-3.10.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/tldextract-5.1.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/tldextract-5.1.2.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/odfpy-1.4.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/idna-3.20.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/scikit_image-0.24.0.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/greenlet-3.5.6.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/ImageHash-4.3.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/python_pptx-1.0.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/iniconfig-2.3.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/xlsxwriter-3.2.9.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/xlsxwriter-3.2.9.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/pysrt-1.1.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pysrt-1.1.2.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/PyYAML-6.0.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/et_xmlfile-2.0.0.dist-info/AUTHORS.txt
+/opt/venv/lib/python3.11/site-packages/et_xmlfile-2.0.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/playwright-1.52.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/playwright-1.52.0.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/numba-0.68.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/fontTools/ttLib/tables/table_API_readme.txt
+/opt/venv/lib/python3.11/site-packages/scipy-1.14.1.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/xmltodict-0.13.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/formulas-1.2.9.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/formulas-1.2.9.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/urllib3-2.8.0.dist-info/licenses/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/fonttools-4.67.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/fonttools-4.67.0.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/openpyxl-3.1.5.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/tifffile-2026.3.3.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/tifffile-2026.3.3.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/setuptools-66.1.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/logos.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/c_api.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/filepaths.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/touch.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/pygame.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/event.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/joystick.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/draw.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/surface.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/transform.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/cursors.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/math.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/color.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/scrap.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/sdl2_video.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/pixelcopy.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/surfarray.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/pixelarray.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/locals.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/sprite.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/color_list.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/context.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/mask.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/font.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/bufferproxy.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/examples.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/key.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/mixer.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/gfxdraw.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/display.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/tests.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/camera.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/sndarray.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/fastevent.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/cdrom.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/sdl2_controller.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/freetype.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/mouse.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/rect.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/midi.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/overlay.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/image.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/time.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/ref/music.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/_sources/index.rst.txt
+/opt/venv/lib/python3.11/site-packages/pygame/docs/generated/LGPL.txt
+/opt/venv/lib/python3.11/site-packages/lxml-5.3.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/lxml-5.3.0.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/lxml-5.3.0.dist-info/LICENSES.txt
+/opt/venv/lib/python3.11/site-packages/python_barcode-0.16.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/python_barcode-0.16.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/charset_normalizer-3.5.2.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/charset_normalizer-3.5.2.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/pluggy-1.7.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/soxr-1.1.0.dist-info/licenses/LICENSE-PFFFT.txt
+/opt/venv/lib/python3.11/site-packages/soxr-1.1.0.dist-info/licenses/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/soxr-1.1.0.dist-info/licenses/LICENSE-libsoxr.txt
+/opt/venv/lib/python3.11/site-packages/cffi-2.1.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/cffi-2.1.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/svmlight_invalid_order.txt
+/opt/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/svmlight_classification.txt
+/opt/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/svmlight_invalid.txt
+/opt/venv/lib/python3.11/site-packages/sklearn/datasets/tests/data/svmlight_multilabel.txt
+/opt/venv/lib/python3.11/site-packages/sklearn/datasets/images/README.txt
+/opt/venv/lib/python3.11/site-packages/qrcode-8.2.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/networkx-3.6.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/networkx-3.6.1.dist-info/licenses/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/networkx-3.6.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/librosa-0.10.2.post1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/librosa/util/example_data/registry.txt
+/opt/venv/lib/python3.11/site-packages/llvmlite-0.50.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/lazy_loader-0.6.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/playwright/driver/package/ThirdPartyNotices.txt
+/opt/venv/lib/python3.11/site-packages/pooch-1.9.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pooch-1.9.0.dist-info/licenses/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/pygame-2.6.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pygame-2.6.1.dist-info/entry_points.txt
+/opt/venv/lib/python3.11/site-packages/defusedxml-0.7.1.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/pycparser-3.11.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/cssselect-1.2.0.dist-info/top_level.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6543.63708543.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2378.0df84c10.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/7632.2857be34.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/1745.6c3b4853.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/1738.6c2ca795.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/977.efd287c1.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6846.69ce9f22.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6842.d462d14d.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6455.4591d5a6.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2017.c0943fff.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/3197.7486e33f.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2352.7813346a.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/3433.98daadc1.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/1318.d5839e4d.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/8387.31e25f9a.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/8722.953d5b99.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6592.5b872e13.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/914.8a56532a.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/7347.84e14484.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/main.3fdfb4c6.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2843.57a180fb.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/4673.40997bd1.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/4610.6198dc34.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/9590.390860da.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/5963.8258ca67.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/5011.e2e867fa.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/6732.7fb3a82f.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2581.e80900cf.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2668.8087d959.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/3854.f3875247.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/7138.82f86a67.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/1619.9487002a.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/7477.e7bcc21e.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/9062.d0568390.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/2282.19d166d8.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/9330.327be025.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/schedula/utils/form/static/schedula/js/7901.90fb668d.chunk.js.LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/numpy-2.0.2.dist-info/LICENSE.txt
+/opt/venv/lib/python3.11/site-packages/numpy-2.0.2.dist-info/entry_points.txt
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'docx'
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ ls -la /home/user/Desktop/doc_proc; file /home/user/Desktop/doc_proc/*.txt; for f in /home/user/Desktop/doc_proc/{1..5}.txt; do echo "=== $f ==="; head -c 500 "$f"; printf '\n'; done; /opt/venv/bin/python -c "import docx; print('python-docx available')"
+[?2004ltotal 36
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:38 [0m[01;34m.[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:38 [01;34m..[0m
+-rw-r--r-- 1 agent agent  457 Mar  6  2024 1.txt
+-rw-r--r-- 1 agent agent  520 Mar  6  2024 2.txt
+-rw-r--r-- 1 agent agent  409 Mar  6  2024 3.txt
+-rw-r--r-- 1 agent agent  426 Mar  6  2024 4.txt
+-rw-r--r-- 1 agent agent  437 Mar  6  2024 5.txt
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:38 [01;34m__MACOSX[0m
+-rw-r--r-- 1 agent agent 2051 Mar  6  2024 doc_process.py
+/home/user/Desktop/doc_proc/1.txt: ASCII text, with very long lines (457), with no line terminators
+/home/user/Desktop/doc_proc/2.txt: ASCII text, with very long lines (520), with no line terminators
+/home/user/Desktop/doc_proc/3.txt: ASCII text, with very long lines (409), with no line terminators
+/home/user/Desktop/doc_proc/4.txt: ASCII text, with very long lines (426), with no line terminators
+/home/user/Desktop/doc_proc/5.txt: ASCII text, with very long lines (437), with no line terminators
+=== /home/user/Desktop/doc_proc/1.txt ===
+In the vast expanse of the universe, our planet is but a small blue dot, teeming with life and brimming with the complexity of ecosystems. This marvel of biodiversity underscores the intricate balance of nature, where every species plays a pivotal role in maintaining the ecological equilibrium. As stewards of Earth, it is our solemn duty to protect and preserve this delicate harmony for future generations, fostering a deep respect for all forms of life.
+=== /home/user/Desktop/doc_proc/2.txt ===
+The digital revolution has irreversibly transformed the landscape of human interaction, ushering in an era of unprecedented connectivity. With the advent of the internet, information flows freely, transcending geographical boundaries and cultural barriers. This new realm of digital communication fosters global collaboration and innovation, yet it also presents challenges in privacy, security, and the spread of misinformation. Navigating this digital age requires a nuanced understanding of its be
+=== /home/user/Desktop/doc_proc/3.txt ===
+Artistic expression serves as a window to the soul, offering profound insights into the human condition. Through the brushstrokes of a painting, the verses of a poem, or the melodies of a song, artists convey emotions, ideas, and narratives that resonate across cultures and epochs. Art challenges our perceptions, sparks imagination, and inspires change, cementing its role as an essential pillar of society.
+=== /home/user/Desktop/doc_proc/4.txt ===
+The pursuit of knowledge is a noble endeavor that has propelled humanity forward, fueling discoveries and innovations that have shaped our world. From the ancient libraries of Alexandria to the modern scientific laboratories, the quest for understanding has transcended time and space. Education, therefore, is not merely the acquisition of facts but the cultivation of critical thinking and the passion for lifelong learning.
+=== /home/user/Desktop/doc_proc/5.txt ===
+Sustainability is the clarion call of our times, urging us to rethink our relationship with the environment and our patterns of consumption. The challenges of climate change, resource depletion, and environmental degradation demand a concerted effort towards sustainable living. By embracing renewable energy, reducing waste, and promoting conservation, we can forge a path towards a more resilient and sustainable future for our planet.
+python-docx available
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> from docx import Document
+[?2004l[?2004h> from docx.shared import Pt
+[?2004l[?2004h> from docx.oxml import OxmlElement
+[?2004l[?2004h> from docx.oxml.ns import qn
+[?2004l[?2004h> root = Path('/home/user/Desktop/doc_proc')
+[?2004l[?2004h> files = sorted(root.glob('*.txt'), key=lambda p: int(p.stem))
+[?2004l[?2004h> text = ''.join(p.read_text(encoding='utf-8') for p in files)
+[?2004l[?2004h> doc = Document()
+[?2004l[?2004h> for style in doc.styles:
+[?2004l[?2004h>     if style.type in (1, 2):
+[?2004l[?2004h>         style.font.size = Pt(10)
+[?2004l[?2004h> run = doc.add_paragraph().add_run(text)
+[?2004l[?2004h> run.font.size = Pt(10)
+[?2004l[?2004h> cs = OxmlElement('w:szCs')
+[?2004l[?2004h> cs.set(qn('w:val'), '20')
+[?2004l[?2004h> run._element.get_or_add_rPr().append(cs)
+[?2004l[?2004h> output = Path('/home/user/Desktop/concat.docx')
+[?2004l[?2004h> doc.save(output)
+[?2004l[?2004h> check = Document(output)
+[?2004l[?2004h> assert '\n'.join(p.text for p in check.paragraphs) == text
+[?2004l[?2004h> assert all(r.font.size == Pt(10) for p in check.paragraphs for r in p.runs)
+[?2004l[?2004h> print(f'Created and verified {output}: {len(files)} files, {len(text)} characters, 10-point font, {output.stat().st_size} bytes')
+[?2004l[?2004h> PY
+[?2004lCreated and verified /home/user/Desktop/concat.docx: 5 files, 2249 characters, 10-point font, 37722 bytes
+[?2004h[01;32magent@00c739bbd86c[00m:[01;34m/app[00m$ 

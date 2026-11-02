@@ -1,0 +1,10 @@
+{
+  "analysis": "Thunderbird is installed but not running. There are two profiles; I need to determine which contains the active Local Folders mail store and its storage format.",
+  "plan": "Read the profile configuration and relevant mail preferences, then inspect existing mail folders.",
+  "commands": [
+    {
+      "keystrokes": "cat ~/.thunderbird/profiles.ini; grep -E 'mail\\.(server|account|root)|storeContract' ~/.thunderbird/t5q2a5hp.default-release/prefs.js; find ~/.thunderbird/t5q2a5hp.default-release/Mail -maxdepth 3 -type f\n",
+      "duration": 0.1
+    }
+  ]
+}

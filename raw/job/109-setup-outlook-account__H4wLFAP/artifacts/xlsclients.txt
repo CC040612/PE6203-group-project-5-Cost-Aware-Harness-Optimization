@@ -1,0 +1,6 @@
+Window 0x400001:
+  Machine:  4f49ca72fb28
+  Name:  Thunderbird
+  Icon Name:  thunderbird-esr
+  Command:  thunderbird-esr
+  Instance/Class:  thunderbird-esr/Thunderbird-esr

@@ -1,0 +1,10 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/check.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> e=c.new_page(); e.goto('chrome://extensions/'); e.wait_for_timeout(1000)
+> print(e.locator('body').inner_text())
+> print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,data:e.data,text:e.shadowRoot.innerText}))'))
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/check.py
+

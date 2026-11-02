@@ -1,0 +1,2 @@
+INFO:desktopenv.metric.table:Loading result file: /home/user/Desktop/Professor_Contact.xlsx
+INFO:desktopenv.metric.table:Successfully loaded result file with sheets: ['Sheet1']

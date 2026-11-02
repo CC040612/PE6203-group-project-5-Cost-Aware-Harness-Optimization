@@ -1,0 +1,16 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/details.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> page=c.new_page()
+> for id in ['laookkfknpbbblfpciffpaejjkokdgca','kgjfgplpablkjnlkjmjdecgdpfankdle']:
+>  page.goto('https://chromewebstore.google.com/detail/'+id); page.wait_for_timeout(1000)
+>  print(page.locator('body').inner_text()[:6500],flush=True)
+>  if id.startswith('kg'):
+>   print(page.evaluate('({keys:Object.keys(chrome),ua:navigator.userAgent})'))
+>   page.on('console',lambda m:print('console',m.text,flush=True))
+>   page.get_by_role('button',name='Add to Chrome',exact=True).click(); page.wait_for_timeout(3000)
+>   print('buttons',page.get_by_role('button').all_text_contents(),flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/details.py
+

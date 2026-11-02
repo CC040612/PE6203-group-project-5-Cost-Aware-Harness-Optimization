@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@5c8e614d8183:/app$ ls -l /app/WeeklySales.xlsx; python - <<'PY'
+> import openpyxl
+> w=openpyxl.load_workbook('/app/WeeklySales.xlsx')
+> for s in w:
+>  print(s.title,s.max_row,s.max_column)
+>  for row in s.iter_rows():
+>   print(row[0].row, [c.value for c in row])
+> PY
+-rw-r--r-- 1 agent agent 9162 Oct 21 15:21 /app/WeeklySales.xlsx
+Sheet1 11 3
+1 ['Week', 'Sales', 'COGS']
+2 ['Week 1', 92808, 81230.8227540488]
+3 ['Week 2', 103740, 32966.53024452376]
+4 ['Week 3', 92828, 10560.387001610548]
+5 ['Week 4', 56032, 51268.67027326688]
+6 ['Week 5', 83685, 33203.656522195364]
+7 ['Week 6', 89271, 26838.67679965224]
+8 ['Week 7', 120530, 79725.77832282588]
+9 ['Week 8', 81764, 61115.56073419186]
+10 ['Week 9', 101728, 3733.34560276964]
+11 ['Week 10', 79359, 50690.05780948359]
+agent@5c8e614d8183:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

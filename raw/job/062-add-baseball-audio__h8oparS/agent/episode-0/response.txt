@@ -1,0 +1,10 @@
+{
+  "analysis": "The presentation and introduction audio are specified, but their contents and available tools have not yet been inspected.",
+  "plan": "Inspect the files and installed presentation libraries, then embed the MP3 on the opening slide and save the presentation in place.",
+  "commands": [
+    {
+      "keystrokes": "ls -lh /app; python - <<'PY'\nimport importlib.util\nprint('pptx:', importlib.util.find_spec('pptx'))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

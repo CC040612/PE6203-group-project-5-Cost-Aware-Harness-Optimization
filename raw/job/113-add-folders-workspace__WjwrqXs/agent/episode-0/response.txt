@@ -1,0 +1,10 @@
+{
+  "analysis": "The terminal is in /app. We need to inspect the workspace file, then add the two folders while preserving any existing folders and settings.",
+  "plan": "Read the workspace file and check the target directories before editing.",
+  "commands": [
+    {
+      "keystrokes": "cat /app/project.code-workspace; printf '\\n--- directories ---\\n'; ls -ld /app/data1 /app/data2\n",
+      "duration": 0.1
+    }
+  ]
+}

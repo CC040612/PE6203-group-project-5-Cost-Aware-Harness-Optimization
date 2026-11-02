@@ -1,0 +1,72 @@
+New Terminal Output:
+
+agent@7d2efb93e269:/app$ python - <<'PY'
+> from pptx import Presentation
+> from pptx.util import Inches
+> p=Presentation('/app/Mady_and_Mia_Baseball.pptx')
+> s=p.slides[0]
+> a=s.shapes.add_movie('/app/Baseball.mp3', Inches(9.0), Inches(6.55), Inches(.6), Inches(.6), mime_type='audio/mpeg')
+> print(a._element.xml)
+> print(s._element.xml[s._element.xml.index('<p:timing'):])
+> p.save('/tmp/baseball_audio_draft.pptx')
+> PY
+<p:pic xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://sche
+mas.openxmlformats.org/officeDocument/2006/relationships">
+  <p:nvPicPr>
+    <p:cNvPr id="4" name="Baseball.mp3">
+      <a:hlinkClick r:id="" action="ppaction://media"/>
+    </p:cNvPr>
+    <p:cNvPicPr>
+      <a:picLocks noChangeAspect="1"/>
+    </p:cNvPicPr>
+    <p:nvPr>
+      <a:videoFile r:link="rId3"/>
+      <p:extLst>
+        <p:ext uri="{DAA4B4D4-6D71-4841-9C94-3DE7FCFB9230}">
+          <p14:media xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" r:embed="rId2"/>
+        </p:ext>
+      </p:extLst>
+    </p:nvPr>
+  </p:nvPicPr>
+  <p:blipFill>
+    <a:blip r:embed="rId4"/>
+    <a:stretch>
+      <a:fillRect/>
+    </a:stretch>
+  </p:blipFill>
+  <p:spPr>
+    <a:xfrm>
+      <a:off x="8229600" y="5989320"/>
+      <a:ext cx="548640" cy="548640"/>
+    </a:xfrm>
+    <a:prstGeom prst="rect">
+      <a:avLst/>
+    </a:prstGeom>
+  </p:spPr>
+</p:pic>
+
+<p:timing>
+    <p:tnLst>
+      <p:par>
+        <p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot">
+          <p:childTnLst>
+            <p:video>
+              <p:cMediaNode vol="80000">
+                <p:cTn id="2" fill="hold" display="0">
+                  <p:stCondLst>
+                    <p:cond delay="indefinite"/>
+                  </p:stCondLst>
+                </p:cTn>
+                <p:tgtEl>
+                  <p:spTgt spid="4"/>
+                </p:tgtEl>
+              </p:cMediaNode>
+            </p:video>
+          </p:childTnLst>
+        </p:cTn>
+      </p:par>
+    </p:tnLst>
+  </p:timing>
+</p:sld>
+
+agent@7d2efb93e269:/app$

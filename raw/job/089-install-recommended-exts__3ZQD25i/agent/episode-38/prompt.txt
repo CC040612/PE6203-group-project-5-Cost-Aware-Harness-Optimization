@@ -1,0 +1,21 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ pkill -TERM -x chromium; sleep 2; python3 - <<'PY'
+> import json,pathlib
+> p=pathlib.Path.home()/'.config/google-chrome/Default/Preferences'
+> d=json.loads(p.read_text());settings=d['extensions']['settings']
+> for id in ['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdb
+domjkkjkaonfhkkikfgjllcleb']:
+>  s=settings[id];print(id,s.get('location'),s.get('state'),s.get('path'));s['location']=4;s['state']=1
+> p.write_text(json.dumps(d))
+> PY
+[1]+  Done                    google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1
+kgjfgplpablkjnlkjmjdecgdpfankdle 8 None /home/agent/.local/share/chrome-extensions/kgjfgplpablkjnlkjmjdecgdpfankdle
+ljflmlehinmoeknoonhibbjpldiijjmm 8 None /home/agent/.local/share/chrome-extensions/ljflmlehinmoeknoonhibbjpldiijjmm
+fmkadmapgofadopljbjfkapdkoienihi 8 None /home/agent/.local/share/chrome-extensions/fmkadmapgofadopljbjfkapdkoienihi
+laookkfknpbbblfpciffpaejjkokdgca 8 None /home/agent/.local/share/chrome-extensions/laookkfknpbbblfpciffpaejjkokdgca
+aapbdbdomjkkjkaonfhkkikfgjllcleb 8 None /home/agent/.local/share/chrome-extensions/aapbdbdomjkkjkaonfhkkikfgjllcleb
+agent@715dad585543:/app$ google-chrome chrome://extensions/ >/tmp/chrome.log 2>&1 &
+[1] 2665
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+

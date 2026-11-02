@@ -1,0 +1,52 @@
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ ls -lh /home/user/Desktop/src.mp4; command -v ffmpeg; command -v ffprobe
+[?2004l-rw-r--r-- 1 agent agent 3.0M Oct 21 15:53 [0m[01;35m/home/user/Desktop/src.mp4[0m
+/usr/bin/ffmpeg
+/usr/bin/ffprobe
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of json /home/user/Desktop/src.mp4
+[?2004l{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_type": "video",
+            "width": 640,
+            "height": 360,
+            "r_frame_rate": "30/1"
+        },
+        {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+        }
+    ],
+    "format": {
+        "duration": "30.526667"
+    }
+}
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ ffmpeg -hide_banner -loglevel error -y -ss 3 -t 5 -i /home/user/Desktop/src.mp4 -filter_complex "[0:v]fps=15,split[a][b];[a]palettegen[p];[b][p]paletteuse" -an -loop 0 /home/user/Desktop/src_clip.gif
+[?2004l[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$  -lh /home/user/Desktop/src_clip.gif; ffprobe -v error -count_frames -show_entries format=duration:stream=width,height,nb_read_frames -of json /home/user/Desktop/src_clip.gif
+[?2004lbash: -lh: command not found
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "width": 640,
+            "height": 360,
+            "nb_read_frames": "75"
+        }
+    ],
+    "format": {
+        "duration": "4.990000"
+    }
+}
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ ffmpeg -hide_banner -loglevel error -y -ss 3 -t 5 -i /home/user/Desktop/src.mp4 -filter_complex "[0:v]fps=15,split[a][b];[a]palettegen[p];[b][p]paletteuse" -an -loop 0 -final_delay 7 /home/user/Desktop/src_clip.gif
+[?2004l[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ ls -lh /home/user/Desktop/src_clip.gif; ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 /home/user/Desktop/src_clip.gif
+[?2004l-rw-r--r-- 1 agent agent 3.8M Oct 21 15:55 [0m[01;35m/home/user/Desktop/src_clip.gif[0m
+duration=5.000000
+[?2004h[01;32magent@c8ad374d260c[00m:[01;34m/app[00m$ 

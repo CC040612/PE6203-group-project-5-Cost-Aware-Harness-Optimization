@@ -1,0 +1,23 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+[{'id': 'aapbdbdomjkkjkaonfhkkikfgjllcleb', 'name': 'Google Translate', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False,
+ 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired
+': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}
+, {'id': 'laookkfknpbbblfpciffpaejjkokdgca', 'name': 'Momentum', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corru
+ptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': Fals
+e, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id'
+: 'fmkadmapgofadopljbjfkapdkoienihi', 'name': 'React Developer Tools', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False,
+'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired'
+: False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}},
+ {'id': 'ljflmlehinmoeknoonhibbjpldiijjmm', 'name': 'Speechify — Text to Speech', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolic
+y': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInSto
+reRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired
+': False}}, {'id': 'kgjfgplpablkjnlkjmjdecgdpfankdle', 'name': 'Zoom Chrome Extension', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedB
+yPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishe
+dInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRe
+quired': False}}, {'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'block
+edByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publi
+shedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updat
+eRequired': False}}]
+agent@715dad585543:/app$

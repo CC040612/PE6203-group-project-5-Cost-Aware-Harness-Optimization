@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@1ab03f642dd9:/app$ which tesseract; ffmpeg -v error -ss 53 -i ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4 -frames:v 1 /tmp/orientation.png -y; f
+or f in null vflip hflip hflip,vflip; do echo "=== $f ==="; ffmpeg -v error -i /tmp/orientation.png -vf "$f,scale=1280:944" -frames:v 1 -y /tmp/test_orientation
+.png; tesseract /tmp/test_orientation.png stdout 2>/dev/null; done
+=== null ===
+=== vflip ===
+=== hflip ===
+

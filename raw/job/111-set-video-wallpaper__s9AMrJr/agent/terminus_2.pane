@@ -1,0 +1,159 @@
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ ls -lh ~/Desktop; printenv | grep -E 'DISPLAY|DBUS|DESKTOP'; command -v ffmpeg ffprobe gsettings xfconf-query pcmanfm feh; pgrep -a -f 'xfdesktop|plasmashell|gnome-shell|pcmanfm|dbus-daemon'
+[?2004ltotal 26M
+-rw-r--r-- 1 agent agent 26M Oct 22 03:04 [0m[01;35m'Interstellar Movie - Official Trailer.mp4'[0m
+/usr/bin/ffmpeg
+/usr/bin/ffprobe
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ ps aux | head -45; ls -la /tmp/.X11-unix /run/user/$(id -u) 2>/dev/null; ls /usr/bin | grep -Ei 'wall|desktop|xfce|xrandr|xset|dconf|gsettings|vlc'; ls -la ~; ffprobe -v error -show_entries format=duration:stream=width,height -of default=noprint_wrappers=1 ~/Desktop/*.mp4
+[?2004lUSER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+agent          1  0.0  0.0   2812  1812 ?        Ss   03:07   0:00 sh -c sleep infinity
+agent          7  0.0  0.0   2708  1488 ?        S    03:07   0:00 sleep infinity
+agent        263  0.0  0.0   9792  4168 ?        Ss   03:07   0:00 tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /logs/agent/terminus_2.pane
+agent        264  0.0  0.0   4600  4028 pts/0    Ss   03:07   0:00 bash --login
+agent        266  0.0  0.0   2812  1864 ?        S    03:07   0:00 sh -c cat > /logs/agent/terminus_2.pane
+agent        267  0.0  0.0   2852  1500 ?        S    03:07   0:00 cat
+agent        283  0.4  0.2 103352 22952 pts/0    Sl+  03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        284  0.0  0.1  29588 15844 pts/0    S+   03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        285  0.0  0.2  29600 16472 pts/0    S+   03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        286  0.0  0.0   2812  1764 pts/1    Ss   03:07   0:00 sh -c /bin/bash
+agent        287  0.0  0.0   4984  4256 pts/1    S    03:07   0:00 /bin/bash
+agent        345  0.0  0.0   8300  4304 pts/1    R+   03:07   0:00 ps aux
+agent        346  0.0  0.0   3104  1868 pts/1    S+   03:07   0:00 head -45
+c[01;31m[Kvlc[m[K
+n[01;31m[Kvlc[m[K
+q[01;31m[Kvlc[m[K
+r[01;31m[Kvlc[m[K
+s[01;31m[Kvlc[m[K
+[01;31m[Kvlc[m[K
+[01;31m[Kvlc[m[K-wrapper
+[01;31m[Kwall[m[K
+xdg-[01;31m[Kdesktop[m[K-icon
+xdg-[01;31m[Kdesktop[m[K-menu
+[01;31m[Kxrandr[m[K
+[01;31m[Kxset[m[K
+[01;31m[Kxset[m[Kmode
+[01;31m[Kxset[m[Kpointer
+[01;31m[Kxset[m[Kroot
+total 52
+drwxr-x--- 1 agent agent 4096 Oct 22 03:04 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 22 03:04 [01;34m..[0m
+-rw-r--r-- 1 agent agent  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 agent agent 3771 Mar 31  2024 .bashrc
+drwxr-xr-x 1 agent agent 4096 Oct 22 03:07 [01;34m.config[0m
+drwxr-xr-x 3 agent agent 4096 Oct 22 03:04 [01;34m.local[0m
+-rw-r--r-- 1 agent agent  807 Mar 31  2024 .profile
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 [01;34mDesktop[0m
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 [01;34mDocuments[0m
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 [01;34mDownloads[0m
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 [01;34mVideos[0m
+width=1920
+height=1080
+width=1280
+height=720
+duration=151.278005
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ find ~/.config ~/.local /app -maxdepth 3 -type f 2>/dev/null | head -80; cat /etc/os-release; sudo -n true && echo sudo_available; dpkg -l | grep -Ei 'xfce|gnome|xserver|feh|wallpaper|lxde|openbox|dbus'; ffprobe -v error -show_entries format=duration:stream=width,height -of default=noprint_wrappers=1 "$HOME/Desktop/Interstellar Movie - Official Trailer.mp4"
+[?2004l/home/agent/.config/vlc/vlcrc
+/home/agent/.config/asciinema/install-id
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+bash: sudo: command not found
+ii  adwaita-icon-theme              46.0-1                              all          default icon theme of [01;31m[KGNOME[m[K
+ii  [01;31m[Kdbus[m[K                            1.14.10-4ubuntu4.1                  amd64        simple interprocess messaging system (system message bus)
+ii  [01;31m[Kdbus[m[K-bin                        1.14.10-4ubuntu4.1                  amd64        simple interprocess messaging system (command line utilities)
+ii  [01;31m[Kdbus[m[K-daemon                     1.14.10-4ubuntu4.1                  amd64        simple interprocess messaging system (reference message bus)
+ii  [01;31m[Kdbus[m[K-session-bus-common         1.14.10-4ubuntu4.1                  all          simple interprocess messaging system (session bus configuration)
+ii  [01;31m[Kdbus[m[K-system-bus-common          1.14.10-4ubuntu4.1                  all          simple interprocess messaging system (system bus configuration)
+ii  [01;31m[Kdbus[m[K-user-session               1.14.10-4ubuntu4.1                  amd64        simple interprocess messaging system (systemd --user integration)
+ii  lib[01;31m[Kdbus[m[K-1-3:amd64               1.14.10-4ubuntu4.1                  amd64        simple interprocess messaging system (library)
+ii  libnet-[01;31m[Kdbus[m[K-perl                1.2.0-2build3                       amd64        Perl extension for the [01;31m[KDBus[m[K bindings
+ii  libqt5[01;31m[Kdbus[m[K5t64:amd64            5.15.13+dfsg-1ubuntu1               amd64        Qt 5 D-Bus module
+ii  libxml2:amd64                   2.9.14+dfsg-1.3ubuntu3.10           amd64        [01;31m[KGNOME[m[K XML library
+ii  python3-[01;31m[Kdbus[m[K                    1.3.2-5build3                       amd64        simple interprocess messaging system (Python 3 interface)
+ii  x11-[01;31m[Kxserver[m[K-utils               7.7+10build2                        amd64        X server utilities
+width=1920
+height=1080
+width=1280
+height=720
+duration=151.278005
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ mkdir -p "$HOME/.local/share/backgrounds"; ffmpeg -hide_banner -loglevel error -ss 85 -i "$HOME/Desktop/Interstellar Movie - Official Trailer.mp4" -map 0:v:0 -frames:v 1 -update 1 "$HOME/.local/share/backgrounds/interstellar.jpg"; ls /usr/share/glib-2.0/schemas; ls /usr/lib/x86_64-linux-gnu/gio/modules; command -v apt download dconf dbus-run-session; grep -n -E 'wallpaper|snapshot' ~/.config/vlc/vlcrc | head -20; apt-cache policy libglib2.0-bin gsettings-desktop-schemas dconf-cli
+[?2004l10_gsettings-desktop-schemas.gschema.override    org.gnome.desktop.default-applications.gschema.xml  org.gnome.desktop.sound.gschema.xml
+gschemas.compiled                                org.gnome.desktop.enums.xml                         org.gnome.desktop.thumbnail-cache.gschema.xml
+org.gnome.desktop.a11y.applications.gschema.xml  org.gnome.desktop.input-sources.gschema.xml         org.gnome.desktop.thumbnailers.gschema.xml
+org.gnome.desktop.a11y.gschema.xml               org.gnome.desktop.interface.gschema.xml             org.gnome.desktop.wm.keybindings.gschema.xml
+org.gnome.desktop.a11y.interface.gschema.xml     org.gnome.desktop.lockdown.gschema.xml              org.gnome.desktop.wm.preferences.gschema.xml
+org.gnome.desktop.a11y.keyboard.gschema.xml      org.gnome.desktop.media-handling.gschema.xml        org.gnome.system.locale.gschema.xml
+org.gnome.desktop.a11y.magnifier.gschema.xml     org.gnome.desktop.notifications.gschema.xml         org.gnome.system.location.gschema.xml
+org.gnome.desktop.a11y.mouse.gschema.xml         org.gnome.desktop.peripherals.gschema.xml           org.gnome.system.proxy.gschema.xml
+org.gnome.desktop.app-folders.gschema.xml        org.gnome.desktop.privacy.gschema.xml               org.gtk.Settings.ColorChooser.gschema.xml
+org.gnome.desktop.background.gschema.xml         org.gnome.desktop.screensaver.gschema.xml           org.gtk.Settings.Debug.gschema.xml
+org.gnome.desktop.calendar.gschema.xml           org.gnome.desktop.search-providers.gschema.xml      org.gtk.Settings.EmojiChooser.gschema.xml
+org.gnome.desktop.datetime.gschema.xml           org.gnome.desktop.session.gschema.xml               org.gtk.Settings.FileChooser.gschema.xml
+giomodule.cache  libdconfsettings.so
+/usr/bin/apt
+/usr/bin/dbus-run-session
+libglib2.0-bin:
+  Installed: (none)
+  Candidate: 2.80.0-6ubuntu3.10
+  Version table:
+     2.80.0-6ubuntu3.10 500 (phased 40%)
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+     2.80.0-6ubuntu3.9 500
+        500 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages
+     2.80.0-6ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+gsettings-desktop-schemas:
+  Installed: 46.1-0ubuntu1
+  Candidate: 46.1-0ubuntu1
+  Version table:
+ *** 46.1-0ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     46.0-1ubuntu2 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+dconf-cli:
+  Installed: (none)
+  Candidate: 0.40.0-4ubuntu0.1
+  Version table:
+     0.40.0-4ubuntu0.1 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+     0.40.0-4build2 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ dbus-run-session -- /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> from gi.repository import Gio
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> p = Path.home()/'.local/share/backgrounds/interstellar.jpg'
+[?2004l[?2004h> assert p.stat().st_size > 0
+[?2004l[?2004h> s = Gio.Settings.new('org.gnome.desktop.background')
+[?2004l[?2004h> for k in ('picture-uri', 'picture-uri-dark'):
+[?2004l[?2004h>     assert s.set_string(k, p.as_uri())
+[?2004l[?2004h> assert s.set_string('picture-options', 'zoom')
+[?2004l[?2004h> Gio.Settings.sync()
+[?2004l[?2004h> print('Wallpaper preferences saved:', p)
+[?2004l[?2004h> PY
+[?2004ldbus-daemon[537]: [session uid=1001 pid=537] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1001 pid=538 comm="/usr/bin/python3 -" label="kernel")
+dbus-daemon[537]: [session uid=1001 pid=537] Successfully activated service 'ca.desrt.dconf'
+Wallpaper preferences saved: /home/agent/.local/share/backgrounds/interstellar.jpg
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ dbus-run-session -- /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> from gi.repository import Gio
+[?2004l[?2004h> s = Gio.Settings.new('org.gnome.desktop.background')
+[?2004l[?2004h> for k in ('picture-uri','picture-uri-dark','picture-options'):
+[?2004l[?2004h>     print(k, s.get_string(k))
+[?2004l[?2004h> PY
+[?2004lpicture-uri file:///home/agent/.local/share/backgrounds/interstellar.jpg
+picture-uri-dark file:///home/agent/.local/share/backgrounds/interstellar.jpg
+picture-options zoom
+[?2004h[01;32magent@2355408990bd[00m:[01;34m/app[00m$ 

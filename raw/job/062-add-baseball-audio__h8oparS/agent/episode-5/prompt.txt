@@ -1,0 +1,42 @@
+New Terminal Output:
+
+agent@7d2efb93e269:/app$ python - <<'PY'
+> from zipfile import ZipFile, ZIP_DEFLATED
+> from lxml import etree as E
+> from pathlib import Path
+> from pptx import Presentation
+> import hashlib, os
+> src='/tmp/baseball_audio_draft.pptx'
+> dst=Path('/app/Mady_and_Mia_Baseball.pptx')
+> ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
+> with ZipFile(src) as z:
+>  data={n:z.read(n) for n in z.namelist()}
+> slide=E.fromstring(data['ppt/slides/slide1.xml'])
+> for el in slide.findall('.//a:videoFile', ns):
+>  el.tag='{'+ns['a']+'}audioFile'
+> for el in slide.findall('.//p:video', ns):
+>  el.tag='{'+ns['p']+'}audio'
+> for el in slide.findall('.//p:audio/p:cMediaNode/p:cTn/p:stCondLst/p:cond', ns):
+>  el.set('delay','0')
+> data['ppt/slides/slide1.xml']=E.tostring(slide,xml_declaration=True,encoding='UTF-8',standalone=True)
+> r='ppt/slides/_rels/slide1.xml.rels'
+> rels=E.fromstring(data[r])
+> for rel in rels:
+>  if rel.get('Type','').endswith('/video'):
+>   rel.set('Type',rel.get('Type').rsplit('/',1)[0]+'/audio')
+> data[r]=E.tostring(rels,xml_declaration=True,encoding='UTF-8',standalone=True)
+> with ZipFile(str(dst)+'.tmp','w',ZIP_DEFLATED) as z:
+>  for name,blob in data.items(): z.writestr(name,blob)
+> with ZipFile(str(dst)+'.tmp') as z:
+>  assert z.testzip() is None
+>  mp3=[n for n in z.namelist() if n.endswith('.mp3')]
+>  assert len(mp3)==1
+>  assert hashlib.sha256(z.read(mp3[0])).digest()==hashlib.sha256(Path('/app/Baseball.mp3').read_bytes()).digest()
+> assert len(Presentation(str(dst)+'.tmp').slides)==8
+> os.replace(str(dst)+'.tmp',dst)
+> print('Saved:',dst,'Bytes:',dst.stat().st_size)
+> print('Verified: 8 slides, matching embedded MP3, automatic first-slide audio playback.')
+> PY
+Saved: /app/Mady_and_Mia_Baseball.pptx Bytes: 7232318
+Verified: 8 slides, matching embedded MP3, automatic first-slide audio playback.
+agent@7d2efb93e269:/app$

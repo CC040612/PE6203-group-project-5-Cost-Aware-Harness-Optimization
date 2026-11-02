@@ -1,0 +1,31 @@
+New Terminal Output:
+
+quit 0)'
+script-fu-Warning: CANVAS 2192x1118
+
+script-fu-Warning: LAYER 2 Thanks World size=422x77 offset=976,702 text=1
+
+script-fu-Warning: LAYER 4 orange_background.png size=2192x1118 offset=0,0 text=0
+
+batch command executed successfully
+gimp: GEGL-WARNING: (../gegl/buffer/gegl-tile-handler-cache.c:1076):gegl_tile_cache_destroy: runtime check failed: (g_queue_is_empty (&cache_queue))
+EEEEeEeek! 3 GeglBuffers leaked
+agent@b8c6a89d73d6:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

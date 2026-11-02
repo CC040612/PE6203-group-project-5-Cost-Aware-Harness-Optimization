@@ -1,0 +1,23 @@
+New Terminal Output:
+
+-gnu TESSDATA_PREFIX=/tmp/ocr-local/usr/share/tesseract-ocr/5/tessdata ./usr/bin/tesseract /tmp/test_orientation.png stdout 2>&1; done
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgif7 amd64 5.2.2-1ubuntu1.2 [35.6 kB]
+Fetched 35.6 kB in 1s (34.6 kB/s)
+=== vflip ===
+Estimating resolution as 1141
+Detected 10 diacritics
+On January 24th,
+tas pa om
+
+si ou soca
+wont be lilse
+
+=== hflip,vflip ===
+Estimating resolution as 1141
+Detected 10 diacritics
+Hih< yisunsl_ 10
+
+stapece ook ith
+sail od now
+
+agent@1ab03f642dd9:/tmp/ocr-local$

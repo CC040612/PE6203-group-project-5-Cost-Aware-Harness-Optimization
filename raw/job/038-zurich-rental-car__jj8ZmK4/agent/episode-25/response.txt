@@ -1,0 +1,10 @@
+{
+  "analysis": "Car listings have loaded.",
+  "plan": "Inspect the beginning of the page and available controls for large cars and price sort.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; print(page.url); print(page.locator('body').inner_text()[:8500]); print(page.locator('select').evaluate_all('(es)=>es.map(e=>e.outerHTML)')[-3:])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

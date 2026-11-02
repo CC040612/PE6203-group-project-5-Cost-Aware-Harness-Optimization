@@ -1,0 +1,10 @@
+{
+  "analysis": "Chromium is now starting. We should allow the initial tabs to populate before exporting.",
+  "plan": "Wait briefly and list the open pages via the debugging endpoint.",
+  "commands": [
+    {
+      "keystrokes": "sleep 5; curl -s http://127.0.0.1:1337/json/list\n",
+      "duration": 6
+    }
+  ]
+}

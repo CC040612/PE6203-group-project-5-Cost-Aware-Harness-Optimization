@@ -1,0 +1,15 @@
+New Terminal Output:
+
+agent@4f49ca72fb28:/app$ /usr/bin/python3 - <<'PY'
+> import pyatspi
+> def walk(o):
+>  if o.getRoleName()=='entry' and o.name=='Email address':
+>   o.queryEditableText().setTextContents('anonym-x2024@outlook.com')
+>   print('Email filled:',o.queryText().getText(0,-1))
+>  if o.getRoleName()=='password text' and o.name=='Password':
+>   o.queryEditableText().setTextContents('password')
+>   print('Password filled; length:',o.queryText().characterCount)
+>  for c in o: walk(c)
+> walk(pyatspi.Registry.getDesktop(0))
+> PY
+

@@ -1,0 +1,10 @@
+{
+  "analysis": "The calendar is open; dates are not button elements.",
+  "plan": "Inspect calendar date markup to select October 30.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; print(page.locator('body').inner_text()[-6500:]); print(page.get_by_text('30',exact=True).evaluate_all('(es)=>es.map(e=>e.outerHTML)'))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

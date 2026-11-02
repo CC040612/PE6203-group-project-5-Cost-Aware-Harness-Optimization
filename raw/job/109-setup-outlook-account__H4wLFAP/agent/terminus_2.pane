@@ -1,0 +1,758 @@
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY
+[?2004lagent         68 34.4  5.1 11521176 409464 ?     Sl   02:58   0:03 /usr/local/bin/[01;31m[Kthunderbird[m[K -profile /home/agent/.[01;31m[Kthunderbird[m[K/tua-task-profile
+agent         74  0.0  0.0  21092  2952 ?        Sl   02:58   0:00 /opt/[01;31m[Kthunderbird[m[K/crashhelper 68 6 /tmp/ 8
+agent        248  3.4  1.4 19243184 113440 ?     Sl   02:58   0:00 /opt/[01;31m[Kthunderbird[m[K/[01;31m[Kthunderbird[m[K-bin -contentproc -isForBrowser -prefsHandle 0:2010 -prefMapHandle 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ba67e5cc-6141-4650-b631-60ffb19838b2} -parentPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/[01;31m[Kthunderbird[m[K/omni.ja -appDir /opt/[01;31m[Kthunderbird[m[K 1 tab
+agent        250  0.3  0.5 258988 44764 ?        Sl   02:58   0:00 /opt/[01;31m[Kthunderbird[m[K/[01;31m[Kthunderbird[m[K-bin -contentproc -parentBuildID 20260417012335 -prefsHandle 0:2346 -prefMapHandle 1:271725 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {e414a685-5f22-49cf-b8ea-ad445c75e7b6} -parentPid 68 -crashReporter 4 -crashHelper 5 -appDir /opt/[01;31m[Kthunderbird[m[K 2 rdd
+/opt/venv/bin/python3
+/usr/bin/xdotool
+/usr/bin/wmctrl
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:57 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 22 02:58 [01;34m..[0m
+:99
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ wmctrl -l; /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi
+[?2004l[?2004h> def walk(o,d=0):
+[?2004l[?2004h>  try:
+[?2004l[?2004h>   print(' '*d, o.getRoleName(), repr(o.name))
+[?2004l[?2004h>   if d<8:
+[?2004l[?2004h>    for c in o: walk(c,d+1)
+[?2004l[?2004h>  except Exception: pass
+[?2004l[?2004h> walk(pyatspi.Registry.getDesktop(0))
+[?2004l[?2004h> PY
+[?2004lCannot get client list properties. 
+(_NET_CLIENT_LIST or _WIN_CLIENT_LIST)
+ desktop frame 'main'
+  application 'Thunderbird'
+   frame 'Account Setup - Mozilla Thunderbird'
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    status bar ''
+     section ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    section ''
+     section ''
+      tool bar ''
+       list ''
+       section ''
+       push button 'AppMenu'
+      push button 'Minimize'
+       label ''
+      push button 'Restore Down'
+       label ''
+      push button 'Close'
+       label ''
+    tool bar 'Menu Bar'
+     menu bar 'Application'
+      menu 'File'
+      menu 'Edit'
+      menu 'View'
+      menu 'Go'
+      menu 'Message'
+      menu 'Tools'
+      menu 'Help'
+    tool bar ''
+     page tab list ''
+      page tab ''
+       section ''
+      page tab 'Account Setup'
+       section 'Account Setup'
+        push button 'Close Tab'
+      page tab 'Thunderbird Privacy Notice — Mozilla'
+       section 'Thunderbird Privacy Notice — Mozilla'
+        push button 'Close Tab'
+    panel ''
+     scroll pane ''
+      tool bar ''
+       push button 'Add Contact'
+       push button 'Join Chat'
+       separator ''
+       push button 'Available'
+        menu ''
+        label ''
+       label 'Available'
+       push button 'Show Accounts'
+       separator ''
+      list box ''
+      label "You haven't set up a chat account yet."
+      label 'Let Thunderbird guide you through the process of setting up your chat account.'
+      push button 'Get started'
+     menu ''
+     scroll pane ''
+      internal frame ''
+       panel 'about:3pane'
+        section ''
+         section ''
+         tree ''
+        separator ''
+        section ''
+         section ''
+         menu ''
+         section ''
+         section ''
+        separator ''
+        section ''
+         internal frame ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+     scroll pane ''
+      internal frame ''
+       document web 'Account Setup'
+        section ''
+         landmark ''
+         section ''
+     scroll pane ''
+      push button 'Go back one page'
+      push button 'Go forward one page'
+      image 'The connection is secure'
+      entry ''
+      internal frame ''
+       document web 'Thunderbird Privacy Notice — Mozilla'
+        section ''
+        landmark 'Primary'
+         link 'Mozilla'
+         section ''
+         section ''
+        section ''
+         section ''
+         landmark ''
+    menu ''
+    alert ''
+     image 'Info'
+     section ''
+     section ''
+     push button 'Know your rights…'
+     section ''
+      push button 'Close'
+       label ''
+    status bar ''
+     push button 'You are currently online.'
+      label ''
+     label 'Done'
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi
+[?2004l[?2004h> root=pyatspi.Registry.getDesktop(0)
+[?2004l[?2004h> def walk(o):
+[?2004l[?2004h>  if o.getRoleName()=='page tab' and o.name=='Account Setup':
+[?2004l[?2004h>   try: o.queryAction().doAction(0)
+[?2004l[?2004h>   except Exception: o.queryComponent().grabFocus()
+[?2004l[?2004h>  for c in o: walk(c)
+[?2004l[?2004h> walk(root)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi
+[?2004l[?2004h> def walk(o,d=0):
+[?2004l[?2004h>  try:
+[?2004l[?2004h>   print(' '*d,o.getRoleName(),repr(o.name))
+[?2004l[?2004h>   for c in o: walk(c,d+1)
+[?2004l[?2004h>  except Exception: pass
+[?2004l[?2004h> walk(pyatspi.Registry.getDesktop(0))
+[?2004l[?2004h> PY
+[?2004l desktop frame 'main'
+  application 'Thunderbird'
+   frame 'Account Setup - Mozilla Thunderbird'
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    status bar ''
+     section ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    menu ''
+    section ''
+     section ''
+      tool bar ''
+       list ''
+       section ''
+       push button 'AppMenu'
+      push button 'Minimize'
+       label ''
+      push button 'Restore Down'
+       label ''
+      push button 'Close'
+       label ''
+    tool bar 'Menu Bar'
+     menu bar 'Application'
+      menu 'File'
+      menu 'Edit'
+      menu 'View'
+      menu 'Go'
+      menu 'Message'
+      menu 'Tools'
+      menu 'Help'
+    tool bar ''
+     page tab list ''
+      page tab ''
+       section ''
+      page tab 'Account Setup'
+       section 'Account Setup'
+        push button 'Close Tab'
+      page tab 'Thunderbird Privacy Notice — Mozilla'
+       section 'Thunderbird Privacy Notice — Mozilla'
+        push button 'Close Tab'
+    panel ''
+     scroll pane ''
+      tool bar ''
+       push button 'Add Contact'
+       push button 'Join Chat'
+       separator ''
+       push button 'Available'
+        menu ''
+        label ''
+       label 'Available'
+       push button 'Show Accounts'
+       separator ''
+      list box ''
+      label "You haven't set up a chat account yet."
+      label 'Let Thunderbird guide you through the process of setting up your chat account.'
+      push button 'Get started'
+     menu ''
+     scroll pane ''
+      internal frame ''
+       panel 'about:3pane'
+        section ''
+         section ''
+          push button 'Folder pane options'
+          push button 'New Message'
+          push button 'Get Messages'
+         tree ''
+          tree item ''
+           panel ''
+        separator ''
+        section ''
+         section ''
+          section ''
+           heading ''
+           section ''
+          section ''
+           toggle button 'Quick Filter'
+           push button 'Message list display options'
+         menu ''
+         section ''
+          section ''
+           section ''
+          table ''
+           tree table ''
+         section ''
+        separator ''
+        section ''
+         internal frame ''
+          document web 'Welcome to Freedom – Thunderbird'
+           landmark ''
+            link ''
+             image ''
+            section ''
+             heading 'Welcome to FREEDOM'
+             paragraph ''
+             link 'Donate'
+              image ''
+             paragraph ''
+            section ''
+             section ''
+              heading 'Free and Open Source'
+              paragraph ''
+              paragraph ''
+              link 'Get Help'
+               image ''
+             section ''
+              heading 'Powered by Community'
+              paragraph ''
+              paragraph ''
+              link 'Participate'
+               image ''
+            section ''
+             link 'Thunderbird Release'
+              static ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+        menu ''
+     scroll pane ''
+      internal frame ''
+       document web 'Account Setup'
+        section ''
+         landmark ''
+          heading 'Set Up Your Existing Email Address'
+          paragraph ''
+          paragraph ''
+         section ''
+          section ''
+           form ''
+            label 'Your full name'
+            entry 'Your full name'
+            image 'Your name, as shown to others'
+            label 'Email address'
+            entry 'Email address'
+            image 'Your existing email address'
+            label 'Password'
+            password text 'Password'
+            label 'Remember password'
+             check box 'Remember password'
+             section ''
+           section ''
+           section ''
+           section ''
+            push button 'Cancel'
+            push button 'Continue'
+           paragraph ''
+          section ''
+           article ''
+            image 'Initial setup'
+     scroll pane ''
+      push button 'Go back one page'
+      push button 'Go forward one page'
+      image 'The connection is secure'
+      entry ''
+      internal frame ''
+       document web 'Thunderbird Privacy Notice — Mozilla'
+        section ''
+        landmark 'Primary'
+         link 'Mozilla'
+          image 'Mozilla'
+         section ''
+          list ''
+           list item 'Products'
+            link 'Products'
+           list item 'About us'
+            link 'About us'
+         section ''
+        section ''
+         section ''
+          landmark ''
+           section ''
+            section ''
+             heading 'Thunderbird Privacy Notice'
+             static ''
+            paragraph ''
+            paragraph ''
+             link 'Mozilla Privacy Policy'
+            paragraph ''
+           section ''
+            section ''
+             heading 'Thunderbird Collects Data To:'
+             section ''
+              heading 'Improve Performance, Stability, and Functionality For Our Users'
+              paragraph ''
+              paragraph ''
+               static ''
+              paragraph ''
+               static ''
+              paragraph ''
+               link 'Thunderbird Desktop'
+               link 'Thunderbird Mobile'
+               link 'data dictionary'
+             section ''
+              heading 'Set-Up, Configure, and Process Your Email'
+              paragraph ''
+               link 'here'
+              paragraph ''
+               static ''
+              paragraph ''
+               static ''
+              paragraph ''
+               static ''
+             section ''
+              heading 'Set Up and Configure Your Calendar (Desktop Only)'
+              paragraph ''
+             section ''
+              heading 'Set Up and Schedule Calendar Appointments with Thunderbird Appointment'
+              paragraph ''
+              paragraph ''
+              paragraph ''
+              paragraph ''
+             section ''
+              heading 'Review Crash Reports'
+              section ''
+               heading 'Thunderbird Desktop'
+               paragraph ''
+               paragraph ''
+                static ''
+               paragraph ''
+                static ''
+               paragraph ''
+                static ''
+               paragraph ''
+                static ''
+               paragraph ''
+                static ''
+               paragraph ''
+                link 'here'
+              section ''
+               heading 'Thunderbird Mobile'
+               paragraph ''
+             section ''
+              heading 'Improve Security for Our Users Everywhere'
+              paragraph ''
+               static ''
+               link 'Learn more'
+              paragraph ''
+               static ''
+               link 'Learn more'
+             section ''
+              heading 'Install and Update Add-Ons (Desktop Only)'
+              paragraph ''
+              paragraph ''
+               static ''
+              paragraph ''
+               static ''
+               link 'Mozilla websites'
+              paragraph ''
+               static ''
+            section ''
+             heading 'Use of OAuth Information'
+             paragraph ''
+             paragraph ''
+             paragraph ''
+             list ''
+              list item '• Login credentials are not stored on your device; instead, they are exchanged for OAuth tokens. These tokens, along with your email and calendar data, are secured within the application sandbox (on Android), the secure key storage (on iOS), or confined within your user profile (on Desktop). Additional security measures such as operating system level full disk encryption increase the security of your data.'
+              list item '• Email and calendar data reside solely on your device for the duration required to operate Thunderbird. This includes sensitive user data associated with your Apple Calendar, Microsoft 365 or Google Calendar.'
+              list item '• Thunderbird does not share OAuth tokens, email contents, calendar events, contact lists, or account details with third parties, except as necessary to provide the services requested by the user (e.g., sending an email or scheduling a calendar event).'
+             paragraph ''
+             list ''
+              list item '• OAuth tokens are stored only as long as necessary to maintain the authorized connection.'
+              list item '• When you remove an account, all associated sensitive user data and OAuth tokens are immediately deleted from your device.'
+              list item '• On Thunderbird Desktop, the OAuth tokens are retained until manually deleted in the password manager.'
+              list item '• If you revoke Thunderbird’s access to your account via your OAuth provider’s account settings (e.g., Google security settings), Thunderbird will be unable to refresh the connection. Locally stored data will remain on your device until you remove the account from Thunderbird.'
+            section ''
+             heading 'Thunderbird May Disclose Information To:'
+             paragraph ''
+              static ''
+             paragraph ''
+              static ''
+             paragraph ''
+              static ''
+             paragraph ''
+              static ''
+              link 'Gandi.net’s'
+              link 'Mailfence’s'
+            section ''
+             heading 'Contact Us'
+             paragraph ''
+             paragraph ''
+              static ''
+             paragraph ''
+              link 'See here for Data Subject Access Requests'
+             paragraph ''
+              link 'visit our forums'
+          landmark ''
+           landmark ''
+            section ''
+             heading 'Mozilla Privacy'
+              link 'Mozilla Privacy'
+             list ''
+              list item 'Mozilla Websites, Communications & Cookies'
+               link 'Mozilla Websites, Communications & Cookies'
+              list item 'Mozilla Accounts'
+               link 'Mozilla Accounts'
+              list item 'Mozilla Subscription Services'
+               link 'Mozilla Subscription Services'
+              list item 'Firefox Browser'
+               link 'Firefox Browser'
+              list item 'Firefox Focus'
+               link 'Firefox Focus'
+              list item 'Thunderbird'
+               link 'Thunderbird'
+              list item 'MDN Plus'
+               link 'MDN Plus'
+              list item 'Smart Window'
+               link 'Smart Window'
+         landmark ''
+          section ''
+           section ''
+            heading 'Company'
+            list ''
+             list item 'Leadership'
+              link 'Leadership'
+             list item 'Press Center'
+              link 'Press Center'
+             list item 'Careers'
+              link 'Careers'
+             list item 'Merch Store'
+              link 'Merch Store'
+             list item 'Contact'
+              link 'Contact'
+           section ''
+            heading 'Support'
+            list ''
+             list item 'Product Help'
+              link 'Product Help'
+             list item 'File a Bug'
+              link 'File a Bug'
+             list item 'Localize Mozilla'
+              link 'Localize Mozilla'
+             list item 'Security'
+              link 'Security'
+           section ''
+            heading 'Developers'
+            list ''
+             list item 'Developer Edition'
+              link 'Developer Edition'
+             list item 'Enterprise'
+              link 'Enterprise'
+             list item 'Tools'
+              link 'Tools'
+             list item 'MDN'
+              link 'MDN'
+             list item 'Firefox Release Notes'
+              link 'Firefox Release Notes'
+           heading 'Follow @Mozilla'
+           list ''
+            list item 'Bluesky (@mozilla.org)'
+             link 'Bluesky (@mozilla.org)'
+            list item 'Instagram (@mozilla)'
+             link 'Instagram (@mozilla)'
+            list item 'LinkedIn (@mozilla)'
+             link 'LinkedIn (@mozilla)'
+            list item 'TikTok (@mozilla)'
+             link 'TikTok (@mozilla)'
+            list item 'Spotify (@mozilla)'
+             link 'Spotify (@mozilla)'
+           heading 'Follow @Firefox'
+           list ''
+            list item 'Bluesky (@firefox.com)'
+             link 'Bluesky (@firefox.com)'
+            list item 'Instagram (@firefox)'
+             link 'Instagram (@firefox)'
+            list item 'YouTube (@firefoxchannel)'
+             link 'YouTube (@firefoxchannel)'
+            list item 'TikTok (@firefox)'
+             link 'TikTok (@firefox)'
+           link 'Donate'
+            section ''
+             image ''
+           form ''
+            link 'All languages'
+            label 'Language'
+            combo box 'Language'
+             menu ''
+              menu item 'English (Canadian)'
+              menu item 'English (British)'
+              menu item 'English'
+           paragraph ''
+            link 'Mozilla Foundation'
+            link 'Creative Commons license'
+           list ''
+            list item 'Website Privacy Notice'
+             link 'Website Privacy Notice'
+            list item 'Cookies'
+             link 'Cookies'
+            list item 'Legal'
+             link 'Legal'
+            list item 'Community Participation Guidelines'
+             link 'Community Participation Guidelines'
+            list item 'About this site'
+             link 'About this site'
+    menu ''
+    alert ''
+     image 'Info'
+     section ''
+     section ''
+     push button 'Know your rights…'
+     section ''
+      push button 'Close'
+       label ''
+    status bar ''
+     push button 'You are currently online.'
+      label ''
+     label 'Done'
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ sleep 2; /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi
+[?2004l[?2004h> def walk(o,d=0):
+[?2004l[?2004h>  try:
+[?2004l[?2004h>   r=o.getRoleName()
+[?2004l[?2004h>   if r in ['entry','password text','push button','heading','document web','page tab','label']: print(r,repr(o.name))
+[?2004l[?2004h>   for c in o: walk(c,d+1)
+[?2004l[?2004h>  except Exception: pass
+[?2004l[?2004h> walk(pyatspi.Registry.getDesktop(0))
+[?2004l[?2004h> PY
+[?2004lpush button 'AppMenu'
+push button 'Minimize'
+label ''
+push button 'Restore Down'
+label ''
+push button 'Close'
+label ''
+page tab ''
+page tab 'Account Setup'
+push button 'Close Tab'
+page tab 'Thunderbird Privacy Notice — Mozilla'
+push button 'Close Tab'
+push button 'Add Contact'
+push button 'Join Chat'
+push button 'Available'
+label ''
+label 'Available'
+push button 'Show Accounts'
+label "You haven't set up a chat account yet."
+label 'Let Thunderbird guide you through the process of setting up your chat account.'
+push button 'Get started'
+push button 'Folder pane options'
+push button 'New Message'
+push button 'Get Messages'
+heading ''
+push button 'Message list display options'
+document web 'Welcome to Freedom – Thunderbird'
+heading 'Welcome to FREEDOM'
+heading 'Free and Open Source'
+heading 'Powered by Community'
+document web 'Account Setup'
+heading 'Set Up Your Existing Email Address'
+label 'Your full name'
+entry 'Your full name'
+label 'Email address'
+entry 'Email address'
+label 'Password'
+password text 'Password'
+label 'Remember password'
+push button 'Cancel'
+push button 'Continue'
+push button 'Go back one page'
+push button 'Go forward one page'
+entry ''
+document web 'Thunderbird Privacy Notice — Mozilla'
+heading 'Thunderbird Privacy Notice'
+heading 'Thunderbird Collects Data To:'
+heading 'Improve Performance, Stability, and Functionality For Our Users'
+heading 'Set-Up, Configure, and Process Your Email'
+heading 'Set Up and Configure Your Calendar (Desktop Only)'
+heading 'Set Up and Schedule Calendar Appointments with Thunderbird Appointment'
+heading 'Review Crash Reports'
+heading 'Thunderbird Desktop'
+heading 'Thunderbird Mobile'
+heading 'Improve Security for Our Users Everywhere'
+heading 'Install and Update Add-Ons (Desktop Only)'
+heading 'Use of OAuth Information'
+heading 'Thunderbird May Disclose Information To:'
+heading 'Contact Us'
+heading 'Mozilla Privacy'
+heading 'Company'
+heading 'Support'
+heading 'Developers'
+heading 'Follow @Mozilla'
+heading 'Follow @Firefox'
+label 'Language'
+push button 'Know your rights…'
+push button 'Close'
+label ''
+push button 'You are currently online.'
+label ''
+label 'Done'
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi
+[?2004l[?2004h> def walk(o):
+[?2004l[?2004h>  if o.getRoleName()=='entry' and o.name=='Email address':
+[?2004l[?2004h>   o.queryEditableText().setTextContents('anonym-x2024@outlook.com')
+[?2004l[?2004h>   print('Email filled:',o.queryText().getText(0,-1))
+[?2004l[?2004h>  if o.getRoleName()=='password text' and o.name=='Password':
+[?2004l[?2004h>   o.queryEditableText().setTextContents('password')
+[?2004l[?2004h>   print('Password filled; length:',o.queryText().characterCount)
+[?2004l[?2004h>  for c in o: walk(c)
+[?2004l[?2004h> walk(pyatspi.Registry.getDesktop(0))
+[?2004l[?2004h> PY
+[?2004lEmail filled: 
+Password filled; length: 0
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi,time
+[?2004l[?2004h> for attempt in range(10):
+[?2004l[?2004h>  found={}
+[?2004l[?2004h>  def walk(o):
+[?2004l[?2004h>   try:
+[?2004l[?2004h>    if o.getRoleName() in ('entry','password text') and o.name in ('Email address','Password'): found[o.name]=o
+[?2004l[?2004h>    for c in o: walk(c)
+[?2004l[?2004h>   except Exception: pass
+[?2004l[?2004h>  walk(pyatspi.Registry.getDesktop(0))
+[?2004l[?2004h>  if len(found)==2:
+[?2004l[?2004h>   found['Email address'].queryEditableText().setTextContents('anonym-x2024@outlook.com')
+[?2004l[?2004h>   found['Password'].queryEditableText().setTextContents('password')
+[?2004l[?2004h>   found['Email address'].queryComponent().grabFocus()
+[?2004l[?2004h>   print('Verified email:',found['Email address'].queryText().getText(0,-1))
+[?2004l[?2004h>   print('Password characters:',found['Password'].queryText().characterCount)
+[?2004l[?2004h>   break
+[?2004l[?2004h>  time.sleep(0.5)
+[?2004l[?2004h> else: print('Fields not found')
+[?2004l[?2004h> PY
+[?2004lVerified email: 
+Password characters: 0
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ /usr/bin/python3 - <<'PY'
+[?2004l[?2004h> import pyatspi,subprocess,time
+[?2004l[?2004h> def find(o,name):
+[?2004l[?2004h>  if o.name==name and o.getRoleName() in ('entry','password text'): return o
+[?2004l[?2004h>  for c in o:
+[?2004l[?2004h>   r=find(c,name)
+[?2004l[?2004h>   if r:return r
+[?2004l[?2004h> root=pyatspi.Registry.getDesktop(0)
+[?2004l[?2004h> for name,value in [('Email address','anonym-x2024@outlook.com'),('Password','password')]:
+[?2004l[?2004h>  field=find(root,name)
+[?2004l[?2004h>  field.queryComponent().grabFocus()
+[?2004l[?2004h>  time.sleep(.2)
+[?2004l[?2004h>  subprocess.run(['xdotool','key','ctrl+a'])
+[?2004l[?2004h>  subprocess.run(['xdotool','type','--clearmodifiers','--delay','50',value])
+[?2004l[?2004h>  time.sleep(.3)
+[?2004l[?2004h>  print(name,'characters:',field.queryText().characterCount)
+[?2004l[?2004h> PY
+[?2004lEmail address characters: 24
+Password characters: 8
+[?2004h[01;32magent@4f49ca72fb28[00m:[01;34m/app[00m$ 

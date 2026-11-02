@@ -1,0 +1,10 @@
+{
+  "analysis": "The frame extraction and configuration checks are still running.",
+  "plan": "Wait briefly for the results before applying persistent settings.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

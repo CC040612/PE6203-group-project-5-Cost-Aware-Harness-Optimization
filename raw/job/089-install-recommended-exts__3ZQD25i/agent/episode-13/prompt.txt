@@ -1,0 +1,73 @@
+New Terminal Output:
+
+bash: import: command not found
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+  File "/opt/venv/lib/python3.11/site-packages/PIL/Image.py", line 3431, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/screen.png'
+agent@715dad585543:/app$ /opt/venv/bin/python - <<'PY'
+> from PIL import ImageGrab
+> import pytesseract
+> im=ImageGrab.grab(); im.save('/tmp/screen.png')
+> d=pytesseract.image_to_data(im,output_type=pytesseract.Output.DICT)
+> for i,t in enumerate(d['text']):
+>  if t.strip(): print(d['left'][i],d['top'][i],t)
+> PY
+26 27 Y
+45 16 —
+60 29 @
+83 16 ZoomChrome
+172 16 Extension-©
+262 26 x
+297 25 +
+28 68 €
+169 67 chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgpIpablkjnlkjimjdecgdpfankdle
+199 119 You
+228 121 are
+254 121 using
+296 121 an
+385 120 Add
+37 321 ‘Switch
+89 323 to
+108 321 Chrome
+169 322 to
+189 321 install
+234 321 extensions
+316 322 and
+347 322 themes
+50 423 Zoom
+144 423 Chrome
+276 423 Extension
+12 498 leatured
+87 498 3.7
+111 494 +
+129 494 (
+207 498 )
+224 498 @
+78 554 Workflow
+141 546 &
+155 554 Planning
+233 554 8,000,000
+308 557 users
+68 759 ‘Zoom
+94 758 Chrome
+130 759 Extension
+515 116 ne
+535 120 E:
+759 119 rity
+784 118 will
+812 118 suffer.
+772 204 Switch
+825 205 to
+845 204 Chrome?
+762 258 recommends
+848 258 using
+885 258 Chrome
+939 258 when
+977 261 using
+759 281 dns
+783 278 and
+810 278 themes.
+agent@715dad585543:/app$

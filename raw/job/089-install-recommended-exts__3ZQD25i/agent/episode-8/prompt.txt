@@ -1,0 +1,122 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/search.py
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Type
+Extensions
+Themes
+Filter by
+Featured extensions
+Established publishers
+Ratings
+& up
+& up
+& up
+Clear all
+Reset your filter options.
+Search results
+Zoom Chrome Extension
+
+Featured
+
+3.7
+
+Schedule Zoom meetings directly from Google Calendar
+
+Zoom for Google Chrome
+
+www.stefanvd.net/
+Featured
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Custom Page Zoom
+
+Featured
+
+3.8
+
+Easily set a custom zoom level for each website (or all websites)
+
+Hover Zoom+
+
+Featured
+
+4.0
+
+Zoom images/videos on all your favorite websites (Facebook, Amazon, etc). Simply hover your mouse over the image to enlarge it.
+
+Zoom Chrome Extension For Gov
+
+5.0
+
+Schedule Zoom meetings directly from Google Calendar
+
+Zoom Page WE
+
+Featured
+
+4.0
+
+Zoom web pages (either per-site or per-tab) using full-page zoom, text-only zoom, automatic fit-to-width and minimum font size.
+
+Zoom Per Tab
+
+Featured
+
+4.8
+
+Zoom one tab without affecting other tabs of the same domain!
+
+Meetings Page Auto Closer for Zoom
+
+chromeadmin.com
+Featured
+
+4.8
+
+Automatically closes the page opened by Zoom to launch meetings and restores focus to the tab you were on before opened.
+
+SmoothZoom – Quick Page Zoom
+
+Featured
+
+4.5
+
+Pinch-to-zoom convenience, now on your desktop.
+
+Image Zoom
+
+3.7
+
+Image Zoom – Simple, Fast, No-Nonsense Zooming
+
+Load more
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+Page loaded.
+[{'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle'}, {'text': '', 'href': 'https://chromewe
+bstore.google.com/detail/zoom-for-google-chrome/lajondecmobodlejlcjllhojikagldgd'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/custom-page-z
+oom/jodiabicmogcbbiocceenmeflipeelle'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/hover-zoom+/pccckmaobkjjboncdfnnofkonhgpceea'}, {'text':
+'', 'href': 'https://chromewebstore.google.com/detail/zoom-chrome-extension-for/pnlbnejodfpnapdpoiboebofddaejkbg'}, {'text': '', 'href': 'https://chromewebstore
+.google.com/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-per-tab/mnoadkhbinhiblij
+cedoifbejfmmkdke'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/meetings-page-auto-closer/pbgidoglkjhfgjhalbbiiahdlokjcplb'}, {'text': '', 'h
+ref': 'https://chromewebstore.google.com/detail/smoothzoom-%E2%80%93-quick-page-z/nlloamlgdioincflcopfgkbikjgaiihg'}, {'text': '', 'href': 'https://chromewebsto
+re.google.com/detail/image-zoom/hjapegicpojdkoinhhdpjmpkomkjccaa'}]
+agent@715dad585543:/app$

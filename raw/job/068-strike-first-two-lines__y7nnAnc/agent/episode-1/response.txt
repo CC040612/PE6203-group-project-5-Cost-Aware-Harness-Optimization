@@ -1,0 +1,10 @@
+{
+  "analysis": "The initial scan shows seven slides, but no explicit soccer club to-do list in the top-level text boxes. The list may be inside grouped shapes, which need to be inspected before editing.",
+  "plan": "Extract all text from slide XML, including text inside grouped shapes, to identify the semester to-do list.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom zipfile import ZipFile\nfrom lxml import etree\nwith ZipFile('/app/New_Club_Spring_2018_Training.pptx') as z:\n for n in z.namelist():\n  if n.startswith('ppt/slides/slide') and n.endswith('.xml'):\n   root=etree.fromstring(z.read(n))\n   print('\\n',n)\n   ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main'}\n   for p in root.findall('.//a:p',ns):\n    print(repr(''.join(p.xpath('.//a:t/text()',namespaces=ns))))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

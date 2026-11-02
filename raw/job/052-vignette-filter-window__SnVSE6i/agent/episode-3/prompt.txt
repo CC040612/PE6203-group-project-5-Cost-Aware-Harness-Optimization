@@ -1,0 +1,30 @@
+New Terminal Output:
+
+agent@3f82e4733fd5:/app$ which Xvfb xvfb-run Xorg Xwayland sudo; gimp --version; id; ls /usr/bin | grep -Ei 'xvfb|weston|broadway|xserver'; sudo -n true; echo s
+udo_status=$?
+/usr/bin/Xvfb
+/usr/bin/xvfb-run
+GNU Image Manipulation Program version 2.10.36
+uid=1001(agent) gid=1001(agent) groups=1001(agent)
+Xvfb
+xvfb-run
+bash: sudo: command not found
+sudo_status=127
+agent@3f82e4733fd5:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

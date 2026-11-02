@@ -1,0 +1,16 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/api.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> page=next(x for x in c.pages if '/detail/kg' in x.url or '/zoom-chrome-extension/' in x.url)
+> print(page.evaluate('Object.keys(chrome.webstorePrivate)'))
+> print(page.evaluate('''()=>new Promise(r=>chrome.webstorePrivate.beginInstallWithManifest3({id:'kgjfgplpablkjnlkjmjdecgdpfankdle',manifest:JSON.stringify({nam
+e:'Zoom Chrome Extension',version:'1.9.16',manifest_version:3})},(...args)=>r({args,error:chrome.runtime.lastError})))'''))
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/api.py
+['beginInstallWithManifest3', 'completeInstall', 'enableAppLauncher', 'getBrowserLogin', 'getExtensionStatus', 'getFullChromeVersion', 'getIsLauncherEnabled', '
+getMV2DeprecationStatus', 'getReferrerChain', 'getStoreLogin', 'getWebGLStatus', 'install', 'isInIncognitoMode', 'isPendingCustodianApproval', 'logEnterprisePro
+moShown', 'onEnterprisePromoClick', 'setStoreLogin', 'shouldShowEnterprisePromotionBanner', 'ExtensionInstallStatus', 'MV2DeprecationStatus', 'PromotionType', '
+Result', 'WebGlStatus']
+{'args': ['already_installed'], 'error': {'message': 'This item is already installed'}}
+agent@715dad585543:/app$

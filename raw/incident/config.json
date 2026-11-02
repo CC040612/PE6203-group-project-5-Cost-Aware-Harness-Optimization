@@ -1,0 +1,473 @@
+{
+  "job_name": "gpt61sol-cockpit-formal-20261021-231816-860550",
+  "jobs_dir": "/home/member2/experiments/jobs",
+  "n_attempts": 1,
+  "timeout_multiplier": 1.0,
+  "agent_timeout_multiplier": 1.0,
+  "verifier_timeout_multiplier": null,
+  "agent_setup_timeout_multiplier": null,
+  "environment_build_timeout_multiplier": null,
+  "debug": false,
+  "n_concurrent_trials": 2,
+  "quiet": false,
+  "retry": {
+    "max_retries": 0,
+    "include_exceptions": null,
+    "exclude_exceptions": [
+      "AgentTimeoutError",
+      "VerifierOutputParseError",
+      "RewardFileEmptyError",
+      "RewardFileNotFoundError",
+      "VerifierTimeoutError"
+    ],
+    "wait_multiplier": 1.0,
+    "min_wait_sec": 1.0,
+    "max_wait_sec": 60.0
+  },
+  "environment": {
+    "type": null,
+    "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+    "force_build": false,
+    "delete": true,
+    "override_cpus": null,
+    "override_memory_mb": null,
+    "override_storage_mb": null,
+    "override_gpus": null,
+    "suppress_override_warnings": false,
+    "mounts_json": null,
+    "env": {},
+    "kwargs": {}
+  },
+  "verifier": {
+    "override_timeout_sec": null,
+    "max_timeout_sec": null,
+    "env": {},
+    "disable": false
+  },
+  "metrics": [],
+  "agents": [
+    {
+      "name": "terminus-2",
+      "import_path": null,
+      "model_name": "openai/gpt-6.1-sol",
+      "override_timeout_sec": null,
+      "override_setup_timeout_sec": null,
+      "max_timeout_sec": null,
+      "kwargs": {
+        "temperature": null,
+        "reasoning_effort": "medium",
+        "api_base": "http://127.0.0.1:58429/v1",
+        "llm_kwargs": {
+          "allowed_openai_params": [
+            "reasoning_effort"
+          ]
+        }
+      },
+      "env": {}
+    }
+  ],
+  "datasets": [],
+  "tasks": [
+    {
+      "path": "/home/member2/TUA-Bench/tasks/020-calculate-period-rate",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/026-sales-cogs-column-chart",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/035-super-bowl-score",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/038-zurich-rental-car",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/052-vignette-filter-window",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/056-move-textbox-left",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/062-add-baseball-audio",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/068-strike-first-two-lines",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/070-edit-friend-image",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/073-force-quit-frozen-doc",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/074-apa-references-review",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/076-make-src-gif-clip",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/078-add-wednesday-lecture",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/080-convert-novel-epub",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/081-video-frame-slide-bg",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/082-brighten-slide-image",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/083-gemini-responses-docx",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/088-extract-presenter-photos",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/089-install-recommended-exts",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/091-add-receipts-bookkeeping",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/092-fix-tetris-bug",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/093-merge-txt-document",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/098-extract-email-doc-image",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/099-professor-contact-info",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/100-name-mountain-photos",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/101-rearrange-warm-tiles",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/102-daily-email-report",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/103-download-blog-pdfs",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/106-create-charles-ssh-user",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/107-attach-aws-bill",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/108-create-mail-folders",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/109-setup-outlook-account",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/110-rotate-macintosh-video",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/111-set-video-wallpaper",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/112-capture-video-frame",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/113-add-folders-workspace",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/115-remove-explorer-find-key",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/117-comma-text-to-table",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/118-set-times-new-roman",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    {
+      "path": "/home/member2/TUA-Bench/tasks/119-tabstop-sentence-split",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    }
+  ],
+  "artifacts": []
+}

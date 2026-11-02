@@ -1,0 +1,31 @@
+New Terminal Output:
+
+agent@2950419b9bc9:/app$ /tmp/contactenv/bin/python - <<'PY'
+> import requests
+> from bs4 import BeautifulSoup
+> u='https://ikekonglp.github.io/contact.html'
+> r=requests.get(u,timeout=30)
+> print(r.status_code,u)
+> s=BeautifulSoup(r.text,'html.parser')
+> print(s.get_text(' ',strip=True))
+> print([a.get('href') for a in s.find_all('a',href=True)])
+> PY
+200 https://ikekonglp.github.io/contact.html
+Lingpeng Kong Home Group Publications Contact Lingpeng Kong My email address is lpk@cs.hku.hk . Please read the following notes before emailing to me. For Ph.D.
+ / M.Phil. applications: I generally do not take M.Phil. students. If you are interested in doing a PhD in my group, please feel free to send me an email. It wo
+uld help me to understand you better if you can express your research interest and your thoughts on our recent papers (and working drafts) in the email. My advi
+sor Noah has a very useful note on Ph.D. applications. I wish I had read that before my own Ph.D. application. The HKU CS Ph.D. application starts very early in
+ the year compared to the U.S. schools. The early recruitment deadline is May 1 -- I know, it's kind of crazy, but I do take most of my students from this batch
+. That means, if you are interested in starting your Ph.D. in September 2048, the best time to contact me is April 2047. Generally, I take 1(±1.0) student(s) ev
+ery year, more information about our students and group can be found at our website . For RA/intern applications: Our group takes a few RAs / interns (2±1.0) ev
+ery year. These are usually students that we know of, or students who take my courses and get very high grades. Please write me an email if you are one of them
+and are interested. For Postdoc applications: Please write me an email to check if there are open positions. For course enrollment matters [COMP3361, COMP3314,
+COMP7607]: Sorry I am not in direct charge of the course enrollment. Please contact enroll@cs.hku.hk for assistance. They will contact me if they need anything
+from my side. For reference letters: I treat writing reference letters a very serious job and usually start a month before at least. I spend a lot of time writi
+ng letters in November and December every year. Therefore, I kindly request that you inform me of your plans well in advance. If you have worked with me on a pr
+oject or taken one of my courses, I would be able to provide a more specific and detailed letter. I am aware that reference letters can have a significant impac
+t on your career prospects. As such, I strongly recommend that you obtain a letter from a faculty member who has either taught you or has known you for a long p
+eriod. It will enhance the credibility and persuasiveness of the letter.
+['index.html', 'https://nlp.cs.hku.hk', 'publications.html', 'contact.html', 'mailto:lpk@cs.hku.hk', 'https://docs.google.com/document/d/1lT-bsIP0GKfh8l5sQnM2hC
+zzR9prt-QLx16rimUOdIM/edit', 'https://www.cs.hku.hk/programmes/research-based/mphil-phd-admission', 'https://nlp.cs.hku.hk/', 'mailto:enroll@cs.hku.hk']
+agent@2950419b9bc9:/app$

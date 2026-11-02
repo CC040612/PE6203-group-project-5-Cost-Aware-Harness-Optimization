@@ -1,0 +1,6 @@
+{
+  "analysis": "The second slide's background image has been brightened by 25% and saved successfully as /home/agent/Desktop/background.png. The PNG was verified, and its original resolution was preserved.",
+  "plan": "No further action is needed.",
+  "commands": [],
+  "task_complete": true
+}

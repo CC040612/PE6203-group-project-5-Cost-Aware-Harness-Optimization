@@ -1,0 +1,32 @@
+New Terminal Output:
+
+agent@6556a8550dfc:/app$ ps aux | grep -E 'chrome|chromium' | head; curl -s http://localhost:9222/json/list; python -c "import playwright; print('playwright ava
+ilable')"
+agent         18  0.9  0.3 111072 29012 ?        Sl   15:22   0:00 /opt/venv/bin/python /usr/local/bin/chrome_state.py task
+agent        147  0.0  0.0   3716  2072 pts/1    S+   15:23   0:00 grep -E chrome|chromium
+bash: curl: command not found
+bash: python: command not found
+agent@6556a8550dfc:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

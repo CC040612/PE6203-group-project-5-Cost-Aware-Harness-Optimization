@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@7dd7f81c65a3:/app$ cd /home/agent/Pictures && mv -n -- picture1.jpg 'Mount Kailash.jpg' && mv -n -- picture2.jpg 'Ama Dablam.jpg' && mv -n -- picture3.jpg
+ 'Mount Hua.jpg' && ls -lh
+total 1.2M
+-rw-r--r-- 1 agent agent  44K Oct 22 02:32 'Ama Dablam.jpg'
+-rw-r--r-- 1 agent agent 906K Oct 22 02:32 'Mount Hua.jpg'
+-rw-r--r-- 1 agent agent 210K Oct 22 02:32 'Mount Kailash.jpg'
+agent@7dd7f81c65a3:~/Pictures$

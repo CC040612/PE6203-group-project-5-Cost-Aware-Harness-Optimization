@@ -1,0 +1,1 @@
+{"analysis":"Worksheet formatting is consistent and can be copied directly. Improved soup OCR is running to determine the charged total.","plan":"Wait for OCR results before saving the ledger.","commands":[{"keystrokes":"","duration":2}]}

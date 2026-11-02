@@ -1,0 +1,6 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ mv /tmp/inspect.py /tmp/probe_store.py; rm -rf /tmp/__pycache__/inspect*; /opt/venv/bin/python /tmp/probe_store.py
+{'ua': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36', 'chrome': ['loadTimes', 'csi', 'activityLogPriva
+te', 'developerPrivate', 'management', 'metricsPrivate', 'runtime', 'send', 'getVariableValue', 'timeTicks'], 'webstore': 'undefined'}
+

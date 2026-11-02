@@ -1,0 +1,10 @@
+{
+  "analysis": "OCR was extracted successfully but needs its Leptonica shared library.",
+  "plan": "Extract the missing library, and compare OCR output for vertical flipping and 180-degree rotation.",
+  "commands": [
+    {
+      "keystrokes": "apt-get download libleptonica6; for p in libleptonica*.deb; do dpkg-deb -x \"$p\" .; done; for f in vflip hflip,vflip null hflip; do echo \"=== $f ===\"; ffmpeg -v error -i /tmp/orientation.png -vf \"$f,scale=1280:944\" -frames:v 1 -y /tmp/test_orientation.png; LD_LIBRARY_PATH=/tmp/ocr-local/usr/lib/x86_64-linux-gnu TESSDATA_PREFIX=/tmp/ocr-local/usr/share/tesseract-ocr/5/tessdata ./usr/bin/tesseract /tmp/test_orientation.png stdout 2>&1; done\n",
+      "duration": 1
+    }
+  ]
+}

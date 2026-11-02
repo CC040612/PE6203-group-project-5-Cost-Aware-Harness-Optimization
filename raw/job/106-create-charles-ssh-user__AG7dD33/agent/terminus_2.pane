@@ -1,0 +1,15 @@
+[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ id; sudo -n true; getent passwd charles; ls -ld /home/test1; command -v bash
+[?2004luid=1001(agent) gid=1001(agent) groups=1001(agent)
+drwxr-xr-x 2 root root 4096 Oct 22 02:46 [0m[01;34m/home/test1[0m
+/usr/bin/bash
+[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ sudo useradd -d /home/test1 -s /usr/bin/bash -M charles && printf '%s\n' 'charles:Ex@mpleP@55w0rd!' | sudo chpasswd && sudo chown charles:$(id -gn charles) /home/test1 && sudo chmod u+rwx /home/test1
+[?2004l[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ getent passwd charles; sudo passwd -S charles; ls -ld /home/test1; sudo -u charles /usr/bin/bash -c 'test -w /home/test1 && touch /home/test1/.write-test && rm /home/test1/.write-test && echo "Home directory is writable"'
+[?2004lcharles:x:1002:1002::/home/test1:/usr/bin/bash
+charles P 2026-10-22 0 99999 7 -1
+drwxr-xr-x 1 charles charles 4096 Oct 22 02:46 [0m[01;34m/home/test1[0m
+Home directory is writable
+[?2004h[01;32magent@e79de7ee4325[00m:[01;34m/app[00m$ 

@@ -1,0 +1,22 @@
+[?2004h[01;32magent@0584cbe3c00c[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@0584cbe3c00c[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@0584cbe3c00c[00m:[01;34m/app[00m$ ps -eo user,pid,ppid,stat,args | grep -E '[m]y_document\.odt|[s]office|[l]ibreoffice|[o]owriter'
+[?2004l[?2004h[01;32magent@0584cbe3c00c[00m:[01;34m/app[00m$ ps -eo user,pid,ppid,stat,comm,args; find /app /home /tmp -name 'my_document.odt' -type f 2>/dev/null
+[?2004lUSER         PID    PPID STAT COMMAND         COMMAND
+agent          1       0 Ss   sh              sh -c sleep infinity
+agent         12       1 S    Xvfb            Xvfb :99 -screen 0 1440x900x24
+agent         43       1 Ss   dbus-daemon     dbus-daemon --session --address=unix:path=/tmp/tua-dbus-session --fork
+agent         51       1 S    sleep           sleep infinity
+agent        239       1 Ss   tmux: server    tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /logs/agent/terminus_2
+agent        240     239 Ss   bash            bash --login
+agent        242     239 S    sh              sh -c cat > /logs/agent/terminus_2.pane
+agent        243     242 S    cat             cat
+agent        258     240 Sl+  asciinema       /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        259     258 S+   asciinema       /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        260     258 S+   asciinema       /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        261     258 Ss   sh              sh -c /bin/bash
+agent        262     261 S    bash            /bin/bash
+agent        317     262 R+   ps              ps -eo user,pid,ppid,stat,comm,args
+[?2004h[01;32magent@0584cbe3c00c[00m:[01;34m/app[00m$ 

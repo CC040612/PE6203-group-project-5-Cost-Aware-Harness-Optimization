@@ -1,0 +1,16 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+kgjfgplpablkjnlkjmjdecgdpfankdle File selection was canceled.
+ljflmlehinmoeknoonhibbjpldiijjmm File selection was canceled.
+fmkadmapgofadopljbjfkapdkoienihi File selection was canceled.
+agent@715dad585543:/app$ pkill -TERM -x chromium; sleep 2; google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdep
+th 1 -type d | paste -sd,)" chrome://extensions/ > /tmp/chrome.log 2>&1 &
+pkill -TERM -x chromium; sleep 2; google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,
+)" chrome://extensions/ > /tmp/chrome.log 2>&1 &
+[1]+  Done                    google-chrome https://chromewebstore.google.com/ > /tmp/chrome.log 2>&1
+[1] 1901
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+

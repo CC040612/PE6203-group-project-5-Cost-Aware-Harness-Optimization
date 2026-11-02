@@ -1,0 +1,6 @@
+New Terminal Output:
+
+agent@1ab03f642dd9:/tmp/ocr-local$ ffmpeg -hide_banner -loglevel error -i ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4 -map 0:v:0 -map 0:a:0 -vf vflip
+-c:v libx264 -preset medium -crf 18 -c:a copy -movflags +faststart -y ~/1984_Apple_Macintosh_Commercial.mp4 && ffprobe -v error -show_entries format=filename,du
+ration,size -show_entries stream=codec_name,width,height -of json ~/1984_Apple_Macintosh_Commercial.mp4
+

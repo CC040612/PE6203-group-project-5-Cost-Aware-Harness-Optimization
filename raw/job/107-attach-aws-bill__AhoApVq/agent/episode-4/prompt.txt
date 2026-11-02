@@ -1,0 +1,139 @@
+New Terminal Output:
+
+agent@1c0d1d135193:/app$ /usr/bin/python3 - <<'PY'
+> import gi
+> gi.require_version('Atspi','2.0')
+> from gi.repository import Atspi
+>
+> def walk(obj, depth=0):
+>     try:
+>         print('  '*depth + obj.get_role_name()+': '+str(obj.get_name()))
+>         for i in range(obj.get_child_count()): walk(obj.get_child_at_index(i),depth+1)
+>     except Exception: pass
+> walk(Atspi.get_desktop(0))
+> PY
+desktop frame: main
+  application: Thunderbird
+    frame: Write: New-month AWS Bill - Thunderbird
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      menu:
+      tool bar:
+        menu bar: Application
+          menu: File
+          menu: Edit
+          menu: View
+          menu: Insert
+          menu: Format
+          menu: Options
+          menu: Tools
+          menu: Help
+        separator:
+      tool bar: Composition Toolbar
+        push button: Send
+        separator:
+        toggle button: Encrypt
+        push button: Spelling
+          menu: Spelling
+        push button: Save
+          menu: Save
+        toggle button: Contacts
+        separator:
+        push button: Attach
+          menu: Attach
+      section:
+        tool bar:
+          label: From
+          combo box: From
+            menu: Anonym Tester <anonym-x2024@outlook.com>
+              menu item: Anonym Tester <anonym-x2024@outlook.com>
+                label: anonym-x2024@outlook.com
+              separator:
+              menu item:
+          section:
+            push button: Cc
+            push button: Bcc
+            push button: Other addressing fields to show
+          label: To
+          unknown: assistant@outlook.com: press Enter to edit, Delete to remove.
+            label: assistant@outlook.com
+          entry: To with one address, use left arrow key to focus on it.
+          label: Subject
+          entry: Subject
+          menu:
+        tool bar:
+          combo box: Choose a paragraph format
+            menu: Body Text
+              menu item: Body Text
+              menu item: Paragraph
+              menu item: Heading 1
+              menu item: Heading 2
+              menu item: Heading 3
+              menu item: Heading 4
+              menu item: Heading 5
+              menu item: Heading 6
+              menu item: Address
+              menu item: Preformat
+          combo box: Choose a font
+            menu: Variable Width
+              menu item: Variable Width
+              menu item: Fixed Width
+              separator:
+              menu item: Helvetica, Arial
+              menu item: Times
+              menu item: Courier
+              separator:
+              menu item: DejaVu Sans
+              menu item: DejaVu Sans Mono
+              menu item: DejaVu Serif
+              menu item: Twemoji Mozilla
+          push button: Set font size
+            menu:
+          push button: Smaller font size
+          push button: Larger font size
+          separator:
+          toggle button: Bold
+          toggle button: Italic
+          toggle button: Underline
+          separator:
+          push button: Remove Text Styling
+          separator:
+          toggle button: Apply or remove bulleted list
+          toggle button: Apply or remove numbered list
+          push button: Outdent text (move left)
+          push button: Indent text (move right)
+          separator:
+          push button: Choose text alignment
+            menu:
+          push button: Insert a Link, Anchor, Image, Horizontal Line, or Table
+            menu:
+          push button: Insert a smiley face
+            menu:
+        separator:
+        section:
+          internal frame: Message body
+            document web: Message body
+              paragraph:
+              paragraph:
+              paragraph:
+              paragraph:
+        separator:
+        panel:
+          push button: 1 Attachment 22.8 KB
+            section:
+            comment:
+          list box: Clear Selection
+            list item: aws-bill .pdf 22.8 KB
+              section:
+              section:
+              comment:
+      status bar:
+        section:
+agent@1c0d1d135193:/app$

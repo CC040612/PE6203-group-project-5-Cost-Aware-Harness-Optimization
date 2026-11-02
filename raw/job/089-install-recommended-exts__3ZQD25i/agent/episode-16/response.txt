@@ -1,0 +1,10 @@
+{
+  "analysis": "The inspection script's filename conflicted with Python's standard inspect module.",
+  "plan": "Rename the script and rerun it to inspect browser integration and identify the remaining extensions.",
+  "commands": [
+    {
+      "keystrokes": "mv /tmp/inspect.py /tmp/probe_store.py; rm -rf /tmp/__pycache__/inspect*; /opt/venv/bin/python /tmp/probe_store.py\n",
+      "duration": 2
+    }
+  ]
+}

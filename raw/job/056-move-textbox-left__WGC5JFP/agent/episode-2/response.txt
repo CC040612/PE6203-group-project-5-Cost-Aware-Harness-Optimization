@@ -1,0 +1,1 @@
+{"analysis":"The GIMP batch inspection is still running.","plan":"Wait briefly for the layer metadata.","commands":[{"keystrokes":"","duration":1}]}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The presentation is on the Desktop as PPT-Template_widescreen.pptx. I will inspect slide 2 and its image relationships to identify the correct source image.",
+  "plan": "Use Python to inspect the second slide's shapes, relationships, and image brightness statistics.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom pptx import Presentation\nfrom PIL import Image, ImageStat\nfrom io import BytesIO\np='/home/agent/Desktop/PPT-Template_widescreen.pptx'\nr=Presentation(p)\ns=r.slides[1]\nprint('Slide size:',r.slide_width,r.slide_height)\nfor sh in s.shapes:\n print('Shape:',sh.shape_id,sh.name,sh.shape_type,sh.left,sh.top,sh.width,sh.height)\n if sh.shape_type==13:\n  im=Image.open(BytesIO(sh.image.blob));print('Image:',sh.image.ext,im.size,ImageStat.Stat(im.convert('RGB')).mean)\nprint('Relationships:')\nfor rel in s.part.rels.values():\n print(rel.rId,rel.reltype,rel.target_ref)\nprint(s._element.xml[:20000])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

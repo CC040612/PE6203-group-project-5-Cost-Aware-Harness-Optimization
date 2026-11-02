@@ -1,0 +1,50 @@
+New Terminal Output:
+
+agent@f10abcb9fc3e:/app$ ffmpeg -v error -ss 00:00:08 -i /app/landscape.mp4 -frames:v 1 -y /tmp/landscape_8s.png
+agent@f10abcb9fc3e:/app$ python - <<'PY'
+> from lxml import etree as E
+> import zipfile, os
+> p='/app/Robotic_Workshop_Infographics.pptx'
+> ns={'p':'http://schemas.openxmlformats.org/presentationml/2006/main','a':'http://schemas.openxmlformats.org/drawingml/2006/main','r':'http://schemas.openxmlfo
+rmats.org/officeDocument/2006/relationships'}
+> rel='http://schemas.openxmlformats.org/package/2006/relationships'
+> ct='http://schemas.openxmlformats.org/package/2006/content-types'
+> with zipfile.ZipFile(p) as z:
+>  root=E.fromstring(z.read('ppt/slides/slide2.xml'))
+>  relationships=E.fromstring(z.read('ppt/slides/_rels/slide2.xml.rels'))
+>  rid='rIdBackground8s'
+>  assert not any(x.get('Id')==rid for x in relationships)
+>  media='ppt/media/landscape_frame_8s.png'
+>  assert media not in z.namelist()
+>  E.SubElement(relationships,'{'+rel+'}Relationship',Id=rid,Type=ns['r']+'/image',Target='../media/landscape_frame_8s.png')
+>  cs=root.find('p:cSld',ns)
+>  old=cs.find('p:bg',ns)
+>  if old is not None: cs.remove(old)
+>  bg=E.Element('{'+ns['p']+'}bg')
+>  pr=E.SubElement(bg,'{'+ns['p']+'}bgPr')
+>  fill=E.SubElement(pr,'{'+ns['a']+'}blipFill',dpi='0',rotWithShape='1')
+>  E.SubElement(fill,'{'+ns['a']+'}blip',{'{'+ns['r']+'}embed':rid})
+>  stretch=E.SubElement(fill,'{'+ns['a']+'}stretch')
+>  E.SubElement(stretch,'{'+ns['a']+'}fillRect')
+>  E.SubElement(pr,'{'+ns['a']+'}effectLst')
+>  cs.insert(0,bg)
+>  types=E.fromstring(z.read('[Content_Types].xml'))
+>  if not any(x.get('Extension','').lower()=='png' for x in types):
+>   E.SubElement(types,'{'+ct+'}Default',Extension='png',ContentType='image/png')
+>  def serial(x): return E.tostring(x,xml_declaration=True,encoding='UTF-8',standalone=True)
+>  changes={'ppt/slides/slide2.xml':serial(root),'ppt/slides/_rels/slide2.xml.rels':serial(relationships),'[Content_Types].xml':serial(types)}
+>  with zipfile.ZipFile(p+'.tmp','w',zipfile.ZIP_DEFLATED) as out:
+>   for item in z.infolist(): out.writestr(item,changes.get(item.filename,z.read(item.filename)))
+>   out.write('/tmp/landscape_8s.png',media)
+> with zipfile.ZipFile(p+'.tmp') as z:
+>  assert z.testzip() is None
+>  r=E.fromstring(z.read('ppt/slides/slide2.xml'))
+>  assert r.find('p:cSld/p:bg/p:bgPr/a:blipFill/a:blip',ns).get('{'+ns['r']+'}embed')==rid
+> os.replace(p+'.tmp',p)
+> os.remove('/tmp/landscape_8s.png')
+> print('Saved and verified:',p)
+> PY
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'lxml'
+agent@f10abcb9fc3e:/app$

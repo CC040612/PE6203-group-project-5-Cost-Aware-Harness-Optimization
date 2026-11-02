@@ -1,0 +1,10 @@
+New Terminal Output:
+
+> PY
+/opt/venv/bin/python - <<'PY'
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+ b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; print(page.locator('body').inner_text()[:5000]); print(page.locator('butto
+n').filter(has_text='Zürich').evaluate_all('(es)=>es.map(e=>e.outerHTML)'))
+PY
+

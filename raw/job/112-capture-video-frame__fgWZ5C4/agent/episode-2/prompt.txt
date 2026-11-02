@@ -1,0 +1,36 @@
+New Terminal Output:
+
+agent@e5bdeb3f4a03:/app$ ffprobe -v error -show_entries format=duration -show_entries stream=width,height -of default=noprint_wrappers=1 "$HOME/Desktop/Interste
+llar Movie - Official Trailer.mp4"
+ffmpeg -hide_banner -loglevel error -ss 00:01:00 -i "$HOME/Desktop/Interstellar Movie - Official Trailer.mp4" -frames:v 1 -update 1 "$HOME/Desktop/interstellar.
+png" && file "$HOME/Desktop/interstellar.png" && ls -lh "$HOME/Desktop/interstellar.png"
+width=1920
+height=1080
+width=1280
+height=720
+duration=151.278005
+agent@e5bdeb3f4a03:/app$ ffmpeg -hide_banner -loglevel error -ss 00:01:00 -i "$HOME/Desktop/Interstellar Movie - Official Trailer.mp4" -frames:v 1 -update 1 "$H
+OME/Desktop/interstellar.png" && file "$HOME/Desktop/interstellar.png" && ls -lh "$HOME/Desktop/interstellar.png"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+  "analysis": "The OCR utility is not installed. We can inspect a terminal-rendered grayscale frame to determine which direction the video is flipped.",
+  "plan": "Render the extracted frame as ASCII, preserving enough detail to identify the orientation of the end-card text.",
+  "commands": [
+    {
+      "keystrokes": "python3 - <<'PY'\nfrom PIL import Image,ImageOps\nim=Image.open('/tmp/orientation.png').convert('L')\nim.thumbnail((160,70))\nchars=' .:-=+*#%@'\nfor y in range(im.height):\n print(''.join(chars[p*9//256] for p in [im.getpixel((x,y)) for x in range(im.width)]))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

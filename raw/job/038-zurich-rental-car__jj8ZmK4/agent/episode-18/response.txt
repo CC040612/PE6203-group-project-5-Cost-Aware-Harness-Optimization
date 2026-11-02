@@ -1,0 +1,10 @@
+{
+  "analysis": "The calendar displays October and November; the first 30 is October 30.",
+  "plan": "Choose October 30, submit the search, and inspect results.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(6000)\n page.get_by_text('30',exact=True).first.click(); page.get_by_role('button',name='Search',exact=True).click(); page.wait_for_timeout(2000); print(page.url); print(page.locator('body').inner_text()[:15000])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

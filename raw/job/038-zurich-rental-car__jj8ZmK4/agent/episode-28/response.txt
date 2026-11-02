@@ -1,0 +1,5 @@
+{
+  "analysis": "The category and sorting controls are updating.",
+  "plan": "Read the price sort option.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

@@ -1,0 +1,18 @@
+New Terminal Output:
+
+agent@6556a8550dfc:/app$ chromium https://www.nfl.com/scores/2019/post4 >/tmp/browser.log 2>&1 &
+[1] 395
+agent@6556a8550dfc:/app$ /opt/venv/bin/python - <<'PY'
+> from playwright.sync_api import sync_playwright
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337')
+>  c=b.contexts[0]
+>  page=c.pages[0] if c.pages else c.new_page()
+>  page.goto('https://www.nfl.com/scores/2019/post4',wait_until='domcontentloaded',timeout=60000)
+>  page.bring_to_front()
+>  page.wait_for_timeout(3000)
+>  print(page.url)
+>  print(page.title())
+>  print(page.locator('body').inner_text()[:18000])
+> PY
+

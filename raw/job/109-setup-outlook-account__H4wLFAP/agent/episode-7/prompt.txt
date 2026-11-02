@@ -1,0 +1,22 @@
+New Terminal Output:
+
+agent@4f49ca72fb28:/app$ /usr/bin/python3 - <<'PY'
+> import pyatspi,subprocess,time
+> def find(o,name):
+>  if o.name==name and o.getRoleName() in ('entry','password text'): return o
+>  for c in o:
+>   r=find(c,name)
+>   if r:return r
+> root=pyatspi.Registry.getDesktop(0)
+> for name,value in [('Email address','anonym-x2024@outlook.com'),('Password','password')]:
+>  field=find(root,name)
+>  field.queryComponent().grabFocus()
+>  time.sleep(.2)
+>  subprocess.run(['xdotool','key','ctrl+a'])
+>  subprocess.run(['xdotool','type','--clearmodifiers','--delay','50',value])
+>  time.sleep(.3)
+>  print(name,'characters:',field.queryText().characterCount)
+> PY
+Email address characters: 24
+Password characters: 8
+agent@4f49ca72fb28:/app$

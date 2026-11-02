@@ -1,0 +1,94 @@
+{
+  "id": "3ef0e199-d9f6-4db6-a650-12679aa3d871",
+  "started_at": "2026-10-21T23:19:12.030679",
+  "updated_at": "2026-10-22T11:19:52.344032",
+  "finished_at": "2026-10-22T11:19:52.344032",
+  "n_total_trials": 40,
+  "stats": {
+    "n_completed_trials": 40,
+    "n_errored_trials": 1,
+    "n_running_trials": 0,
+    "n_pending_trials": 0,
+    "n_cancelled_trials": 0,
+    "n_retries": 0,
+    "evals": {
+      "terminus-2__gpt-6.1-sol__adhoc": {
+        "n_trials": 40,
+        "n_errors": 1,
+        "metrics": [
+          {
+            "mean": 0.5509622136464574
+          }
+        ],
+        "pass_at_k": {},
+        "reward_stats": {
+          "reward": {
+            "1.0": [
+              "038-zurich-rental-car__jj8ZmK4",
+              "092-fix-tetris-bug__uGV64YB",
+              "083-gemini-responses-docx__ZyJJYzJ",
+              "062-add-baseball-audio__h8oparS",
+              "093-merge-txt-document__4or48u9",
+              "052-vignette-filter-window__SnVSE6i",
+              "078-add-wednesday-lecture__fTfuE8Y",
+              "082-brighten-slide-image__XJN4gaL",
+              "099-professor-contact-info__ouwjQMd",
+              "102-daily-email-report__QukU74P",
+              "103-download-blog-pdfs__sUck2gq",
+              "106-create-charles-ssh-user__AG7dD33",
+              "107-attach-aws-bill__AhoApVq",
+              "109-setup-outlook-account__H4wLFAP",
+              "110-rotate-macintosh-video__iCWnWhc",
+              "113-add-folders-workspace__WjwrqXs",
+              "117-comma-text-to-table__tXevoKb",
+              "118-set-times-new-roman__7bixGKB"
+            ],
+            "0.0": [
+              "073-force-quit-frozen-doc__FiyYWnd",
+              "056-move-textbox-left__WGC5JFP",
+              "026-sales-cogs-column-chart__Zy3X8tr",
+              "089-install-recommended-exts__3ZQD25i",
+              "035-super-bowl-score__XMtgMVS",
+              "068-strike-first-two-lines__y7nnAnc",
+              "091-add-receipts-bookkeeping__YtDv9QF",
+              "080-convert-novel-epub__B6Q4qzB",
+              "020-calculate-period-rate__Htbw554",
+              "088-extract-presenter-photos__JxPo2st",
+              "098-extract-email-doc-image__hmsRRJN",
+              "100-name-mountain-photos__MBRDK66",
+              "101-rearrange-warm-tiles__efPtjnq",
+              "108-create-mail-folders__HfjixRA",
+              "111-set-video-wallpaper__s9AMrJr",
+              "115-remove-explorer-find-key__kve3fv3",
+              "119-tabstop-sentence-split__uNy7i7N"
+            ],
+            "0.8439513677924382": [
+              "076-make-src-gif-clip__bYrSBjA"
+            ],
+            "0.9072818921527955": [
+              "070-edit-friend-image__FyYk8Db"
+            ],
+            "0.8035433081070689": [
+              "081-video-frame-slide-bg__mpbmT8i"
+            ],
+            "0.73311628485422": [
+              "074-apa-references-review__6v4Tbud"
+            ],
+            "0.750595692951772": [
+              "112-capture-video-frame__fgWZ5C4"
+            ]
+          }
+        },
+        "exception_stats": {
+          "AgentTimeoutError": [
+            "088-extract-presenter-photos__JxPo2st"
+          ]
+        }
+      }
+    },
+    "n_input_tokens": 10013015,
+    "n_cache_tokens": 4954752,
+    "n_output_tokens": 94744,
+    "cost_usd": 11.559441200000004
+  }
+}

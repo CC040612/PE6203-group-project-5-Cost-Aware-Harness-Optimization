@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@7d2efb93e269:/app$ ls -lh /app; python - <<'PY'
+> import importlib.util
+> print('pptx:', importlib.util.find_spec('pptx'))
+> PY
+total 7.1M
+-rw-r--r-- 1 agent agent 7.0M Oct 21 15:35 Baseball.mp3
+-rw-r--r-- 1 agent agent  77K Oct 21 15:35 Mady_and_Mia_Baseball.pptx
+pptx: ModuleSpec(name='pptx', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7de7c00dbdd0>, origin='/opt/venv/lib/python3.12/site-packages/pptx
+/__init__.py', submodule_search_locations=['/opt/venv/lib/python3.12/site-packages/pptx'])
+agent@7d2efb93e269:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

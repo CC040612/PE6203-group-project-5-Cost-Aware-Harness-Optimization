@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@c20a90688c47:/app$ /opt/venv/bin/python -u - <<'PY'
+> from playwright.sync_api import sync_playwright
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.get_by_text('Select all',exact=True
+).click(); print(page.locator('body').inner_text()[-4500:]); print(page.locator('button').all_text_contents())
+> PY
+

@@ -1,0 +1,24 @@
+New Terminal Output:
+
+ration,size -show_entries stream=codec_name,width,height -of json ~/1984_Apple_Macintosh_Commercial.mp4
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_name": "h264",
+            "width": 320,
+            "height": 236
+        },
+        {
+            "codec_name": "aac"
+        }
+    ],
+    "format": {
+        "filename": "/home/agent/1984_Apple_Macintosh_Commercial.mp4",
+        "duration": "59.833333",
+        "size": "4211932"
+    }
+}
+agent@1ab03f642dd9:/tmp/ocr-local$

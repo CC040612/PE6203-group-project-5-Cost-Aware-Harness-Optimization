@@ -1,0 +1,71 @@
+New Terminal Output:
+
+agent@1d512c9b2066:/app$ cat ~/.thunderbird/profiles.ini; grep -E 'mail\.(server|account|root)|storeContract' ~/.thunderbird/t5q2a5hp.default-release/prefs.js;
+find ~/.thunderbird/t5q2a5hp.default-release/Mail -maxdepth 3 -type f
+[Profile1]
+Name=default
+IsRelative=1
+Path=cidfb56c.default
+Default=1
+
+[InstallFDC34C9F024745EB]
+Default=t5q2a5hp.default-release
+Locked=1
+
+[Profile0]
+Name=default-release
+IsRelative=1
+Path=t5q2a5hp.default-release
+
+[General]
+StartWithLastProfile=1
+Version=2
+
+user_pref("mail.account.account1.identities", "id1");
+user_pref("mail.account.account1.server", "server1");
+user_pref("mail.account.account2.server", "server2");
+user_pref("mail.account.lastKey", 2);
+user_pref("mail.accountmanager.accounts", "account1,account2");
+user_pref("mail.accountmanager.defaultaccount", "account1");
+user_pref("mail.accountmanager.localfoldersserver", "server2");
+user_pref("mail.root.imap", "/home/david/.thunderbird/t5q2a5hp.default-release/ImapMail");
+user_pref("mail.root.imap-rel", "[ProfD]ImapMail");
+user_pref("mail.root.none", "/home/david/.thunderbird/t5q2a5hp.default-release/Mail");
+user_pref("mail.root.none-rel", "[ProfD]Mail");
+user_pref("mail.server.server1.check_new_mail", false);
+user_pref("mail.server.server1.clientid", "ec909625-423d-44a2-bceb-92a4e7e7abca");
+user_pref("mail.server.server1.directory", "/home/user/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com");
+user_pref("mail.server.server1.directory-rel", "[ProfD]ImapMail/outlook.office365.com");
+user_pref("mail.server.server1.hostname", "outlook.office365.com");
+user_pref("mail.server.server1.lastFilterTime", 29193675);
+user_pref("mail.server.server1.max_cached_connections", 5);
+user_pref("mail.server.server1.name", "anonym-x2024@outlook.com");
+user_pref("mail.server.server1.namespace.personal", "\"\"");
+user_pref("mail.server.server1.nextFilterTime", 29193685);
+user_pref("mail.server.server1.port", 994);
+user_pref("mail.server.server1.serverIDResponse", "(\"name\" \"Microsoft.Exchange.Imap4.Imap4Server\" \"version\" \"15.20\")");
+user_pref("mail.server.server1.socketType", 3);
+user_pref("mail.server.server1.spamActionTargetAccount", "imap://anonym-x2024%40outlook.com@outlook.office365.com");
+user_pref("mail.server.server1.storeContractID", "@mozilla.org/msgstore/berkeleystore;1");
+user_pref("mail.server.server1.timeout", 29);
+user_pref("mail.server.server1.trash_folder_name", "Deleted");
+user_pref("mail.server.server1.type", "imap");
+user_pref("mail.server.server1.userName", "anonym-x2024@outlook.com");
+user_pref("mail.server.server2.directory", "/home/david/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders");
+user_pref("mail.server.server2.directory-rel", "[ProfD]Mail/Local Folders");
+user_pref("mail.server.server2.hostname", "Local Folders");
+user_pref("mail.server.server2.lastFilterTime", 29193675);
+user_pref("mail.server.server2.name", "Local Folders");
+user_pref("mail.server.server2.nextFilterTime", 29193685);
+user_pref("mail.server.server2.spamActionTargetAccount", "mailbox://nobody@Local%20Folders");
+user_pref("mail.server.server2.storeContractID", "@mozilla.org/msgstore/berkeleystore;1");
+user_pref("mail.server.server2.type", "none");
+user_pref("mail.server.server2.userName", "nobody");
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages.msf
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills.msf
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/msgFilterRules.dat
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash.msf
+agent@1d512c9b2066:/app$

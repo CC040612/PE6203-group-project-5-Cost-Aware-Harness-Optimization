@@ -1,0 +1,10 @@
+{
+  "analysis": "The system Python lacks Pillow. I will install an image-processing and segmentation tool in the available Python environment.",
+  "plan": "Install rembg with its CPU runtime and Pillow, then run automatic foreground extraction.",
+  "commands": [
+    {
+      "keystrokes": "python -m pip install 'rembg[cpu]' pillow\n",
+      "duration": 1
+    }
+  ]
+}

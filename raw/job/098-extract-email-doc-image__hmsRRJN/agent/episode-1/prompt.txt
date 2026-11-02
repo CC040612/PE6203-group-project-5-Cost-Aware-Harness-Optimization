@@ -1,0 +1,77 @@
+New Terminal Output:
+agent@d9c0c32180f1:/app$ find /app/.thunderbird -maxdepth 5 -type f | head -70; which libreoffice soffice antiword catdoc python3 convert
+/app/.thunderbird/cidfb56c.default/.parentlock
+/app/.thunderbird/cidfb56c.default/times.json
+/app/.thunderbird/profiles.ini
+/app/.thunderbird/installs.ini
+/app/.thunderbird/t5q2a5hp.default-release/extension-preferences.json
+/app/.thunderbird/t5q2a5hp.default-release/folderTree.json
+/app/.thunderbird/t5q2a5hp.default-release/global-messages-db.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/addonStartup.json.lz4
+/app/.thunderbird/t5q2a5hp.default-release/permissions.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/handlers.json
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Sent.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Drafts.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Notes
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Notes.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Outbox.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.sbd/POP.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Templates.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/&XAFbWA-.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Junk.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.sbd/2024
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.sbd/2024.msf
+/app/.thunderbird/t5q2a5hp.default-release/places.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/virtualFolders.dat
+/app/.thunderbird/t5q2a5hp.default-release/prefs.js
+/app/.thunderbird/t5q2a5hp.default-release/favicons.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/folderCache.json
+/app/.thunderbird/t5q2a5hp.default-release/.parentlock
+/app/.thunderbird/t5q2a5hp.default-release/key4.db
+/app/.thunderbird/t5q2a5hp.default-release/content-prefs.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/logins.json
+/app/.thunderbird/t5q2a5hp.default-release/search.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/openpgp.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/cert9.db
+/app/.thunderbird/t5q2a5hp.default-release/SiteSecurityServiceState.txt
+/app/.thunderbird/t5q2a5hp.default-release/storage/ls-archive.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/storage/permanent/chrome/.metadata-v2
+/app/.thunderbird/t5q2a5hp.default-release/mailViews.dat
+/app/.thunderbird/t5q2a5hp.default-release/webappsstore.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/extensions.json
+/app/.thunderbird/t5q2a5hp.default-release/addons.json
+/app/.thunderbird/t5q2a5hp.default-release/times.json
+/app/.thunderbird/t5q2a5hp.default-release/settings/data.safe.bin
+/app/.thunderbird/t5q2a5hp.default-release/storage.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/session-state.json
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624355705.4fdc6ef5-e591-45f4-bd23-116e9ab3266e.main.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624355706.d8765f80-e697-4221-b000-ec40830e8a76.first-shutdown.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/state.json
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Articles
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Articles.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash.msf
+/app/.thunderbird/t5q2a5hp.default-release/crashes/store.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/cookies.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/sessionCheckpoints.json
+/app/.thunderbird/t5q2a5hp.default-release/pkcs11.txt
+/app/.thunderbird/t5q2a5hp.default-release/xulstore.json
+/app/.thunderbird/t5q2a5hp.default-release/session.json.backup
+/usr/bin/libreoffice
+/usr/bin/soffice
+/usr/bin/python3
+/usr/bin/convert
+agent@d9c0c32180f1:/app$

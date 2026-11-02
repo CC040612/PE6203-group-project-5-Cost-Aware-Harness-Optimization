@@ -1,0 +1,14 @@
+{
+  "analysis": "An Account Setup tab exists, but its form is not yet exposed in the accessibility tree.",
+  "plan": "Activate the Account Setup tab and inspect the complete accessibility tree for editable fields.",
+  "commands": [
+    {
+      "keystrokes": "/usr/bin/python3 - <<'PY'\nimport pyatspi\nroot=pyatspi.Registry.getDesktop(0)\ndef walk(o):\n if o.getRoleName()=='page tab' and o.name=='Account Setup':\n  try: o.queryAction().doAction(0)\n  except Exception: o.queryComponent().grabFocus()\n for c in o: walk(c)\nwalk(root)\nPY\n",
+      "duration": 1
+    },
+    {
+      "keystrokes": "/usr/bin/python3 - <<'PY'\nimport pyatspi\ndef walk(o,d=0):\n try:\n  print(' '*d,o.getRoleName(),repr(o.name))\n  for c in o: walk(c,d+1)\n except Exception: pass\nwalk(pyatspi.Registry.getDesktop(0))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

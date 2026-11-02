@@ -1,0 +1,14 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ which scrot import; import -window root /tmp/screen.png; /opt/venv/bin/python - <<'PY'
+import pytesseract
+from PIL import Image
+print(pytesseract.image_to_data(Image.open('/tmp/screen.png'),output_type=pytesseract.Output.DICT))
+PY
+which scrot import; import -window root /tmp/screen.png; /opt/venv/bin/python - <<'PY'
+> import pytesseract
+> from PIL import Image
+> print(pytesseract.image_to_data(Image.open('/tmp/screen.png'),output_type=pytesseract.Output.DICT))
+> PY
+bash: import: command not found
+

@@ -1,0 +1,145 @@
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ find /app/.thunderbird -maxdepth 5 -type f | head -70; which libreoffice soffice antiword catdoc python3 convert
+[?2004l/app/.thunderbird/cidfb56c.default/.parentlock
+/app/.thunderbird/cidfb56c.default/times.json
+/app/.thunderbird/profiles.ini
+/app/.thunderbird/installs.ini
+/app/.thunderbird/t5q2a5hp.default-release/extension-preferences.json
+/app/.thunderbird/t5q2a5hp.default-release/folderTree.json
+/app/.thunderbird/t5q2a5hp.default-release/global-messages-db.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/addonStartup.json.lz4
+/app/.thunderbird/t5q2a5hp.default-release/permissions.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/handlers.json
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Sent.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Drafts.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Notes
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Notes.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Outbox.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.sbd/POP.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Templates.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/&XAFbWA-.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Junk.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.sbd/2024
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives-1.sbd/2024.msf
+/app/.thunderbird/t5q2a5hp.default-release/places.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/virtualFolders.dat
+/app/.thunderbird/t5q2a5hp.default-release/prefs.js
+/app/.thunderbird/t5q2a5hp.default-release/favicons.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/folderCache.json
+/app/.thunderbird/t5q2a5hp.default-release/.parentlock
+/app/.thunderbird/t5q2a5hp.default-release/key4.db
+/app/.thunderbird/t5q2a5hp.default-release/content-prefs.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/logins.json
+/app/.thunderbird/t5q2a5hp.default-release/search.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/openpgp.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/cert9.db
+/app/.thunderbird/t5q2a5hp.default-release/SiteSecurityServiceState.txt
+/app/.thunderbird/t5q2a5hp.default-release/storage/ls-archive.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/storage/permanent/chrome/.metadata-v2
+/app/.thunderbird/t5q2a5hp.default-release/mailViews.dat
+/app/.thunderbird/t5q2a5hp.default-release/webappsstore.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/extensions.json
+/app/.thunderbird/t5q2a5hp.default-release/addons.json
+/app/.thunderbird/t5q2a5hp.default-release/times.json
+/app/.thunderbird/t5q2a5hp.default-release/settings/data.safe.bin
+/app/.thunderbird/t5q2a5hp.default-release/storage.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/session-state.json
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624355705.4fdc6ef5-e591-45f4-bd23-116e9ab3266e.main.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624355706.d8765f80-e697-4221-b000-ec40830e8a76.first-shutdown.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/state.json
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Articles
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Articles.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash.msf
+/app/.thunderbird/t5q2a5hp.default-release/crashes/store.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/cookies.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/sessionCheckpoints.json
+/app/.thunderbird/t5q2a5hp.default-release/pkcs11.txt
+/app/.thunderbird/t5q2a5hp.default-release/xulstore.json
+/app/.thunderbird/t5q2a5hp.default-release/session.json.backup
+/usr/bin/libreoffice
+/usr/bin/soffice
+/usr/bin/python3
+/usr/bin/convert
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ mkdir -p /tmp/doc-extract; python3 - <<'PY'
+[?2004l[?2004h> import mailbox,email.utils,pathlib
+[?2004l[?2004h> p=next(pathlib.Path('/app/.thunderbird').glob('*/ImapMail/*/Notes'))
+[?2004l[?2004h> msgs=list(mailbox.mbox(str(p)))
+[?2004l[?2004h> for i,m in enumerate(msgs):
+[?2004l[?2004h>  print(i,m['Date'],m['Subject'],[(a.get_filename(),a.get_content_type()) for a in m.walk() if a.get_filename()])
+[?2004l[?2004h> m=max(msgs,key=lambda m: email.utils.parsedate_to_datetime(m['Date']).timestamp())
+[?2004l[?2004h> print('NEWEST',m['Date'],m['Subject'])
+[?2004l[?2004h> for i,a in enumerate(m.walk()):
+[?2004l[?2004h>  if a.get_filename():
+[?2004l[?2004h>   dest=pathlib.Path('/tmp/doc-extract')/pathlib.Path(a.get_filename()).name
+[?2004l[?2004h>   dest.write_bytes(a.get_payload(decode=True));print(dest)
+[?2004l[?2004h> PY
+[?2004l0 Tue, 30 Jan 2024 02:38:44 -0800 Lecture Document [('lecture-notes.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')]
+NEWEST Tue, 30 Jan 2024 02:38:44 -0800 Lecture Document
+/tmp/doc-extract/lecture-notes.docx
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ file /tmp/doc-extract/*
+[?2004l/tmp/doc-extract/lecture-notes.docx: Microsoft Word 2007+
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import zipfile,xml.etree.ElementTree as E,posixpath,io
+[?2004l[?2004h> from PIL import Image
+[?2004l[?2004h> p='/tmp/doc-extract/lecture-notes.docx'
+[?2004l[?2004h> with zipfile.ZipFile(p) as z:
+[?2004l[?2004h>  ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}
+[?2004l[?2004h>  root=E.fromstring(z.read('word/document.xml'))
+[?2004l[?2004h>  rels={e.attrib['Id']:e.attrib['Target'] for e in E.fromstring(z.read('word/_rels/document.xml.rels'))}
+[?2004l[?2004h>  images=[]
+[?2004l[?2004h>  for e in root.iter():
+[?2004l[?2004h>   rid=e.get('{'+ns['r']+'}embed') or (e.get('{'+ns['r']+'}id') if e.tag.endswith('imagedata') else None)
+[?2004l[?2004h>   if rid: images.append(rels[rid])
+[?2004l[?2004h>  print('Images in document order:',images)
+[?2004l[?2004h>  target=images[0]
+[?2004l[?2004h>  name=posixpath.normpath(posixpath.join('word',target)) if not target.startswith('/') else target.lstrip('/')
+[?2004l[?2004h>  data=z.read(name)
+[?2004l[?2004h>  im=Image.open(io.BytesIO(data));print('First image:',name,im.format,im.size)
+[?2004l[?2004h>  if im.format=='PNG': open('/app/background.png','wb').write(data)
+[?2004l[?2004h>  else: im.save('/app/background.png','PNG')
+[?2004l[?2004h> PY
+[?2004lTraceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+ModuleNotFoundError: No module named 'PIL'
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ file /app/background.png
+[?2004l/app/background.png: cannot open `/app/background.png' (No such file or directory)
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import zipfile,xml.etree.ElementTree as E,posixpath
+[?2004l[?2004h> with zipfile.ZipFile('/tmp/doc-extract/lecture-notes.docx') as z:
+[?2004l[?2004h>  r='{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
+[?2004l[?2004h>  rels={e.attrib['Id']:e.attrib['Target'] for e in E.fromstring(z.read('word/_rels/document.xml.rels'))}
+[?2004l[?2004h>  for e in E.fromstring(z.read('word/document.xml')).iter():
+[?2004l[?2004h>   rid=e.get(r+'embed') or (e.get(r+'id') if e.tag.endswith('imagedata') else None)
+[?2004l[?2004h>   if rid:
+[?2004l[?2004h>    target=rels[rid];name=posixpath.normpath(posixpath.join('word',target)) if not target.startswith('/') else target.lstrip('/')
+[?2004l[?2004h>    print('First image:',name)
+[?2004l[?2004h>    open('/tmp/doc-extract/first-image','wb').write(z.read(name));break
+[?2004l[?2004h>  else: raise RuntimeError('No image found')
+[?2004l[?2004h> PY
+[?2004lFirst image: word/media/image1.png
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ file /tmp/doc-extract/first-image
+[?2004l/tmp/doc-extract/first-image: PNG image data, 860 x 732, 8-bit/color RGBA, non-interlaced
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ convert /tmp/doc-extract/first-image /app/background.png
+[?2004l[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ file /app/background.png; identify /app/background.png
+[?2004l/app/background.png: PNG image data, 860 x 732, 4-bit colormap, non-interlaced
+/app/background.png PNG 860x732 860x732+0+0 8-bit sRGB 8c 23021B 0.000u 0:00.000
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ cp /tmp/doc-extract/first-image /app/background.png; file /app/background.png; rm -rf /tmp/doc-extract
+[?2004l/app/background.png: PNG image data, 860 x 732, 8-bit/color RGBA, non-interlaced
+[?2004h[01;32magent@d9c0c32180f1[00m:[01;34m/app[00m$ 

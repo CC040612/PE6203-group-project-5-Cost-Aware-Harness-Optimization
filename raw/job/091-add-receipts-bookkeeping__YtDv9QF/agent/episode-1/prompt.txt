@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@04c1a7a0bc04:/app$ ls -lh /app; which python3 tesseract pdftotext convert
+total 508K
+-rw-r--r-- 1 agent agent 6.1K Oct 21 16:27 my_bookkeeping.xlsx
+-rw-r--r-- 1 agent agent 334K Oct 21 16:27 receipt_0.jpeg
+-rw-r--r-- 1 agent agent  22K Oct 21 16:27 receipt_1.jpg
+-rw-r--r-- 1 agent agent  28K Oct 21 16:27 receipt_2.jpg
+-rw-r--r-- 1 agent agent  40K Oct 21 16:28 receipt_3.pdf
+-rw-r--r-- 1 agent agent  72K Oct 21 16:28 receipt_4.jpg
+/usr/bin/python3
+/usr/bin/tesseract
+agent@04c1a7a0bc04:/app$ python3 - <<'PY'
+> import openpyxl
+> w=openpyxl.load_workbook('/app/my_bookkeeping.xlsx')
+> for s in w:
+>  print(s.title,s.max_row,s.max_column)
+>  for row in s:
+>   v=['%s:%s'%(c.column_letter,c.value) for c in row if c.value is not None]
+>   if v: print(row[0].row,' | '.join(v))
+> PY
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'openpyxl'
+agent@04c1a7a0bc04:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

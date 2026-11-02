@@ -1,0 +1,7 @@
+export DISPLAY=":99"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/tmp/tua-dbus-session"
+export XDG_RUNTIME_DIR="/tmp/xdg-runtime-1001"
+export GNOME_ACCESSIBILITY="1"
+export GTK_MODULES="gail:atk-bridge"
+export TUA_THUNDERBIRD_BIN="/usr/local/bin/thunderbird"
+export TUA_THUNDERBIRD_PROFILE_DIR="/home/agent/.thunderbird/tua-task-profile"

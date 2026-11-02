@@ -1,0 +1,10 @@
+{
+  "analysis": "The usual screenshot utilities are unavailable.",
+  "plan": "Use Pillow's desktop capture and OCR to inspect Chrome's native dialog.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nfrom PIL import ImageGrab\nimport pytesseract\nim=ImageGrab.grab(); im.save('/tmp/screen.png')\nd=pytesseract.image_to_data(im,output_type=pytesseract.Output.DICT)\nfor i,t in enumerate(d['text']):\n if t.strip(): print(d['left'][i],d['top'][i],t)\nPY\n",
+      "duration": 2
+    }
+  ]
+}

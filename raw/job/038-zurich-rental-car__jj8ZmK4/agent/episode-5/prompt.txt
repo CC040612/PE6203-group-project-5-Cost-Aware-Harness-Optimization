@@ -1,0 +1,36 @@
+New Terminal Output:
+
+agent@c20a90688c47:/app$ /opt/venv/bin/python /tmp/search.py
+https://www.rentalcars.com/SearchResults.do?locationName=Z%C3%BCrich&dropLocationName=Z%C3%BCrich&filterCriteria_carCategory=large&filterCriteria_sortBy=PRICE&p
+uDay=26&puMonth=10&puYear=2026&doDay=30&doMonth=10&doYear=2026
+Skip to main content
+
+by
+
+SGD
+Manage booking
+Stays
+Flights
+Car rentals
+Attractions
+Airport taxis
+Searching our best deals from hundreds of brands
+Cars of all sizes
+for every type of trip
+Privacy Notice
+Cookies
+Terms of service
+Help
+Modern Slavery Statement
+Human Rights Statement
+Accessibility Statement
+How we Work
+Supply Partner Inquiry
+Affiliate Programme
+Careers
+Contact Us
+Rentalcars.com is a trading name of Booking.com Transport Limited which is a limited company registered in England and Wales (Number: 05179829) whose registered
+ address is at 6 Goods Yard Street, Manchester, M3 3BG, United Kingdom. VAT number: GB 855349007.
+Rentalcars.com is part of Booking Holdings Inc., the world leader in online travel & related services.
+Copyright © 2025 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved
+agent@c20a90688c47:/app$

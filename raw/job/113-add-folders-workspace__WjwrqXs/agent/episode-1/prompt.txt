@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@e1ca203d1a82:/app$ cat /app/project.code-workspace; printf '\n--- directories ---\n'; ls -ld /app/data1 /app/data2
+{
+        "folders": [
+                {
+                        "path": "project"
+                }
+        ],
+        "settings": {}
+}
+
+--- directories ---
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:09 /app/data1
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:09 /app/data2
+agent@e1ca203d1a82:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+  "analysis": "There is no desktop session to update live. I can still extract a trailer frame and persist a standard GNOME wallpaper preference, but cannot honestly verify a visible wallpaper in this headless environment.",
+  "plan": "Extract a frame into the user's background directory and check whether GNOME settings schemas and the dconf backend are available for storing the wallpaper preference.",
+  "commands": [
+    {
+      "keystrokes": "mkdir -p \"$HOME/.local/share/backgrounds\"; ffmpeg -hide_banner -loglevel error -ss 85 -i \"$HOME/Desktop/Interstellar Movie - Official Trailer.mp4\" -map 0:v:0 -frames:v 1 -update 1 \"$HOME/.local/share/backgrounds/interstellar.jpg\"; ls /usr/share/glib-2.0/schemas; ls /usr/lib/x86_64-linux-gnu/gio/modules; command -v apt download dconf dbus-run-session; grep -n -E 'wallpaper|snapshot' ~/.config/vlc/vlcrc | head -20; apt-cache policy libglib2.0-bin gsettings-desktop-schemas dconf-cli\n",
+      "duration": 1
+    }
+  ]
+}

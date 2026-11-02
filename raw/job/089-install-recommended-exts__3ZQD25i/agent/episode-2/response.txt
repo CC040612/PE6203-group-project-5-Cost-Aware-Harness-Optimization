@@ -1,0 +1,14 @@
+{
+  "analysis": "The document lists Zoom Chrome Extension, Speechify Text to Speech Voice Reader, React Developer Tools, Momentum, and Google Translate. Chrome's launcher supports a persistent Default profile.",
+  "plan": "Launch Chrome, inspect the profile location, and check automation tools so the extensions can be installed through their Web Store pages.",
+  "commands": [
+    {
+      "keystrokes": "ls -ld /home/agent/.config/google-chrome /home/user; readlink -f /home/user; ls -la /home/agent/.config/google-chrome/Default; ls -la /home/user/.config/google-chrome/Default; google-chrome https://chromewebstore.google.com/ > /tmp/chrome.log 2>&1 &\npython3 - <<'PY'\nimport importlib.util\nfor m in ['playwright','requests','websocket','PIL']:\n print(m, bool(importlib.util.find_spec(m)))\nPY\n",
+      "duration": 2
+    },
+    {
+      "keystrokes": "curl -s http://localhost:1337/json/list; cat /tmp/chrome.log | head\n",
+      "duration": 1
+    }
+  ]
+}

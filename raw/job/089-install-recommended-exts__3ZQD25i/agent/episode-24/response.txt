@@ -1,0 +1,8 @@
+{
+  "analysis": "Speechify and React Developer Tools install actions have been triggered; Momentum and Google Translate are next in the running sequence.",
+  "plan": "Wait for the sequence to complete and inspect persistent extension records.",
+  "commands": [
+    {"keystrokes":"","duration":10},
+    {"keystrokes":"ls -la /home/user/.config/google-chrome/Default/Extensions; cat > /tmp/verify.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\ne=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(1000)\nprint(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,name:e.data.name,state:e.data.state,location:e.data.location,disableReasons:e.data.disableReasons}))'))\nPY\n/opt/venv/bin/python /tmp/verify.py\n","duration":2}
+  ]
+}

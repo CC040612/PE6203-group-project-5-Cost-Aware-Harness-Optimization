@@ -1,0 +1,10 @@
+{
+  "analysis": "We need to extract one scene from the supplied trailer and save it as a PNG at the exact requested Desktop path.",
+  "plan": "Check the video and available extraction tools, then extract a frame from a point within the trailer.",
+  "commands": [
+    {
+      "keystrokes": "ls -lh ~/Desktop; command -v ffmpeg; command -v ffprobe; command -v vlc\n",
+      "duration": 0.1
+    }
+  ]
+}

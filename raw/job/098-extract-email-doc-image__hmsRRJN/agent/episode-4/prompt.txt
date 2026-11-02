@@ -1,0 +1,23 @@
+New Terminal Output:
+
+agent@d9c0c32180f1:/app$ python3 - <<'PY'
+> import zipfile,xml.etree.ElementTree as E,posixpath
+> with zipfile.ZipFile('/tmp/doc-extract/lecture-notes.docx') as z:
+>  r='{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
+>  rels={e.attrib['Id']:e.attrib['Target'] for e in E.fromstring(z.read('word/_rels/document.xml.rels'))}
+>  for e in E.fromstring(z.read('word/document.xml')).iter():
+>   rid=e.get(r+'embed') or (e.get(r+'id') if e.tag.endswith('imagedata') else None)
+>   if rid:
+>    target=rels[rid];name=posixpath.normpath(posixpath.join('word',target)) if not target.startswith('/') else target.lstrip('/')
+>    print('First image:',name)
+>    open('/tmp/doc-extract/first-image','wb').write(z.read(name));break
+>  else: raise RuntimeError('No image found')
+> PY
+First image: word/media/image1.png
+agent@d9c0c32180f1:/app$ file /tmp/doc-extract/first-image
+/tmp/doc-extract/first-image: PNG image data, 860 x 732, 8-bit/color RGBA, non-interlaced
+agent@d9c0c32180f1:/app$ convert /tmp/doc-extract/first-image /app/background.png
+agent@d9c0c32180f1:/app$ file /app/background.png; identify /app/background.png
+/app/background.png: PNG image data, 860 x 732, 4-bit colormap, non-interlaced
+/app/background.png PNG 860x732 860x732+0+0 8-bit sRGB 8c 23021B 0.000u 0:00.000
+agent@d9c0c32180f1:/app$

@@ -1,0 +1,10 @@
+{
+  "analysis": "ImageMagick is available. The image is 962×1280, so thirds will be 320–321 pixels wide because the width is not divisible by three.",
+  "plan": "Measure the mean red, green, and blue levels of each vertical third to rank their warmth.",
+  "commands": [
+    {
+      "keystrokes": "for geom in 321x1280+0+0 320x1280+321+0 321x1280+641+0; do convert /app/tilearray.png -crop \"$geom\" +repage -resize 1x1\\! -depth 8 txt:-; done\n",
+      "duration": 1
+    }
+  ]
+}

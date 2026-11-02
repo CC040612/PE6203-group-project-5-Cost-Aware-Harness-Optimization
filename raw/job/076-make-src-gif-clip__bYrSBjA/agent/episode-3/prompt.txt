@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@c8ad374d260c:/app$ ffmpeg -hide_banner -loglevel error -y -ss 3 -t 5 -i /home/user/Desktop/src.mp4 -filter_complex "[0:v]fps=15,split[a][b];[a]palettegen[
+p];[b][p]paletteuse" -an -loop 0 -final_delay 7 /home/user/Desktop/src_clip.gif
+agent@c8ad374d260c:/app$ ls -lh /home/user/Desktop/src_clip.gif; ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 /home/user/Deskto
+p/src_clip.gif
+-rw-r--r-- 1 agent agent 3.8M Oct 21 15:55 /home/user/Desktop/src_clip.gif
+duration=5.000000
+agent@c8ad374d260c:/app$

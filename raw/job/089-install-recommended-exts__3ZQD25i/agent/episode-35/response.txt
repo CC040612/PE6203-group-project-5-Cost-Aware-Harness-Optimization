@@ -1,0 +1,5 @@
+{
+  "analysis": "Chrome has restarted without any extension-loading arguments. Verification is running against the persistent default profile.",
+  "plan": "Wait for the final installed-state check.",
+  "commands": [{"keystrokes":"","duration":3}]
+}

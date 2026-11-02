@@ -1,0 +1,152 @@
+{
+  "litellm_trace_id": "a3319f1b-34f1-453e-9840-36617be25700",
+  "litellm_call_id": "e2e13c6b-f6ae-4611-bb80-0ec48dc08417",
+  "input": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `/app/Mady_and_Mia_Baseball.pptx`, I am making a presentation about the history of baseball. I want to add an introduction audio using the available file `/app/Baseball.mp3`, but I do not know how. Could you help me add this audio into my presentation file, optionally using LibreOffice Impress if needed? Please save the updated presentation in place at `/app/Mady_and_Mia_Baseball.pptx`.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"The presentation and introduction audio are specified, but their contents and available tools have not yet been inspected.\",\n  \"plan\": \"Inspect the files and installed presentation libraries, then embed the MP3 on the opening slide and save the presentation in place.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -lh /app; python - <<'PY'\\nimport importlib.util\\nprint('pptx:', importlib.util.find_spec('pptx'))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@7d2efb93e269:/app$ ls -lh /app; python - <<'PY'\n> import importlib.util\n> print('pptx:', importlib.util.find_spec('pptx'))\n> PY\ntotal 7.1M\n-rw-r--r-- 1 agent agent 7.0M Oct 21 15:35 Baseball.mp3\n-rw-r--r-- 1 agent agent  77K Oct 21 15:35 Mady_and_Mia_Baseball.pptx\npptx: ModuleSpec(name='pptx', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7de7c00dbdd0>, origin='/opt/venv/lib/python3.12/site-packages/pptx\n/__init__.py', submodule_search_locations=['/opt/venv/lib/python3.12/site-packages/pptx'])\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"Both files are present and python-pptx is available. The audio is about 7 MB, so embedding it will make the presentation self-contained rather than dependent on an external file.\",\n  \"plan\": \"Inspect the opening slide layout and the library's media support so the audio can be placed unobtrusively and represented as a proper embedded audio object.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"python - <<'PY'\\nfrom pptx import Presentation\\nimport inspect\\nfrom pptx.parts.media import MediaPart\\nfrom pptx.shapes.shapetree import SlideShapes\\np=Presentation('/app/Mady_and_Mia_Baseball.pptx')\\nprint('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\\nfor s in p.slides[0].shapes:\\n print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\\nprint(inspect.getsource(SlideShapes.add_movie))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\n\nagent@7d2efb93e269:/app$ python - <<'PY'\n> from pptx import Presentation\n> import inspect\n> from pptx.parts.media import MediaPart\n> from pptx.shapes.shapetree import SlideShapes\n> p=Presentation('/app/Mady_and_Mia_Baseball.pptx')\n> print('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\n> for s in p.slides[0].shapes:\n>  print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\n> print(inspect.getsource(SlideShapes.add_movie))\n> PY\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "litellm_params": {
+    "acompletion": true,
+    "api_key": "[REDACTED]",
+    "force_timeout": 600,
+    "verbose": false,
+    "custom_llm_provider": "openai",
+    "api_base": "http://127.0.0.1:58429/v1/",
+    "litellm_call_id": "e2e13c6b-f6ae-4611-bb80-0ec48dc08417",
+    "model_alias_map": {},
+    "completion_call_id": "None",
+    "aembedding": "None",
+    "metadata": "None",
+    "model_info": "None",
+    "proxy_server_request": "None",
+    "preset_cache_key": "None",
+    "no-log": "None",
+    "stream_response": {},
+    "input_cost_per_token": "None",
+    "input_cost_per_second": "None",
+    "output_cost_per_token": "None",
+    "output_cost_per_second": "None",
+    "cost_per_query": "None",
+    "cooldown_time": "None",
+    "text_completion": "None",
+    "azure_ad_token_provider": "None",
+    "user_continue_message": "None",
+    "base_model": "None",
+    "litellm_trace_id": "None",
+    "litellm_session_id": "None",
+    "hf_model_name": "None",
+    "custom_prompt_dict": {},
+    "litellm_metadata": "None",
+    "disable_add_transform_inline_image_block": "None",
+    "drop_params": true,
+    "prompt_id": "None",
+    "prompt_variables": "None",
+    "async_call": "None",
+    "ssl_verify": "None",
+    "merge_reasoning_content_in_choices": "None",
+    "api_version": "None",
+    "max_retries": "None",
+    "use_litellm_proxy": false,
+    "litellm_request_debug": false,
+    "timeout": 600.0,
+    "tenant_id": "None",
+    "rpm": "None",
+    "azure_password": "[REDACTED]",
+    "client_id": "None",
+    "azure_ad_token": "[REDACTED]",
+    "client_secret": "[REDACTED]",
+    "azure_username": "None",
+    "azure_scope": "None",
+    "tpm": "None"
+  },
+  "applied_guardrails": [],
+  "model": "gpt-6.1-sol",
+  "messages": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `/app/Mady_and_Mia_Baseball.pptx`, I am making a presentation about the history of baseball. I want to add an introduction audio using the available file `/app/Baseball.mp3`, but I do not know how. Could you help me add this audio into my presentation file, optionally using LibreOffice Impress if needed? Please save the updated presentation in place at `/app/Mady_and_Mia_Baseball.pptx`.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"The presentation and introduction audio are specified, but their contents and available tools have not yet been inspected.\",\n  \"plan\": \"Inspect the files and installed presentation libraries, then embed the MP3 on the opening slide and save the presentation in place.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -lh /app; python - <<'PY'\\nimport importlib.util\\nprint('pptx:', importlib.util.find_spec('pptx'))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@7d2efb93e269:/app$ ls -lh /app; python - <<'PY'\n> import importlib.util\n> print('pptx:', importlib.util.find_spec('pptx'))\n> PY\ntotal 7.1M\n-rw-r--r-- 1 agent agent 7.0M Oct 21 15:35 Baseball.mp3\n-rw-r--r-- 1 agent agent  77K Oct 21 15:35 Mady_and_Mia_Baseball.pptx\npptx: ModuleSpec(name='pptx', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7de7c00dbdd0>, origin='/opt/venv/lib/python3.12/site-packages/pptx\n/__init__.py', submodule_search_locations=['/opt/venv/lib/python3.12/site-packages/pptx'])\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"Both files are present and python-pptx is available. The audio is about 7 MB, so embedding it will make the presentation self-contained rather than dependent on an external file.\",\n  \"plan\": \"Inspect the opening slide layout and the library's media support so the audio can be placed unobtrusively and represented as a proper embedded audio object.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"python - <<'PY'\\nfrom pptx import Presentation\\nimport inspect\\nfrom pptx.parts.media import MediaPart\\nfrom pptx.shapes.shapetree import SlideShapes\\np=Presentation('/app/Mady_and_Mia_Baseball.pptx')\\nprint('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\\nfor s in p.slides[0].shapes:\\n print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\\nprint(inspect.getsource(SlideShapes.add_movie))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\n\nagent@7d2efb93e269:/app$ python - <<'PY'\n> from pptx import Presentation\n> import inspect\n> from pptx.parts.media import MediaPart\n> from pptx.shapes.shapetree import SlideShapes\n> p=Presentation('/app/Mady_and_Mia_Baseball.pptx')\n> print('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\n> for s in p.slides[0].shapes:\n>  print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\n> print(inspect.getsource(SlideShapes.add_movie))\n> PY\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "optional_params": {
+    "reasoning_effort": "medium",
+    "extra_body": {}
+  },
+  "start_time": "2026-10-21 23:37:44.607864",
+  "stream": false,
+  "user": "None",
+  "call_type": "acompletion",
+  "completion_start_time": "None",
+  "standard_callback_dynamic_params": {},
+  "stream_options": "None",
+  "reasoning_effort": "medium",
+  "extra_body": {},
+  "custom_llm_provider": "openai",
+  "additional_args": {
+    "complete_input_dict": {
+      "model": "gpt-6.1-sol",
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `/app/Mady_and_Mia_Baseball.pptx`, I am making a presentation about the history of baseball. I want to add an introduction audio using the available file `/app/Baseball.mp3`, but I do not know how. Could you help me add this audio into my presentation file, optionally using LibreOffice Impress if needed? Please save the updated presentation in place at `/app/Mady_and_Mia_Baseball.pptx`.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"analysis\": \"The presentation and introduction audio are specified, but their contents and available tools have not yet been inspected.\",\n  \"plan\": \"Inspect the files and installed presentation libraries, then embed the MP3 on the opening slide and save the presentation in place.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -lh /app; python - <<'PY'\\nimport importlib.util\\nprint('pptx:', importlib.util.find_spec('pptx'))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+        },
+        {
+          "role": "user",
+          "content": "New Terminal Output:\nagent@7d2efb93e269:/app$ ls -lh /app; python - <<'PY'\n> import importlib.util\n> print('pptx:', importlib.util.find_spec('pptx'))\n> PY\ntotal 7.1M\n-rw-r--r-- 1 agent agent 7.0M Oct 21 15:35 Baseball.mp3\n-rw-r--r-- 1 agent agent  77K Oct 21 15:35 Mady_and_Mia_Baseball.pptx\npptx: ModuleSpec(name='pptx', loader=<_frozen_importlib_external.SourceFileLoader object at 0x7de7c00dbdd0>, origin='/opt/venv/lib/python3.12/site-packages/pptx\n/__init__.py', submodule_search_locations=['/opt/venv/lib/python3.12/site-packages/pptx'])\nagent@7d2efb93e269:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"analysis\": \"Both files are present and python-pptx is available. The audio is about 7 MB, so embedding it will make the presentation self-contained rather than dependent on an external file.\",\n  \"plan\": \"Inspect the opening slide layout and the library's media support so the audio can be placed unobtrusively and represented as a proper embedded audio object.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"python - <<'PY'\\nfrom pptx import Presentation\\nimport inspect\\nfrom pptx.parts.media import MediaPart\\nfrom pptx.shapes.shapetree import SlideShapes\\np=Presentation('/app/Mady_and_Mia_Baseball.pptx')\\nprint('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\\nfor s in p.slides[0].shapes:\\n print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\\nprint(inspect.getsource(SlideShapes.add_movie))\\nPY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+        },
+        {
+          "role": "user",
+          "content": "New Terminal Output:\n\nagent@7d2efb93e269:/app$ python - <<'PY'\n> from pptx import Presentation\n> import inspect\n> from pptx.parts.media import MediaPart\n> from pptx.shapes.shapetree import SlideShapes\n> p=Presentation('/app/Mady_and_Mia_Baseball.pptx')\n> print('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\n> for s in p.slides[0].shapes:\n>  print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\n> print(inspect.getsource(SlideShapes.add_movie))\n> PY\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        }
+      ],
+      "extra_body": {},
+      "reasoning_effort": "medium"
+    }
+  },
+  "log_event_type": "post_api_call",
+  "api_call_start_time": "2026-10-21 23:37:44.609281",
+  "llm_api_duration_ms": 3336.716,
+  "original_response": "{\"id\": \"chatcmpl-resp_08621943e8f34987016ad8dc495ea481919226b974c06aa45c\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"analysis\\\": \\\"The inspection command is still running; no results have appeared yet.\\\",\\n  \\\"plan\\\": \\\"Wait briefly for the slide and media API inspection to finish.\\\",\\n  \\\"commands\\\": [\\n    {\\n      \\\"keystrokes\\\": \\\"\\\",\\n      \\\"duration\\\": 1\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning_details\": [{\"content\": [], \"encrypted_content\": \"gAAAAABq2NxLLcCNu9dvxx900anZ5EN5m_7JmvbIeprzFtqxu2djTUrP5H6T-YILa5C9AKDvrn5wx9G72-ows80HyN2zDCUmbjeg6rLTLw5Bo53UrBD-_wxmJ_kdzse-sxfjpk8voaZUUyJh3gwx33bjk-BJnKfR0lhQw5SiAPod9nD4SCU-Fq6EIKrrAUO_VPKAY0fvQYI8YgtjHGOeReKyspqH3Pa387RZKDK0XZtVTILk5sKE9S5y1flrZnWiCD-KMBE5xpS9keDjQfVYA1xNw1ZtTxK4DmIt-HBWqDDYMikEE6vL7r8Mt6dLyzzYIwOMhb9NS0GTD1rHYip0LQT4crgYOUEEXKVKrNspq4zmvcsR2MKEpGnNDs8GLBQjBo5DR-5ST7BhpQitDOo_olW4Tzcmf9c6ZF-OcBJ2nGe_huR6A4LbueBVdSHghKtMNO7xmMSAo4B5OzPQApB0K_3KW7cF37djpRsrj4mW6d3uAgj-NQqu_IaYgdrDL2c_L1SsGHtMNTXj0kFqOhVaftK2xmC7iPU_nOcKAN2KMBfnAQ88U42oNRuDAbv6QrEwXWi0jZ5hlW7XM29IgU29S9tUIIG_YrA52K6TnDsgn_68MvS2iIXlm6KS9Hf-1q1gbynySmvFe7YGP-8vADL_LJyCzFQx95asTS9jaZUxuvj0T_amSpI3DTPx5CYMq2VmAJCFXySeCtulW86Umv1xGE_oiiwe4hVuMMyV-pBwBmw-D3iqBeHdg2MQA2aJLar2EuotpvF9xM9vLjbCRUzf6MTHgKCmvfUizQhs341-Ko6fLYCyFraup92oY2vG7pq6gAtu7aU3S3KnQXfvZBwzjdQ67eAQJ8pjbK4QLhcMNz6Ghb5NjOlnJ9ihWfLRiEgxd244LGEdDJrqwHplVsehhUY7OVE4J35ZTZdrcZXzvoEQVgo2HeStaA1wTPp15DNCVRQ24lX0NvWp9IXymBkloSPAr4VAf8JNN8qEaYVL21hwE8ZWLyLCoWmakpib7zj3DHDBTeNA4EYZ5iRCuEq_wytmarAe5sqZRl0YHl-iWW-yud3vH8t2oizLY1Qw4e6KbKyXefLPSomIwXfwQKmR01mK0-jYvgjgu_HPBk_hoqxKVueCBrsa0BgR_sW6gNgyr2zIWiKki7bDFy5B0kG_jWCeRCmmgT6jzuqDnfs_xxH59WTMYQAK19b_LYPRxq4sFD2TERI69UsgT9kv8Hl-cdy6pYdpNhE8JSokQHL3adS7YLG-cXyTDdOqDrd4_xOsb6tHOeIB2ELfENW81E7wyExNZyOM7DlLqUuQTw-6Jc92qmQUlJQJlaYQmVMyBv_9diDkyMkzNaxyUYlnAGXP9k9_Rt0O_TjxTMdNlB86aS95PRGzw6yqNgjKWUbUA2L0co2yFzcOLm0GTBZK5Vla7lDGI6byAZY1m8kv0iM-r8unfJGWK_FIcNnG7JMZlcJ9Uz12yCgF7wmndZ30t6DBStVpkbZyDGhPydoZf0K6koog_r37R7bf852XUNGb4bIcRWmWk021eBaUN4ZZleJCVvj-a88wOxcFJFcbBP7zx2LbUIobIrk_oKc=\", \"id\": \"rs_08621943e8f34987016ad8dc4ac2108191985d084cf92f881b\", \"summary\": [], \"type\": \"reasoning\"}]}, \"native_finish_reason\": \"stop\"}], \"created\": 1792597065, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"service_tier\": \"default\", \"system_fingerprint\": null, \"usage\": {\"completion_tokens\": 74, \"prompt_tokens\": 1561, \"total_tokens\": 1635, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": null, \"reasoning_tokens\": 6, \"rejected_prediction_tokens\": null}, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 0, \"cache_write_tokens\": 0, \"cached_creation_tokens\": 0}}}",
+  "api_key_sha256": "[REDACTED]"
+}

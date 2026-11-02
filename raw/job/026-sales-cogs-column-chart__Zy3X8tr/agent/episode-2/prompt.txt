@@ -1,0 +1,41 @@
+New Terminal Output:
+
+agent@5c8e614d8183:/app$ python - <<'PY'
+> import openpyxl
+> from openpyxl.chart import BarChart, Reference
+> p='/app/WeeklySales.xlsx'
+> w=openpyxl.load_workbook(p)
+> s=w['Sheet1']
+> t=w.create_sheet('Sheet2')
+> c=BarChart()
+> c.type='col'
+> c.grouping='clustered'
+> c.overlap=0
+> c.title='Sales & COGS'
+> c.x_axis.title='Week'
+> c.y_axis.title='Amount'
+> c.add_data(Reference(s,min_col=2,max_col=3,min_row=1,max_row=11),titles_from_data=True)
+> c.set_categories(Reference(s,min_col=1,min_row=2,max_row=11))
+> c.width=25
+> c.height=14
+> c.style=10
+> c.x_axis.tickLblSkip=1
+> t.add_chart(c,'A1')
+> w.save(p)
+> r=openpyxl.load_workbook(p)
+> chart=r['Sheet2']._charts[0]
+> assert chart.type=='col' and chart.grouping=='clustered'
+> assert len(chart.series)==2
+> assert r['Sheet1'].max_row==11
+> print('Saved:',p)
+> print('Sheets:',r.sheetnames)
+> print('Chart:',chart.type,chart.grouping)
+> for series in chart.series:
+>  print('Series:',series.tx.strRef.f,'Values:',series.val.numRef.f,'Categories:',series.cat.numRef.f)
+> PY
+Saved: /app/WeeklySales.xlsx
+Sheets: ['Sheet1', 'Sheet2']
+Chart: col clustered
+Series: 'Sheet1'!B1 Values: 'Sheet1'!$B$2:$B$11 Categories: 'Sheet1'!$A$2:$A$11
+Series: 'Sheet1'!C1 Values: 'Sheet1'!$C$2:$C$11 Categories: 'Sheet1'!$A$2:$A$11
+agent@5c8e614d8183:/app$

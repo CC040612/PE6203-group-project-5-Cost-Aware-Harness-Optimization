@@ -1,0 +1,1 @@
+68 /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile

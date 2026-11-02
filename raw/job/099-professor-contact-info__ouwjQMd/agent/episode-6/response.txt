@@ -1,0 +1,10 @@
+{
+  "analysis": "Qi Liu lists liuqi@cs.hku.hk, and Tao Yu lists tao.yu.nlp [AT] gmail.com. Lingpeng Kong's homepage links to contact.html; a commented-out old address should not be used.",
+  "plan": "Retrieve Lingpeng Kong's active contact page to verify his current address.",
+  "commands": [
+    {
+      "keystrokes": "/tmp/contactenv/bin/python - <<'PY'\nimport requests\nfrom bs4 import BeautifulSoup\nu='https://ikekonglp.github.io/contact.html'\nr=requests.get(u,timeout=30)\nprint(r.status_code,u)\ns=BeautifulSoup(r.text,'html.parser')\nprint(s.get_text(' ',strip=True))\nprint([a.get('href') for a in s.find_all('a',href=True)])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The desktop contains a JPEG source image and a Word requirements document.",
+  "plan": "Extract the document text and inspect the image dimensions to establish the requested edits.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom zipfile import ZipFile\nfrom lxml import etree\nfrom PIL import Image\np='/home/user/Desktop/'\nwith ZipFile(p+'requirment.docx') as z:\n r=etree.fromstring(z.read('word/document.xml'))\n for para in r.xpath('//*[local-name()=\"p\"]'):\n  print(''.join(para.xpath('.//*[local-name()=\"t\"]/text()')))\nim=Image.open(p+'ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg')\nprint('IMAGE',im.size, im.mode)\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

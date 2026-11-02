@@ -1,0 +1,6 @@
+{
+  "analysis": "No new input is available, and no files have been changed. I cannot select photos by matching a person’s face against a reference image.",
+  "plan": "Await your selected filenames. I can then create Desktop/presenter/ and Desktop/presenter.zip, with presenter/ as the archive’s top-level folder.",
+  "commands": [],
+  "task_complete": false
+}

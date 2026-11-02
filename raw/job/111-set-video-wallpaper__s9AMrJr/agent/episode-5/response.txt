@@ -1,0 +1,10 @@
+{
+  "analysis": "The GNOME background schemas and dconf backend are already installed. We can use Python's GIO bindings to persist the wallpaper without installing tools.",
+  "plan": "Set both light and dark wallpaper preferences to the extracted frame through a temporary D-Bus session, then read them back to verify persistence.",
+  "commands": [
+    {
+      "keystrokes": "dbus-run-session -- /usr/bin/python3 - <<'PY'\nfrom gi.repository import Gio\nfrom pathlib import Path\np = Path.home()/'.local/share/backgrounds/interstellar.jpg'\nassert p.stat().st_size > 0\ns = Gio.Settings.new('org.gnome.desktop.background')\nfor k in ('picture-uri', 'picture-uri-dark'):\n    assert s.set_string(k, p.as_uri())\nassert s.set_string('picture-options', 'zoom')\nGio.Settings.sync()\nprint('Wallpaper preferences saved:', p)\nPY\ndbus-run-session -- /usr/bin/python3 - <<'PY'\nfrom gi.repository import Gio\ns = Gio.Settings.new('org.gnome.desktop.background')\nfor k in ('picture-uri','picture-uri-dark','picture-options'):\n    print(k, s.get_string(k))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

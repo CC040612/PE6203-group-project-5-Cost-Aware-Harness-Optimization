@@ -1,0 +1,259 @@
+New Terminal Output:
+
+agent@632bb3a92d9f:/app$ ls -la /home/agent/Desktop/tetris /tmp/092-fix-tetris-bug; for f in /home/agent/Desktop/tetris/*.py; do echo "=== $f"; cat "$f"; done;
+diff -qr /home/agent/Desktop/tetris /tmp/092-fix-tetris-bug/build
+/home/agent/Desktop/tetris:
+total 24
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:31 .
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:31 ..
+-rw-r--r-- 1 agent agent 1194 Oct 21 16:31 block.py
+-rw-r--r-- 1 agent agent 2530 Oct 21 16:31 main.py
+-rw-r--r-- 1 agent agent  253 Oct 21 16:31 settings.py
+-rw-r--r-- 1 agent agent 2516 Oct 21 16:31 tetris.py
+
+/tmp/092-fix-tetris-bug:
+total 12
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:31 .
+drwxrwxrwt 1 root  root  4096 Oct 21 16:31 ..
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:31 build
+=== /home/agent/Desktop/tetris/block.py
+# block.py
+class Block:
+    def __init__(self, shapes):
+        self.shapes = shapes
+        self.rotation = 0
+        self.x = 5
+        self.y = 0
+        self.color = (0, 255, 255)  # Cyan, for example
+
+    def rotate(self):
+        self.rotation = (self.rotation + 1) % len(self.shapes)
+
+    @property
+    def shape(self):
+        return self.shapes[self.rotation]
+
+
+# Define block shapes
+shapes = [
+    # I shape
+    [
+        [[1, 1, 1, 1]],
+        [[1], [1], [1], [1]]
+    ],
+    # J shape
+    [
+        [[0, 1], [0, 1], [1, 1]],
+        [[1, 0, 0], [1, 1, 1]],
+        [[1, 1], [1, 0], [1, 0]],
+        [[1, 1, 1], [0, 0, 1]]
+    ],
+    # L shape
+    [
+        [[1, 0], [1, 0], [1, 1]],
+        [[1, 1, 1], [1, 0, 0]],
+        [[1, 1], [0, 1], [0, 1]],
+        [[0, 0, 1], [1, 1, 1]]
+    ],
+    # O shape
+    [
+        [[1, 1], [1, 1]]
+    ],
+    # S shape
+    [
+        [[0, 1, 1], [1, 1, 0]],
+        [[1, 0], [1, 1], [0, 1]]
+    ],
+    # T shape
+    [
+        [[0, 1, 0], [1, 1, 1]],
+        [[1, 0], [1, 1], [1, 0]],
+        [[1, 1, 1], [0, 1, 0]],
+        [[0, 1], [1, 1], [0, 1]]
+    ],
+    # Z shape
+    [
+        [[1, 1, 0], [0, 1, 1]],
+        [[0, 1], [1, 1], [1, 0]]
+    ]
+]=== /home/agent/Desktop/tetris/main.py
+# main.py
+import pygame
+import sys
+from tetris import Tetris
+import settings  # Import settings
+
+# Initialize Pygame
+pygame.init()
+
+# Screen dimensions
+screen = pygame.display.set_mode((settings.SCREEN_WIDTH, settings.SCREEN_HEIGHT))
+pygame.display.set_caption("Tetris")
+
+# Game setup
+game = Tetris(settings.BOARD_HEIGHT, settings.BOARD_WIDTH)  # Use settings for board size
+clock = pygame.time.Clock()
+last_fall_time = pygame.time.get_ticks()
+
+fall_time = 0
+fall_speed = 100
+
+# Main game loop
+running = True
+while running:
+    clock.tick(settings.GAME_SPEED)
+
+    if game.block is None:
+        game.new_block()
+
+    current_time = pygame.time.get_ticks()
+    if current_time - last_fall_time > fall_speed:
+        last_fall_time = current_time
+        game.go_down()
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                game.move(-1, 0)
+            if event.key == pygame.K_RIGHT:
+                game.move(1, 0)
+            if event.key == pygame.K_DOWN:
+                game.go_down()
+            if event.key == pygame.K_UP:
+                game.rotate()
+            if event.key == pygame.K_SPACE:
+                game.go_space()
+
+    screen.fill(settings.BLACK)
+
+    # Draw the game board
+    for i in range(game.height):
+        for j in range(game.width):
+            pygame.draw.rect(screen, settings.GREY,
+                             [settings.BLOCK_SIZE * j, settings.BLOCK_SIZE * i, settings.BLOCK_SIZE,
+                              settings.BLOCK_SIZE], 1)
+            if game.board[i][j] != 0:
+                pygame.draw.rect(screen, settings.WHITE,
+                                 [settings.BLOCK_SIZE * j + 1, settings.BLOCK_SIZE * i + 1, settings.BLOCK_SIZE - 2,
+                                  settings.BLOCK_SIZE - 1])
+
+    # Draw the current block
+    if game.block is not None:
+        for i in range(len(game.block.shape)):
+            for j in range(len(game.block.shape[i])):
+                if game.block.shape[i][j] != 0:
+                    pygame.draw.rect(screen, game.block.color, [settings.BLOCK_SIZE * (j + game.block.x) + 1,
+                                                                settings.BLOCK_SIZE * (i + game.block.y) + 1,
+                                                                settings.BLOCK_SIZE - 2, settings.BLOCK_SIZE - 2])
+
+    pygame.display.flip()
+    clock.tick(settings.GAME_SPEED)
+
+pygame.quit()
+sys.exit()
+=== /home/agent/Desktop/tetris/settings.py
+# settings.py
+
+# Screen dimensions
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 500
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GREY = (128, 128, 128)
+
+# Block size
+BLOCK_SIZE = 20
+
+# Board size
+BOARD_WIDTH = 10
+BOARD_HEIGHT = 20
+
+# Speed
+GAME_SPEED = 60
+=== /home/agent/Desktop/tetris/tetris.py
+# tetris.py
+from block import Block, shapes
+import random
+
+
+class Tetris:
+    def __init__(self, height, width):
+        self.height = height
+        self.width = width
+        self.board = [[0] * width for _ in range(height)]
+        self.score = 0
+        self.state = "start"
+        self.block = None
+        self.next_block = Block(random.choice(shapes))
+
+    def new_block(self):
+        self.block = self.next_block
+        self.next_block = Block(random.choice(shapes))
+        self.block.x = int(self.width / 2) - int(len(self.block.shape[0]) / 2)
+        self.block.y = 0
+        if self.intersect():
+            self.state = "gameover"
+
+    def intersect(self):
+        for i in range(len(self.block.shape)):
+            for j in range(len(self.block.shape[i])):
+                if self.block.shape[i][j] != 0:
+                    if i + self.block.y > self.height - 1 or \
+                            j + self.block.x > self.width - 1 or \
+                            j + self.block.x < 0 or \
+                            self.board[i + self.block.y][j + self.block.x] != 0:
+                        return True
+        return False
+
+    def freeze(self):
+        for i in range(len(self.block.shape)):
+            for j in range(len(self.block.shape[i])):
+                if self.block.shape[i][j] != 0:
+                    self.board[i + self.block.y][j + self.block.x] = self.block.shape[i][j]
+        self.break_lines()
+        self.new_block()
+
+    def move(self, dx, dy):
+        if self.block is None:
+            return
+        old_x = self.block.x
+        old_y = self.block.y
+        self.block.x += dx
+        self.block.y += dy
+        if self.intersect():
+            self.block.x = old_x
+            self.block.y = old_y
+
+    def rotate(self):
+        if self.block is None:
+            return
+        self.block.rotate()
+
+    def break_lines(self):
+        lines_to_remove = []
+        for i, row in enumerate(self.board):
+            if 0 not in row:
+                lines_to_remove.append(i)
+        for i in lines_to_remove:
+            del self.board[i]
+            self.board.insert(0, [0 for _ in range(self.width)])
+        self.score += len(lines_to_remove)
+
+    def go_space(self):
+        while not self.intersect():
+            self.block.y += 1
+        self.block.y -= 1
+        self.freeze()
+
+    def go_down(self):
+        if self.block is None:
+            return
+        self.block.y += 1
+        if self.intersect():
+            self.block.y -= 1
+            self.freeze()
+agent@632bb3a92d9f:/app$

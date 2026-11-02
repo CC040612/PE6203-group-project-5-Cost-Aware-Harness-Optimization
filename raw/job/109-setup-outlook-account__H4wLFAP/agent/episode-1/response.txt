@@ -1,0 +1,10 @@
+{
+  "analysis": "Thunderbird is already running on display :99, and desktop automation tools are available.",
+  "plan": "Inspect window titles and the accessibility tree to find the account setup fields.",
+  "commands": [
+    {
+      "keystrokes": "wmctrl -l; /usr/bin/python3 - <<'PY'\nimport pyatspi\ndef walk(o,d=0):\n try:\n  print(' '*d, o.getRoleName(), repr(o.name))\n  if d<8:\n   for c in o: walk(c,d+1)\n except Exception: pass\nwalk(pyatspi.Registry.getDesktop(0))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

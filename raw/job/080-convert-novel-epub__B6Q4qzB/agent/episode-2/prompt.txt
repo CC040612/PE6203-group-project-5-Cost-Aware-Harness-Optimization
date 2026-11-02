@@ -1,0 +1,74 @@
+New Terminal Output:
+
+agent@6934aa39976b:/app$ file '/home/user/Documents/Novels/Pass Through/'*.txt; for f in '/home/user/Documents/Novels/Pass Through/'*.txt; do echo "--- $f"; hea
+d -n 12 "$f"; done
+bash: file: command not found
+--- /home/user/Documents/Novels/Pass Through/Chapter0.txt
+Chapter 1 Passing through the book
+
+As soon as Chi Qingluo opened his eyes, he found that he was sleeping in the bathtub, and the cell phone placed on the cabinet next to him was ringing alarmingl
+y.
+
+
+
+
+
+                 She leaned half of her body out of the water and took the phone.
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter1.txt
+Chapter 2 Change
+
+Qin Yan paused and frowned slightly.
+
+
+
+
+
+                 "Just a few minutes!"
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter2.txt
+Chapter 3 Plan
+
+Um? ?
+
+
+
+
+
+                 Chi Qingluo paused while biting the lion's head. The original owner was on a diet?
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter3.txt
+Chapter 4 Black Material
+
+"Silence does not mean admitting defeat, but public relations still need to be done. Let's lower the heat first."
+
+
+
+
+
+                 Sister Ji thought for a while and nodded, "Okay, I will do the public relations for this matter, and I will also negotiate with the endorsement
+ company. Now I will send you home first, and you stay at home and don't act like a monster."
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter4.txt
+Chapter 5: Ask him to pay back the money
+
+In the Qin family's study room, the man was working hard at the table. The cold lights in the room outlined his thin outline, and the breath on his body became
+colder and colder.
+
+
+
+
+
+                 "Ayan."
+
+
+
+agent@6934aa39976b:/app$

@@ -1,0 +1,5 @@
+{
+  "analysis": "The extension detail page is loading.",
+  "plan": "Wait for its installation options.",
+  "commands": [{"keystrokes": "", "duration": 3}]
+}

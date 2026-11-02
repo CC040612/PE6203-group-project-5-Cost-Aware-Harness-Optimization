@@ -1,0 +1,10 @@
+{
+  "analysis": "Today is Wednesday, October 21, 2026, so next Monday to Friday is October 26–30, 2026. A graphical display is available.",
+  "plan": "Find the running Chrome debugging endpoint and installed automation libraries to interact with the visible browser.",
+  "commands": [
+    {
+      "keystrokes": "ps aux | grep -E 'chrome|chromium' | head; curl -s localhost:9222/json/list; python -c \"import importlib.util; print(importlib.util.find_spec('playwright'))\"; node -e \"try{console.log(require.resolve('playwright'))}catch(e){console.log('no')}\"\n",
+      "duration": 0.1
+    }
+  ]
+}

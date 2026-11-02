@@ -1,0 +1,10 @@
+{
+  "analysis": "The final dependency and OCR checks are running.",
+  "plan": "Wait briefly for the results.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

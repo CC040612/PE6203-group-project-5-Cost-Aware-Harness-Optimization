@@ -1,0 +1,10 @@
+{
+  "analysis": "System package installation is restricted. An isolated virtual environment will avoid changing the system Python.",
+  "plan": "Create a virtual environment and install the background-removal dependencies there.",
+  "commands": [
+    {
+      "keystrokes": "python -m venv /tmp/photoenv && /tmp/photoenv/bin/pip install 'rembg[cpu]' pillow\n",
+      "duration": 1
+    }
+  ]
+}

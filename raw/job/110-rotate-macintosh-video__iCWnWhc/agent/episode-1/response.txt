@@ -1,0 +1,10 @@
+{
+  "analysis": "The file contains a 59.8-second H.264 video with AAC audio and no rotation metadata. The flip is embedded in the image, so it must be corrected with a video filter.",
+  "plan": "Extract a late frame containing the commercial's text, and compare OCR results for the possible flip corrections to identify the correct orientation.",
+  "commands": [
+    {
+      "keystrokes": "which tesseract; ffmpeg -v error -ss 53 -i ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4 -frames:v 1 /tmp/orientation.png -y; for f in null vflip hflip hflip,vflip; do echo \"=== $f ===\"; ffmpeg -v error -i /tmp/orientation.png -vf \"$f,scale=1280:944\" -frames:v 1 -y /tmp/test_orientation.png; tesseract /tmp/test_orientation.png stdout 2>/dev/null; done\n",
+      "duration": 1
+    }
+  ]
+}

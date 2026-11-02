@@ -1,0 +1,10 @@
+{
+  "analysis": "The Large car category is explicitly a checkbox control.",
+  "plan": "Select the category checkbox and open sorting.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.get_by_role('checkbox',name='Large car',exact=False).click(); page.locator('button').filter(has_text='Sort by:').click(); print(page.locator('body').inner_text()[1200:4500])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

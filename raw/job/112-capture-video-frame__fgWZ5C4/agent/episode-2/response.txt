@@ -1,0 +1,10 @@
+{
+  "analysis": "The trailer is approximately 151 seconds long, and extraction of the frame at 60 seconds is underway. We need to wait for confirmation that the PNG was saved.",
+  "plan": "Wait briefly for ffmpeg and the file verification commands to finish.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

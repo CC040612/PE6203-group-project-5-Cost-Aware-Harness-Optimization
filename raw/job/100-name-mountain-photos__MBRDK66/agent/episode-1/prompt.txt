@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@7dd7f81c65a3:/app$ ls -la; find /app /home/agent -maxdepth 3 -type d -iname Pictures 2>/dev/null
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:38 .
+drwxr-xr-x 1 root  root  4096 Oct 22 02:33 ..
+/home/agent/Pictures
+agent@7dd7f81c65a3:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

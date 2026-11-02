@@ -1,0 +1,10 @@
+{
+  "analysis": "The document has ten nonempty paragraphs, each containing a sentence or instruction. Its text area is 6.5 inches wide. I will preserve all text, styles, links, and package contents, changing only the separator after each paragraph's first three words and the paragraph alignment/tab settings.",
+  "plan": "Inspect paragraph properties and runs to account for existing numbering and formatting before editing the XML directly.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom zipfile import ZipFile\nfrom lxml import etree\nwith ZipFile('/app/04 CHIN9505 EBook Purchasing info 2021 Jan.docx') as z:\n r=etree.fromstring(z.read('word/document.xml'))\n ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}\n for p in r.xpath('//w:p',namespaces=ns)[:7]: print(etree.tostring(p,pretty_print=True).decode())\n print(z.read('word/styles.xml').decode())\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

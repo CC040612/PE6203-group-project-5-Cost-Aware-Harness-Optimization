@@ -1,0 +1,90 @@
+New Terminal Output:
+agent@c88500295499:/app$ ls -l /app/Graphemes_Sound_Letter_Patterns.docx
+-rw-r--r-- 1 agent agent 68195 Oct 22 03:13 /app/Graphemes_Sound_Letter_Patterns.docx
+agent@c88500295499:/app$ python - <<'PY'
+> from docx import Document
+> p='/app/Graphemes_Sound_Letter_Patterns.docx'
+> d=Document(p)
+> for i,b in enumerate(d.element.body):
+>  print(i,b.tag.split('}')[-1],repr(''.join(b.itertext()))[:3000])
+> PY
+0 p 'We have 20 vowel sounds, and 24 consonant sounds.We have 20 vowel sounds, and 24 consonant sounds.We have 20 vowel sounds, and 24 consonant sounds.-88899-2
+5399Graphemes = Sound Letter Patterns Graphemes = Sound Letter Patterns Graphemes = Sound Letter Patterns English can be thought of as an alphabetic language co
+nsisting of 44 speech sounds (phonemes) which map onto letter patterns (graphemes).English can be thought of as an alphabetic language consisting of 44 speech s
+ounds (phonemes) which map onto letter patterns (graphemes).English can be thought of as an alphabetic language consisting of 44 speech sounds (phonemes) which
+map onto letter patterns (graphemes).-88899-25399'
+1 p 'In English we use graphemes to represent these various sounds (phonemes). In English we use graphemes to represent these various sounds (phonemes). In Engl
+ish we use graphemes to represent these various sounds (phonemes). '
+2 p 'Graphemes can be a single letter (graph), or a combination of two (digraph), three (trigraph), or four letters (quadgraph). Graphemes can be a single lette
+r (graph), or a combination of two (digraph), three (trigraph), or four letters (quadgraph). Graphemes can be a single letter (graph), or a combination of two (
+digraph), three (trigraph), or four letters (quadgraph). '
+3 p ''
+4 p 'Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word\xa0Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word\xa0Sound-Letter Pattern,Grapheme
+,Example Grapheme,Example Word\xa0'
+5 p '1 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,rub\xa0 cat\xa01 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,ru1 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,
+rubb\xa0 c\xa0 caat\xa0t\xa0'
+6 p '2 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0,\xa0ch\xa0\xa0\xa0 oy\xa0,chop\xa0 soy\xa02 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0
+,\xa0ch\xa0\xa0\xa0 oy\xa0,2 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0,\xa0ch\xa0\xa0\xa0 oy\xa0,chchop\xa0 sop\xa0 soyoy\xa0\xa0'
+7 p '3 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\xa0 ere\xa0,ridge\xa0\xa0\xa0 here\xa03 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\x
+a0 ere\xa0,ri3 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\xa0 ere\xa0,ridgedge\xa0\xa0\xa0 h\xa0\xa0\xa0 hereere\xa0\xa0'
+8 p '4 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa0,ough\xa0,through\xa0 though\xa04 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa
+0,ough\xa0,thr4 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa0,ough\xa0,throughough\xa0 th\xa0 thoughough\xa0\xa0'
+9 p ''
+10 p 'Consonant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.
+ Consonant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.  Cons
+onant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.  '
+11 p 'Graphemes can be organised into introductory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to
+analyse the individual phonemes and graphemes that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) r
+ecommends the teaching of vowels through onset-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  Graphemes can be
+organised into introductory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to analyse the individual
+phonemes and graphemes that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) recommends the teaching
+of vowels through onset-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  Graphemes can be organised into introduc
+tory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to analyse the individual phonemes and graphemes
+that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) recommends the teaching of vowels through onset
+-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  '
+12 p 'While there are no set rules for what graphemes teachers should focus on first, it is useful to 
+[... output limited to 10000 bytes; 70 interior bytes omitted ...]
+a0\xa0\xa0\xa0e_e\xa0e_e\xa0e_e\xa0\xa0\xa0\xa0i_e\xa0i_e\xa0i_e\xa0\xa0\xa0\xa0o_e\xa0o_e\xa0o_e\xa0\xa0\xa0\xa0u_e\xa0u_e\xa0u_e\xa
+0made\xa0mmaaddee\xa0\xa0\xa0\xa0\xa0Pete\xa0PPeettee\xa0\xa0\xa0\xa0\xa0site\xa0ssiittee\xa0\xa0\xa0\xa0\xa0cope\xa0ccooppee\xa0\xa0\xa0\xa0\xa0tube\xa0ttuube\
+xa0be\xa0'
+35 p '\nLong Vowel Digraphs (intermediate)\nLong Vowel Digraphs (intermediate)Long Vowel Digraphs (intermediate)'
+36 tbl 'ay\xa0ay\xa0ay\xa0\xa0\xa0\xa0ea\xa0\xa0 y\xa0ea\xa0\xa0 y\xa0ea\xa0\xa0 y\xa0\xa0\xa0\xa0ie\xa0\xa0\xa0 y\xa0ie\xa0\xa0\xa0 y\xa0ie\xa0\xa0\xa0 y\xa0\x
+a0\xa0\xa0oe\xa0\xa0\xa0oe\xa0\xa0\xa0oe\xa0\xa0\xa0\xa0\xa0\xa0ue\xa0\xa0\xa0ue\xa0\xa0\xa0ue\xa0\xa0\xa0\xa0\xa0\xa0tray\xa0tray\xa0tray\xa0\xa0\xa0\xa0beat\x
+a0\xa0 happy\xa0bbeaeat\xa0\xa0 happt\xa0\xa0 happyy\xa0\xa0\xa0\xa0\xa0pie\xa0\xa0\xa0 why\xa0pie\xa0\xa0\xa0 whpie\xa0\xa0\xa0 whyy\xa0\xa0\xa0\xa0\xa0toe\xa0
+\xa0\xa0toe\xa0\xa0\xa0toe\xa0\xa0\xa0\xa0\xa0\xa0cue\xa0cue\xa0cue\xa0\xa0\xa0\xa0'
+37 p '\xa0\xa0\xa0'
+38 tbl 'ar\xa0ar\xa0ar\xa0\xa0\xa0\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0\xa0\xa0\xa0or\xa0\xa0\xa0or\xa0\xa0\x
+a0or\xa0\xa0\xa0car\xa0ccarar\xa0\xa0\xa0\xa0\xa0her\xa0 bird\xa0 hurt\xa0\xa0hherer\xa0 b\xa0 birird\xa0 hd\xa0 hururt\xa0\xa0t\xa0\xa0\xa0\xa0\xa0cork\xa0ccor
+ork\xa0k\xa0'
+39 p '\xa0\xa0\xa0'
+40 tbl 'ow\xa0 ou\xa0ow\xa0 ou\xa0ow\xa0 ou\xa0\xa0\xa0\xa0oy\xa0\xa0 oi\xa0oy\xa0\xa0 oi\xa0oy\xa0\xa0 oi\xa0\xa0\xa0\xa0eer\xa0 ear\xa0\xa0\xa0eer\xa0 ear\xa0
+\xa0\xa0eer\xa0 ear\xa0\xa0\xa0\xa0\xa0\xa0air\xa0\xa0 ere\xa0air\xa0\xa0 ere\xa0air\xa0\xa0 ere\xa0\xa0\xa0\xa0our\xa0our\xa0our\xa0cow\xa0\xa0 out\xa0ccowow\x
+a0\xa0 \xa0\xa0 ouout\xa0t\xa0\xa0\xa0\xa0boy\xa0 void\xa0\xa0bboy\xa0oy\xa0 v voioid\xa0\xa0d\xa0\xa0\xa0\xa0\xa0deer\xa0 near\xa0ddeeeer\xa0 nr\xa0 near\xa0ea
+r\xa0\xa0\xa0\xa0hair\xa0 there\xa0hhairair\xa0 th\xa0 there\xa0ere\xa0\xa0\xa0\xa0tour\xa0ttour\xa0our\xa0'
+41 p '\nConsonant Digraphs/Trigraphs (intermediate)\xa0\nConsonant Digraphs/Trigraphs (intermediate)\xa0Consonant Digraphs/Trigraphs (intermediate)\xa0'
+42 tbl '“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0\xa0\xa0\xa0ch\xa0ch
+\xa0ch\xa0\xa0\xa0\xa0ch\xa0ch\xa0ch\xa0\xa0\xa0\xa0wh\xa0wh\xa0wh\xa0\xa0\xa0\xa0tch\xa0tch\xa0tch\xa0\xa0\xa0\xa0dge\xa0dge\xa0dge\xa0\xa0\xa0\xa0\xa0\xa0\xa0
+\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0vision beige treasure\xa0vivisision beion beigege trea treassure\xa0ure\xa0\xa0\xa0\xa0school\xa0sschchool\xa0ool\xa0\xa0\xa
+0\xa0chute\xa0chchute\xa0ute\xa0\xa0\xa0\xa0when\xa0whwhen\xa0en\xa0\xa0\xa0\xa0witch\xa0wiwitchtch\xa0\xa0\xa0\xa0\xa0edge\xa0eedgedge\xa0\xa0\xa0\xa0\xa0'
+43 p ''
+44 p 'Double and triple blendsDouble and triple blendsDouble and triple blends'
+45 p 'Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl-\xa0Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl-\xa0Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl
+-\xa0'
+46 p 'Final: e.g. -lt, nk, sp, -sks\xa0Final: e.g. -lt, nk, sp, -sks\xa0Final: e.g. -lt, nk, sp, -sks\xa0'
+47 p '\xa0\xa0\xa0'
+48 p 'Introduction to unstressed syllables\xa0Introduction to unstressed syllables\xa0Introduction to unstressed syllables\xa0'
+49 tbl 'SCHWA\xa0SCHWA\xa0SCHWA\xa0trumpet across suppose\xa0\xa0trumptrumpeet t aacross scross suuppose\xa0\xa0ppose\xa0\xa0'
+50 p '\xa0\xa0\xa0'
+51 p 'Advanced graphemes / spelling rules\xa0Advanced graphemes / spelling rules\xa0Advanced graphemes / spelling rules\xa0'
+52 p 'There are numerous other useful graphemes and spelling rules, but these will not be listed exhaustively. If a grapheme or spelling rule is not listed abov
+e, it can be considered more advanced.\xa0\xa0There are numerous other useful graphemes and spelling rules, but these will not be listed exhaustively. If a grap
+heme or spelling rule is not listed above, it can be considered more advanced.\xa0\xa0There are numerous other useful graphemes and spelling rules, but these wi
+ll not be listed exhaustively. If a grapheme or spelling rule is not listed above, it can be considered more advanced.\xa0\xa0'
+53 p '\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0\
+xa0\xa0\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0
+\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0\xa0'
+54 p '\xa0\xa0\xa0'
+55 p 'Adams, M. (1990). Beginning to read: thinking and learning about print. Cambridge MA: The MIT PressAdams, M. (1990). Beginning to read: thinking and learn
+ing about print. Cambridge MA: The MIT PressAdams, M. (1990). Beginning to read: thinking and learning about print. Cambridge MA: The MIT Press'
+56 sectPr ''
+agent@c88500295499:/app$

@@ -1,0 +1,14 @@
+F
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+>       assert evaluate_keybindings() == 1.0, FAILURE_MESSAGE
+E       AssertionError: /home/agent/.config/Code/User/keybindings.json does not contain the expected VS Code keybinding
+E       assert 0.0 == 1.0
+E        +  where 0.0 = evaluate_keybindings()
+
+/tests/test_outputs.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_main - AssertionError: /home/agent/.con...
+1 failed in 0.01s

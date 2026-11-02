@@ -1,0 +1,10 @@
+{
+  "analysis": "Package installation is still running; the inspection command is queued.",
+  "plan": "Wait briefly for the installation and workbook inspection output.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 5
+    }
+  ]
+}

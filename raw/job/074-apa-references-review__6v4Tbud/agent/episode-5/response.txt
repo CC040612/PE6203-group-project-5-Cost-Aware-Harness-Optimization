@@ -1,0 +1,10 @@
+{
+  "analysis": "The existing references are justified and use a hanging indent smaller than APA's required half inch. The metadata queries have not finished yet.",
+  "plan": "Wait for the source metadata before correcting journal details.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 20
+    }
+  ]
+}

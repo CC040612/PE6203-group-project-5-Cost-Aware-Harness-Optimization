@@ -1,0 +1,24 @@
+      1       0 Ss   sh -c sleep infinity
+     10       1 S    Xvfb :99 -screen 0 1280x720x24
+     20       1 Ss   dbus-daemon --session --address=unix:path=/tmp/tua-dbus-session --fork
+     27       1 Sl   /usr/libexec/at-spi-bus-launcher --launch-immediately
+     35      27 S    /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/tmp/xdg-runtime-1001/at-spi/bus_99
+     58       1 S    /usr/libexec/at-spi2-registryd
+     68       1 Sl   /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile
+     74       1 Sl   /opt/thunderbird/crashhelper 68 6 /tmp/ 8
+    134       1 Ss   tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /logs/agent/terminus_2.pane
+    135     134 Ss   bash --login
+    137     134 S    sh -c cat > /logs/agent/terminus_2.pane
+    139     137 S    cat
+    160     135 Sl+  /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+    168     160 S+   /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+    169     160 S+   /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+    170     160 Ss   sh -c /bin/bash
+    171     170 S+   /bin/bash
+    248      68 Sl   /opt/thunderbird/thunderbird-bin -contentproc -isForBrowser -prefsHandle 0:2010 -prefMapHandle 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ba67e5cc-6141-4650-b631-60ffb19838b2} -parentPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/thunderbird/omni.ja -appDir /opt/thunderbird 1 tab
+    250      68 Sl   /opt/thunderbird/thunderbird-bin -contentproc -parentBuildID 20260417012335 -prefsHandle 0:2346 -prefMapHandle 1:271725 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {e414a685-5f22-49cf-b8ea-ad445c75e7b6} -parentPid 68 -crashReporter 4 -crashHelper 5 -appDir /opt/thunderbird 2 rdd
+    306       1 S    sleep infinity
+    332      68 Sl   /opt/thunderbird/thunderbird-bin -contentproc -isForBrowser -prefsHandle 0:2193 -prefMapHandle 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {828a6ba2-27c4-45e4-bca7-149eb2408272} -parentPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/thunderbird/omni.ja -appDir /opt/thunderbird 3 tab
+    521       0 Ss   bash -c (/tests/test.sh) > /logs/verifier/test-stdout.txt 2>&1
+    527     521 S    /bin/bash /tests/test.sh
+    538     527 R    ps -eo pid=,ppid=,stat=,args=

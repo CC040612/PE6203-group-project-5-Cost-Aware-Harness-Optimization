@@ -1,0 +1,10 @@
+{
+  "analysis": "I need to inspect the document's text and existing formatting before applying tab stops while preserving its content.",
+  "plan": "Examine the DOCX contents and paragraph text to identify sentences, then insert tabs after the first three words and configure appropriate right-side tab stops.",
+  "commands": [
+    {
+      "keystrokes": "ls -l /app\npython - <<'PY'\nfrom zipfile import ZipFile\nfrom lxml import etree\np='/app/04 CHIN9505 EBook Purchasing info 2021 Jan.docx'\nwith ZipFile(p) as z:\n r=etree.fromstring(z.read('word/document.xml'))\n ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}\n for i,p in enumerate(r.xpath('//w:p',namespaces=ns)):\n  print(i,repr(''.join(p.xpath('.//w:t/text() | .//w:tab/@w:val',namespaces=ns))))\n print(etree.tostring(r,pretty_print=True).decode()[-3000:])\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

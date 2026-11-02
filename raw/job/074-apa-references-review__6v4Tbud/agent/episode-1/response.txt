@@ -1,0 +1,10 @@
+{
+  "analysis": "The document exists, but python-docx is not installed.",
+  "plan": "Install python-docx to inspect and edit the Word document directly.",
+  "commands": [
+    {
+      "keystrokes": "pip -q install python-docx\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+New Terminal Output:
+
+agent@d9c0c32180f1:/app$ mkdir -p /tmp/doc-extract; python3 - <<'PY'
+> import mailbox,email.utils,pathlib
+> p=next(pathlib.Path('/app/.thunderbird').glob('*/ImapMail/*/Notes'))
+> msgs=list(mailbox.mbox(str(p)))
+> for i,m in enumerate(msgs):
+>  print(i,m['Date'],m['Subject'],[(a.get_filename(),a.get_content_type()) for a in m.walk() if a.get_filename()])
+> m=max(msgs,key=lambda m: email.utils.parsedate_to_datetime(m['Date']).timestamp())
+> print('NEWEST',m['Date'],m['Subject'])
+> for i,a in enumerate(m.walk()):
+>  if a.get_filename():
+>   dest=pathlib.Path('/tmp/doc-extract')/pathlib.Path(a.get_filename()).name
+>   dest.write_bytes(a.get_payload(decode=True));print(dest)
+> PY
+0 Tue, 30 Jan 2024 02:38:44 -0800 Lecture Document [('lecture-notes.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')]
+NEWEST Tue, 30 Jan 2024 02:38:44 -0800 Lecture Document
+/tmp/doc-extract/lecture-notes.docx
+agent@d9c0c32180f1:/app$ file /tmp/doc-extract/*
+/tmp/doc-extract/lecture-notes.docx: Microsoft Word 2007+
+agent@d9c0c32180f1:/app$

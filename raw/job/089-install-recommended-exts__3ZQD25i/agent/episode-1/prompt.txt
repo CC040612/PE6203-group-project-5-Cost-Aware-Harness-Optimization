@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@715dad585543:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from xml.etree import ElementTree as E
+> p='/home/user/Desktop/Recommended_plugin_list.docx'
+> with ZipFile(p) as z:
+>  r=E.fromstring(z.read('word/document.xml'))
+>  for p in r.findall('.//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
+>   print(''.join(p.itertext()))
+> PY
+bash: python: command not found
+agent@715dad585543:/app$ which google-chrome chromium chromium-browser; ps aux | grep -E 'chrome|chromium' | head; ls -la /home/user/.config; env | grep -E 'DIS
+PLAY|HOME'; which xdotool
+/usr/local/bin/google-chrome
+/usr/local/bin/chromium
+agent        298  0.0  0.0   3716  1980 pts/1    S+   16:18   0:00 grep -E chrome|chromium
+total 24
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 .
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 ..
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 Code
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:18 asciinema
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 google-chrome
+HOME=/home/agent
+DISPLAY=:99
+/usr/bin/xdotool
+agent@715dad585543:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@32f08de7ccee:/app$ python -m venv /tmp/docx-env && /tmp/docx-env/bin/pip -q install python-docx && /tmp/docx-env/bin/python - <<'PY'
+> from docx import Document
+> d=Document('/home/user/Desktop/students work/case study.docx')
+> for i,p in enumerate(d.paragraphs):
+>  print(i,repr(p.text),'STYLE',p.style.name)
+> PY
+

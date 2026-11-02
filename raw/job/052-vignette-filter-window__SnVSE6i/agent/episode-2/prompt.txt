@@ -1,0 +1,37 @@
+New Terminal Output:
+
+agent@3f82e4733fd5:/app$ ls -la /tmp/.X11-unix; ps aux | grep -E 'Xvfb|Xorg|Xwayland|gimp|vnc' | grep -v grep; which gnome-screenshot import; ls -la /tmp | head
+ls: cannot access '/tmp/.X11-unix': No such file or directory
+total 16
+drwxrwxrwt 1 root   root   4096 Oct 21 15:28 .
+drwxr-xr-x 1 root   root   4096 Oct 21 15:28 ..
+-rw-r--r-- 1 ubuntu ubuntu  923 Oct 20 08:37 get-asciinema-timestamp.sh
+drwx------ 2 agent  agent  4096 Oct 21 15:28 tmux-1001
+agent@3f82e4733fd5:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

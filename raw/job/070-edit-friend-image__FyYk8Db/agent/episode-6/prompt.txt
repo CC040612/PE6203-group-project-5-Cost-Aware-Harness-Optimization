@@ -1,0 +1,4 @@
+New Terminal Output:
+
+agent@f2848db5c646:/app$ python -m venv /tmp/photoenv && /tmp/photoenv/bin/pip install 'rembg[cpu]' pillow
+

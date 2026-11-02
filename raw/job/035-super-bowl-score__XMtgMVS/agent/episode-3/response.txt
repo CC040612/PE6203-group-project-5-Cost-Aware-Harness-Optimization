@@ -1,0 +1,14 @@
+{
+  "analysis": "The browser supports Playwright through port 1337. The relevant NFL score listing is the 2019 postseason Super Bowl week, which should show Kansas City versus San Francisco.",
+  "plan": "Open the NFL 2019 Super Bowl scores page in Chrome, bring it to the foreground, and verify the displayed final score.",
+  "commands": [
+    {
+      "keystrokes": "chromium https://www.nfl.com/scores/2019/post4 >/tmp/browser.log 2>&1 &\n",
+      "duration": 1
+    },
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337')\n c=b.contexts[0]\n page=c.pages[0] if c.pages else c.new_page()\n page.goto('https://www.nfl.com/scores/2019/post4',wait_until='domcontentloaded',timeout=60000)\n page.bring_to_front()\n page.wait_for_timeout(3000)\n print(page.url)\n print(page.title())\n print(page.locator('body').inner_text()[:18000])\nPY\n",
+      "duration": 10
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "Playwright is available in /opt/venv and the Web Store is reachable.",
+  "plan": "Use Playwright to inspect the store and open the Zoom extension listing.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/store.py <<'PY'\nfrom playwright.sync_api import sync_playwright\np=sync_playwright().start()\nb=p.chromium.connect_over_cdp('http://localhost:1337')\nc=b.contexts[0]\npage=c.pages[0]\nprint(page.url)\nprint(page.locator('body').inner_text()[:18000])\nprint(page.locator('a').evaluate_all('(els)=>els.map(e=>({text:e.innerText,href:e.href}))')[:30])\nPY\n/opt/venv/bin/python /tmp/store.py\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+New Terminal Output:
+
+agent@7d2efb93e269:/app$ python - <<'PY'
+> from pptx import Presentation
+> import inspect
+> from pptx.parts.media import MediaPart
+> from pptx.shapes.shapetree import SlideShapes
+> p=Presentation('/app/Mady_and_Mia_Baseball.pptx')
+> print('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)
+> for s in p.slides[0].shapes:
+>  print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))
+> print(inspect.getsource(SlideShapes.add_movie))
+> PY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

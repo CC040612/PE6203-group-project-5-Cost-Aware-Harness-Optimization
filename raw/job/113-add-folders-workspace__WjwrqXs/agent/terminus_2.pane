@@ -1,0 +1,44 @@
+[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ cat /app/project.code-workspace; printf '\n--- directories ---\n'; ls -ld /app/data1 /app/data2
+[?2004l{
+	"folders": [
+		{
+			"path": "project"
+		}
+	],
+	"settings": {}
+}
+
+--- directories ---
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:09 [0m[01;34m/app/data1[0m
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:09 [01;34m/app/data2[0m
+[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import json
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> p = Path('/app/project.code-workspace')
+[?2004l[?2004h> workspace = json.loads(p.read_text())
+[?2004l[?2004h> folders = workspace.setdefault('folders', [])
+[?2004l[?2004h> for target in ['/app/data1', '/app/data2']:
+[?2004l[?2004h>     if not any((p.parent / f['path']).resolve() == Path(target).resolve() for f in folders if 'path' in f):
+[?2004l[?2004h>         folders.append({'path': target})
+[?2004l[?2004h> p.write_text(json.dumps(workspace, indent=8) + '\n')
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ cat /app/project.code-workspace
+[?2004l{
+        "folders": [
+                {
+                        "path": "project"
+                },
+                {
+                        "path": "/app/data1"
+                },
+                {
+                        "path": "/app/data2"
+                }
+        ],
+        "settings": {}
+}
+[?2004h[01;32magent@e1ca203d1a82[00m:[01;34m/app[00m$ 

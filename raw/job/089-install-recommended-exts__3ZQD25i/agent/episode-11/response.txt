@@ -1,0 +1,10 @@
+{
+  "analysis": "The install action was accepted and the button disappeared, suggesting a native browser confirmation may be open.",
+  "plan": "Capture the desktop and use OCR to locate the native extension confirmation.",
+  "commands": [
+    {
+      "keystrokes": "which scrot import; import -window root /tmp/screen.png; /opt/venv/bin/python - <<'PY'\nimport pytesseract\nfrom PIL import Image\nprint(pytesseract.image_to_data(Image.open('/tmp/screen.png'),output_type=pytesseract.Output.DICT))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

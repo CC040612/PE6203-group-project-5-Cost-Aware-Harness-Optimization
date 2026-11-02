@@ -1,0 +1,20 @@
+New Terminal Output:
+
+> PY
+1 [('A1', 5, 'General'), ('B1', 6, 'General'), ('C1', 6, 'General'), ('D1', 6, 'General'), ('E1', 6, 'General')]
+2 [('A2', 7, 'General'), ('B2', 7, 'General'), ('C2', 7, 'General'), ('D2', 7, 'General'), ('E2', 7, 'General')]
+3 [('A3', 8, 'General'), ('B3', 8, 'General'), ('C3', 8, 'General'), ('D3', 9, 'General'), ('E3', 9, 'General')]
+4 [('A4', 8, 'General'), ('B4', 8, 'General'), ('C4', 8, 'General'), ('D4', 9, 'General'), ('E4', 9, 'General')]
+5 [('A5', 8, 'General'), ('B5', 8, 'General'), ('C5', 8, 'General'), ('D5', 9, 'General'), ('E5', 9, 'General')]
+6 [('A6', 8, 'General'), ('B6', 8, 'General'), ('C6', 8, 'General'), ('D6', 9, 'General'), ('E6', 9, 'General')]
+7 [('A7', 8, 'General'), ('B7', 8, 'General'), ('C7', 8, 'General'), ('D7', 9, 'General'), ('E7', 9, 'General')]
+8 [('A8', 8, 'General'), ('B8', 8, 'General'), ('C8', 8, 'General'), ('D8', 9, 'General'), ('E8', 9, 'General')]
+tables [] merged A1:E1
+agent@04c1a7a0bc04:/app$ /opt/venv/bin/python - <<'PY'
+> from PIL import Image,ImageEnhance,ImageFilter
+> im=Image.open('/app/receipt_2.jpg').resize((2100,1518))
+> im.save('/tmp/soup.png')
+> PY
+agent@04c1a7a0bc04:/app$ for p in 3 6 11 12; do echo ====PSM$p; tesseract /tmp/soup.png stdout --psm $p 2>/dev/null; done
+====PSM3
+

@@ -1,0 +1,41 @@
+New Terminal Output:
+
+Copyright © 2025 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved
+['<button id=":re:" role="option" tabindex="-1" type="button" class="landing_pages_mfe_ba204088 landing_pages_mfe_a317afa4 landing_pages_mfe_ea9c202a landing_pa
+ges_mfe_d1c232f1 landing_pages_mfe_d16261db"><div class="landing_pages_mfe_e2d1d800 landing_pages_mfe_aebe81db landing_pages_mfe_d367eec8 landing_pages_mfe_d2ad
+00fd landing_pages_mfe_ecb5351b" style="--bui_stack_spaced_gap--s: 2;"><span class="landing_pages_mfe_f3fb8742 landing_pages_mfe_bbbaa8d7" aria-hidden="true"><s
+vg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px"><path d="M18.33 3.57 5.7 9.955l.79.07-1.96-1.478a.75.75 0 0 0-.753-.087l-2.1.925C.73 9.85
+6.359 10.967.817 11.88c.11.22.263.417.45.577l3.997 3.402a2.94 2.94 0 0 0 3.22.4l3.62-1.8-1.084-.671v5.587a1.833 1.833 0 0 0 2.654 1.657l1.88-.932a1.85 1.85 0 0
+0 .975-1.226l1.87-7.839-.396.498 3.441-1.707a3.494 3.494 0 1 0-3.11-6.259zm.672 1.342a1.994 1.994 0 0 1 1.775 3.571l-3.44 1.707a.75.75 0 0 0-.396.498l-1.87 7.83
+8a.35.35 0 0 1-.185.232l-1.88.932a.335.335 0 0 1-.486-.304V13.79a.75.75 0 0 0-1.084-.672l-3.62 1.8a1.44 1.44 0 0 1-1.578-.197l-3.997-3.402a.35.35 0 0 1 .073-.57
+7l2.067-.91-.754-.087 1.96 1.478a.75.75 0 0 0 .79.07l12.63-6.383zm-3.272.319-4.46-2.26a1.85 1.85 0 0 0-1.656-.001l-1.846.912a1.85 1.85 0 0 0-.295 3.128l2.573 1.
+955a.75.75 0 1 0 .908-1.194L8.38 5.816a.35.35 0 0 1 .055-.591l1.845-.912a.35.35 0 0 1 .315 0l4.456 2.256a.75.75 0 0 0 .678-1.338z"></path></svg></span><div clas
+s="landing_pages_mfe_fb40f8f3 landing_pages_mfe_c10df282 landing_pages_mfe_db9f53a4"><div class="landing_pages_mfe_bc1659ec">Zurich Airport (ZRH)</div><div clas
+s="landing_pages_mfe_cf906332 landing_pages_mfe_a665235a">Zürich, Canton of Zurich, Switzerland</div></div></div></button>', '<button id=":rf:" role="option" ta
+bindex="-1" type="button" class="landing_pages_mfe_ba204088 landing_pages_mfe_a317afa4 landing_pages_mfe_ea9c202a landing_pages_mfe_d1c232f1 landing_pages_mfe_d
+16261db"><div class="landing_pages_mfe_e2d1d800 landing_pages_mfe_aebe81db landing_pages_mfe_d367eec8 landing_pages_mfe_d2ad00fd landing_pages_mfe_ecb5351b" sty
+le="--bui_stack_spaced_gap--s: 2;"><span class="landing_pages_mfe_f3fb8742 landing_pages_mfe_bbbaa8d7" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg
+" viewBox="0 0 24 24" width="50px"><path d="M2.75 6h9.5a.25.25 0 0 1-.25-.25v17.5l.75-.75H2.25l.75.75V5.75a.25.25 0 0 1-.25.25m0-1.5c-.69 0-1.25.56-1.25 1.25v17
+.5c0 .414.336.75.75.75h10.5a.75.75 0 0 0 .75-.75V5.75c0-.69-.56-1.25-1.25-1.25zm3-1.5h3.5A.25.25 0 0 1 9 2.75v2.5l.75-.75h-4.5l.75.75v-2.5a.25.25 0 0 1-.25.25m0
+-1.5c-.69 0-1.25.56-1.25 1.25v2.5c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-2.5c0-.69-.56-1.25-1.25-1.25zM5.25 9h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0
+1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5m0 3
+h4.5a.75.75 0 0 0 0-1.5h-4.5a.75.75 0 0 0 0 1.5M7.5.75v1.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0M15.75 24h6a.75.75 0 0 0 .75-.75V10.5A1.5 1.5 0 0 0 21 9h-4.
+5a1.5 1.5 0 0 0-1.5 1.5v12.75a.75.75 0 0 0 1.5 0V10.5H21v12.75l.75-.75h-6a.75.75 0 0 0 0 1.5M19.5 8.25v1.5a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0M.75 24h22.
+5a.75.75 0 0 0 0-1.5H.75a.75.75 0 0 0 0 1.5"></path></svg></span><div class="landing_pages_mfe_fb40f8f3 landing_pages_mfe_c10df282 landing_pages_mfe_db9f53a4"><
+div class="landing_pages_mfe_bc1659ec">Zürich</div><div class="landing_pages_mfe_cf906332 landing_pages_mfe_a665235a">Zürich, Canton of Zurich, Switzerland</div
+></div></div></button>', '<button id=":rg:" role="option" tabindex="-1" type="button" class="landing_pages_mfe_ba204088 landing_pages_mfe_a317afa4 landing_pages
+_mfe_ea9c202a landing_pages_mfe_d1c232f1 landing_pages_mfe_d16261db"><div class="landing_pages_mfe_e2d1d800 landing_pages_mfe_aebe81db landing_pages_mfe_d367eec
+8 landing_pages_mfe_d2ad00fd landing_pages_mfe_ecb5351b" style="--bui_stack_spaced_gap--s: 2;"><span class="landing_pages_mfe_f3fb8742 landing_pages_mfe_bbbaa8d
+7" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px"><path d="M15 8.25a3 3 0 1 1-6 0 3 3 0 0 1 6 0m1.5 0a4.5 4.5 0 1 0
+-9 0 4.5 4.5 0 0 0 9 0M12 1.5a6.75 6.75 0 0 1 6.75 6.75c0 2.537-3.537 9.406-6.75 14.25-3.214-4.844-6.75-11.713-6.75-14.25A6.75 6.75 0 0 1 12 1.5M12 0a8.25 8.25
+0 0 0-8.25 8.25c0 2.965 3.594 9.945 7 15.08a1.5 1.5 0 0 0 2.5 0c3.406-5.135 7-12.115 7-15.08A8.25 8.25 0 0 0 12 0"></path></svg></span><div class="landing_pages
+_mfe_fb40f8f3 landing_pages_mfe_c10df282 landing_pages_mfe_db9f53a4"><div class="landing_pages_mfe_bc1659ec">Main Railway Station Zurich</div><div class="landin
+g_pages_mfe_cf906332 landing_pages_mfe_a665235a">Zürich, Canton of Zurich, Switzerland</div></div></div></button>']
+agent@c20a90688c47:/app$ /opt/venv/bin/python -u - <<'PY'
+> from playwright.sync_api import sync_playwright
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000)
+>  page.get_by_role('option').nth(1).click(); page.get_by_role('button',name='Choose Drop-off Date',exact=True).click(); print(page.locator('button').evaluate_a
+ll('(es)=>es.map(e=>({text:e.innerText,aria:e.getAttribute("aria-label")}))'))
+> PY
+

@@ -1,0 +1,33 @@
+New Terminal Output:
+
+chrome_state.py  chromium  google-chrome  google-chrome-stable  task-entrypoint.sh
+Package           Version
+----------------- -------
+greenlet          3.5.6
+iniconfig         2.3.1
+packaging         26.3
+pip               26.2.2
+playwright        1.52.0
+pluggy            1.7.0
+pyee              13.0.1
+Pygments          2.21.0
+pytest            8.4.1
+pytz              2024.1
+setuptools        66.1.1
+typing_extensions 4.16.0
+agent@c20a90688c47:/app$ cat > /tmp/search.py <<'PY'
+> from playwright.sync_api import sync_playwright
+> from urllib.parse import urlencode
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337')
+>  c=b.contexts[0]
+>  page=c.pages[0] if c.pages else c.new_page()
+>  params={'locationName':'Zürich','dropLocationName':'Zürich','filterCriteria_carCategory':'large','filterCriteria_sortBy':'PRICE','puDay':'26','puMonth':'10',
+'puYear':'2026','doDay':'30','doMonth':'10','doYear':'2026'}
+>  page.goto('https://www.rentalcars.com/SearchResults.do?'+urlencode(params),wait_until='domcontentloaded',timeout=60000)
+>  page.bring_to_front()
+>  print(page.url)
+>  print(page.locator('body').inner_text()[:18000])
+> PY
+agent@c20a90688c47:/app$ /opt/venv/bin/python /tmp/search.py
+

@@ -1,0 +1,5 @@
+{
+  "analysis": "Location selection is updating.",
+  "plan": "Read the continuation control.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

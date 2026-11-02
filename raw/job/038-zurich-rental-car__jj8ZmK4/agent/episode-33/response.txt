@@ -1,0 +1,10 @@
+{
+  "analysis": "Both sidebar and carousel expose the same category. I can select the sidebar by its test identifier.",
+  "plan": "Check the large-car filter and display sorting options.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.get_by_test_id('carCategory-filter-option-large').check(); page.locator('button').filter(has_text='Sort by:').click(); print(page.locator('body').inner_text()[1200:4400])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The model download has started successfully and is about 20% complete.",
+  "plan": "Wait for the download and foreground extraction to complete.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 20
+    }
+  ]
+}

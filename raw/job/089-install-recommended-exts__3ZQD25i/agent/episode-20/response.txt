@@ -1,0 +1,10 @@
+{
+  "analysis": "We are verifying the official Momentum listing and the store installation behavior.",
+  "plan": "Retrieve an official Zoom CRX from Google's extension update service as a fallback and inspect the current results.",
+  "commands": [
+    {
+      "keystrokes": "curl -L --max-time 30 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=155.0.0.0&acceptformat=crx3&x=id%3Dkgjfgplpablkjnlkjmjdecgdpfankdle%26uc' -o /tmp/zoom.crx; ls -l /tmp/zoom.crx\n",
+      "duration": 2
+    }
+  ]
+}

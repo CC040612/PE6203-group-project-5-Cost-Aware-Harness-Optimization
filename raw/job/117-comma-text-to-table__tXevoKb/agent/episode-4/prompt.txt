@@ -1,0 +1,11 @@
+New Terminal Output:
+
+agent@c88500295499:/app$ python /tmp/convert_graphemes.py
+Saved and verified: /app/Graphemes_Sound_Letter_Patterns.docx
+New table: 5 rows x 4 columns; other document content preserved.
+['Sound-Letter Pattern', 'Grapheme', 'Example Grapheme', 'Example Word\xa0']
+['1 letter making 1 sound', 'Graph', 'b\xa0\xa0\xa0 a', 'rub\xa0 cat\xa0']
+['2 letters making 1 sound', 'Digraph\xa0\xa0\xa0\xa0\xa0\xa0', '\xa0ch\xa0\xa0\xa0 oy\xa0', 'chop\xa0 soy\xa0']
+['3 letters making 1 sound\xa0\xa0', 'Trigraph\xa0', 'dge\xa0\xa0\xa0 ere\xa0', 'ridge\xa0\xa0\xa0 here\xa0']
+['4 letters making 1 sound\xa0\xa0', 'Quadgraph\xa0\xa0\xa0\xa0\xa0', 'ough\xa0', 'through\xa0 though\xa0']
+agent@c88500295499:/app$

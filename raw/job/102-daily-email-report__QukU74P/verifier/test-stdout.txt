@@ -1,0 +1,2 @@
+INFO:desktopenv.metric.table:Loading result file: /app/report.xlsx
+INFO:desktopenv.metric.table:Successfully loaded result file with sheets: ['daily']

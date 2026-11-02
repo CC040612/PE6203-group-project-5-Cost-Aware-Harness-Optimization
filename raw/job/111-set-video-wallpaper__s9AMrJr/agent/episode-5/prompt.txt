@@ -1,0 +1,46 @@
+New Terminal Output:
+
+ngs-desktop-schemas dconf-cli
+10_gsettings-desktop-schemas.gschema.override    org.gnome.desktop.default-applications.gschema.xml  org.gnome.desktop.sound.gschema.xml
+gschemas.compiled                                org.gnome.desktop.enums.xml                         org.gnome.desktop.thumbnail-cache.gschema.xml
+org.gnome.desktop.a11y.applications.gschema.xml  org.gnome.desktop.input-sources.gschema.xml         org.gnome.desktop.thumbnailers.gschema.xml
+org.gnome.desktop.a11y.gschema.xml               org.gnome.desktop.interface.gschema.xml             org.gnome.desktop.wm.keybindings.gschema.xml
+org.gnome.desktop.a11y.interface.gschema.xml     org.gnome.desktop.lockdown.gschema.xml              org.gnome.desktop.wm.preferences.gschema.xml
+org.gnome.desktop.a11y.keyboard.gschema.xml      org.gnome.desktop.media-handling.gschema.xml        org.gnome.system.locale.gschema.xml
+org.gnome.desktop.a11y.magnifier.gschema.xml     org.gnome.desktop.notifications.gschema.xml         org.gnome.system.location.gschema.xml
+org.gnome.desktop.a11y.mouse.gschema.xml         org.gnome.desktop.peripherals.gschema.xml           org.gnome.system.proxy.gschema.xml
+org.gnome.desktop.app-folders.gschema.xml        org.gnome.desktop.privacy.gschema.xml               org.gtk.Settings.ColorChooser.gschema.xml
+org.gnome.desktop.background.gschema.xml         org.gnome.desktop.screensaver.gschema.xml           org.gtk.Settings.Debug.gschema.xml
+org.gnome.desktop.calendar.gschema.xml           org.gnome.desktop.search-providers.gschema.xml      org.gtk.Settings.EmojiChooser.gschema.xml
+org.gnome.desktop.datetime.gschema.xml           org.gnome.desktop.session.gschema.xml               org.gtk.Settings.FileChooser.gschema.xml
+giomodule.cache  libdconfsettings.so
+/usr/bin/apt
+/usr/bin/dbus-run-session
+libglib2.0-bin:
+  Installed: (none)
+  Candidate: 2.80.0-6ubuntu3.10
+  Version table:
+     2.80.0-6ubuntu3.10 500 (phased 40%)
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+     2.80.0-6ubuntu3.9 500
+        500 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages
+     2.80.0-6ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+gsettings-desktop-schemas:
+  Installed: 46.1-0ubuntu1
+  Candidate: 46.1-0ubuntu1
+  Version table:
+ *** 46.1-0ubuntu1 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     46.0-1ubuntu2 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+dconf-cli:
+  Installed: (none)
+  Candidate: 0.40.0-4ubuntu0.1
+  Version table:
+     0.40.0-4ubuntu0.1 500
+        500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages
+     0.40.0-4build2 500
+        500 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages
+agent@2355408990bd:/app$

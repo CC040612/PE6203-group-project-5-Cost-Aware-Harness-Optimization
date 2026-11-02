@@ -1,0 +1,10 @@
+{
+  "analysis": "The workspace contains the existing project folder and empty settings. Both requested directories exist. We can add them directly without using VS Code.",
+  "plan": "Update the folders array to include both absolute paths, preserving the existing entries and settings, then print the file to verify the result.",
+  "commands": [
+    {
+      "keystrokes": "python3 - <<'PY'\nimport json\nfrom pathlib import Path\np = Path('/app/project.code-workspace')\nworkspace = json.loads(p.read_text())\nfolders = workspace.setdefault('folders', [])\nfor target in ['/app/data1', '/app/data2']:\n    if not any((p.parent / f['path']).resolve() == Path(target).resolve() for f in folders if 'path' in f):\n        folders.append({'path': target})\np.write_text(json.dumps(workspace, indent=8) + '\\n')\nPY\ncat /app/project.code-workspace\n",
+      "duration": 0.1
+    }
+  ]
+}

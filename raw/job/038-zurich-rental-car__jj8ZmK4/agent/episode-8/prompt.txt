@@ -1,0 +1,190 @@
+New Terminal Output:
+
+> PY
+Skip to main content
+
+by
+
+SGD
+Manage booking
+Stays
+Flights
+Car rentals
+Attractions
+Airport taxis
+Car Rental – Search, Compare & Save
+Free cancellations on most bookings
+60,000+ locations
+Customer support in 30+ languages
+Pick-up location
+Pick-up date
+Mon, Oct 26
+Time
+10:00
+00:00
+00:30
+01:00
+01:30
+02:00
+02:30
+03:00
+03:30
+04:00
+04:30
+05:00
+05:30
+06:00
+06:30
+07:00
+07:30
+08:00
+08:30
+09:00
+09:30
+10:00
+10:30
+11:00
+11:30
+12:00
+12:30
+13:00
+13:30
+14:00
+14:30
+15:00
+15:30
+16:00
+16:30
+17:00
+17:30
+18:00
+18:30
+19:00
+19:30
+20:00
+20:30
+21:00
+21:30
+22:00
+22:30
+23:00
+23:30
+Drop-off date
+Thu, Oct 29
+Time
+10:00
+00:00
+00:30
+01:00
+01:30
+02:00
+02:30
+03:00
+03:30
+04:00
+04:30
+05:00
+05:30
+06:00
+06:30
+07:00
+07:30
+08:00
+08:30
+09:00
+09:30
+10:00
+10:30
+11:00
+11:30
+12:00
+12:30
+13:00
+13:30
+14:00
+14:30
+15:00
+15:30
+16:00
+16:30
+17:00
+17:30
+18:00
+18:30
+19:00
+19:30
+20:00
+20:30
+21:00
+21:30
+22:00
+22:30
+23:00
+23:30
+Search
+Drop car off at different location
+Driver aged 30 – 65?
+Quick filters
+Flexible rentals
+
+Cancel or change most bookings for free up to 48 hours before pick-up
+
+No hidden fees
+
+Know exactly what you’re paying
+
+5 million+ reviews
+
+By real, verified customers
+
+Top Worldwide Destinations
+Perth
+London
+Melbourne
+Chitose
+Bangkok
+San Francisco
+Sydney
+Brisbane
+Kuala Lumpur
+Penang
+Top Worldwide Airports
+Perth Airport
+Melbourne Airport
+Chitose Airport
+Heathrow Airport
+Bangkok Suvarnabhumi Airport
+Penang Airport
+Sydney Airport
+San Francisco Airport
+Jeju Airport
+Phuket Airport
+Frequently Asked Questions
+How old do I need to be to rent a car?
+Can I book a one-way car rental?
+Do I need rental car insurance – and what is ‘CDW’ anyway?
+How do I find the cheapest car rental deals?
+Additional Information
+Related searches
+Popular Destinations
+Airports
+Car Rental Companies
+Privacy Notice
+Cookies
+Terms of service
+Help
+Modern Slavery Statement
+Human Rights Statement
+Accessibility Statement
+How we Work
+Supply Partner Inquiry
+Affiliate Programme
+Careers
+Contact Us
+Rentalcars.com is a trading name of Booking.com Transport Limited which is a limited company registered in England and Wales (Number: 05179829) whose registered
+ address is at 6 Goods Yard Street, Manchester, M3 3BG, United Kingdom. VAT number: GB 855349007.
+Rentalcars.com is part of Booking Holdings Inc., the world leader in online travel & related services.
+Copyright © 2025 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved
+[{'placeholder': 'Airport, city, or station', 'name': 'pickup-location', 'value': ''}, {'placeholder': '', 'name': 'drop-off-at-different-loc', 'value': ''}, {'
+placeholder': '', 'name': 'drivers-age', 'value': ''}]
+agent@c20a90688c47:/app$

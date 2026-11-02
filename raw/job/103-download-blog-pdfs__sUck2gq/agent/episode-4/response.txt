@@ -1,0 +1,10 @@
+{
+  "analysis": "Two blog articles are open: “LLM Powered Autonomous Agents” and “Thinking about High-Quality Human Data.” We can export the loaded pages directly through Chromium to preserve article formatting and images.",
+  "plan": "Connect with Playwright, inspect all article tabs, wait for images and fonts, and print each to a PDF named after its article heading in the requested folder.",
+  "commands": [
+    {
+      "keystrokes": "mkdir -p /home/user/Documents/Blog\ncat > /tmp/export_blogs.py <<'PY'\nfrom playwright.sync_api import sync_playwright\nfrom pathlib import Path\nimport re, html\nout = Path('/home/user/Documents/Blog')\nwith sync_playwright() as p:\n    browser = p.chromium.connect_over_cdp('http://127.0.0.1:1337')\n    pages = [page for ctx in browser.contexts for page in ctx.pages if page.url.startswith(('https://','http://'))]\n    print('Open article tabs:', len(pages), flush=True)\n    for page in pages:\n        page.wait_for_load_state('load', timeout=60000)\n        title = page.locator('h1').first.inner_text() if page.locator('h1').count() else html.unescape(page.title()).split(' | ')[0]\n        print(title, page.url, flush=True)\n        page.evaluate(\"\"\"async () => {\n            document.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });\n            await document.fonts.ready;\n            await Promise.race([Promise.all(Array.from(document.images).map(img => img.complete ? Promise.resolve() : new Promise(resolve => {img.onload = resolve; img.onerror = resolve;}))), new Promise(r => setTimeout(r, 15000))]);\n        }\"\"\")\n        name = re.sub(r'[/\\\\\\x00-\\x1f]', '-', title).strip()\n        target = out / (name + '.pdf')\n        page.pdf(path=str(target), format='A4', print_background=True, margin={'top':'15mm','bottom':'15mm','left':'12mm','right':'12mm'})\n        print('Saved:', target, target.stat().st_size, 'bytes', flush=True)\nPY\n/opt/venv/bin/python /tmp/export_blogs.py\n",
+      "duration": 1
+    }
+  ]
+}

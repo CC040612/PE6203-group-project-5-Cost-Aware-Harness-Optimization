@@ -1,0 +1,14 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/store.py <<'PY'
+> from playwright.sync_api import sync_playwright
+> p=sync_playwright().start()
+> b=p.chromium.connect_over_cdp('http://localhost:1337')
+> c=b.contexts[0]
+> page=c.pages[0]
+> print(page.url)
+> print(page.locator('body').inner_text()[:18000])
+> print(page.locator('a').evaluate_all('(els)=>els.map(e=>({text:e.innerText,href:e.href}))')[:30])
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/store.py
+

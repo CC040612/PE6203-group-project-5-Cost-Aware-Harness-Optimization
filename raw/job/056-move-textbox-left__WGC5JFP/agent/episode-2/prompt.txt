@@ -1,0 +1,36 @@
+New Terminal Output:
+
+agent@b8c6a89d73d6:/app$ gimp -i -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "/app/orange_background.xcf" "/app/orange_background.xcf"))) (layers (g
+imp-image-get-layers img))) (gimp-message (string-append "CANVAS " (number->string (car (gimp-image-width img))) "x" (number->string (car (gimp-image-height img
+))))) (let loop ((i 0)) (if (< i (car layers)) (let* ((l (vector-ref (cadr layers) i)) (off (gimp-drawable-offsets l))) (gimp-message (string-append "LAYER " (n
+umber->string l) " " (car (gimp-item-get-name l)) " size=" (number->string (car (gimp-drawable-width l))) "x" (number->string (car (gimp-drawable-height l))) "
+offset=" (number->string (car off)) "," (number->string (cadr off)) " text=" (number->string (car (gimp-item-is-text-layer l))))) (loop (+ i 1))))))' -b '(gimp-
+quit 0)'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+New Terminal Output:
+
+agent@752b3f228563:/app$ cat > /tmp/format_doc.py <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree as E
+> import re, os
+> path='/app/04 CHIN9505 EBook Purchasing info 2021 Jan.docx'
+> W='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+> ns={'w':W}
+> def tag(s): return '{'+W+'}'+s
+> with ZipFile(path) as z:
+>  infos=z.infolist(); data={i.filename:z.read(i.filename) for i in infos}
+> root=E.fromstring(data['word/document.xml'])
+> original=[]
+> count=0
+> for p in root.xpath('//w:p',namespaces=ns):
+>  nodes=p.xpath('.//w:t',namespaces=ns)
+>  text=''.join(n.text or '' for n in nodes)
+>  original.append(text)
+>  words=list(re.finditer(r'\S+',text))
+>  if len(words)<=3: continue
+>  start=words[2].end(); end=words[3].start()
+>  offset=0; inserted=False
+>  for n in nodes:
+>   s=n.text or ''; a=offset; b=a+len(s); offset=b
+>   if a<=start<b:
+>    local=start-a
+>    before=s[:local]; after=s[max(0,end-a):] if end<b else ''
+>    n.text=before; n.set('{http://www.w3.org/XML/1998/namespace}space','preserve')
+>    tab=E.Element(tag('tab')); n.addnext(tab)
+>    if after:
+>     t=E.Element(tag('t')); t.text=after; t.set('{http://www.w3.org/XML/1998/namespace}space','preserve'); tab.addnext(t)
+>    inserted=True
+>   elif a<end and b>start:
+>    n.text=s[max(0,end-a):]
+>  assert inserted
+>  pr=p.find(tag('pPr'))
+>  if pr is None: pr=E.Element(tag('pPr')); p.insert(0,pr)
+>  for name in ('tabs','ind','jc'):
+>   for old in pr.findall(tag(name)): pr.remove(old)
+>  tabs=E.Element(tag('tabs')); E.SubElement(tabs,tag('tab'),{tag('val'):'left',tag('pos'):'5040'})
+>  ind=E.Element(tag('ind'),{tag('left'):'5040',tag('hanging'):'5040'})
+>  jc=E.Element(tag('jc'),{tag('val'):'left'})
+>  idx=next((i for i,c in enumerate(pr) if c.tag==tag('rPr')),len(pr))
+>  for c in (tabs,ind,jc): pr.insert(idx,c); idx+=1
+>  count+=1
+> newtexts=[''.join(p.xpath('.//w:t/text()',namespaces=ns)) for p in root.xpath('//w:p',namespaces=ns)]
+> assert [[*re.findall(r'\S+',t)] for t in original]==[[*re.findall(r'\S+',t)] for t in newtexts]
+> data['word/document.xml']=E.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+> tmp=path+'.tmp'
+> with ZipFile(tmp,'w') as z:
+>  for info in infos: z.writestr(info,data[info.filename])
+> with ZipFile(tmp) as z: assert z.testzip() is None
+> os.replace(tmp,path)
+> print(f'Saved in place. Formatted {count} paragraphs; all words and other package parts preserved.')
+> PY
+agent@752b3f228563:/app$ python /tmp/format_doc.py
+Traceback (most recent call last):
+  File "/tmp/format_doc.py", line 45, in <module>
+    assert [[*re.findall(r'\S+',t)] for t in original]==[[*re.findall(r'\S+',t)] for t in newtexts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+agent@752b3f228563:/app$

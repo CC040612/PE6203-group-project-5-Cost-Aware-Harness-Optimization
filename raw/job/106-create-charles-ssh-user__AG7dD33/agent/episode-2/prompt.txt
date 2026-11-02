@@ -1,0 +1,38 @@
+New Terminal Output:
+
+agent@e79de7ee4325:/app$ sudo useradd -d /home/test1 -s /usr/bin/bash -M charles && printf '%s\n' 'charles:Ex@mpleP@55w0rd!' | sudo chpasswd && sudo chown charl
+es:$(id -gn charles) /home/test1 && sudo chmod u+rwx /home/test1
+agent@e79de7ee4325:/app$ getent passwd charles; sudo passwd -S charles; ls -ld /home/test1; sudo -u charles /usr/bin/bash -c 'test -w /home/test1 && touch /home
+/test1/.write-test && rm /home/test1/.write-test && echo "Home directory is writable"'
+charles:x:1002:1002::/home/test1:/usr/bin/bash
+charles P 2026-10-22 0 99999 7 -1
+drwxr-xr-x 1 charles charles 4096 Oct 22 02:46 /home/test1
+Home directory is writable
+agent@e79de7ee4325:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

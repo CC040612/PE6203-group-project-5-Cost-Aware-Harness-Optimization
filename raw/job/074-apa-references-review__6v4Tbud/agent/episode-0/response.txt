@@ -1,0 +1,10 @@
+{
+  "analysis": "The document has not yet been inspected. I need to identify the references and their current text and formatting, then correct any APA 7 issues while preserving the rest of the document.",
+  "plan": "Check that the file exists and inspect its paragraphs and formatting using python-docx, including the reference section at the end.",
+  "commands": [
+    {
+      "keystrokes": "ls -l '/home/user/Desktop/students work/case study.docx'; python - <<'PY'\nimport docx\np='/home/user/Desktop/students work/case study.docx'\nd=docx.Document(p)\nfor i,x in enumerate(d.paragraphs):\n print(i,repr(x.text), 'STYLE',x.style.name)\nPY\n",
+      "duration": 1
+    }
+  ]
+}

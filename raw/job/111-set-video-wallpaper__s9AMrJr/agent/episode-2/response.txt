@@ -1,0 +1,10 @@
+{
+  "analysis": "This environment has VLC but no running graphical desktop or X display. A persistent wallpaper setting may need to be stored for a desktop session rather than applied to a currently visible desktop.",
+  "plan": "Inspect existing configuration and available packages to identify the intended wallpaper backend, and finish probing the video.",
+  "commands": [
+    {
+      "keystrokes": "find ~/.config ~/.local /app -maxdepth 3 -type f 2>/dev/null | head -80; cat /etc/os-release; sudo -n true && echo sudo_available; dpkg -l | grep -Ei 'xfce|gnome|xserver|feh|wallpaper|lxde|openbox|dbus'; ffprobe -v error -show_entries format=duration:stream=width,height -of default=noprint_wrappers=1 \"$HOME/Desktop/Interstellar Movie - Official Trailer.mp4\"\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "analysis": "Chrome has relaunched with the actual official extension files.",
+  "plan": "Inspect whether they registered and then restart normally to confirm persistence.",
+  "commands": [{"keystrokes":"","duration":3}]
+}

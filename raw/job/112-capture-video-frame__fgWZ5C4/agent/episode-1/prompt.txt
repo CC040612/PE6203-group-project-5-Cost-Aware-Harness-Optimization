@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@e5bdeb3f4a03:/app$ ls -lh ~/Desktop; command -v ffmpeg; command -v ffprobe; command -v vlc
+total 26M
+-rw-r--r-- 1 agent agent 26M Oct 22 03:11 'Interstellar Movie - Official Trailer.mp4'
+/usr/bin/ffmpeg
+/usr/bin/ffprobe
+/usr/local/bin/vlc
+agent@e5bdeb3f4a03:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@6934aa39976b:/app$ ls -lah '/home/user/Documents/Novels/Pass Through/'
+total 68K
+drwxr-xr-x 2 agent agent 4.0K Oct 21 15:59 .
+drwxr-xr-x 4 agent agent 4.0K Oct 21 15:59 ..
+-rw-r--r-- 1 agent agent 9.7K Mar  6  2024 Chapter0.txt
+-rw-r--r-- 1 agent agent 9.8K Mar  6  2024 Chapter1.txt
+-rw-r--r-- 1 agent agent 9.1K Mar  6  2024 Chapter2.txt
+-rw-r--r-- 1 agent agent 9.2K Mar  6  2024 Chapter3.txt
+-rw-r--r-- 1 agent agent 9.0K Mar  6  2024 Chapter4.txt
+agent@6934aa39976b:/app$ which ebook-convert pandoc python3; python3 -c "import importlib.util; print({x:bool(importlib.util.find_spec(x)) for x in ['ebooklib',
+'chardet']})"
+/usr/bin/python3
+{'ebooklib': False, 'chardet': False}
+agent@6934aa39976b:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

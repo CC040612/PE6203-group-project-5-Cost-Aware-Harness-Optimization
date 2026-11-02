@@ -1,0 +1,10 @@
+{
+  "analysis": "The presentation was updated and ZIP integrity verified. One compatibility detail needs correction: the standard XML writer can rename the p14 namespace prefix even though the slide's compatibility markup refers to that prefix by name.",
+  "plan": "Restore the original namespace prefixes in slide 2's XML so its existing transition compatibility markup remains valid.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nimport zipfile, os\nimport xml.etree.ElementTree as E\np='/app/Robotic_Workshop_Infographics.pptx'\nfor prefix,uri in {'p':'http://schemas.openxmlformats.org/presentationml/2006/main','a':'http://schemas.openxmlformats.org/drawingml/2006/main','r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships','p14':'http://schemas.microsoft.com/office/powerpoint/2010/main','mc':'http://schemas.openxmlformats.org/markup-compatibility/2006'}.items(): E.register_namespace(prefix,uri)\nwith zipfile.ZipFile(p) as z:\n root=E.fromstring(z.read('ppt/slides/slide2.xml'))\n data=E.tostring(root,encoding='UTF-8',xml_declaration=True)\n assert b'xmlns:p14=' in data\n with zipfile.ZipFile(p+'.tmp','w',zipfile.ZIP_DEFLATED) as out:\n  for item in z.infolist(): out.writestr(item,data if item.filename=='ppt/slides/slide2.xml' else z.read(item.filename))\nwith zipfile.ZipFile(p+'.tmp') as z: assert z.testzip() is None\nos.replace(p+'.tmp',p)\nprint('Verified and saved presentation in place.')\nPY\n",
+      "duration": 1
+    }
+  ]
+}

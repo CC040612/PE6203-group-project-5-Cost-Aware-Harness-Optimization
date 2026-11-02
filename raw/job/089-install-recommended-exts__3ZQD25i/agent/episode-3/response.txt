@@ -1,0 +1,10 @@
+{
+  "analysis": "The /home/user path points to /home/agent, so Chrome is using the correct profile. Chrome's debugging endpoint is available.",
+  "plan": "Find the available automation Python environment and inspect the Web Store page.",
+  "commands": [
+    {
+      "keystrokes": "ls /opt/venv/bin; /opt/venv/bin/python - <<'PY'\nimport importlib.util\nfor m in ['playwright','requests','websocket','PIL']:\n print(m, bool(importlib.util.find_spec(m)))\nPY\ncurl -I -L --max-time 20 https://chromewebstore.google.com/ | head\n",
+      "duration": 1
+    }
+  ]
+}

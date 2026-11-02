@@ -1,0 +1,185 @@
+New Terminal Output:
+
+agent@c88500295499:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree as E
+> with ZipFile('/app/Graphemes_Sound_Letter_Patterns.docx') as z:
+>  root=E.fromstring(z.read('word/document.xml'))
+>  ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+>  body=root.find('w:body',ns)
+>  for i in range(4,9):
+>   print('PARAGRAPH',i)
+>   print(E.tostring(body[i],pretty_print=True).decode())
+> PY
+PARAGRAPH 4
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://sc
+hemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/
+2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxm
+lformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wo
+rdml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://sch
+emas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/dra
+wingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordproc
+essingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rs
+idR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000005">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 5
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://sc
+hemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/
+2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxm
+lformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wo
+rdml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://sch
+emas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/dra
+wingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordproc
+essingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rs
+idR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000006">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">1 letter making 1 sound,Graph,b&#160;&#160;&#160; a,ru</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">b</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160; c</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">a</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">t&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 6
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://sc
+hemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/
+2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmln
+[... output limited to 10000 bytes; 70 interior bytes omitted ...]
+/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://sc
+hemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/
+2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxm
+lformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wo
+rdml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://sch
+emas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/dra
+wingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordproc
+essingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rs
+idR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000008">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">3 letters making 1 sound&#160;&#160;,Trigraph&#160;,dge&#160;&#160;&#160; ere&#160;,ri</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">dge</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;&#160;&#160; h</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ere</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 8
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://sc
+hemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/
+2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxm
+lformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wo
+rdml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://sch
+emas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/dra
+wingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordproc
+essingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rs
+idR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000009">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">4 letters making 1 sound&#160;&#160;,Quadgraph&#160;&#160;&#160;&#160;&#160;,ough&#160;,thr</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ough</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160; th</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ough</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+  </w:r>
+</w:p>
+
+agent@c88500295499:/app$

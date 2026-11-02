@@ -1,0 +1,29 @@
+New Terminal Output:
+
+agent@00c739bbd86c:/app$ /opt/venv/bin/python - <<'PY'
+> from pathlib import Path
+> from docx import Document
+> from docx.shared import Pt
+> from docx.oxml import OxmlElement
+> from docx.oxml.ns import qn
+> root = Path('/home/user/Desktop/doc_proc')
+> files = sorted(root.glob('*.txt'), key=lambda p: int(p.stem))
+> text = ''.join(p.read_text(encoding='utf-8') for p in files)
+> doc = Document()
+> for style in doc.styles:
+>     if style.type in (1, 2):
+>         style.font.size = Pt(10)
+> run = doc.add_paragraph().add_run(text)
+> run.font.size = Pt(10)
+> cs = OxmlElement('w:szCs')
+> cs.set(qn('w:val'), '20')
+> run._element.get_or_add_rPr().append(cs)
+> output = Path('/home/user/Desktop/concat.docx')
+> doc.save(output)
+> check = Document(output)
+> assert '\n'.join(p.text for p in check.paragraphs) == text
+> assert all(r.font.size == Pt(10) for p in check.paragraphs for r in p.runs)
+> print(f'Created and verified {output}: {len(files)} files, {len(text)} characters, 10-point font, {output.stat().st_size} bytes')
+> PY
+Created and verified /home/user/Desktop/concat.docx: 5 files, 2249 characters, 10-point font, 37722 bytes
+agent@00c739bbd86c:/app$

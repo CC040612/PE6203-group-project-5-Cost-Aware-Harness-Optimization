@@ -1,0 +1,64 @@
+New Terminal Output:
+agent@f10abcb9fc3e:/app$ ls -l /app; which ffmpeg; python - <<'PY'
+> import zipfile
+> p='/app/Robotic_Workshop_Infographics.pptx'
+> with zipfile.ZipFile(p) as z:
+>  for n in ['ppt/slides/slide2.xml','ppt/slides/_rels/slide2.xml.rels']:
+>   print(n); print(z.read(n).decode())
+> PY
+total 9520
+-rw-r--r-- 1 agent agent  381651 Oct 21 16:03 Robotic_Workshop_Infographics.pptx
+-rw-r--r-- 1 agent agent 9362831 Oct 21 16:03 landscape.mp4
+/usr/bin/ffmpeg
+ppt/slides/slide2.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://sche
+mas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" xmlns:p15="http://schemas.microso
+ft.com/office/powerpoint/2012/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><p:cSld><p:spTree><p:nvGrpSpPr>        <p:cNvPr id="1
+" name=""/>        <p:cNvGrpSpPr/>        <p:nvPr/>      </p:nvGrpSpPr>      <p:grpSpPr>        <a:xfrm>          <a:off x="0" y="0"/>          <a:ext cx="0" cy
+="0"/>          <a:chOff x="0" y="0"/>          <a:chExt cx="0" cy="0"/>        </a:xfrm>      </p:grpSpPr><p:sp><p:nvSpPr><p:cNvPr id="317" name="PlaceHolder 1
+"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph/></p:nvPr></p:nvSpPr><p:spPr><a:xfrm><a:off x="720000" y="1111680"/><a:ext cx="7900920" cy="366552
+0"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:noFill/><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:txBody><a:bodyPr tIns="91440" bIns="91440" anch
+or="t"><a:noAutofit/></a:bodyPr><a:p><a:pPr marL="457200" indent="-317520"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buClr><a:srgbClr val="263238"/></a:buCl
+r><a:buFont typeface="Poppins"/><a:buChar char="●"/></a:pPr><a:r><a:rPr b="0" lang="en" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238
+"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a:t>This template contains an assortment of complementary infographic resources
+ for the </a:t></a:r><a:r><a:rPr b="1" lang="en" sz="1400" spc="-1" strike="noStrike" u="sng"><a:solidFill><a:srgbClr val="263238"/></a:solidFill><a:uFillTx/><a
+:latin typeface="Poppins"/><a:ea typeface="Poppins"/><a:hlinkClick r:id="rId1"/></a:rPr><a:t>Robotic Workshop</a:t></a:r><a:r><a:rPr b="0" lang="en" sz="1400" s
+pc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a:t> presentation.
+</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:solidFill><a:latin typeface="Arial"/
+></a:endParaRPr></a:p><a:p><a:pPr marL="457200" indent="-317520"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="1001"/></a:spcBef><a:buClr>
+<a:srgbClr val="263238"/></a:buClr><a:buFont typeface="Poppins"/><a:buChar char="●"/></a:pPr><a:r><a:rPr b="0" lang="en" sz="1400" spc="-1" strike="noStrike"><a
+:solidFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a:t>These infographics are adapted to the styl
+e of the aforementioned presentation, so you can insert them easily and have them completely integrated at once. You just need to do the following:</a:t></a:r><
+a:endParaRPr b="0" lang="en-HK" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:solidFill><a:latin typeface="Arial"/></a:endParaR
+Pr></a:p><a:p><a:pPr lvl="1" marL="914400" indent="-317520"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:spcBef><a:spcPts val="1001"/></a:spcBef><a:buClr><a:sr
+gbClr val="263238"/></a:buClr><a:buFont typeface="Poppins"/><a:buChar char="○"/></a:pPr><a:r><a:rPr b="0" lang="en" sz="1400" spc="-1" strike="noStrike"><a:soli
+dFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a:t>Select the element that you want to copy</a:t><
+/a:r><a:endParaRPr b="0" lang="en-HK" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:solidFill><a:latin typeface="Arial"/></a:en
+dParaRPr></a:p><a:p><a:pPr lvl="1" marL="914400" indent="-317520"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buClr><a:srgbClr val="263238"/></a:buClr><a:buFo
+nt typeface="Poppins"/><a:buChar char="○"/></a:pPr><a:r><a:rPr b="0" lang="en" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238"/></a:so
+lidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a:t>Right-click and choose “Copy”</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1400"
+spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:solidFill><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr lvl="1" marL="914400"
+ indent="-317520"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buClr><a:srgbClr val="263238"/></a:buClr><a:buFont typeface="Poppins"/><a:buChar char="○"/></a:p
+Pr><a:r><a:rPr b="0" lang="en" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typef
+ace="Poppins"/></a:rPr><a:t>Go to the slide where you want the element to appear</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1400" spc="-1" strike="noStrike
+"><a:solidFill><a:srgbClr val="000000"/></a:solidFill><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr lvl="1" marL="914400" indent="-317520"><a:lnSp
+c><a:spcPct val="100000"/></a:lnSpc><a:buClr><a:srgbClr val="263238"/></a:buClr><a:buFont typeface="Poppins"/><a:buChar char="○"/></a:pPr><a:r><a:rPr b="0" lang
+="en" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins"/><a:ea typeface="Poppins"/></a:rPr><a
+:t>Right-click and choose “Paste”</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1400" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:sol
+idFill><a:latin typeface="Arial"/></a:endParaRPr></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="318" name="PlaceHolder 2"/><p:cNvSpPr><a:spLocks noGrp="1"
+/></p:cNvSpPr><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:spPr><a:xfrm><a:off x="720000" y="390960"/><a:ext cx="7703640" cy="612360"/></a:xfrm><a:prstGeo
+m prst="rect"><a:avLst/></a:prstGeom><a:noFill/><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:txBody><a:bodyPr tIns="91440" bIns="91440" anchor="t"><a:noAutofit/></
+a:bodyPr><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/><a:tabLst><a:tab algn="l" pos="0"/></a:tabLst></a:pPr><a:r><a:rPr b="0" lang="en" sz=
+"3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="263238"/></a:solidFill><a:latin typeface="Poppins Black"/><a:ea typeface="Poppins Black"/></a:rPr
+><a:t>Contents of this template</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="000000"/></a:solid
+Fill><a:latin typeface="Arial"/></a:endParaRPr></a:p></p:txBody></p:sp></p:spTree></p:cSld><mc:AlternateContent><mc:Choice Requires="p14"><p:transition spd="slo
+w" p14:dur="2000"></p:transition></mc:Choice><mc:Fallback><p:transition spd="slow"></p:transition></mc:Fallback></mc:AlternateContent></p:sld>
+ppt/slides/_rels/slide2.xml.rels
+<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocume
+nt/2006/relationships/hyperlink" Target="https://slidesgo.com/theme/robotic-workshop#search-robotic+workshop&amp;position-1&amp;results-1&amp;rs=search?utm_sour
+ce=slidesgo_template_infographics&amp;utm_medium=referral-link&amp;utm_campaign=sg_credits&amp;utm_content=template" TargetMode="External"/><Relationship Id="rI
+d2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout" Target="../slideLayouts/slideLayout15.xml"/>
+</Relationships>
+agent@f10abcb9fc3e:/app$

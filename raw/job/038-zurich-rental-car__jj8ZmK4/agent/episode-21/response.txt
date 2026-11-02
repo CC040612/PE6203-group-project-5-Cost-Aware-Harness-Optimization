@@ -1,0 +1,10 @@
+{
+  "analysis": "Zurich city searches first ask which pickup locations to include.",
+  "plan": "Select all Zurich-area locations and proceed to car results.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.get_by_text('Select all',exact=True).click(); print(page.locator('body').inner_text()[-4500:]); print(page.locator('button').all_text_contents())\nPY\n",
+      "duration": 1
+    }
+  ]
+}

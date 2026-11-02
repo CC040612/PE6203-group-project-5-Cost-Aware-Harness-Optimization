@@ -1,0 +1,23 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/check.py
+
+[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'data': {'canUploadAsAccountExtension': False, 'commands': [], 'dependentExtensions': [], 'description': '', 'disabl
+eReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissio
+ns': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersi
+on': False, 'updateRequired': False}, 'errorCollection': {'isActive': False, 'isEnabled': False}, 'fileAccess': {'isActive': False, 'isEnabled': False}, 'fileAc
+cessPendingChange': False, 'homePage': {'specified': False, 'url': ''}, 'iconUrl': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACR0lEQV
+R4nOyauYoiURSGf7XaBRQ3kLFHjMRAcAHBUPodJhHMjAQDA6XjiecJfIEJRLN5ARUxMhkQRTRRcEEQ1FEQcZl7bnfSNEww3qqyoD4oags8n3XrnnOKK4GRz+e/mkymH+zwhW3PeGzmbGtcLpfXSqUyM7wH/5td9E
+JbrJlEXHr/57UWPOGl2CW8DRut8kICjz7m/8WzERpHF1AbXUBtdAG10QXURvMCEmTCarUinU4jFovB4/HAbrdjv99js9mg1+uh3W5jt9vhXmQRCAQC1GPA5XLx8/P5jOVyCYfDgWAwyLfD4YBms4l7ES7g8/lQLB
+Zhs9mwWq1Qr9cxHA7Band+3+l0Ih6P8ycgAuECmUyGBz8ej8E6JhyPxw/3t9stWq0WRCFUwO/3IxwO43a7oVarfQpeDoQK0NAg+v0+ZrMZlECoAI1/YrFYQCmECtBUSazXayiFUAGDwcD31+sVSiFUgOZ2ghKXUg
+gVoGRFuN1uKIXQWmgwGPB9JBLhuUAJhApMJhM+fdLLnM1mwT48QW6EV6PVapWXDYlEAqVSCaFQCEbjx5/xer2frv0vhkKhcINgotEocrkcnp6e+PnpdOLvhyRJPFvTbFUul4VkalMqlfoOwVAR1+12eaBmsxkWi4
+UXcfRkptMpOp0ORqMRLznuRbZ+gJIZVaJyo7eUaqMLqI0uoDa6gNroAmqjC6gNCcyhXeYk0IB2aRhp1Qc7UO5DjjhosceriTUef5LJ5E/W4n3B26IPBx4bGvK/WPDfaLnNXwAAAP//CDba/AAAAAZJREFUAwCV37
+mtJ0nCUQAAAABJRU5ErkJggg==', 'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'incognitoAccess': {'isActive': True, 'isEnabled': True}, 'incognitoAccessPendingChange':
+ False, 'installWarnings': [], 'isAffectedByMV2Deprecation': False, 'isCommandRegistrationHandledExternally': False, 'location': 'UNKNOWN', 'locationText': 'Not
+ from Chrome Web Store.', 'manifestErrors': [], 'manifestHomePageUrl': '', 'mustRemainInstalled': False, 'name': 'Chromium PDF Viewer', 'offlineEnabled': True,
+'permissions': {'simplePermissions': []}, 'runtimeErrors': [], 'runtimeWarnings': [], 'showAccessRequestsInToolbar': True, 'showSafeBrowsingAllowlistWarning': F
+alse, 'state': 'ENABLED', 'type': 'EXTENSION', 'updateUrl': '', 'userMayModify': False, 'userScriptsAccess': {'isActive': False, 'isEnabled': False}, 'version':
+ '1', 'views': [], 'webStoreUrl': ''}, 'text': None}]
+agent@715dad585543:/app$ ls /home/user/.config/google-chrome/Default/Extensions
+ls: cannot access '/home/user/.config/google-chrome/Default/Extensions': No such file or directory
+agent@715dad585543:/app$

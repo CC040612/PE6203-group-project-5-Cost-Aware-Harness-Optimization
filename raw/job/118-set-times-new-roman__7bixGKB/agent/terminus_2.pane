@@ -1,0 +1,97 @@
+[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ ls -l /app/Dublin_Zoo_Intro.docx
+[?2004l-rw-r--r-- 1 agent agent 11047 Oct 22 03:16 /app/Dublin_Zoo_Intro.docx
+[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree
+[?2004l[?2004h> p='/app/Dublin_Zoo_Intro.docx'
+[?2004l[?2004h> with ZipFile(p) as z:
+[?2004l[?2004h>  print('\n'.join(z.namelist()))
+[?2004l[?2004h>  for name in ['word/document.xml','word/styles.xml']:
+[?2004l[?2004h>   root=etree.fromstring(z.read(name))
+[?2004l[?2004h>   ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+[?2004l[?2004h>   print(name, 'runs:',len(root.findall('.//w:r',ns)), 'font settings:',len(root.findall('.//w:rFonts',ns)))
+[?2004l[?2004h> PY
+[?2004lword/numbering.xml
+word/settings.xml
+word/fontTable.xml
+word/styles.xml
+customXML/itemProps1.xml
+customXML/item1.xml
+customXML/_rels/item1.xml.rels
+word/document.xml
+word/_rels/document.xml.rels
+_rels/.rels
+word/theme/theme1.xml
+[Content_Types].xml
+word/document.xml runs: 47 font settings: 85
+word/styles.xml runs: 0 font settings: 3
+[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree as E
+[?2004l[?2004h> import os, copy
+[?2004l[?2004h> p='/app/Dublin_Zoo_Intro.docx'
+[?2004l[?2004h> w='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+[?2004l[?2004h> q=lambda s:'{'+w+'}'+s
+[?2004l[?2004h> font='Times New Roman'
+[?2004l[?2004h> def setfont(el):
+[?2004l[?2004h>  for a in ['asciiTheme','hAnsiTheme','eastAsiaTheme','cstheme','csTheme']:
+[?2004l[?2004h>   el.attrib.pop(q(a),None)
+[?2004l[?2004h>  for a in ['ascii','hAnsi','eastAsia','cs']:
+[?2004l[?2004h>   el.set(q(a),font)
+[?2004l[?2004h> def stripped(root):
+[?2004l[?2004h>  root=copy.deepcopy(root)
+[?2004l[?2004h>  for el in list(root.iter(q('rFonts'))):
+[?2004l[?2004h>   el.getparent().remove(el)
+[?2004l[?2004h>  for el in list(root.iter(q('rPr'))):
+[?2004l[?2004h>   if len(el)==0 and not el.attrib and not el.text:
+[?2004l[?2004h>    el.getparent().remove(el)
+[?2004l[?2004h>  return E.tostring(root,method='c14n')
+[?2004l[?2004h> with ZipFile(p) as z:
+[?2004l[?2004h>  entries=z.infolist()
+[?2004l[?2004h>  original={i.filename:z.read(i.filename) for i in entries}
+[?2004l[?2004h> updated=dict(original)
+[?2004l[?2004h> for name,data in original.items():
+[?2004l[?2004h>  if not(name.startswith('word/') and name.endswith('.xml')): continue
+[?2004l[?2004h>  root=E.fromstring(data)
+[?2004l[?2004h>  before=stripped(root)
+[?2004l[?2004h>  for el in root.iter(q('rFonts')): setfont(el)
+[?2004l[?2004h>  for run in root.iter(q('r')):
+[?2004l[?2004h>   props=run.find(q('rPr'))
+[?2004l[?2004h>   if props is None:
+[?2004l[?2004h>    props=E.Element(q('rPr')); run.insert(0,props)
+[?2004l[?2004h>   fonts=props.find(q('rFonts'))
+[?2004l[?2004h>   if fonts is None:
+[?2004l[?2004h>    fonts=E.Element(q('rFonts')); props.insert(0,fonts)
+[?2004l[?2004h>   setfont(fonts)
+[?2004l[?2004h>  if name=='word/styles.xml':
+[?2004l[?2004h>   defaults=root.find(q('docDefaults'))
+[?2004l[?2004h>   if defaults is not None:
+[?2004l[?2004h>    rp=defaults.find(q('rPrDefault')+'/'+q('rPr'))
+[?2004l[?2004h>    if rp is not None:
+[?2004l[?2004h>     fonts=rp.find(q('rFonts'))
+[?2004l[?2004h>     if fonts is None:
+[?2004l[?2004h>      fonts=E.Element(q('rFonts')); rp.insert(0,fonts)
+[?2004l[?2004h>     setfont(fonts)
+[?2004l[?2004h>  assert stripped(root)==before, 'Non-font change: '+name
+[?2004l[?2004h>  if E.tostring(root)!=E.tostring(E.fromstring(data)):
+[?2004l[?2004h>   updated[name]=E.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+[?2004l[?2004h> tmp=p+'.tmp'
+[?2004l[?2004h> with ZipFile(tmp,'w') as z:
+[?2004l[?2004h>  for info in entries: z.writestr(info,updated[info.filename])
+[?2004l[?2004h> with ZipFile(tmp) as z:
+[?2004l[?2004h>  assert z.testzip() is None
+[?2004l[?2004h>  root=E.fromstring(z.read('word/document.xml'))
+[?2004l[?2004h>  for run in root.iter(q('r')):
+[?2004l[?2004h>   fonts=run.find(q('rPr')+'/'+q('rFonts'))
+[?2004l[?2004h>   assert all(fonts.get(q(a))==font for a in ['ascii','hAnsi','eastAsia','cs'])
+[?2004l[?2004h> os.replace(tmp,p)
+[?2004l[?2004h> print('Saved:',p)
+[?2004l[?2004h> print('Modified font properties only in:',', '.join(n for n in original if original[n]!=updated[n]))
+[?2004l[?2004h> PY
+[?2004lSaved: /app/Dublin_Zoo_Intro.docx
+Modified font properties only in: word/styles.xml, word/document.xml
+[?2004h[01;32magent@1cf89a095885[00m:[01;34m/app[00m$ 

@@ -1,0 +1,8 @@
+New Terminal Output:
+
+agent@f2848db5c646:/app$ identify /home/user/Desktop/pic.jpg /home/user/Desktop/pic.png && ls -lh /home/user/Desktop/pic.*
+/home/user/Desktop/pic.jpg JPEG 320x510 320x510+0+0 8-bit sRGB 44147B 0.000u 0:00.000
+/home/user/Desktop/pic.png PNG 320x510 320x510+0+0 8-bit sRGB 97235B 0.000u 0:00.000
+-rw-r--r-- 1 agent agent 44K Oct 21 15:53 /home/user/Desktop/pic.jpg
+-rw-r--r-- 1 agent agent 95K Oct 21 15:53 /home/user/Desktop/pic.png
+agent@f2848db5c646:/app$

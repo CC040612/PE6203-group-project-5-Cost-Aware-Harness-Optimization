@@ -1,0 +1,10 @@
+{
+  "analysis": "The presentation is available at the specified path, but its slides and text have not yet been inspected. I need to identify the to-do list and apply strikethrough only to its first two lines while preserving the presentation.",
+  "plan": "Inspect the presentation's slide text using Python and the installed presentation libraries to locate the relevant list.",
+  "commands": [
+    {
+      "keystrokes": "ls -l /app/New_Club_Spring_2018_Training.pptx; python - <<'PY'\nfrom pptx import Presentation\np=Presentation('/app/New_Club_Spring_2018_Training.pptx')\nfor i,s in enumerate(p.slides,1):\n print('\\nSLIDE',i)\n for j,sh in enumerate(s.shapes):\n  if sh.has_text_frame:\n   print(' SHAPE',j,repr(sh.text))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

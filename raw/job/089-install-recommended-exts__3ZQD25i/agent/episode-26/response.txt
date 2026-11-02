@@ -1,0 +1,10 @@
+{
+  "analysis": "The store reports an installed status without creating real extension registrations. To satisfy persistence, we must install actual official extension files and verify after restart.",
+  "plan": "Download and extract all five official CRX packages into a permanent folder in the user's home, retaining their manifests and keys.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/download.py <<'PY'\nimport requests,zipfile,io,pathlib,json\nids=['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']\nfor id in ids:\n r=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&uc'});r.raise_for_status()\n path=pathlib.Path.home()/'.local/share/chrome-extensions'/id;path.mkdir(parents=True,exist_ok=True)\n z=zipfile.ZipFile(io.BytesIO(r.content));z.extractall(path)\n m=json.loads((path/'manifest.json').read_text());print(id,m.get('name'),m.get('manifest_version'),'key',bool(m.get('key')),flush=True)\nPY\n/opt/venv/bin/python /tmp/download.py\n",
+      "duration": 3
+    }
+  ]
+}

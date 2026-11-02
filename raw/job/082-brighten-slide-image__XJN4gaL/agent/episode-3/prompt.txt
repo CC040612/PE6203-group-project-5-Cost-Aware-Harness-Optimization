@@ -1,0 +1,22 @@
+New Terminal Output:
+
+agent@c918d826cef3:/app$ python3 - <<'PY'
+> from pptx import Presentation
+> from PIL import Image, ImageStat
+> from io import BytesIO
+> r=Presentation('/home/agent/Desktop/PPT-Template_widescreen.pptx')
+> s=r.slides[1]
+> print('Slide size:',r.slide_width,r.slide_height)
+> for sh in s.shapes:
+>  print('Shape:',sh.shape_id,sh.name,sh.shape_type,sh.left,sh.top,sh.width,sh.height)
+>  if sh.shape_type==13:
+>   im=Image.open(BytesIO(sh.image.blob));print('Image:',sh.image.ext,im.size,ImageStat.Stat(im.convert('RGB')).mean)
+> print('Relationships:')
+> for rel in s.part.rels.values():
+>  print(rel.rId,rel.reltype,rel.target_ref)
+> print(s._element.xml[:16000])
+> PY
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'pptx'
+agent@c918d826cef3:/app$

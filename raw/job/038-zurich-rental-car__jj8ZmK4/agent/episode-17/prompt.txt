@@ -1,0 +1,11 @@
+New Terminal Output:
+
+> PY
+[{'text': 'SGD', 'aria': 'Prices in Singapore Dollar'}, {'text': '', 'aria': 'Language: English (US)'}, {'text': 'Manage booking', 'aria': 'Manage booking'}, {'
+text': '', 'aria': 'Menu'}, {'text': '', 'aria': 'Clear'}, {'text': 'Pick-up date\nMon, Oct 26', 'aria': 'Choose Pick-up Date'}, {'text': 'Drop-off date\nThu, O
+ct 29', 'aria': 'Choose Drop-off Date'}, {'text': 'Search', 'aria': None}, {'text': 'Quick filters', 'aria': None}, {'text': 'How old do I need to be to rent a
+car?', 'aria': None}, {'text': 'Can I book a one-way car rental?', 'aria': None}, {'text': 'Do I need rental car insurance – and what is ‘CDW’ anyway?', 'aria':
+ None}, {'text': 'How do I find the cheapest car rental deals?', 'aria': None}, {'text': 'Related searches', 'aria': None}, {'text': 'Popular Destinations', 'ar
+ia': None}, {'text': 'Airports', 'aria': None}, {'text': 'Car Rental Companies', 'aria': None}, {'text': 'Cookies', 'aria': None}, {'text': '', 'aria': 'Followi
+ng months'}, {'text': 'Close', 'aria': None}]
+agent@c20a90688c47:/app$

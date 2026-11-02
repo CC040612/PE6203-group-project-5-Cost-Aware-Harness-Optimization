@@ -1,0 +1,18 @@
+New Terminal Output:
+
+agent@6556a8550dfc:/app$ /opt/venv/bin/python - <<'PY'
+> from playwright.sync_api import sync_playwright
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337')
+>  page=next(x for x in b.contexts[0].pages if '/scores/2019/' in x.url)
+>  try: page.get_by_role('button',name='Reject Non-Essential Cookies',exact=True).click(timeout=3000)
+>  except Exception: pass
+>  game=page.get_by_role('link',name='View 49ers Chiefs game')
+>  print(game.count())
+>  if game.count():
+>   game.scroll_into_view_if_needed()
+>   print(game.evaluate('(el)=>el.outerHTML'))
+>  page.bring_to_front()
+>  print(page.url)
+> PY
+

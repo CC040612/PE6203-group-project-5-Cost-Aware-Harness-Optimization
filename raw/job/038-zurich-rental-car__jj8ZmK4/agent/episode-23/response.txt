@@ -1,0 +1,10 @@
+{
+  "analysis": "All 10 locations are selected, with same-location returns.",
+  "plan": "Load car listings and inspect filter and sorting controls.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.get_by_role('button',name='Search in 10 locations',exact=True).click(); page.wait_for_timeout(1500); print(page.url); print(page.locator('body').inner_text()[:16000])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

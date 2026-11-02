@@ -1,0 +1,100 @@
+New Terminal Output:
+
+agent@32f08de7ccee:/app$ cat > /tmp/fix_references.py <<'PY'
+> from docx import Document
+e),('Communications of the Association for Information Systems, 46',True),(', 252–272. https://doi.org/10.17705/1CAIS.04611',False)],
+ [('Dwivedi, Y. K., Shareef, M. A., Simintiras, A. C., Lal, B., & Weerakkody, V. (2016). A generalised adoption model for services: A cross-country comparison o
+f mobile health (m-health). ',False),('Government Information Quarterly, 33',True),('(1), 174–187. https://doi.org/10.1016/j.giq.2015.06.003',False)],
+ [('European Commission. (2018). ',False),('Standard Eurobarometer 90: Public opinion in the European Union',True),('. https://ec.europa.eu/commfrontoffice/publ
+icopinion/index.cfm/Survey/getSurveyDetail/instruments/STANDARD/surveyKy/2215',False)],
+ [('European Commission. (2019). ',False),('Digital Economy and Society Index (DESI) 2019: Country report Italy',True),('. https://ec.europa.eu/digital-single-m
+arket/en/news/digital-economy-and-society-index-desi-2019',False)],
+ [('Gartner. (2021). ',False),('Digital transformation',True),('. https://www.gartner.com/en/inform> from docx.shared import Inches, Pt
+> from docx.enum.text import WD_ALIGN_PARAGRAPH
+> import shutil
+> path='/home/user/Desktop/students work/case study.docx'
+> shutil.copy2(path,'/tmp/case-study-original.docx')
+> d=Document(path)
+> # Preserve the body, updating only the verified citation year.
+> for p in d.paragraphs[:113]:
+>  for r in p.runs:
+>   r.text=r.text.replace('Dwivedi et al., 2017','Dwivedi et al., 2016')
+> # Replace blank-line pagination and the old reference section.
+> for p in list(d.paragraphs)[100:]:
+>  p._element.getparent().remove(p._element)
+> h=d.add_paragraph()
+> h.alignment=WD_ALIGN_PARAGRAPH.CENTER
+> f=h.paragraph_format
+> f.page_break_before=True
+> f.keep_with_next=True
+> f.space_before=Pt(0); f.space_after=Pt(0); f.line_spacing=2
+> r=h.add_run('References'); r.bold=True; r.font.name='Times New Roman'; r.font.size=Pt(12)
+> # Each tuple is (text, italic).
+> entries=[
+>  [('Datta, P. (2020). Digital transformation of the Italian public administration: A case study. ',False),('Communications of the Association for Information
+Systems, 46',True),(', 252–272. https://doi.org/10.17705/1CAIS.04611',False)],
+>  [('Dwivedi, Y. K., Shareef, M. A., Simintiras, A. C., Lal, B., & Weerakkody, V. (2016). A generalised adoption model for services: A cross-country comparison
+ of mobile health (m-health). ',False),('Government Information Quarterly, 33',True),('(1), 174–187. https://doi.org/10.1016/j.giq.2015.06.003',False)],
+>  [('European Commission. (2018). ',False),('Standard Eurobarometer 90: Public opinion in the European Union',True),('. https://ec.europa.eu/commfrontoffice/pu
+blicopinion/index.cfm/Survey/getSurveyDetail/instruments/STANDARD/surveyKy/2215',False)],
+>  [('European Commission. (2019). ',False),('Digital Economy and Society Index (DESI) 2019: Country report Italy',True),('. https://ec.europa.eu/digital-single
+-market/en/news/digital-economy-and-society-index-desi-2019',False)],
+>  [('Gartner. (2021). ',False),('Digital transformation',True),('. https://www.gartner.com/en/information-technology/glossary/digital-transformation',False)],
+>  [('Mergel, I., Edelmann, N., & Haug, N. (2019). Defining digital transformation: Results from expert interviews. ',False),('Government Information Quarterly,
+ 36',True),('(4), Article 101385. https://doi.org/10.1016/j.giq.2019.06.002',False)],
+>  [('Organisation for Economic Co-operation and Development. (2017). ',False),('Digital government review of Norway: Boosting the digital transformation of the
+ public sector',True),('. OECD Publishing. https://doi.org/10.1787/9789264279742-en',False)],
+>  [('United Nations. (2018). ',False),('United Nations e-government survey 2018: Gearing e-government to support transformation towards sustainable and resilie
+nt societies',True),('. https://publicadministration.un.org/egovkb/Portals/egovkb/Documents/un/2018-Survey/EGovernment%20Survey%202018_FINAL%20for%20web.pdf',Fa
+lse)],
+>  [('World Bank. (2016). ',False),('World development report 2016: Digital dividends',True),('. https://doi.org/10.1596/978-1-4648-0671-1',False)]
+> ]
+> for entry in entries:
+>  p=d.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.LEFT
+>  f=p.paragraph_format
+>  f.left_indent=Inches(.5); f.first_line_indent=Inches(-.5)
+>  f.right_indent=Inches(0); f.line_spacing=2
+>  f.space_before=Pt(0); f.space_after=Pt(0)
+>  f.widow_control=True
+>  for text,italic in entry:
+>   r=p.add_run(text);r.italic=italic;r.bold=False;r.font.name='Times New Roman';r.font.size=Pt(12)
+> # Define the corporate-author abbreviation at its first citation.
+> for p in d.paragraphs[:100]:
+>  if '(OECD, 2017)' in p.text:
+>   for r in p.runs:
+>    if '(OECD, 2017)' in r.text:
+>     r.text=r.text.replace('(OECD, 2017)','(Organisation for Economic Co-operation and Development [OECD], 2017)',1)
+>     break
+>   break
+> d.save(path)
+> check=Document(path)
+> assert len(check.paragraphs)==110
+> assert check.paragraphs[100].text=='References'
+> assert check.paragraphs[100].paragraph_format.page_break_before
+> for p in check.paragraphs[101:]:
+>  assert p.paragraph_format.left_indent==Inches(.5)
+>  assert p.paragraph_format.first_line_indent==Inches(-.5)
+>  assert p.paragraph_format.line_spacing==2
+> print('Saved and validated:',path)
+> for p in check.paragraphs[100:]: print(p.text)
+> PY
+agent@32f08de7ccee:/app$ /tmp/docx-env/bin/python /tmp/fix_references.py
+Saved and validated: /home/user/Desktop/students work/case study.docx
+References
+Datta, P. (2020). Digital transformation of the Italian public administration: A case study. Communications of the Association for Information Systems, 46, 252–
+272. https://doi.org/10.17705/1CAIS.04611
+Dwivedi, Y. K., Shareef, M. A., Simintiras, A. C., Lal, B., & Weerakkody, V. (2016). A generalised adoption model for services: A cross-country comparison of mo
+bile health (m-health). Government Information Quarterly, 33(1), 174–187. https://doi.org/10.1016/j.giq.2015.06.003
+European Commission. (2018). Standard Eurobarometer 90: Public opinion in the European Union. https://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/Surve
+y/getSurveyDetail/instruments/STANDARD/surveyKy/2215
+European Commission. (2019). Digital Economy and Society Index (DESI) 2019: Country report Italy. https://ec.europa.eu/digital-single-market/en/news/digital-eco
+nomy-and-society-index-desi-2019
+Gartner. (2021). Digital transformation. https://www.gartner.com/en/information-technology/glossary/digital-transformation
+Mergel, I., Edelmann, N., & Haug, N. (2019). Defining digital transformation: Results from expert interviews. Government Information Quarterly, 36(4), Article 1
+01385. https://doi.org/10.1016/j.giq.2019.06.002
+Organisation for Economic Co-operation and Development. (2017). Digital government review of Norway: Boosting the digital transformation of the public sector. O
+ECD Publishing. https://doi.org/10.1787/9789264279742-en
+United Nations. (2018). United Nations e-government survey 2018: Gearing e-government to support transformation towards sustainable and resilient societies. htt
+ps://publicadministration.un.org/egovkb/Portals/egovkb/Documents/un/2018-Survey/EGovernment%20Survey%202018_FINAL%20for%20web.pdf
+World Bank. (2016). World development report 2016: Digital dividends. https://doi.org/10.1596/978-1-4648-0671-1
+agent@32f08de7ccee:/app$

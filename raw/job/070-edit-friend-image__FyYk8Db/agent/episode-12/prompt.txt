@@ -1,0 +1,5 @@
+New Terminal Output:
+
+> PY
+Downloading data from 'https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx' to file '/home/agent/.rembg/models/u2net/u2net.onnx'.
+ 20%|███████▊                              | 36.0M/176M [00:01<00:07, 18.3MB/s]

@@ -1,0 +1,26 @@
+New Terminal Output:
+
+OME/Desktop/interstellar.png" && file "$HOME/Desktop/interstellar.png" && ls -lh "$HOME/Desktop/interstellar.png"
+/home/agent/Desktop/interstellar.png: PNG image data, 1920 x 1080, 8-bit/color RGB, non-interlaced
+-rw-r--r-- 1 agent agent 68K Oct 22 03:14 /home/agent/Desktop/interstellar.png
+agent@e5bdeb3f4a03:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

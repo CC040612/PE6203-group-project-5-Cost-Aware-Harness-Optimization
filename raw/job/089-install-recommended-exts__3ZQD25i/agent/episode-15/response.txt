@@ -1,0 +1,10 @@
+{
+  "analysis": "Zoom has not installed. This Chromium build may not expose the Web Store installation integration, despite displaying the button.",
+  "plan": "Inspect the browser's Web Store API and listing button markup, and identify the other exact extension IDs.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/inspect.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\nprint(page.evaluate('({ua:navigator.userAgent,chrome:Object.keys(window.chrome||{}),webstore:typeof chrome.webstore})'))\nprint(page.get_by_role('button',name='Add to Chrome',exact=True).evaluate('(e)=>e.outerHTML'))\nfrom urllib.parse import quote\nfor name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:\n page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1200)\n print(name,page.locator('a[href*=\"/detail/\"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'))\nPY\n/opt/venv/bin/python /tmp/inspect.py\n",
+      "duration": 2
+    }
+  ]
+}

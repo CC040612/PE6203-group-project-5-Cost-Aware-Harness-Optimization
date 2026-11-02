@@ -1,0 +1,10 @@
+{
+  "analysis": "There is no active X server or graphical session. A virtual display will be needed to open the actual GIMP dialog.",
+  "plan": "Check for virtual X server binaries, GIMP version, and installation privileges.",
+  "commands": [
+    {
+      "keystrokes": "which Xvfb xvfb-run Xorg Xwayland sudo; gimp --version; id; ls /usr/bin | grep -Ei 'xvfb|weston|broadway|xserver'; sudo -n true; echo sudo_status=$?\n",
+      "duration": 0.1
+    }
+  ]
+}

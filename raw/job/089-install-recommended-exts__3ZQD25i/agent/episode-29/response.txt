@@ -1,0 +1,10 @@
+{
+  "analysis": "The packages now have official IDs. Chrome's API does not accept a direct directory argument, so we will use its normal Load unpacked folder chooser.",
+  "plan": "Open the folder chooser for each package and enter its permanent installation directory.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/loadui.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\nimport subprocess,time\nfrom pathlib import Path\ne=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)\ne.evaluate('chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true})')\nfor path in (Path.home()/'.local/share/chrome-extensions').iterdir():\n e.bring_to_front()\n e.evaluate('chrome.developerPrivate.loadUnpacked({failQuietly:true},()=>{window.loadResult=chrome.runtime.lastError?.message||\"ok\"})')\n time.sleep(1)\n subprocess.run(['xdotool','key','ctrl+l']);subprocess.run(['xdotool','type','--clearmodifiers',str(path)]);subprocess.run(['xdotool','key','Return']);time.sleep(1);subprocess.run(['xdotool','key','Return']);time.sleep(2)\n print(path.name,e.evaluate('window.loadResult'),flush=True)\nPY\n/opt/venv/bin/python /tmp/loadui.py\n",
+      "duration": 2
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+fmkadmapgofadopljbjfkapdkoienihi React Developer Tools 3 key False
+laookkfknpbbblfpciffpaejjkokdgca Momentum 3 key False
+aapbdbdomjkkjkaonfhkkikfgjllcleb __MSG_8969005060131950570__ 3 key False
+agent@715dad585543:/app$ cat > /tmp/load.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)
+> print(e.evaluate('Object.keys(chrome.developerPrivate)'),flush=True)
+> print(e.evaluate('''()=>new Promise(r=>chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true},()=>r(chrome.runtime.lastError||'ok')))'''),f
+lush=True)
+> from pathlib import Path
+> for path in (Path.home()/'.local/share/chrome-extensions').iterdir():
+>  print(path.name,e.evaluate('''path=>new Promise(r=>chrome.developerPrivate.loadUnpacked({failQuietly:true,useDragInstall:true,draggedPath:path},(...args)=>r(
+{args,error:chrome.runtime.lastError})))''',str(path)),flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/load.py
+

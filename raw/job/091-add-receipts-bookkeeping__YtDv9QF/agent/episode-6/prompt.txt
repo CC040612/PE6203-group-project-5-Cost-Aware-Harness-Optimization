@@ -1,0 +1,55 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+> PY
+
+/app/receipt_0.jpeg (900, 1383)
+/app/receipt_1.jpg (564, 1219)
+/app/receipt_2.jpg (700, 506)
+/app/receipt_4.jpg (736, 981)
+agent@04c1a7a0bc04:/app$ if [ -f /app/pdf_receipt.png ]; then tesseract /app/pdf_receipt.png stdout 2>/dev/null; fi
+receipt
+
+FROM RECEIPT #
+East Repair Inc. RECEIPT DATE
+1912 Harvest Lane
+P.O0.#
+
+New York, NY¥ 12210
+
+DUE DATE
+BILL TO SHIP TO
+John Smith John Smith
+2 Court Square 3787 Pineview Drive
+New York, NY¥ 12210 Cambridge, MA 12210
+
+QTY DESCRIPTION UNIT PRICE
+
+Front and rear brake cables
+
+US-001
+
+AMOUNT
+
+New set of pedal arms
+
+Subtotal
+
+Sales Tax 6.25%
+
+145.00
+9.06
+
+TOTAL $154.06
+
+TERMS & CONDITIONS
+
+Payment is due within 15 days
+
+Please make checks payable to: East Repair Inc.
+
+Smith
+agent@04c1a7a0bc04:/app$ tesseract /app/receipt_0.jpeg stdout --psm 11 2>/dev/null; tesseract /app/receipt_2.jpg stdout --psm 11 2>/dev/null
+

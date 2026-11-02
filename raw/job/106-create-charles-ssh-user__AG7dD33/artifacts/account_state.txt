@@ -1,0 +1,2 @@
+charles:x:1002:1002::/home/test1:/usr/bin/bash
+drwxr-xr-x 1 charles charles 4096 Oct 22 02:46 /home/test1

@@ -1,0 +1,151 @@
+[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ ls -l /app/New_Club_Spring_2018_Training.pptx; python - <<'PY'
+[?2004l[?2004h> from pptx import Presentation
+[?2004l[?2004h> p=Presentation('/app/New_Club_Spring_2018_Training.pptx')
+[?2004l[?2004h> for i,s in enumerate(p.slides,1):
+[?2004l[?2004h>  print('\nSLIDE',i)
+[?2004l[?2004h>  for j,sh in enumerate(s.shapes):
+[?2004l[?2004h>   if sh.has_text_frame:
+[?2004l[?2004h>    print(' SHAPE',j,repr(sh.text))
+[?2004l[?2004h> PY
+[?2004l-rw-r--r-- 1 agent agent 168672 Oct 21 15:37 /app/New_Club_Spring_2018_Training.pptx
+
+SLIDE 1
+ SHAPE 0 'New Club and Organization\x0b Training'
+ SHAPE 1 'SPRING 2018 '
+
+SLIDE 2
+ SHAPE 0 'Overview'
+ SHAPE 1 'Introductions\nClub Rights, Responsibilities & Resources\nPolicies and Procedures\nFIT Link - Program and Activity Form\nFIT Link - Event Form \nImportant Dates\nImportant Resources & Links'
+
+SLIDE 3
+ SHAPE 1 'Name  \nClub or Organization '
+
+SLIDE 4
+ SHAPE 0 'Director of Student Organizations'
+ SHAPE 1 'MARTY SULLIVAN II '
+ SHAPE 2 'Office Hours:\nMonday 4PM to 5PM\nWednesday 12PM to 1PM'
+
+SLIDE 5
+ SHAPE 0 'What I do:'
+ SHAPE 1 'Finance Meetings:\nProviding another perspective for the clubs and organizations.\nAdvocating for student Budget Requests.\nTracking budgets to reflect attendance and participation.\nMeetings with the Program Coordinator:\nTouching base with what clubs and organizations are planning.\nAssisting during the planning process.\nBoard of Directors Meetings:\nSharing the agendas of clubs and organizations with the members of FIT SGA'
+
+SLIDE 6
+ SHAPE 0 'Club Rights, Responsibilities, and Resources '
+
+SLIDE 7
+ SHAPE 0 'Clubs and Organizations Have the Right to… '
+ SHAPE 1 'Request campus space for approved meetings, programs, and activities\nAssignment and usage of a campus space for meetings  \nSpaces may change year-year based on availability\nAdditional meeting requests for separate E-board meetings are a privilege and are not guaranteed. \n\nRequests approval to host a Program or Activity ON or OFF Campus\nUse designated campus posting areas & bulletin boards for approved materials\n\n'
+[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree
+[?2004l[?2004h> with ZipFile('/app/New_Club_Spring_2018_Training.pptx') as z:
+[?2004l[?2004h>  for n in z.namelist():
+[?2004l[?2004h>   if n.startswith('ppt/slides/slide') and n.endswith('.xml'):
+[?2004l[?2004h>    root=etree.fromstring(z.read(n))
+[?2004l[?2004h>    print('\n',n)
+[?2004l[?2004h>    ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main'}
+[?2004l[?2004h>    for p in root.findall('.//a:p',ns):
+[?2004l[?2004h>     print(repr(''.join(p.xpath('.//a:t/text()',namespaces=ns))))
+[?2004l[?2004h> PY
+[?2004l
+ ppt/slides/slide1.xml
+'New Club and Organization Training'
+'SPRING 2018 '
+
+ ppt/slides/slide2.xml
+'Overview'
+'Introductions'
+'Club Rights, Responsibilities & Resources'
+'Policies and Procedures'
+'FIT Link - Program and Activity Form'
+'FIT Link - Event Form '
+'Important Dates'
+'Important Resources & Links'
+
+ ppt/slides/slide3.xml
+'Name  '
+'Club or Organization '
+
+ ppt/slides/slide4.xml
+'Director of Student Organizations'
+'MARTY SULLIVAN II '
+'Office Hours:'
+'Monday 4PM to 5PM'
+'Wednesday 12PM to 1PM'
+
+ ppt/slides/slide5.xml
+'What I do:'
+'Finance Meetings:'
+'Providing another perspective for the clubs and organizations.'
+'Advocating for student Budget Requests.'
+'Tracking budgets to reflect attendance and participation.'
+'Meetings with the Program Coordinator:'
+'Touching base with what clubs and organizations are planning.'
+'Assisting during the planning process.'
+'Board of Directors Meetings:'
+'Sharing the agendas of clubs and organizations with the members of FIT SGA'
+
+ ppt/slides/slide6.xml
+'Club Rights, Responsibilities, and Resources '
+
+ ppt/slides/slide7.xml
+'Clubs and Organizations Have the Right to… '
+'Request campus space for approved meetings, programs, and activities'
+'Assignment and usage of a campus space for meetings  '
+'Spaces may change year-year based on availability'
+'Additional meeting requests for separate E-board meetings are a privilege and are not guaranteed. '
+''
+'Requests approval to host a Program or Activity ON or OFF Campus'
+'Use designated campus posting areas & bulletin boards for approved materials'
+''
+''
+[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree
+[?2004l[?2004h> import os
+[?2004l[?2004h> path='/app/New_Club_Spring_2018_Training.pptx'
+[?2004l[?2004h> ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
+[?2004l[?2004h> a='{'+ns['a']+'}'
+[?2004l[?2004h> with ZipFile(path) as src:
+[?2004l[?2004h>  root=etree.fromstring(src.read('ppt/slides/slide7.xml'))
+[?2004l[?2004h>  targets=[]
+[?2004l[?2004h>  for sp in root.findall('.//p:sp',ns):
+[?2004l[?2004h>   paras=sp.findall('./p:txBody/a:p',ns)
+[?2004l[?2004h>   if paras and ''.join(paras[0].xpath('.//a:t/text()',namespaces=ns)).startswith('Request campus space'):
+[?2004l[?2004h>    targets=paras[:2]
+[?2004l[?2004h>  assert len(targets)==2
+[?2004l[?2004h>  for p in targets:
+[?2004l[?2004h>   pp=p.find(a+'pPr')
+[?2004l[?2004h>   if pp is None:
+[?2004l[?2004h>    pp=etree.Element(a+'pPr'); p.insert(0,pp)
+[?2004l[?2004h>   default=pp.find(a+'defRPr')
+[?2004l[?2004h>   if default is None:
+[?2004l[?2004h>    default=etree.SubElement(pp,a+'defRPr')
+[?2004l[?2004h>   default.set('strike','sngStrike')
+[?2004l[?2004h>   for run in p.findall(a+'r')+p.findall(a+'fld'):
+[?2004l[?2004h>    rp=run.find(a+'rPr')
+[?2004l[?2004h>    if rp is None:
+[?2004l[?2004h>     rp=etree.Element(a+'rPr'); run.insert(0,rp)
+[?2004l[?2004h>    rp.set('strike','sngStrike')
+[?2004l[?2004h>   end=p.find(a+'endParaRPr')
+[?2004l[?2004h>   if end is not None: end.set('strike','sngStrike')
+[?2004l[?2004h>   print('Struck through:', ''.join(p.xpath('.//a:t/text()',namespaces=ns)))
+[?2004l[?2004h>  data=etree.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+[?2004l[?2004h>  with ZipFile(path+'.tmp','w') as dst:
+[?2004l[?2004h>   for item in src.infolist():
+[?2004l[?2004h>    dst.writestr(item,data if item.filename=='ppt/slides/slide7.xml' else src.read(item.filename))
+[?2004l[?2004h> os.replace(path+'.tmp',path)
+[?2004l[?2004h> with ZipFile(path) as z:
+[?2004l[?2004h>  assert z.testzip() is None
+[?2004l[?2004h>  root=etree.fromstring(z.read('ppt/slides/slide7.xml'))
+[?2004l[?2004h>  assert len(root.xpath('//a:rPr[@strike="sngStrike"]',namespaces=ns))>=2
+[?2004l[?2004h> print('Saved and verified:',path)
+[?2004l[?2004h> PY
+[?2004lStruck through: Request campus space for approved meetings, programs, and activities
+Struck through: Assignment and usage of a campus space for meetings  
+Saved and verified: /app/New_Club_Spring_2018_Training.pptx
+[?2004h[01;32magent@806aaa1948ca[00m:[01;34m/app[00m$ 

@@ -1,0 +1,4 @@
+New Terminal Output:
+
+agent@1b01909f3e52:/app$ pip -q install --target /tmp/report-libs openpyxl
+agent@1b01909f3e52:/app$

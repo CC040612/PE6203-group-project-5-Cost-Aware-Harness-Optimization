@@ -1,0 +1,10 @@
+{
+  "analysis": "The terminal is ready in /app. I need to locate the presentation, extract the image from its second slide, brighten it, and save the result as background.png on the Desktop.",
+  "plan": "Inspect available files and Desktop locations to identify the input presentation.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /app; ls -la ~/Desktop; find /mnt /tmp /home/agent /app -maxdepth 3 -type f \\( -iname '*.pptx' -o -iname '*.ppt' -o -iname '*.odp' \\) 2>/dev/null\n",
+      "duration": 0.1
+    }
+  ]
+}

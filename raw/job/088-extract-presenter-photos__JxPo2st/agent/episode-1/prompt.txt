@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@5724321cc949:~/Desktop$ pwd; ls -la; find 'IDS LLM seminar' -maxdepth 2 -type f | head -60
+/home/agent/Desktop
+total 16
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:12  .
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:17  ..
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:12 'IDS LLM seminar'
+IDS LLM seminar/DSC00495.jpg
+IDS LLM seminar/DSC00659.jpg
+IDS LLM seminar/DSC00454.jpg
+IDS LLM seminar/DSC00574.jpg
+IDS LLM seminar/DSC00554.jpg
+IDS LLM seminar/DSC00657.jpg
+agent@5724321cc949:~/Desktop$ which python3 curl wget magick convert chafa viu firefox chromium; python3 - <<'PY'
+> import importlib.util
+> for m in ['PIL','cv2','torch','transformers','face_recognition','insightface']:
+>  print(m, bool(importlib.util.find_spec(m)))
+> PY
+/usr/bin/python3
+/usr/bin/curl
+/usr/bin/convert
+/usr/local/bin/chromium
+PIL False
+cv2 False
+torch False
+transformers False
+face_recognition False
+insightface False
+agent@5724321cc949:~/Desktop$
+
+
+
+
+
+
+
+
+
+
+
+

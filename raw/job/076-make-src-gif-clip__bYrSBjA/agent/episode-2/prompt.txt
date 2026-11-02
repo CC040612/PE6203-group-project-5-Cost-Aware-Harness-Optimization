@@ -1,0 +1,23 @@
+New Terminal Output:
+
+agent@c8ad374d260c:/app$ ffmpeg -hide_banner -loglevel error -y -ss 3 -t 5 -i /home/user/Desktop/src.mp4 -filter_complex "[0:v]fps=15,split[a][b];[a]palettegen[
+p];[b][p]paletteuse" -an -loop 0 /home/user/Desktop/src_clip.gif
+agent@c8ad374d260c:/app$  -lh /home/user/Desktop/src_clip.gif; ffprobe -v error -count_frames -show_entries format=duration:stream=width,height,nb_read_frames -
+of json /home/user/Desktop/src_clip.gif
+bash: -lh: command not found
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "width": 640,
+            "height": 360,
+            "nb_read_frames": "75"
+        }
+    ],
+    "format": {
+        "duration": "4.990000"
+    }
+}
+agent@c8ad374d260c:/app$

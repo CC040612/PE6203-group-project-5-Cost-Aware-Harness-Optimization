@@ -1,0 +1,10 @@
+{
+  "analysis": "The previous command is still waiting for its selector and the inspection command is queued.",
+  "plan": "Allow the selector timeout to finish so the next inspection can run.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 10
+    }
+  ]
+}

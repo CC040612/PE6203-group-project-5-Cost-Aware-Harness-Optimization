@@ -1,0 +1,10 @@
+{
+  "analysis": "An additional Python environment exists at /opt/venv, which may include Pillow.",
+  "plan": "Use that environment to brighten the full-resolution background image by 25%, save it under the requested filename, and verify the output.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nimport zipfile,io\nfrom PIL import Image,ImageEnhance,ImageStat\np='/home/agent/Desktop/background.png'\nwith zipfile.ZipFile('/home/agent/Desktop/PPT-Template_widescreen.pptx') as z:\n im=Image.open(io.BytesIO(z.read('ppt/media/image3.png')))\n im.load()\nprint('Source:', im.size, im.mode)\nout=ImageEnhance.Brightness(im).enhance(1.25)\nout.save(p,'PNG')\nwith Image.open(p) as check:\n check.verify()\nprint('Saved:',p)\nprint('Mean RGB before:',ImageStat.Stat(im.convert('RGB')).mean)\nprint('Mean RGB after:',ImageStat.Stat(out.convert('RGB')).mean)\nPY\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+New Terminal Output:
+
+PY
+agent@2950419b9bc9:/app$ /tmp/contactenv/bin/python - <<'PY'
+> import openpyxl
+> w=openpyxl.load_workbook('/home/user/Desktop/Professor_Contact.xlsx')
+> for s in w:
+>  print('SHEET',s.title,s.max_row,s.max_column)
+>  for row in s:
+>   print([(c.coordinate,c.value,c.hyperlink.target if c.hyperlink else None) for c in row if c.value is not None or c.hyperlink])
+> PY
+SHEET Sheet1 5 6
+[]
+[('A2', 'No.', None), ('B2', 'Professor', None), ('C2', 'University', None), ('D2', 'Major', None), ('E2', 'Website', None), ('F2', 'Email', None)]
+[('A3', 1, None), ('B3', 'Qi Liu', None), ('C3', 'HKU', None), ('D3', 'Computer Science', None), ('E3', 'https://leuchine.github.io/', None)]
+[('A4', 2, None), ('B4', 'Tao Yu', None), ('C4', 'HKU', None), ('D4', 'Computer Science', None), ('E4', 'https://taoyds.github.io/', None)]
+[('A5', 3, None), ('B5', 'Lingpeng Kong', None), ('C5', 'HKU', None), ('D5', 'Computer Science', None), ('E5', 'https://ikekonglp.github.io/', 'https://ikekongl
+p.github.io/')]
+agent@2950419b9bc9:/app$

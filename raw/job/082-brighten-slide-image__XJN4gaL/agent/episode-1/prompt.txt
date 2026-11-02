@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@c918d826cef3:/app$ ls -la /app; ls -la ~/Desktop; find /mnt /tmp /home/agent /app -maxdepth 3 -type f \( -iname '*.pptx' -o -iname '*.ppt' -o -iname '*.od
+p' \) 2>/dev/null
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 15:44 .
+drwxr-xr-x 1 root  root  4096 Oct 21 16:05 ..
+total 12292
+drwxr-xr-x 2 agent agent     4096 Oct 21 16:04 .
+drwxr-xr-x 1 agent agent     4096 Oct 21 16:05 ..
+-rw-r--r-- 1 agent agent 12570766 Oct 21 16:04 PPT-Template_widescreen.pptx
+/tmp/082-brighten-slide-image/build/PPT-Template_widescreen.pptx
+/home/agent/Desktop/PPT-Template_widescreen.pptx
+agent@c918d826cef3:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

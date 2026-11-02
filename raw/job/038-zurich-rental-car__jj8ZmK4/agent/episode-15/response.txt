@@ -1,0 +1,10 @@
+{
+  "analysis": "Location suggestions use the option role, not button. The city is the second option.",
+  "plan": "Select that option and open the drop-off calendar.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000)\n page.get_by_role('option').nth(1).click(); page.get_by_role('button',name='Choose Drop-off Date',exact=True).click(); print(page.locator('button').evaluate_all('(es)=>es.map(e=>({text:e.innerText,aria:e.getAttribute(\"aria-label\")}))'))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

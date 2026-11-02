@@ -1,0 +1,14 @@
+{
+  "analysis": "All five actual extensions are now enabled with their correct IDs. We must confirm they remain installed on a normal restart without startup loading flags.",
+  "plan": "Restart Chrome normally and rerun the extension verification.",
+  "commands": [
+    {
+      "keystrokes": "pkill -TERM -x chromium; sleep 2; google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1 &\n",
+      "duration": 3
+    },
+    {
+      "keystrokes": "/opt/venv/bin/python /tmp/verify.py\n",
+      "duration": 3
+    }
+  ]
+}

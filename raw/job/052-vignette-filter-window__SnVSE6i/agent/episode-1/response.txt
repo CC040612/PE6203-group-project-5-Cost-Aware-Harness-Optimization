@@ -1,0 +1,10 @@
+{
+  "analysis": "GIMP and xdotool are installed, but DISPLAY is unset. I need to locate the running graphical display before launching GIMP.",
+  "plan": "Inspect X sockets and graphical processes to identify the display and available screenshot utilities.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /tmp/.X11-unix; ps aux | grep -E 'Xvfb|Xorg|Xwayland|gimp|vnc' | grep -v grep; which gnome-screenshot import; ls -la /tmp | head\n",
+      "duration": 0.1
+    }
+  ]
+}

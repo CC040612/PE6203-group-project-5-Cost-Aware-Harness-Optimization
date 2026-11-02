@@ -1,0 +1,30 @@
+New Terminal Output:
+
+agent@83e3666913d5:/app$ curl -s http://127.0.0.1:1337/json/list; ps aux | grep -E 'chrom|task_state'; ls -la ~/.config/google-chrome/Default; ls -la /home/user
+/Documents
+agent         25  0.6  0.3 111196 29212 ?        Sl   02:54   0:00 python3 /usr/local/bin/task_state.py task
+agent        350 77.2  1.1 54993064 94352 ?      Rl   02:55   0:01 /usr/lib/chromium/chromium --show-component-extension-options --enable-gpu-rasterization --no
+-default-browser-check --disable-pings --media-router=0 --disable-dev-shm-usage --enable-remote-extensions --load-extension --user-data-dir=/home/agent/.config/
+google-chrome --profile-directory=Default --no-first-run --no-default-browser-check --password-store=basic --disable-dev-shm-usage --no-sandbox --user-data-dir=
+/home/agent/.config/google-chrome --profile-directory=Default --remote-debugging-port=1337
+agent        366  0.7  0.0 54541956 4152 ?       Sl   02:55   0:00 /usr/lib/chromium/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=cras
+hpad-handler --database=/home/agent/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=Debian
+GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=155.0.8059.79 --initial-client-fd=5 --shared-client-connection
+agent        368  0.0  0.0 54533744 3764 ?       S    02:55   0:00 /usr/lib/chromium/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype
+=crashpad-handler --database=/home/agent/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=De
+bian GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=155.0.8059.79 --initial-client-fd=4 --shared-client-connect
+ion
+agent        371 21.1  0.8 54898736 71592 ?      S    02:55   0:00 /usr/lib/chromium/chromium --type=zygote --no-zygote-sandbox --no-sandbox --crashpad-handler-
+pid=366 --enable-crash-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/home/agent/.config/google-chrome --change-stack-guard-on-fork=enable
+agent        372 12.1  0.8 54898736 71312 ?      S    02:55   0:00 /usr/lib/chromium/chromium --type=zygote --no-sandbox --crashpad-handler-pid=366 --enable-cra
+sh-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/home/agent/.config/google-chrome --change-stack-guard-on-fork=enable
+agent        390  0.0  0.0   3716  2016 pts/1    S+   02:55   0:00 grep -E chrom|task_state
+total 16
+drwxr-xr-x 2 agent agent 4096 Oct 22 02:50 .
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:55 ..
+-rw-r--r-- 1 agent agent  229 Oct 22 02:50 Bookmarks
+-rw-r--r-- 1 agent agent    3 Oct 22 02:50 Preferences
+total 12
+drwxr-xr-x 2 agent agent 4096 Oct 22 02:50 .
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:55 ..
+agent@83e3666913d5:/app$

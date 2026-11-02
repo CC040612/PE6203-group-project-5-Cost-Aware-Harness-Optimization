@@ -1,0 +1,252 @@
+[69] Sandbox: CanCreateUserNamespace() clone() failure: EPERM
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: glxtest: libEGL missing
+[Parent 69, Main Thread] WARNING: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Gtk-CRITICAL **: 02:51:02.669: gtk_widget_event: assertion 'WIDGET_REALIZED_FOR_EVENT (widget, event)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.077: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.077: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.078: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.078: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.078: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.078: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.079: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: gtk_container_forall: assertion 'GTK_IS_CONTAINER (container)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Gtk-CRITICAL **: 02:51:14.079: gtk_container_forall: assertion 'GTK_IS_CONTAINER (container)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.079: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.079: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.079: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.079: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:14.080: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:14.080: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:29.051: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:29.051: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Atk-CRITICAL **: 02:51:29.051: atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+[Parent 69, Main Thread] WARNING: gtk_container_forall: assertion 'GTK_IS_CONTAINER (container)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): Gtk-CRITICAL **: 02:51:29.051: gtk_container_forall: assertion 'GTK_IS_CONTAINER (container)' failed
+[Parent 69, Main Thread] WARNING: g_object_unref: assertion 'G_IS_OBJECT (object)' failed: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+(thunderbird-esr:69): GLib-GObject-CRITICAL **: 02:51:29.051: g_object_unref: assertion 'G_IS_OBJECT (object)' failed

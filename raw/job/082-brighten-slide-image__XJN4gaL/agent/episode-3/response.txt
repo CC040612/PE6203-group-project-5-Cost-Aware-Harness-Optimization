@@ -1,0 +1,10 @@
+{
+  "analysis": "python3 is available, but python-pptx is not installed. The presentation can be inspected directly as a ZIP archive without that dependency.",
+  "plan": "Read slide 2's XML and relationships, and check whether Pillow is available for image processing.",
+  "commands": [
+    {
+      "keystrokes": "python3 - <<'PY'\nimport zipfile\nz=zipfile.ZipFile('/home/agent/Desktop/PPT-Template_widescreen.pptx')\nfor p in ['ppt/slides/slide2.xml','ppt/slides/_rels/slide2.xml.rels']:\n print(p);print(z.read(p).decode())\nfrom PIL import Image\nprint('Pillow available')\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

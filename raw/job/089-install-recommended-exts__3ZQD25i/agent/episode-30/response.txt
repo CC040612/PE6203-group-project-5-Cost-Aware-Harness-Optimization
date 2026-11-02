@@ -1,0 +1,5 @@
+{
+  "analysis": "The native Load unpacked sequence is running.",
+  "plan": "Wait for the folder selections to finish and verify actual registered extensions.",
+  "commands": [{"keystrokes":"","duration":10}]
+}

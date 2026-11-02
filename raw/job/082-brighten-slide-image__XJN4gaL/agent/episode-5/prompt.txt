@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@c918d826cef3:/app$ which convert magick ffmpeg pip3; ls /opt; find /opt -maxdepth 4 -name python -o -name python3; python3 -m pip --version
+/usr/bin/ffmpeg
+/usr/bin/pip3
+venv
+/opt/venv/bin/python
+/opt/venv/bin/python3
+

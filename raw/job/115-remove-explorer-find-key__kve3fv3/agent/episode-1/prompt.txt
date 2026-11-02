@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@6bea6e6417e9:/app$ ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json
+ls: cannot access '/home/agent/.config/Code/User/keybindings.json': No such file or directory
+agent@6bea6e6417e9:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

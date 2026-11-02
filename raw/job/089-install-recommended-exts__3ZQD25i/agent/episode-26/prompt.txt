@@ -1,0 +1,51 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': Fals
+e, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequir
+ed': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False
+}}]
+agent@715dad585543:/app$ find /home/agent/.config/google-chrome -maxdepth 3 -type f | head -35; ls -l /usr/bin/chromium; env | grep -i chrome
+find /home/agent/.config/google-chrome -maxdepth 3 -type f | head -35; ls -l /usr/bin/chromium; env | grep -i chrome
+/home/agent/.config/google-chrome/Default/Preferences
+/home/agent/.config/google-chrome/Default/Bookmarks
+/home/agent/.config/google-chrome/Default/Login Data For Account
+/home/agent/.config/google-chrome/Default/heavy_ad_intervention_opt_out.db-journal
+/home/agent/.config/google-chrome/Default/Cookies-journal
+/home/agent/.config/google-chrome/Default/SCT Auditing Pending Reports
+/home/agent/.config/google-chrome/Default/GCM Store/000003.log
+/home/agent/.config/google-chrome/Default/GCM Store/LOCK
+/home/agent/.config/google-chrome/Default/GCM Store/LOG
+/home/agent/.config/google-chrome/Default/GCM Store/CURRENT
+/home/agent/.config/google-chrome/Default/GCM Store/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/LOCK
+/home/agent/.config/google-chrome/Default/LOG
+/home/agent/.config/google-chrome/Default/Session Storage/000003.log
+/home/agent/.config/google-chrome/Default/Session Storage/LOCK
+/home/agent/.config/google-chrome/Default/Session Storage/LOG
+/home/agent/.config/google-chrome/Default/Session Storage/CURRENT
+/home/agent/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/000003.log
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/LOCK
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/LOG
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/CURRENT
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/Affiliation Database
+/home/agent/.config/google-chrome/Default/heavy_ad_intervention_opt_out.db
+/home/agent/.config/google-chrome/Default/DIPS
+/home/agent/.config/google-chrome/Default/Web Data-journal
+/home/agent/.config/google-chrome/Default/discount_infos_db/LOCK
+/home/agent/.config/google-chrome/Default/discount_infos_db/LOG
+/home/agent/.config/google-chrome/Default/Network Action Predictor
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_1
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_0
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_3
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/index
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_2
+find: ‘standard output’: Broken pipe
+find: write error
+-rwxr-xr-x 1 root root 5066 Oct 14 21:13 /usr/bin/chromium
+agent@715dad585543:/app$

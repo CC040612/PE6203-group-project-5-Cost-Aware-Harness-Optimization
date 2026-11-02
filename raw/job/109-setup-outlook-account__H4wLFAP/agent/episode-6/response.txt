@@ -1,0 +1,10 @@
+{
+  "analysis": "Thunderbird's accessibility text setter did not change the fields. Keyboard input is needed instead.",
+  "plan": "Focus each field and type the supplied value using desktop keyboard events, without submitting the form.",
+  "commands": [
+    {
+      "keystrokes": "/usr/bin/python3 - <<'PY'\nimport pyatspi,subprocess,time\ndef find(o,name):\n if o.name==name and o.getRoleName() in ('entry','password text'): return o\n for c in o:\n  r=find(c,name)\n  if r:return r\nroot=pyatspi.Registry.getDesktop(0)\nfor name,value in [('Email address','anonym-x2024@outlook.com'),('Password','password')]:\n field=find(root,name)\n field.queryComponent().grabFocus()\n time.sleep(.2)\n subprocess.run(['xdotool','key','ctrl+a'])\n subprocess.run(['xdotool','type','--clearmodifiers','--delay','50',value])\n time.sleep(.3)\n print(name,'characters:',field.queryText().characterCount)\nPY\n",
+      "duration": 3
+    }
+  ]
+}

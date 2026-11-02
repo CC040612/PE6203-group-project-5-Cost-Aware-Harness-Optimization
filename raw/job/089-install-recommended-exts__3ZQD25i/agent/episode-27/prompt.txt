@@ -1,0 +1,18 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/download.py <<'PY'
+> import requests,zipfile,io,pathlib,json
+> ids=['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkk
+jkaonfhkkikfgjllcleb']
+> for id in ids:
+>  r=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'
+&uc'});r.raise_for_status()
+>  path=pathlib.Path.home()/'.local/share/chrome-extensions'/id;path.mkdir(parents=True,exist_ok=True)
+>  z=zipfile.ZipFile(io.BytesIO(r.content));z.extractall(path)
+>  m=json.loads((path/'manifest.json').read_text());print(id,m.get('name'),m.get('manifest_version'),'key',bool(m.get('key')),flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/download.py
+kgjfgplpablkjnlkjmjdecgdpfankdle Zoom Chrome Extension 3 key True
+ljflmlehinmoeknoonhibbjpldiijjmm __MSG_appName__ 3 key True
+fmkadmapgofadopljbjfkapdkoienihi React Developer Tools 3 key False
+

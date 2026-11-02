@@ -1,0 +1,10 @@
+{
+  "analysis": "We need to locate the project text files and available document-generation tools, then concatenate the text into a DOCX with a uniform 10-point font.",
+  "plan": "Inspect the working directory and common project locations, and check whether Python DOCX support or LibreOffice is available.",
+  "commands": [
+    {
+      "keystrokes": "pwd; ls -la; ls -la /home/user; find /app /home/user /workspace -type f -iname '*.txt' 2>/dev/null | head -150; which libreoffice; python -c \"import docx; print('python-docx available')\"\n",
+      "duration": 1
+    }
+  ]
+}

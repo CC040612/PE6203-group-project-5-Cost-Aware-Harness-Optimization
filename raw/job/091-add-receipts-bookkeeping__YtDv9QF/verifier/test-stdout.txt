@@ -1,0 +1,19 @@
+INFO:desktopenv.metric.table:Loading result file: /app/my_bookkeeping.xlsx
+INFO:desktopenv.metric.table:Successfully loaded result file with sheets: ['Sheet1']
+Traceback (most recent call last):
+  File "/tests/test_outputs.py", line 1070, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/tests/test_outputs.py", line 1059, in main
+    score = evaluate_current_state()
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/test_outputs.py", line 947, in evaluate_current_state
+    score = float(metric(result_value, expected_value, **(options_list[idx] or {})))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/desktop_env/evaluators/metrics/table.py", line 411, in compare_table
+    value1: str = str(read_cell_value(*sheet1, coordinate))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tests/desktop_env/evaluators/metrics/utils.py", line 348, in read_cell_value
+    return float(cell["c"]["v"])
+           ^^^^^^^^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'

@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@c8ad374d260c:/app$ ls -lh /home/user/Desktop/src.mp4; command -v ffmpeg; command -v ffprobe
+-rw-r--r-- 1 agent agent 3.0M Oct 21 15:53 /home/user/Desktop/src.mp4
+/usr/bin/ffmpeg
+/usr/bin/ffprobe
+agent@c8ad374d260c:/app$ ffprobe -v error -show_entries format=duration:stream=codec_type,width,height,r_frame_rate -of json /home/user/Desktop/src.mp4
+{
+    "programs": [
+
+    ],
+    "streams": [
+        {
+            "codec_type": "video",
+            "width": 640,
+            "height": 360,
+            "r_frame_rate": "30/1"
+        },
+        {
+            "codec_type": "audio",
+            "r_frame_rate": "0/0"
+        }
+    ],
+    "format": {
+        "duration": "30.526667"
+    }
+}
+agent@c8ad374d260c:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+

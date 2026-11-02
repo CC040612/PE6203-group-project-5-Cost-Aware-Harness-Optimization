@@ -1,0 +1,10 @@
+{
+  "analysis": "The system Python disallows global package installation. A temporary virtual environment will avoid changing system packages.",
+  "plan": "Create an isolated environment, install python-docx, and print all document paragraphs.",
+  "commands": [
+    {
+      "keystrokes": "python -m venv /tmp/docx-env && /tmp/docx-env/bin/pip -q install python-docx && /tmp/docx-env/bin/python - <<'PY'\nfrom docx import Document\nd=Document('/home/user/Desktop/students work/case study.docx')\nfor i,p in enumerate(d.paragraphs):\n print(i,repr(p.text),'STYLE',p.style.name)\nPY\n",
+      "duration": 1
+    }
+  ]
+}

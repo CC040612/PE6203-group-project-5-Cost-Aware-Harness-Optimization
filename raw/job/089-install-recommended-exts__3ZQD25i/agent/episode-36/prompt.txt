@@ -1,0 +1,8 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': Fals
+e, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequir
+ed': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False
+}}]
+agent@715dad585543:/app$

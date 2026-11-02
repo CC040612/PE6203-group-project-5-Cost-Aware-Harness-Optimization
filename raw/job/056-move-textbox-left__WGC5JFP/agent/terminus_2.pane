@@ -1,0 +1,28 @@
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ ls -lh /app; which gimp python3 convert; gimp --version 2>/dev/null
+[?2004ltotal 24K
+-rw-r--r-- 1 agent agent 24K Oct 21 15:33 [0m[01;35morange_background.xcf[0m
+/usr/bin/gimp
+/opt/venv/bin/python3
+GNU Image Manipulation Program version 2.10.36
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ gimp -i -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "/app/orange_background.xcf" "/app/orange_background.xcf"))) (layers (gimp-image-get-layers img))) (gimp-message (string-append "CANVAS " (number->string (car (gimp-image-width img))) "x" (number->string (car (gimp-image-height img))))) (let loop ((i 0)) (if (< i (car layers)) (let* ((l (vector-ref (cadr layers) i)) (off (gimp-drawable-offsets l))) (gimp-message (string-append "LAYER " (number->string l) " " (car (gimp-item-get-name l)) " size=" (number->string (car (gimp-drawable-width l))) "x" (number->string (car (gimp-drawable-height l))) " offset=" (number->string (car off)) "," (number->string (cadr off)) " text=" (number->string (car (gimp-item-is-text-layer l))))) (loop (+ i 1))))))' -b '(gimp-quit 0)'
+[?2004lscript-fu-Warning: CANVAS 2192x1118
+
+script-fu-Warning: LAYER 2 Thanks World size=422x77 offset=976,702 text=1
+
+script-fu-Warning: LAYER 4 orange_background.png size=2192x1118 offset=0,0 text=0
+
+batch command executed successfully
+gimp: GEGL-WARNING: (../gegl/buffer/gegl-tile-handler-cache.c:1076):gegl_tile_cache_destroy: runtime check failed: (g_queue_is_empty (&cache_queue))
+EEEEeEeek! 3 GeglBuffers leaked
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ gimp -i -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "/app/orange_background.xcf" "/app/orange_background.xcf"))) (layers (gimp-image-get-layers img)) (text (vector-ref (cadr layers) 0))) (gimp-layer-set-offsets text 110 702) (let ((merged (car (gimp-image-merge-visible-layers img CLIP-TO-IMAGE)))) (file-png-save RUN-NONINTERACTIVE img merged "/app/leftside_textbox.png" "/app/leftside_textbox.png" 0 9 0 0 0 0 0)))' -b '(gimp-quit 0)'
+[?2004lbatch command executed successfully
+gimp: GEGL-WARNING: (../gegl/buffer/gegl-tile-handler-cache.c:1076):gegl_tile_cache_destroy: runtime check failed: (g_queue_is_empty (&cache_queue))
+EEEEeEeek! 4 GeglBuffers leaked
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ ls -lh /app/leftside_textbox.png; file /app/leftside_textbox.png
+[?2004l-rw-r--r-- 1 agent agent 25K Oct 21 15:35 [0m[01;35m/app/leftside_textbox.png[0m
+bash: file: command not found
+[?2004h[01;32magent@b8c6a89d73d6[00m:[01;34m/app[00m$ 

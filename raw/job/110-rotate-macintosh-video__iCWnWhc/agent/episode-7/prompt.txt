@@ -1,0 +1,6 @@
+New Terminal Output:
+
+agent@1ab03f642dd9:/tmp/ocr-local$ apt-get download libleptonica6; for p in libleptonica*.deb; do dpkg-deb -x "$p" .; done; for f in vflip hflip,vflip null hfli
+p; do echo "=== $f ==="; ffmpeg -v error -i /tmp/orientation.png -vf "$f,scale=1280:944" -frames:v 1 -y /tmp/test_orientation.png; LD_LIBRARY_PATH=/tmp/ocr-loca
+l/usr/lib/x86_64-linux-gnu TESSDATA_PREFIX=/tmp/ocr-local/usr/share/tesseract-ocr/5/tessdata ./usr/bin/tesseract /tmp/test_orientation.png stdout 2>&1; done
+

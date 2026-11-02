@@ -1,0 +1,344 @@
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ ls -l /app/Graphemes_Sound_Letter_Patterns.docx
+[?2004l-rw-r--r-- 1 agent agent 68195 Oct 22 03:13 /app/Graphemes_Sound_Letter_Patterns.docx
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from docx import Document
+[?2004l[?2004h> p='/app/Graphemes_Sound_Letter_Patterns.docx'
+[?2004l[?2004h> d=Document(p)
+[?2004l[?2004h> for i,b in enumerate(d.element.body):
+[?2004l[?2004h>  print(i,b.tag.split('}')[-1],repr(''.join(b.itertext()))[:3000])
+[?2004l[?2004h> PY
+[?2004l0 p 'We have 20 vowel sounds, and 24 consonant sounds.We have 20 vowel sounds, and 24 consonant sounds.We have 20 vowel sounds, and 24 consonant sounds.-88899-25399Graphemes = Sound Letter Patterns Graphemes = Sound Letter Patterns Graphemes = Sound Letter Patterns English can be thought of as an alphabetic language consisting of 44 speech sounds (phonemes) which map onto letter patterns (graphemes).English can be thought of as an alphabetic language consisting of 44 speech sounds (phonemes) which map onto letter patterns (graphemes).English can be thought of as an alphabetic language consisting of 44 speech sounds (phonemes) which map onto letter patterns (graphemes).-88899-25399'
+1 p 'In English we use graphemes to represent these various sounds (phonemes). In English we use graphemes to represent these various sounds (phonemes). In English we use graphemes to represent these various sounds (phonemes). '
+2 p 'Graphemes can be a single letter (graph), or a combination of two (digraph), three (trigraph), or four letters (quadgraph). Graphemes can be a single letter (graph), or a combination of two (digraph), three (trigraph), or four letters (quadgraph). Graphemes can be a single letter (graph), or a combination of two (digraph), three (trigraph), or four letters (quadgraph). '
+3 p ''
+4 p 'Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word\xa0Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word\xa0Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word\xa0'
+5 p '1 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,rub\xa0 cat\xa01 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,ru1 letter making 1 sound,Graph,b\xa0\xa0\xa0 a,rubb\xa0 c\xa0 caat\xa0t\xa0'
+6 p '2 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0,\xa0ch\xa0\xa0\xa0 oy\xa0,chop\xa0 soy\xa02 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0,\xa0ch\xa0\xa0\xa0 oy\xa0,2 letters making 1 sound,Digraph\xa0\xa0\xa0\xa0\xa0\xa0,\xa0ch\xa0\xa0\xa0 oy\xa0,chchop\xa0 sop\xa0 soyoy\xa0\xa0'
+7 p '3 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\xa0 ere\xa0,ridge\xa0\xa0\xa0 here\xa03 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\xa0 ere\xa0,ri3 letters making 1 sound\xa0\xa0,Trigraph\xa0,dge\xa0\xa0\xa0 ere\xa0,ridgedge\xa0\xa0\xa0 h\xa0\xa0\xa0 hereere\xa0\xa0'
+8 p '4 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa0,ough\xa0,through\xa0 though\xa04 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa0,ough\xa0,thr4 letters making 1 sound\xa0\xa0,Quadgraph\xa0\xa0\xa0\xa0\xa0,ough\xa0,throughough\xa0 th\xa0 thoughough\xa0\xa0'
+9 p ''
+10 p 'Consonant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.  Consonant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.  Consonant digraphs and trigraphs are not to be confused with consonant blends — which are combinations of consonants that appear before or after a vowel.  '
+11 p 'Graphemes can be organised into introductory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to analyse the individual phonemes and graphemes that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) recommends the teaching of vowels through onset-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  Graphemes can be organised into introductory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to analyse the individual phonemes and graphemes that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) recommends the teaching of vowels through onset-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  Graphemes can be organised into introductory, basic, intermediate, and advanced patterns. Grapheme patterns can be taught in multiple ways. One way is to analyse the individual phonemes and graphemes that make up words, demonstrating how vowel and consonant sounds are represented in multiple words. Adams (1990) recommends the teaching of vowels through onset-rime, stating that vowel sounds are “generally quite stable within particular rimes” (p. 320).  '
+12 p 'While there are no set rules for what graphemes teachers should focus on first, it is useful to begin with the simpler graphemes, then focus on progressively more advanced patterns as you go.  While there are no set rules for what graphemes teachers should focus on first, it is useful to begin with the simpler graphemes, then focus on progressively more advanced patterns as you go.  While there are no set rules for what graphemes teachers should focus on first, it is useful to begin with the simpler graphemes, then focus on progressively more advanced patterns as you go.  '
+13 p ''
+14 p ''
+15 p 'Examples of introductory graphemes:Examples of introductory graphemes:Examples of introductory graphemes:'
+16 tbl 'a\xa0a\xa0a\xa0\xa0\xa0\xa0e\xa0e\xa0e\xa0\xa0\xa0\xa0i\xa0i\xa0i\xa0\xa0\xa0\xa0o\xa0o\xa0o\xa0\xa0\xa0\xa0u\xa0u\xa0u\xa0cat\xa0ccaat\xa0t\xa0\xa0\xa0\xa0leg\xa0lleeg\xa0g\xa0\xa0\xa0\xa0sit\xa0ssiit\xa0t\xa0\xa0\xa0\xa0top\xa0ttoop\xa0p\xa0\xa0\xa0\xa0rub\xa0rruub\xa0b\xa0'
+17 p '\xa0\xa0\xa0'
+18 tbl 'p\xa0p\xa0p\xa0\u202f\xa0\u202f\xa0\u202f\xa0b\xa0b\xa0b\xa0\u202f\xa0\u202f\xa0\u202f\xa0t\xa0t\xa0t\xa0\u202f\xa0\u202f\xa0\u202f\xa0d\xa0d\xa0d\xa0\xa0\xa0\xa0k\xa0 c\xa0k\xa0 c\xa0k\xa0 c\xa0\u202f\xa0\u202f\xa0\u202f\xa0g\xa0g\xa0g\xa0pet\xa0ppet\xa0et\xa0\u202f\xa0\u202f\xa0\u202f\xa0bet\xa0bbet\xa0et\xa0\u202f\xa0\u202f\xa0\u202f\xa0tip\xa0ttip\xa0ip\xa0\u202f\xa0\u202f\xa0\u202f\xa0dip\xa0ddip\xa0ip\xa0\xa0\xa0\xa0kit cap\xa0kkit it ccap\xa0ap\xa0\u202f\xa0\u202f\xa0\u202f\xa0gap\xa0ggap\xa0ap\xa0'
+19 p '\xa0\xa0\xa0'
+20 tbl 'f\xa0f\xa0f\xa0\u202f\xa0\u202f\xa0\u202f\xa0v\xa0v\xa0v\xa0\xa0\xa0\xa0m\xa0m\xa0m\xa0\u202f\xa0\u202f\xa0\u202f\xa0n\xa0n\xa0n\xa0\xa0\xa0\xa0s\xa0s\xa0s\xa0\u202f\xa0\u202f\xa0\u202f\xa0z\xa0z\xa0z\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0fan\xa0ffan\xa0an\xa0\u202f\xa0\u202f\xa0\u202f\xa0van\xa0vvan\xa0an\xa0\xa0\xa0\xa0met\xa0mmet\xa0et\xa0\u202f\xa0\u202f\xa0\u202f\xa0net\xa0nnet\xa0et\xa0\xa0\xa0\xa0sue\xa0ssue\xa0ue\xa0\u202f\xa0\u202f\xa0\u202f\xa0zoo\xa0zzoo\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
+21 p '\xa0\xa0\xa0'
+22 tbl 'w\xa0w\xa0w\xa0\xa0\xa0\xa0r\xa0r\xa0r\xa0\xa0\xa0\xa0l\xa0l\xa0l\xa0\xa0\xa0\xa0y\xa0y\xa0y\xa0\xa0\xa0\xa0h\xa0h\xa0h\xa0\xa0\xa0\xa0j\xa0j\xa0j\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0wet\xa0wwet\xa0et\xa0\xa0\xa0\xa0rat\xa0rrat\xa0at\xa0\xa0\xa0\xa0leg\xa0lleg\xa0eg\xa0\xa0\xa0\xa0yak\xa0yyak\xa0ak\xa0\xa0\xa0\xa0hat\xa0hhat\xa0at\xa0\xa0\xa0\xa0Jane\xa0JJane\xa0ane\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0'
+23 p '\xa0\xa0\xa0'
+24 p 'Examples of basic graphemes: Examples of basic graphemes: Examples of basic graphemes: '
+25 p 'Basic vowel digraphs/trigraphs (long vowels, plus short "oo")Basic vowel digraphs/trigraphs (long vowels, plus short "oo")Basic vowel digraphs/trigraphs (long vowels, plus short "oo")'
+26 tbl 'ai\xa0ai\xa0ai\xa0\xa0\xa0\xa0ee\xa0\xa0\xa0\xa0ee\xa0\xa0\xa0\xa0ee\xa0\xa0\xa0\xa0\xa0\xa0\xa0igh\xa0igh\xa0igh\xa0\xa0\xa0\xa0ow\xa0ow\xa0ow\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0oo\xa0\xa0\xa0\xa0\xa0\xa0paid\xa0paid\xa0paid\xa0\xa0\xa0\xa0bee\xa0bbeeee\xa0\xa0\xa0\xa0\xa0high\xa0high\xa0high\xa0\xa0\xa0\xa0flow\xa0flow\xa0flow\xa0\xa0\xa0\xa0moon\xa0\xa0\xa0\xa0moon\xa0\xa0\xa0\xa0moon\xa0\xa0\xa0\xa0\xa0\xa0\xa0book\xa0\xa0bbooook\xa0\xa0k\xa0\xa0'
+27 p '\nConsonant digraphs (basic)\xa0\nConsonant digraphs (basic)\xa0Consonant digraphs (basic)\xa0'
+28 tbl 'sh\xa0sh\xa0sh\xa0\u202f\xa0\u202f\xa0\u202f\xa0ch\xa0ch\xa0ch\xa0\xa0\xa0\xa0th\xa0th\xa0th\xa0\u202f\xa0\u202f\xa0\u202f\xa0th\xa0th\xa0th\xa0\xa0\xa0\xa0ck\xa0ck\xa0ck\xa0\xa0\xa0\xa0ng\xa0ng\xa0ng\xa0\xa0\xa0\xa0\xa0\xa0\xa0ship\xa0shship\xa0ip\xa0\u202f\xa0\u202f\xa0\u202f\xa0chain\xa0chchain\xa0ain\xa0\xa0\xa0\xa0thin\xa0ththin\xa0in\xa0\u202f\xa0\u202f\xa0\u202f\xa0this\xa0ththis\xa0is\xa0\xa0\xa0\xa0pick\xa0pipickck\xa0\xa0\xa0\xa0\xa0sing\xa0sisingng\xa0\xa0'
+29 p '\nDoublets (occurs at end of syllable)\xa0\nDoublets (occurs at end of syllable)\xa0Doublets (occurs at end of syllable)\xa0'
+30 tbl 'ff\xa0ff\xa0ff\xa0\u202f\xa0\u202f\xa0\u202f\xa0ll\xa0ll\xa0ll\xa0\xa0\xa0\xa0ss\xa0ss\xa0ss\xa0\u202f\xa0\u202f\xa0\u202f\xa0zz\xa0zz\xa0zz\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0puff\xa0pupuffff\xa0\xa0\u202f\xa0\u202f\xa0\u202f\xa0will\xa0wiwillll\xa0\xa0\xa0\xa0\xa0hiss\xa0hihissss\xa0\xa0\u202f\xa0\u202f\xa0\u202f\xa0jazz\xa0jajazzzz\xa0\xa0'
+31 p ''
+32 p 'Examples of intermediate graphemes: Examples of intermediate graphemes: Examples of intermediate graphemes: '
+33 p 'Magic EMagic EMagic E'
+34 tbl 'a_e\xa0a_e\xa0a_e\xa0\xa0\xa0\xa0e_e\xa0e_e\xa0e_e\xa0\xa0\xa0\xa0i_e\xa0i_e\xa0i_e\xa0\xa0\xa0\xa0o_e\xa0o_e\xa0o_e\xa0\xa0\xa0\xa0u_e\xa0u_e\xa0u_e\xa0made\xa0mmaaddee\xa0\xa0\xa0\xa0\xa0Pete\xa0PPeettee\xa0\xa0\xa0\xa0\xa0site\xa0ssiittee\xa0\xa0\xa0\xa0\xa0cope\xa0ccooppee\xa0\xa0\xa0\xa0\xa0tube\xa0ttuube\xa0be\xa0'
+35 p '\nLong Vowel Digraphs (intermediate)\nLong Vowel Digraphs (intermediate)Long Vowel Digraphs (intermediate)'
+36 tbl 'ay\xa0ay\xa0ay\xa0\xa0\xa0\xa0ea\xa0\xa0 y\xa0ea\xa0\xa0 y\xa0ea\xa0\xa0 y\xa0\xa0\xa0\xa0ie\xa0\xa0\xa0 y\xa0ie\xa0\xa0\xa0 y\xa0ie\xa0\xa0\xa0 y\xa0\xa0\xa0\xa0oe\xa0\xa0\xa0oe\xa0\xa0\xa0oe\xa0\xa0\xa0\xa0\xa0\xa0ue\xa0\xa0\xa0ue\xa0\xa0\xa0ue\xa0\xa0\xa0\xa0\xa0\xa0tray\xa0tray\xa0tray\xa0\xa0\xa0\xa0beat\xa0\xa0 happy\xa0bbeaeat\xa0\xa0 happt\xa0\xa0 happyy\xa0\xa0\xa0\xa0\xa0pie\xa0\xa0\xa0 why\xa0pie\xa0\xa0\xa0 whpie\xa0\xa0\xa0 whyy\xa0\xa0\xa0\xa0\xa0toe\xa0\xa0\xa0toe\xa0\xa0\xa0toe\xa0\xa0\xa0\xa0\xa0\xa0cue\xa0cue\xa0cue\xa0\xa0\xa0\xa0'
+37 p '\xa0\xa0\xa0'
+38 tbl 'ar\xa0ar\xa0ar\xa0\xa0\xa0\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0er\xa0\xa0 ir\xa0\xa0 ur\xa0\xa0\xa0\xa0or\xa0\xa0\xa0or\xa0\xa0\xa0or\xa0\xa0\xa0car\xa0ccarar\xa0\xa0\xa0\xa0\xa0her\xa0 bird\xa0 hurt\xa0\xa0hherer\xa0 b\xa0 birird\xa0 hd\xa0 hururt\xa0\xa0t\xa0\xa0\xa0\xa0\xa0cork\xa0ccorork\xa0k\xa0'
+39 p '\xa0\xa0\xa0'
+40 tbl 'ow\xa0 ou\xa0ow\xa0 ou\xa0ow\xa0 ou\xa0\xa0\xa0\xa0oy\xa0\xa0 oi\xa0oy\xa0\xa0 oi\xa0oy\xa0\xa0 oi\xa0\xa0\xa0\xa0eer\xa0 ear\xa0\xa0\xa0eer\xa0 ear\xa0\xa0\xa0eer\xa0 ear\xa0\xa0\xa0\xa0\xa0\xa0air\xa0\xa0 ere\xa0air\xa0\xa0 ere\xa0air\xa0\xa0 ere\xa0\xa0\xa0\xa0our\xa0our\xa0our\xa0cow\xa0\xa0 out\xa0ccowow\xa0\xa0 \xa0\xa0 ouout\xa0t\xa0\xa0\xa0\xa0boy\xa0 void\xa0\xa0bboy\xa0oy\xa0 v voioid\xa0\xa0d\xa0\xa0\xa0\xa0\xa0deer\xa0 near\xa0ddeeeer\xa0 nr\xa0 near\xa0ear\xa0\xa0\xa0\xa0hair\xa0 there\xa0hhairair\xa0 th\xa0 there\xa0ere\xa0\xa0\xa0\xa0tour\xa0ttour\xa0our\xa0'
+41 p '\nConsonant Digraphs/Trigraphs (intermediate)\xa0\nConsonant Digraphs/Trigraphs (intermediate)\xa0Consonant Digraphs/Trigraphs (intermediate)\xa0'
+42 tbl '“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0“zh”\xa0 si\xa0\xa0 ge\xa0\xa0 s\xa0\xa0\xa0\xa0\xa0\xa0ch\xa0ch\xa0ch\xa0\xa0\xa0\xa0ch\xa0ch\xa0ch\xa0\xa0\xa0\xa0wh\xa0wh\xa0wh\xa0\xa0\xa0\xa0tch\xa0tch\xa0tch\xa0\xa0\xa0\xa0dge\xa0dge\xa0dge\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0vision beige treasure\xa0vivisision beion beigege trea treassure\xa0ure\xa0\xa0\xa0\xa0school\xa0sschchool\xa0ool\xa0\xa0\xa0\xa0chute\xa0chchute\xa0ute\xa0\xa0\xa0\xa0when\xa0whwhen\xa0en\xa0\xa0\xa0\xa0witch\xa0wiwitchtch\xa0\xa0\xa0\xa0\xa0edge\xa0eedgedge\xa0\xa0\xa0\xa0\xa0'
+43 p ''
+44 p 'Double and triple blendsDouble and triple blendsDouble and triple blends'
+45 p 'Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl-\xa0Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl-\xa0Initial: e.g. sl-, sk-, tr-, cl-, cr-, str-, spl-\xa0'
+46 p 'Final: e.g. -lt, nk, sp, -sks\xa0Final: e.g. -lt, nk, sp, -sks\xa0Final: e.g. -lt, nk, sp, -sks\xa0'
+47 p '\xa0\xa0\xa0'
+48 p 'Introduction to unstressed syllables\xa0Introduction to unstressed syllables\xa0Introduction to unstressed syllables\xa0'
+49 tbl 'SCHWA\xa0SCHWA\xa0SCHWA\xa0trumpet across suppose\xa0\xa0trumptrumpeet t aacross scross suuppose\xa0\xa0ppose\xa0\xa0'
+50 p '\xa0\xa0\xa0'
+51 p 'Advanced graphemes / spelling rules\xa0Advanced graphemes / spelling rules\xa0Advanced graphemes / spelling rules\xa0'
+52 p 'There are numerous other useful graphemes and spelling rules, but these will not be listed exhaustively. If a grapheme or spelling rule is not listed above, it can be considered more advanced.\xa0\xa0There are numerous other useful graphemes and spelling rules, but these will not be listed exhaustively. If a grapheme or spelling rule is not listed above, it can be considered more advanced.\xa0\xa0There are numerous other useful graphemes and spelling rules, but these will not be listed exhaustively. If a grapheme or spelling rule is not listed above, it can be considered more advanced.\xa0\xa0'
+53 p '\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0\xa0\xa0\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0\xa0Refer to the morphology section which focuses on the parts of words (morphemes) that carry meaning, including prefixes, suffixes, and base words.\xa0\xa0'
+54 p '\xa0\xa0\xa0'
+55 p 'Adams, M. (1990). Beginning to read: thinking and learning about print. Cambridge MA: The MIT PressAdams, M. (1990). Beginning to read: thinking and learning about print. Cambridge MA: The MIT PressAdams, M. (1990). Beginning to read: thinking and learning about print. Cambridge MA: The MIT Press'
+56 sectPr ''
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree as E
+[?2004l[?2004h> with ZipFile('/app/Graphemes_Sound_Letter_Patterns.docx') as z:
+[?2004l[?2004h>  root=E.fromstring(z.read('word/document.xml'))
+[?2004l[?2004h>  ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+[?2004l[?2004h>  body=root.find('w:body',ns)
+[?2004l[?2004h>  for i in range(4,9):
+[?2004l[?2004h>   print('PARAGRAPH',i)
+[?2004l[?2004h>   print(E.tostring(body[i],pretty_print=True).decode())
+[?2004l[?2004h> PY
+[?2004lPARAGRAPH 4
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000005">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">Sound-Letter Pattern,Grapheme,Example Grapheme,Example Word&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 5
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000006">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">1 letter making 1 sound,Graph,b&#160;&#160;&#160; a,ru</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">b</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160; c</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">a</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">t&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 6
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000007">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">2 letters making 1 sound,Digraph&#160;&#160;&#160;&#160;&#160;&#160;,&#160;ch&#160;&#160;&#160; oy&#160;,</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ch</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">op&#160; s</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">oy</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 7
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000008">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">3 letters making 1 sound&#160;&#160;,Trigraph&#160;,dge&#160;&#160;&#160; ere&#160;,ri</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">dge</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;&#160;&#160; h</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ere</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;</w:t>
+  </w:r>
+</w:p>
+
+PARAGRAPH 8
+<w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000009">
+  <w:pPr>
+    <w:rPr/>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">4 letters making 1 sound&#160;&#160;,Quadgraph&#160;&#160;&#160;&#160;&#160;,ough&#160;,thr</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ough</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160; th</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:u w:val="single"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">ough</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">&#160;</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+  </w:r>
+</w:p>
+
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ cat > /tmp/convert_graphemes.py <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from lxml import etree as E
+[?2004l[?2004h> from copy import deepcopy
+[?2004l[?2004h> import os
+[?2004l[?2004h> path='/app/Graphemes_Sound_Letter_Patterns.docx'
+[?2004l[?2004h> W='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+[?2004l[?2004h> ns={'w':W}
+[?2004l[?2004h> def tag(s): return '{'+W+'}'+s
+[?2004l[?2004h> def el(s, **attrs):
+[?2004l[?2004h>  e=E.Element(tag(s))
+[?2004l[?2004h>  for k,v in attrs.items(): e.set(tag(k),str(v))
+[?2004l[?2004h>  return e
+[?2004l[?2004h> with ZipFile(path) as z:
+[?2004l[?2004h>  infos=z.infolist(); data={i.filename:z.read(i.filename) for i in infos}
+[?2004l[?2004h> root=E.fromstring(data['word/document.xml'])
+[?2004l[?2004h> body=root.find('w:body',ns)
+[?2004l[?2004h> original=list(body)
+[?2004l[?2004h> selected=original[4:9]
+[?2004l[?2004h> expected=[''.join(p.xpath('.//w:t/text()',namespaces=ns)).split(',') for p in selected]
+[?2004l[?2004h> assert all(len(r)==4 for r in expected)
+[?2004l[?2004h> sect=body.find('w:sectPr',ns)
+[?2004l[?2004h> size=sect.find('w:pgSz',ns); mar=sect.find('w:pgMar',ns)
+[?2004l[?2004h> width=int(size.get(tag('w')))-int(mar.get(tag('left')))-int(mar.get(tag('right')))
+[?2004l[?2004h> widths=[int(width*f) for f in (.34,.18,.24)]
+[?2004l[?2004h> widths.append(width-sum(widths))
+[?2004l[?2004h> table=el('tbl'); props=el('tblPr'); table.append(props)
+[?2004l[?2004h> props.append(el('tblW',w=width,type='dxa'))
+[?2004l[?2004h> borders=el('tblBorders')
+[?2004l[?2004h> for side in ['top','left','bottom','right','insideH','insideV']:
+[?2004l[?2004h>  borders.append(el(side,val='single',sz=4,color='000000'))
+[?2004l[?2004h> props.append(borders)
+[?2004l[?2004h> props.append(el('tblLayout',type='fixed'))
+[?2004l[?2004h> grid=el('tblGrid')
+[?2004l[?2004h> for w in widths: grid.append(el('gridCol',w=w))
+[?2004l[?2004h> table.append(grid)
+[?2004l[?2004h> for rownum,p in enumerate(selected):
+[?2004l[?2004h>  row=el('tr'); table.append(row)
+[?2004l[?2004h>  if rownum==0:
+[?2004l[?2004h>   rp=el('trPr'); rp.append(el('tblHeader')); row.append(rp)
+[?2004l[?2004h>  paragraphs=[]
+[?2004l[?2004h>  for width in widths:
+[?2004l[?2004h>   cell=el('tc'); cp=el('tcPr'); cp.append(el('tcW',w=width,type='dxa')); cell.append(cp)
+[?2004l[?2004h>   para=el('p')
+[?2004l[?2004h>   if p.find('w:pPr',ns) is not None: para.append(deepcopy(p.find('w:pPr',ns)))
+[?2004l[?2004h>   cell.append(para); row.append(cell); paragraphs.append(para)
+[?2004l[?2004h>  col=0
+[?2004l[?2004h>  for run in p.findall('w:r',ns):
+[?2004l[?2004h>   text=''.join(run.xpath('./w:t/text()',namespaces=ns))
+[?2004l[?2004h>   chunks=text.split(',')
+[?2004l[?2004h>   for j,chunk in enumerate(chunks):
+[?2004l[?2004h>    if j: col+=1
+[?2004l[?2004h>    if not chunk: continue
+[?2004l[?2004h>    newrun=deepcopy(run)
+[?2004l[?2004h>    for child in list(newrun):
+[?2004l[?2004h>     if child.tag!=tag('rPr'): newrun.remove(child)
+[?2004l[?2004h>    t=el('t'); t.set('{http://www.w3.org/XML/1998/namespace}space','preserve'); t.text=chunk
+[?2004l[?2004h>    newrun.append(t); paragraphs[col].append(newrun)
+[?2004l[?2004h>  assert col==3
+[?2004l[?2004h> body.insert(4,table)
+[?2004l[?2004h> for p in selected: body.remove(p)
+[?2004l[?2004h> actual=[[''.join(c.xpath('.//w:t/text()',namespaces=ns)) for c in r.findall('w:tc',ns)] for r in table.findall('w:tr',ns)]
+[?2004l[?2004h> assert actual==expected
+[?2004l[?2004h> assert [E.tostring(x) for x in body if x is not table]==[E.tostring(x) for i,x in enumerate(original) if not 4<=i<9]
+[?2004l[?2004h> data['word/document.xml']=E.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+[?2004l[?2004h> tmp=path+'.tmp'
+[?2004l[?2004h> with ZipFile(tmp,'w') as z:
+[?2004l[?2004h>  for info in infos: z.writestr(info,data[info.filename])
+[?2004l[?2004h> with ZipFile(tmp) as z:
+[?2004l[?2004h>  assert z.testzip() is None
+[?2004l[?2004h>  for info in infos:
+[?2004l[?2004h>   assert z.read(info.filename)==data[info.filename]
+[?2004l[?2004h> os.replace(tmp,path)
+[?2004l[?2004h> from docx import Document
+[?2004l[?2004h> doc=Document(path)
+[?2004l[?2004h> assert any([[c.text for c in r.cells] for r in t.rows]==expected for t in doc.tables)
+[?2004l[?2004h> print('Saved and verified:',path)
+[?2004l[?2004h> print('New table: 5 rows x 4 columns; other document content preserved.')
+[?2004l[?2004h> for row in actual: print(row)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ python /tmp/convert_graphemes.py
+[?2004lSaved and verified: /app/Graphemes_Sound_Letter_Patterns.docx
+New table: 5 rows x 4 columns; other document content preserved.
+['Sound-Letter Pattern', 'Grapheme', 'Example Grapheme', 'Example Word\xa0']
+['1 letter making 1 sound', 'Graph', 'b\xa0\xa0\xa0 a', 'rub\xa0 cat\xa0']
+['2 letters making 1 sound', 'Digraph\xa0\xa0\xa0\xa0\xa0\xa0', '\xa0ch\xa0\xa0\xa0 oy\xa0', 'chop\xa0 soy\xa0']
+['3 letters making 1 sound\xa0\xa0', 'Trigraph\xa0', 'dge\xa0\xa0\xa0 ere\xa0', 'ridge\xa0\xa0\xa0 here\xa0']
+['4 letters making 1 sound\xa0\xa0', 'Quadgraph\xa0\xa0\xa0\xa0\xa0', 'ough\xa0', 'through\xa0 though\xa0']
+[?2004h[01;32magent@c88500295499[00m:[01;34m/app[00m$ 

@@ -1,0 +1,12 @@
+New Terminal Output:
+
+agent@83e3666913d5:/app$ python3 - <<'PY'
+> from pathlib import Path
+> for p in Path('/home/user/Documents/Blog').glob('*.pdf'):
+>     data=p.read_bytes()
+>     assert data.startswith(b'%PDF-') and data.rstrip().endswith(b'%%EOF'), p
+>     print('Verified:',p.name, f'({len(data):,} bytes)')
+> PY
+Verified: LLM Powered Autonomous Agents.pdf (5,740,252 bytes)
+Verified: Thinking about High-Quality Human Data.pdf (3,235,867 bytes)
+agent@83e3666913d5:/app$

@@ -1,0 +1,21 @@
+New Terminal Output:
+
+agent@1c0d1d135193:/app$ which xdotool wmctrl import python3; ps -ef | grep -E 'thunderbird|firefox' | grep -v grep; xdotool search --onlyvisible --name . getwi
+ndowname
+/usr/bin/xdotool
+/usr/bin/wmctrl
+/opt/venv/bin/python3
+agent         69       1  9 02:50 ?        00:00:01 /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/t5q2a5hp.default-release -compose from='Anonym
+Tester <anonym-x2024@outlook.com>',to='assistant@outlook.com',subject='New-month AWS Bill',body='<!DOCTYPE html><html><body><p>Dear Assistant,</p><p>           
+   Hello. Here is the bill for the new-month usage of AWS. Please help us to submit it to the treasurer\'s office.</p><p>      Regards,</p><p>      Anonym</p></
+body></html>'
+agent         75       1  0 02:50 ?        00:00:00 /opt/thunderbird/crashhelper 69 6 /tmp/ 8
+Write: New-month AWS Bill - Thunderbird
+agent@1c0d1d135193:/app$
+
+
+
+
+
+
+

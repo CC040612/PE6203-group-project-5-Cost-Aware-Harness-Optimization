@@ -1,0 +1,10 @@
+{
+  "analysis": "We need inspect the video's metadata and a sample frame to determine how it is flipped, then correct its orientation and save it at the exact requested path.",
+  "plan": "Check available video tools and probe the input file, then extract a frame for orientation analysis.",
+  "commands": [
+    {
+      "keystrokes": "ls -lh ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4; which ffmpeg ffprobe; ffprobe -v error -show_streams -show_format ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4\n",
+      "duration": 1
+    }
+  ]
+}

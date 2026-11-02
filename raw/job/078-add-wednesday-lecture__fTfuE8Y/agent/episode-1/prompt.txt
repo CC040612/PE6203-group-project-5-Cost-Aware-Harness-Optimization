@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@77da5446c3f2:/app$ ls -l /home/user/Desktop
+total 56
+-rw-r--r-- 1 agent agent 18985 Oct 21 15:55 'Course Timetable.xlsx'
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:55  FDI
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:55 'Grammar rules PDF'
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:55 'Grammar test'
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:55 'Lec powerpoint'
+-rw-r--r-- 1 agent agent 13987 Oct 21 15:55 'Public Lecture Teaching Plan.docx'
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:55 'students work'
+agent@77da5446c3f2:/app$ python - <<'PY'
+> import openpyxl
+> p='/home/user/Desktop/Course Timetable.xlsx'
+> w=openpyxl.load_workbook(p)
+> for s in w:
+>  print('SHEET',s.title,s.max_row,s.max_column,'MERGES',list(s.merged_cells.ranges))
+>  for row in s:
+>   v=['%s:%s'%(c.coordinate,c.value) for c in row if c.value is not None]
+>   if v: print(' | '.join(v))
+> PY
+bash: python: command not found
+agent@77da5446c3f2:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

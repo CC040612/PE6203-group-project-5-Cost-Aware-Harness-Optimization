@@ -1,0 +1,10 @@
+{
+  "analysis": "The shell does not provide curl or the python alias. A browser-state service runs with a virtual-environment Python interpreter.",
+  "plan": "Inspect the browser launcher and state service to determine the supported browser connection and use Python 3 for automation.",
+  "commands": [
+    {
+      "keystrokes": "cat /usr/local/bin/chromium; sed -n '1,200p' /usr/local/bin/chrome_state.py; which python3; ls /opt/venv/bin | head; cat /tmp/chrome_state.log | tail -15\n",
+      "duration": 0.1
+    }
+  ]
+}

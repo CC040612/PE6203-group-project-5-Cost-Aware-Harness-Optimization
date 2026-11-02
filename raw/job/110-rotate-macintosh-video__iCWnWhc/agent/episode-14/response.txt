@@ -1,0 +1,10 @@
+{
+  "analysis": "Encoding is still running with no reported errors.",
+  "plan": "Wait briefly for completion.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

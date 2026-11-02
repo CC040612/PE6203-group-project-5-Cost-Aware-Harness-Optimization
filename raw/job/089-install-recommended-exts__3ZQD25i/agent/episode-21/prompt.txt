@@ -1,0 +1,309 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/details.py
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Momentum
+Momentum Dashboard
+Featured
+4.2
+(
+
+13.7K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+2,000,000 users
+Add to Chrome
+Overview
+
+Transform your browser into a beautifully designed tab that helps you feel calm, keep focus, and stay energized.
+
+⭐ Featured in Tim Ferriss’ Tools of Titans, The Wall Street Journal, Apple Worldwide Developer Conference, Product Hunt, Lifehacker, and so much more ⭐
+
+💙 FREE features
+
+🌊 Feel inspired with a new background, mantra and quote each day
+🌊 Focus better with Focus Mode
+🌊 Simplify work and life with easy to-do lists
+🌊 Create shortcuts to your favorite websites
+🌊 Get local weather info
+🌊 Google/Bing and other search options on your dashboard
+🌊 Customizable (Show/hide features as you like!)
+🌊 Private and secure (We don’t share or sell your data!)
+
+⭐ Join over 3 million inspired users ⭐
+
+Note: For the best experience, after installing Momentum click the ‘Keep it’ button on the ‘Change back to Google’ notification. This will show Momentum on each
+ new tab as intended. 🙂
+
+Want more Momentum?
+
+💙 PLUS features (You can try Plus for FREE once you install the extension!)
+
+🌊 Sustain better focus all day with unlimited Focus Mode
+🌊 Create one-of-a-kind vision board
+🌊 Vacuum your 107 tabs with Tab Stash
+🌊 Write better (and quicker) with Notes AI
+🌊 Become an idea machine with Ask AI
+🌊 Get in the zone with Soundscapes
+🌊 Seamless task manager integrations (ClickUp, Todoist, Asana, etc.)
+🌊 Track your habits with Metrics
+🌊 Unlimited to-do lists
+
+…And Countdowns, World Clocks, premium weather info (and more!)
+
+🛡️ Privacy & Security
+
+The Momentum team is committed to protecting your privacy. The information we gather or process is used solely for core functionality of Momentum and to improve
+ the quality and security of our service. Your information isn’t and has never been sold to third parties.
+
+For more information on privacy and the security of your data, visit https://momentumdash.com/privacy.
+
+🤍 Help & Contact Resources
+Help Center: https://momentumdash.help
+Suggestions: https://momentum.nolt.io/
+Contact us: https://momentumdash.com/contact
+
+👍 Our Social Media
+Blog: https://momentumdash.com/blog
+Instagram: https://instagram.com/momentumdash
+
+See more
+4.2 out of 5
+13.7K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+2.27.9
+Updated
+October 20, 2026
+Features
+Offers in-app purchases
+Flag concern
+Size
+18.04MiB
+Languages
+English
+Developer
+Momentum Dashboard
+3 Fan Tan Alley Suite 400 Victoria, BC V8W 3G9 CA
+Website
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU
+ laws.
+D-U-N-S
+202795134
+Privacy
+
+Momentum has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's priv
+acy policy.
+
+Momentum handles the following:
+Personally identifiable information
+Authentication information
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+
+For help with questions, suggestions, or problems, visit the developer's support site
+
+Related
+
+Forest: stay focused, be present
+
+3.0
+
+Stay focused in a pleasant way.
+
+Infinity New Tab
+
+4.5
+
+Infinity New Tab allows you to customize your New Tab page
+
+Todoist for Chrome: Planner & Calendar
+
+4.8
+
+Organize work and life with Todoist for Chrome
+
+Weava Highlighter - PDF & Web
+
+3.0
+
+Best highlighting tool for Website and PDF. FREE and easy to use.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Zoom Chrome Extension
+Featured
+3.7
+(
+
+1K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+8,000,000 users
+Add to Chrome
+Overview
+
+Schedule Zoom meetings directly from Google Calendar
+
+Schedule Zoom cloud meetings directly from Google Calendar
+
+Zoom, the cloud meeting company, unifies mobile collaboration, cloud video conferencing and simple online meetings into one easy-to-use platform. Our solution o
+ffers the best video, audio and screen-sharing experience across Windows PC, Mac, iOS, Android and H.323/SIP room systems
+
+The Zoom Chrome Extension allows participants to schedule Zoom cloud meetings directly from Google Calendar. With the click of a button, you can start an instan
+t meeting or schedule a future meeting. The meeting URL and information is sent via a Google Calendar  invitation so the attendee can join with a single-click.
+
+
+Zoom Chrome Extension allows you to:
+•  Start an instant meeting
+•  Schedule a meeting
+•  Schedule a meeting for other
+
+Do we do more?
+
+Zoom offers the following:
+•  Unparalleled video, voice and screen sharing quality
+•  Free unlimited minutes for 1-to-1 meetings and 40 minutes for group meetings
+•  Paid service is only $14.99/month with unlimited minutes and meetings
+•  Video gallery view to see all 25 video streams at once
+•  Full online meeting functionality, including desktop and mobile screen sharing
+•  Annotations and share audio, mouse and keyboard controls
+•  Free global teleconferencing
+•  Interoperability between H.323/SIP room systems, desktop, tablet and mobile devices
+
+To learn more about Zoom, please visit <a href="https://zoom.us">https://zoom.us</a>
+
+See more
+3.7 out of 5
+1K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+1.9.16
+Updated
+August 27, 2026
+Flag concern
+Offered by
+zoom.us
+Size
+313KiB
+Languages
+3 languages
+Developer
+Zoom Communications, Inc.
+55 Almaden Blvd Ste 600 San Jose, CA 95113 US
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU
+ laws.
+D-U-N-S
+053553307
+Privacy
+
+Zoom Chrome Extension has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the dev
+eloper's privacy policy.
+
+Zoom Chrome Extension handles the following:
+User activity
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+Visit support hub
+Related
+
+Zoom Closer
+
+3.6
+
+This extension automatically closes the launched window from Zoom meetings.
+
+Zoom for Google Chrome
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Calendly Browser Extension
+
+3.8
+
+Schedule meetings without the hassle. Never get double booked. Calendly works with your calendar to automate appointment scheduling.
+
+LinkedIn Extension
+
+3.9
+
+This extension lights up with a new notification count whenever you have new activity waiting for you at LinkedIn.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+{'keys': ['loadTimes', 'csi', 'app', 'webstorePrivate', 'management', 'runtime'], 'ua': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+Chrome/155.0.0.0 Safari/537.36'}
+buttons ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+agent@715dad585543:/app$ curl -L --max-time 30 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=155.0.0.0&acceptformat=crx3&x=id%3
+Dkgjfgplpablkjnlkjmjdecgdpfankdle%26uc' -o /tmp/zoom.crx; ls -l /tmp/zoom.crx
+curl -L --max-time 30 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=155.0.0.0&acceptformat=crx3&x=id%3Dkgjfgplpablkjnlkjmjdecgd
+pfankdle%26uc' -o /tmp/zoom.crx; ls -l /tmp/zoom.crx
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   468    0   468    0     0   1497      0 --:--:-- --:--:-- --:--:--  1500
+100  313k  100  313k    0     0   494k      0 --:--:-- --:--:-- --:--:--  494k
+-rw-r--r-- 1 agent agent 320595 Oct 21 16:22 /tmp/zoom.crx
+agent@715dad585543:/app$

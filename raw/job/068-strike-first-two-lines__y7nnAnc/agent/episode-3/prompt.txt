@@ -1,0 +1,48 @@
+New Terminal Output:
+
+agent@806aaa1948ca:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree
+> import os
+> path='/app/New_Club_Spring_2018_Training.pptx'
+> ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
+> a='{'+ns['a']+'}'
+> with ZipFile(path) as src:
+>  root=etree.fromstring(src.read('ppt/slides/slide7.xml'))
+>  targets=[]
+>  for sp in root.findall('.//p:sp',ns):
+>   paras=sp.findall('./p:txBody/a:p',ns)
+>   if paras and ''.join(paras[0].xpath('.//a:t/text()',namespaces=ns)).startswith('Request campus space'):
+>    targets=paras[:2]
+>  assert len(targets)==2
+>  for p in targets:
+>   pp=p.find(a+'pPr')
+>   if pp is None:
+>    pp=etree.Element(a+'pPr'); p.insert(0,pp)
+>   default=pp.find(a+'defRPr')
+>   if default is None:
+>    default=etree.SubElement(pp,a+'defRPr')
+>   default.set('strike','sngStrike')
+>   for run in p.findall(a+'r')+p.findall(a+'fld'):
+>    rp=run.find(a+'rPr')
+>    if rp is None:
+>     rp=etree.Element(a+'rPr'); run.insert(0,rp)
+>    rp.set('strike','sngStrike')
+>   end=p.find(a+'endParaRPr')
+>   if end is not None: end.set('strike','sngStrike')
+>   print('Struck through:', ''.join(p.xpath('.//a:t/text()',namespaces=ns)))
+>  data=etree.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+>  with ZipFile(path+'.tmp','w') as dst:
+>   for item in src.infolist():
+>    dst.writestr(item,data if item.filename=='ppt/slides/slide7.xml' else src.read(item.filename))
+> os.replace(path+'.tmp',path)
+> with ZipFile(path) as z:
+>  assert z.testzip() is None
+>  root=etree.fromstring(z.read('ppt/slides/slide7.xml'))
+>  assert len(root.xpath('//a:rPr[@strike="sngStrike"]',namespaces=ns))>=2
+> print('Saved and verified:',path)
+> PY
+Struck through: Request campus space for approved meetings, programs, and activities
+Struck through: Assignment and usage of a campus space for meetings
+Saved and verified: /app/New_Club_Spring_2018_Training.pptx
+agent@806aaa1948ca:/app$

@@ -1,0 +1,10 @@
+{
+  "analysis": "Crossref confirms that the Dwivedi article was published in 2016, not 2017, and its volume and pages are incorrect in the document. Datta's article has pages 252–272. I will correct these details and the corresponding Dwivedi in-text years, in addition to the reference formatting.",
+  "plan": "Verify the Mergel DOI and inspect the Datta publisher metadata, Gartner page date, and relevant in-text citations. Then rebuild the reference section with consistent APA formatting.",
+  "commands": [
+    {
+      "keystrokes": "/tmp/docx-env/bin/python -u - <<'PY'\nimport urllib.request,json,re\nfrom docx import Document\nfor p in Document('/home/user/Desktop/students work/case study.docx').paragraphs[:100]:\n if any(s in p.text for s in ['OECD','World Bank','Dwivedi']): print(p.text)\nfor url in ['https://api.crossref.org/works/10.1016/j.giq.2019.06.002','https://aisel.aisnet.org/cais/vol46/iss1/11/','https://www.gartner.com/en/information-technology/glossary/digital-transformation']:\n try:\n  t=urllib.request.urlopen(url,timeout=15).read().decode()\n  if 'crossref.org' in url:\n   x=json.loads(t)['message'];print({k:x.get(k) for k in ['title','volume','issue','article-number','page','DOI']})\n  else:\n   print(url); print('\\n'.join(re.findall(r'<meta[^>]+(?:citation_|date|published)[^>]+>',t,re.I))[:5000])\n except Exception as e: print(e)\nPY\n",
+      "duration": 1
+    }
+  ]
+}

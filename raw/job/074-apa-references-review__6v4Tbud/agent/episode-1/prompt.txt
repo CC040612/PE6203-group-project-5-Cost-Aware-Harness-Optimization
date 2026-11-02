@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@32f08de7ccee:/app$ ls -l '/home/user/Desktop/students work/case study.docx'; python - <<'PY'
+> import docx
+> p='/home/user/Desktop/students work/case study.docx'
+> d=docx.Document(p)
+> for i,x in enumerate(d.paragraphs):
+>  print(i,repr(x.text), 'STYLE',x.style.name)
+> PY
+-rw-r--r-- 1 agent agent 16470 Oct 21 15:56 '/home/user/Desktop/students work/case study.docx'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'docx'
+agent@32f08de7ccee:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

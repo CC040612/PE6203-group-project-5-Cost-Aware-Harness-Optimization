@@ -1,0 +1,10 @@
+{
+  "analysis": "Both files are present and python-pptx is available. The audio is about 7 MB, so embedding it will make the presentation self-contained rather than dependent on an external file.",
+  "plan": "Inspect the opening slide layout and the library's media support so the audio can be placed unobtrusively and represented as a proper embedded audio object.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom pptx import Presentation\nimport inspect\nfrom pptx.parts.media import MediaPart\nfrom pptx.shapes.shapetree import SlideShapes\np=Presentation('/app/Mady_and_Mia_Baseball.pptx')\nprint('Slides:', len(p.slides), 'Size:', p.slide_width/914400, p.slide_height/914400)\nfor s in p.slides[0].shapes:\n print(s.shape_type, tuple(round(getattr(s,k)/914400,2) for k in ['left','top','width','height']),repr(s.text if s.has_text_frame else ''))\nprint(inspect.getsource(SlideShapes.add_movie))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

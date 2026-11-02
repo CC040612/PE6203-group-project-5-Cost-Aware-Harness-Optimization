@@ -1,0 +1,5 @@
+{
+  "analysis": "The precise filter selection is processing.",
+  "plan": "Wait for sort choices.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

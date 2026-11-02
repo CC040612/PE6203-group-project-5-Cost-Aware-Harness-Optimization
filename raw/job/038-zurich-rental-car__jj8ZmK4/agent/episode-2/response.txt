@@ -1,0 +1,10 @@
+{
+  "analysis": "Standard Node and curl tools are absent, but a Python virtual environment and Chrome-state helper are present.",
+  "plan": "Inspect the helper and installed commands to identify the supported browser interface.",
+  "commands": [
+    {
+      "keystrokes": "cat /usr/local/bin/chrome_state.py; ls /usr/local/bin; /opt/venv/bin/python -m pip list\n",
+      "duration": 0.1
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+New Terminal Output:
+
+agent@c20a90688c47:/app$ /opt/venv/bin/python -u - <<'PY'
+> from playwright.sync_api import sync_playwright
+> with sync_playwright() as p:
+>  b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; print(page.locator('body').inner_text()[:23000])
+> PY
+Skip to main content
+
+by
+
+SGD
+Manage booking
+Stays
+Flights
+Car rentals
+Attractions
+Airport taxis
+Pick-up location
+Pick-up date
+Mon, Oct 26
+Time
+10:00
+00:00
+00:30
+01:00
+01:30
+02:00
+02:30
+03:00
+03:30
+04:00
+04:30
+05:00
+05:30
+06:00
+06:30
+07:00
+07:30
+08:00
+08:30
+09:00
+09:30
+10:00
+10:30
+11:00
+11:30
+12:00
+12:30
+13:00
+13:30
+14:00
+14:30
+15:00
+15:30
+16:00
+16:30
+17:00
+17:30
+18:00
+18:30
+19:00
+19:30
+20:00
+20:30
+21:00
+21:30
+22:00
+22:30
+23:00
+23:30
+Drop-off date
+Fri, Oct 30
+Time
+10:00
+00:00
+00:30
+01:00
+01:30
+02:00
+02:30
+03:00
+03:30
+04:00
+04:30
+05:00
+05:30
+06:00
+06:30
+07:00
+07:30
+08:00
+08:30
+09:00
+09:30
+10:00
+10:30
+11:00
+11:30
+12:00
+12:30
+13:00
+13:30
+14:00
+14:30
+15:00
+15:30
+16:00
+16:30
+17:00
+17:30
+18:00
+18:30
+19:00
+19:30
+20:00
+20:30
+21:00
+21:30
+22:00
+22:30
+23:00
+23:30
+Search
+Drop car off at different location
+Driver aged 30 – 65?
+Find your ideal pick-up location
+All locations
+Airport (1)
+Other (9)
+Sort by: Distance (nearest first)
+Clear all
+Select all
+Zurich Downtown South
+33 Lindenstrasse, Zurich, Switzerland, 8008 · 1.2 kilometers from Zürich
+21 cars · 1 car rental company
+Total price
+from S$ 338
+Zurich Downtown
+17, Gartenhofstrasse, Zurich, Switzerland, 8004 · 1.5 kilometers from Zürich
+58 cars · 4 car rental companies
+Total price
+from S$ 245
+Zurich - Giesshubelstrasse
+65 Giesshubelstrasse, Zurich Brunaupark, Zurich, Switzerland, 8045 · 2.2 kilometers from Zürich
+25 cars · 1 car rental company
+Total price
+from S$ 338
+Zurich - Maschinenstrasse
+Pfingstweidstr. 3, Zürich, Switzerland, 8005 · 3 kilometers from Zürich
+10 cars · 1 car rental company
+Total price
+from S$ 443
+Zurich Downtown West
+39 Freilagerstrasse, Zurich, Switzerland, 8047 · 4.3 kilometers from Zürich
+25 cars · 1 car rental company
+Total price
+from S$ 338
+Zurich Downtown North
+48 Hagenholzstrasse, Zurich, Switzerland, 8050 · 5.3 kilometers from Zürich
+21 cars · 1 car rental company
+Total price
+from S$ 345
+Duebendorf Downtown
+4 Giessenstrasse, Amag Autowelt, Dübendorf, Switzerland, 8600 · 6.2 kilometers from Zürich
+25 cars · 1 car rental company
+Total price
+from S$ 338
+Glattbrugg Downtown
+61 Flughofstrasse, Opfikon, Switzerland, 8152 · 8 kilometers from Zürich
+14 cars · 1 car rental company
+Total price
+from S$ 319
+Schlieren Downtown
+AMAG Automobil- und Motoren AG, Brandstrasse 34, Schlieren, Switzerland, 8952 · 8.7 kilometers from Zürich
+31 cars · 2 car rental companies
+Total price
+from S$ 365
+Zurich Airport
+Rondellstrasse, Kloten, Zurich, Switzerland, 8058 · 9.2 kilometers from Zürich
+159 cars · 9 car rental companies
++5
+Total price
+from S$ 156
+S$ 156
+S$ 443
+S$ 338
+S$ 338
+S$ 338
+S$ 245
+S$ 338
+S$ 319
+S$ 365
+S$ 345
+S$ 156
+S$ 443
+S$ 338
+S$ 338
+S$ 338
+S$ 245
+S$ 338
+S$ 319
+S$ 365
+S$ 345
+Map Data
+5 km 
+Terms
+Select at least one location
+Privacy Notice
+Cookies
+Terms of service
+Help
+Modern Slavery Statement
+Human Rights Statement
+Accessibility Statement
+How we Work
+Supply Partner Inquiry
+Affiliate Programme
+Careers
+Contact Us
+Rentalcars.com is a trading name of Booking.com Transport Limited which is a limited company registered in England and Wales (Number: 05179829) whose registered
+ address is at 6 Goods Yard Street, Manchester, M3 3BG, United Kingdom. VAT number: GB 855349007.
+Rentalcars.com is part of Booking Holdings Inc., the world leader in online travel & related services.
+Copyright © 2025 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved
+agent@c20a90688c47:/app$

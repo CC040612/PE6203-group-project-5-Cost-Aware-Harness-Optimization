@@ -1,0 +1,128 @@
+{
+  "litellm_trace_id": "97880eae-5aa9-41bd-85e4-64005e08534c",
+  "litellm_call_id": "7462137a-e9d9-4de6-a584-5b95026b865b",
+  "input": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `~/.config/Code/User/keybindings.json`, could you help me remove the shortcut `ctrl+f` for Tree View Find (Explorer search) in the VS Code Explorer view to avoid a shortcut conflict, optionally using VS Code if needed?\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"We need to inspect the VS Code keybindings file and remove or explicitly disable the Explorer Tree View Find binding for ctrl+f without changing unrelated shortcuts.\",\n  \"plan\": \"Read the current keybindings file to identify existing bindings and determine the appropriate override.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@6bea6e6417e9:/app$ ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\nls: cannot access '/home/agent/.config/Code/User/keybindings.json': No such file or directory\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "litellm_params": {
+    "acompletion": true,
+    "api_key": "[REDACTED]",
+    "force_timeout": 600,
+    "verbose": false,
+    "custom_llm_provider": "openai",
+    "api_base": "http://127.0.0.1:58429/v1/",
+    "litellm_call_id": "7462137a-e9d9-4de6-a584-5b95026b865b",
+    "model_alias_map": {},
+    "completion_call_id": "None",
+    "aembedding": "None",
+    "metadata": "None",
+    "model_info": "None",
+    "proxy_server_request": "None",
+    "preset_cache_key": "None",
+    "no-log": "None",
+    "stream_response": {},
+    "input_cost_per_token": "None",
+    "input_cost_per_second": "None",
+    "output_cost_per_token": "None",
+    "output_cost_per_second": "None",
+    "cost_per_query": "None",
+    "cooldown_time": "None",
+    "text_completion": "None",
+    "azure_ad_token_provider": "None",
+    "user_continue_message": "None",
+    "base_model": "None",
+    "litellm_trace_id": "None",
+    "litellm_session_id": "None",
+    "hf_model_name": "None",
+    "custom_prompt_dict": {},
+    "litellm_metadata": "None",
+    "disable_add_transform_inline_image_block": "None",
+    "drop_params": true,
+    "prompt_id": "None",
+    "prompt_variables": "None",
+    "async_call": "None",
+    "ssl_verify": "None",
+    "merge_reasoning_content_in_choices": "None",
+    "api_version": "None",
+    "max_retries": "None",
+    "use_litellm_proxy": false,
+    "litellm_request_debug": false,
+    "tpm": "None",
+    "client_id": "None",
+    "azure_scope": "None",
+    "azure_ad_token": "[REDACTED]",
+    "rpm": "None",
+    "azure_username": "None",
+    "timeout": 600.0,
+    "tenant_id": "None",
+    "azure_password": "[REDACTED]",
+    "client_secret": "[REDACTED]"
+  },
+  "applied_guardrails": [],
+  "model": "gpt-6.1-sol",
+  "messages": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `~/.config/Code/User/keybindings.json`, could you help me remove the shortcut `ctrl+f` for Tree View Find (Explorer search) in the VS Code Explorer view to avoid a shortcut conflict, optionally using VS Code if needed?\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"We need to inspect the VS Code keybindings file and remove or explicitly disable the Explorer Tree View Find binding for ctrl+f without changing unrelated shortcuts.\",\n  \"plan\": \"Read the current keybindings file to identify existing bindings and determine the appropriate override.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@6bea6e6417e9:/app$ ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\nls: cannot access '/home/agent/.config/Code/User/keybindings.json': No such file or directory\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "optional_params": {
+    "reasoning_effort": "medium",
+    "extra_body": {}
+  },
+  "start_time": "2026-10-22 11:11:14.426718",
+  "stream": false,
+  "user": "None",
+  "call_type": "acompletion",
+  "completion_start_time": "None",
+  "standard_callback_dynamic_params": {},
+  "stream_options": "None",
+  "reasoning_effort": "medium",
+  "extra_body": {},
+  "custom_llm_provider": "openai",
+  "additional_args": {
+    "complete_input_dict": {
+      "model": "gpt-6.1-sol",
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nGiven the file `~/.config/Code/User/keybindings.json`, could you help me remove the shortcut `ctrl+f` for Tree View Find (Explorer search) in the VS Code Explorer view to avoid a shortcut conflict, optionally using VS Code if needed?\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"analysis\": \"We need to inspect the VS Code keybindings file and remove or explicitly disable the Explorer Tree View Find binding for ctrl+f without changing unrelated shortcuts.\",\n  \"plan\": \"Read the current keybindings file to identify existing bindings and determine the appropriate override.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+        },
+        {
+          "role": "user",
+          "content": "New Terminal Output:\nagent@6bea6e6417e9:/app$ ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json\nls: cannot access '/home/agent/.config/Code/User/keybindings.json': No such file or directory\nagent@6bea6e6417e9:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        }
+      ],
+      "extra_body": {},
+      "reasoning_effort": "medium"
+    }
+  },
+  "log_event_type": "post_api_call",
+  "api_call_start_time": "2026-10-22 11:11:14.428210",
+  "llm_api_duration_ms": 10361.027,
+  "original_response": "{\"id\": \"chatcmpl-resp_07417fd7c6be45ef016ad97ed45d2487d086909b210d3b9564\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"analysis\\\": \\\"The keybindings file does not exist yet. VS Code's Tree View Find shortcut is a default binding, so disabling it requires adding a negative keybinding for the list.find command rather than deleting an existing user entry.\\\",\\n  \\\"plan\\\": \\\"Create the user keybindings file with an override removing ctrl+f from Tree View Find. This leaves the editor's normal Find shortcut untouched. Then display the file and validate its JSON.\\\",\\n  \\\"commands\\\": [\\n    {\\n      \\\"keystrokes\\\": \\\"mkdir -p ~/.config/Code/User\\\\ncat > ~/.config/Code/User/keybindings.json <<'EOF'\\\\n[\\\\n    {\\\\n        \\\\\\\"key\\\\\\\": \\\\\\\"ctrl+f\\\\\\\",\\\\n        \\\\\\\"command\\\\\\\": \\\\\\\"-list.find\\\\\\\"\\\\n    }\\\\n]\\\\nEOF\\\\npython3 -m json.tool ~/.config/Code/User/keybindings.json\\\\n\\\",\\n      \\\"duration\\\": 0.1\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning_details\": [{\"content\": [], \"encrypted_content\": \"gAAAAABq2X7ZRcDO5zoXNddGbl5LNE8tVL-8iBZKpU1pwNot5xZtA_AD4vZLWbqw_paQEeGDOe7qFaKuiacFeHGmzUXU3b5Jh6IofAWQG-a73jgakEEscC1AyJnNmKtRD2BXRf9s_EE9U8gKlf23qahVy7BcHrfBV5JWlsy1QwiSbodhYp73DLEMs7YCTIrmKRnkcOwtOdOdryAIE65lpzcCG7Pqj8XC6uE-PhKkmwbJzpuDXjIZzElIXIm4H5DVPXETmETv3ZMZyagZ4FCnlf5M-mEjN0f_GOCH8-WYaoEJI-G8brX2Io3oGQRtdxSFrkN4rlsgfBetHi0pqMStDtsnln5XngHPOU68xnnSr0-MAi_2XBoMBfgzJ51ZHb-mOZQ_ora4MdNATYDUCqKDYiKqbO171110yIqqHnpBaI39rw7xJUFsjDr7uaooSajzIvONZgjGR7koCvqs_iayYgdVIO3dQXl5t5NZH1_8P7i-bQcDwmwyQfeb7FN3ahdR5XwsDN8hcKP0DY_MqehL_Wlb6AoTea253H0nKW_64byjmOb65a6tRR5WiViqK4agjzrBZUGiUWH0Hi-Z79_lYxZummUKzDhfxn-Lu-NmNEVEbxW4QWFSQljJRWTmULWIjDv-fcww9yfHLKDejVMmglex_QvsBGawcSg0imOZ2PrgsCsOvEnYqPet1bFqqtQDWBODsuxKf0OfyeoDAXDLPEBle2MEQ8m0FrmRjBch-usK4F9NfoxfvpbJT8BGXwOLe8QaF4wYEdTuwJisE6adx0ug-TEdJz_8gPuwOvLWyFjLHt6aZCx79Pgkb8bXPszyQXhDS8b31jggJOnzjonIbEq2jsU7NMwImIMfVN7nZh-tgpiCMihX0P2TD2mSotxsAy32ntlivUxrqC72I1n6vLy5ZSKhIHGg3t48zKdA34eNpKnii4x0ikfoYRxEe5t87JPu7XPetMVOFmLZq2lsVM6iTi6wvFRIikFjljsJgUPYjKLUNRExbcrJFXKpuq6H73mMCFV68fhAQ7eAAxcXcm_gSdhrjXsD1DaJteeMMFcuFgxdjWHWR-Oeqsk4v87UINGzQzi8Zn-gCgasqqJ7JftGsO4cMA3k2UviD9D4w6eKU9YvGzQoVI50hCTITW3Q5BzJpFMD6tgqp-ncvb7Vct5gj8uruEAioAa6WLzvA7kQPwe--E5wdtW2WCnaiBJz10GFxeEmLtIGtKPoUUyCjgnB997joiOR_JOjZwLFcRoJNo5TwVKZm48CwlJtPb8RBbsY085XtOQBV8MYJIQ599GIvopCMkWFn11l7SBUhYRLyYYHB_7T7_akHBNddiN81oMbvBQuF7FptVvuZAuf21Bw68vfPfvsYQUjyLcwWAvc9YyouXwQP_IUCZY9PlMxPl_7ACHzJ05jQXm0UbelEUpRxg8NGt3ysYrczS-1srU7DyWuYZT-8THENtS92Z1l7pv4lBaySEHRXj5cMViPNXR_lyvSjzET818g2V6rWtZcUgqSYzWi5ACsG37bofGNagWdQYSlNRHw4rv4oCoPbODSMQIHGEZZCEm7ygz_1D94FDmpQOF0-hzdGZbc4-sbYYL4IZD1xwdGTjRM6_LLed7UAzNE8e9zlUYsWlvZU8MHTyWyph7mo1tiL2DXW0uTKQKAP8_bZVaZW7jwouGPH87uGTETIMBE3vDXRSibE-3pcz5qLN7-IwtEPBjgZwYYwu2ugZyTclYqPTaBPVA2YT4rOiUFNfhkQTu4A9UcXoC3RBYOO4_izwa3Htpa1fWqmnYGwLWO-jkG755DxKo75Rrdsqr9SShEoLvkdAMxsfc4Ax-Bv4A68HF4ZhEJR6SYK8EazSZgkrW51vNFagSzlzhtRE6cTORTe1rzZcTqRezf2ihDiK678uIeo_Qy91BcKO0Oy-JXN6K-7pINPepF_XvnXR_WqrfxLyLNzAWbv9sLq7wUx6Ektr5WgF_6n5PV3HgLIXY5AcaEyZoMg76E7Z4RZxTnCaWkSerp40A-tgsR8VrXSSfjiI5NpFQwcAPB4IxBrNEzfsz2KbAO7Zki6jAh4BYq6IK-FB785ltFI1PWx6BsByhMuvknrCOewGkxyucuYWzM6kXL__pIie5Y8P-8JJAPIsKF1fZ9m5MzhF3kP2nMpnyjNLNEweQjM_quT6hoiCjeZ2wUqYC-LIy36Q7oP0LWfKQF5fkmWrW8HnEtk7TvTXYXLvPwXffQMuD9_XLh2pKj3G_wsFceNUWe8cX8CCJALuRC-qBYjixs839BUHBOuRUv2UQo2XOAIXtbQ4EkVOjMClYMwIYG9LdkCX29EXZxqpnA8kCvMwM5RSWtaBgOb1vpXuOvdRQTOt1Zmibx2Psr6BextR6vEIzZUFU2mswAnWz3e8WZN4uXk2oj-VaxkpALbNU8vSIyt35HRg2KKccu9hSGyzqilKtlygUls2jYqlfe-z_5vlFD6s-Bazv1eoOn0c5PGvfPk5DKV9nF3fulcicCb_mewPrkQqar2_GwFGFwXSyRiGgyzv4jinFJ69u0OV1A8i6cJ4U69m3YL7bnZubNoxjal1G7AMORsd_WPr7heeJj8SQOlA7u-5DBa-W13boAV6rEGYDqarAszNzSdqb9aCzkuAmuNoq9pFNW3kqEMwLd_ngtzGlWgod-Fy-I7iHBWvN3Rj1T0OBd3qC7xvo8elWNRWA8wsYNTybApGW2H1113bVKvT-2KKOP1AuK2cniFMO7pqjK7TmHo98bSQQezFWxW5Qt5yb-Wn81dGOqCPz_hPy0stgYbetrNtMnZKmGBqGLHqnGAu0GI1b7LkGaX5Osl0Ymhk6rQEv4miN03wzxK0GYAQwSSstE-VMYzRSOgjrgaOyeOW2TYhRt_0AHaGJO2QKxvwXsfIJYTgtqRP2wwYuwhzKjvZSJ93YA6rswbimeM-Xvro7NMsFTSXhGfBdx5d45-QhofUDgFn3TgitCrFRbaK8ny4TZdvSY7XGZCPLYu1m_jKw8UCh-BcRpuQn-CXiDXsa7piAxeWZMFknkNLwhEafNQ0xqVA4pywqac5eG-aE3OwoQCIm8i0gs352JTPL1yHVe2gx832PKM7kv2lqI77Bpgt-0_wrZfbX29OYacg7UoNiI11R6w8MVI-usziHYT2QTlwChtdd6wA2l9wm9gvE7yjSI7pdzvLA=\", \"id\": \"rs_07417fd7c6be45ef016ad97ed5c5a487d0be3601355d8cebbd\", \"summary\": [], \"type\": \"reasoning\"}]}, \"native_finish_reason\": \"stop\"}], \"created\": 1792638676, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"service_tier\": \"default\", \"system_fingerprint\": null, \"usage\": {\"completion_tokens\": 314, \"prompt_tokens\": 929, \"total_tokens\": 1243, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": null, \"reasoning_tokens\": 117, \"rejected_prediction_tokens\": null}, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 0, \"cache_write_tokens\": 0, \"cached_creation_tokens\": 0}}}",
+  "api_key_sha256": "[REDACTED]"
+}

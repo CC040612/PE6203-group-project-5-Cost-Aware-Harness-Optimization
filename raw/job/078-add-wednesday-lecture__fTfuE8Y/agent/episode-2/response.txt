@@ -1,0 +1,10 @@
+{
+  "analysis": "Python3 is available but openpyxl is not installed.",
+  "plan": "Install openpyxl, then inspect the workbook to determine where to add the lecture.",
+  "commands": [
+    {
+      "keystrokes": "pip3 install openpyxl\n",
+      "duration": 1
+    }
+  ]
+}

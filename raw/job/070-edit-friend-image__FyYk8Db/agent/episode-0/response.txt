@@ -1,0 +1,10 @@
+{
+  "analysis": "I need to locate the image and requirements document before determining what edits are needed.",
+  "plan": "List the desktop files and identify the available document and image formats.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /home/user/Desktop && find /home/user/Desktop -maxdepth 2 -type f\n",
+      "duration": 0.1
+    }
+  ]
+}

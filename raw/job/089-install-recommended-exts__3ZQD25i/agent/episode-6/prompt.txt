@@ -1,0 +1,290 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/store.py
+https://chromewebstore.google.com/
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Welcome to Chrome Web Store
+The future of writing
+
+Elevate your writing and create engaging and high-quality content effortlessly
+
+See collection
+Welcome to the Chrome Web Store
+
+Supercharge your browser with extensions and themes for Chrome
+
+See collection
+Favorites of 2025
+
+Discover the standout AI extensions that made our year
+
+See collection
+Every day is Earth Day
+
+Plant trees, shop sustainably, and more
+
+See collection
+The future of writing
+
+Elevate your writing and create engaging and high-quality content effortlessly
+
+See collection
+Welcome to the Chrome Web Store
+
+Supercharge your browser with extensions and themes for Chrome
+
+See collection
+2
+/
+4
+Top categories
+Shopping
+Entertainment
+Tools
+Art & Design
+Recommended for you
+See more
+
+Ultimate Car Driving Game
+
+4.4
+
+Enjoy car driving simulator in a big and fascinating city.
+
+Custom Progress Bar for YouTube™
+
+4.3
+
+Change Youtube™ progress bar to custom from fun collection. Make your Youtube™ player awesome!
+
+Offline Games - No Wifi Games
+
+4.3
+
+Now you can play Offline Games - No Wifi Games right on Chrome™ Browser! Fun for all ages, and a mental workout too!
+
+Boxel Rebound
+
+4.5
+
+Play over 50 levels of box-jumping madness! Design and share your own levels.
+
+Top charts
+Trending
+Change Timezone for Google Chrome™
+Workflow & Planning
+4.1
+AI VPN – Free Fast Secure Proxy
+Privacy & Security
+4.1
+Change Timezone (Time Shift)
+Tools
+3.1
+See more
+Popular
+Volume Master
+Accessibility
+4.8
+Free VPN for Chrome - VPN Proxy VeePN
+Workflow & Planning
+4.5
+AdBlock — block ads across the web
+Workflow & Planning
+3.9
+See more
+New and notable
+Ad Blocker Pro - block ads ad blocker
+Tools
+4.2
+Chatwait: Get paid while AI thinks
+Tools
+4.2
+Editing Enhancer - Editing News & reLynth
+Tools
+4.4
+See more
+Extend your browser
+See more
+
+Discover a new level of convenience and customization with side panel extensions
+
+Chat with all AI models (Gemini, Claude, DeepSeek…) & AI Agents | AITOPIA
+
+4.8
+
+AI Agent Marketplace & AI Sidebar with all AI models (Gemini, Claude, DeepSeek & more) and hundreds of AI Agents
+
+Adobe Photoshop
+
+4.0
+
+Easily remove backgrounds, adjust colors and more.
+
+BrowserGPT: ChatGPT Anywhere Powered by GPT 4
+
+4.0
+
+Write, reword, and translate 8x faster. Reply to emails in a click. Works on Google Docs, Gmail, YouTube, Twitter, Instagram, etc.
+
+Sidebar: ChatGPT, Bookmarks, GPT-4o | Meomni
+
+4.9
+
+Ultimate Sidebar ChatGPT Assistant, Bookmarks with AI, Calendar and Tasks
+
+Eclipse your screen
+
+Dim the lights with our dark mode selections
+
+See collection
+Chrome monthly spotlight
+
+Promising extensions to try out
+
+Web Highlights: PDF & Web Highlighter + Notes & AI Summary
+
+Productivity Highlighter & Annotation Tool for Websites & PDFs with AI Summary - free, easy to use, no sign-up required.
+
+Moonlight: AI Colleague for Research Papers
+
+Everything you need to read a paper: explanation, summary, translation, chat, and reference search.
+
+Reboost - Track Water Intake and Set Reminders
+
+Track your water intake and set custom reminders. Stay hydrated, stay on track, and never miss a break! ✨
+
+Just for fun
+
+Bring some joy to your browser
+
+See collection
+Learn a new language
+See more
+
+Study while you browse
+
+Google Translate
+
+3.0
+
+View translations easily as you browse the web. By the Google Translate team.
+
+Rememberry - Translate and Memorize with Flashcards
+
+4.7
+
+Translate words while browsing and turn them into spaced repetition flashcards to build foreign language vocabulary.
+
+DeepL: translate and write with AI
+
+4.5
+
+Translate while you read and write with DeepL Translate, the world’s most accurate translator.
+
+Relingo - Master vocabulary while browsing websites and watching YouTube
+
+4.6
+
+Relingo extract words, full-text immersive translation while browsing. Also supports bilingual subtitles for Youtube, Netflix, etc.
+
+Game on
+See more
+
+Beat boredom with bite-sized games in your browser
+
+BattleTabs
+
+4.5
+
+Multiplayer Battles in your New Tab
+
+Tiny Tycoon
+
+4.7
+
+Build a tiny tycoon on a tiny planet.
+
+Tower Stacking Blocks Challenge Game
+
+4.3
+
+Tower Stacking Blocks Challenge Game on your Google Chrome!
+
+Boxel 3D
+
+4.3
+
+Boxel 3D is a speedrunning game packed with challenging levels, custom skins, online multiplayer, and a creative level editor.
+
+Work smarter, not harder with AI
+
+Automate tasks and stay focused and organized with AI-powered productivity extensions
+
+See collection
+For music lovers
+See more
+
+Equalizers, radios, playlists, and more
+
+Volume Master
+
+4.8
+
+Up to 600% volume boost
+
+SynQ for Spotify, YouTube, Amazon Music, more
+
+3.8
+
+Mini player with universal music sharing for Spotify, Apple Music, YouTube Music, and Amazon Music.
+
+Music Mode for YouTube™
+
+4.9
+
+Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music.
+
+Smart Mute
+
+4.4
+
+Listen to audio one tab at a time.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+[{'text': 'Skip to main content', 'href': ''}, {'text': 'chrome web store', 'href': 'https://chromewebstore.google.com/'}, {'text': 'My extensions & themes', 'h
+ref': 'https://chromewebstore.google.com/user/installed'}, {'text': 'Developer Dashboard', 'href': 'https://chrome.google.com/webstore/devconsole/'}, {'text': '
+', 'href': 'https://www.google.com.sg/intl/en/about/products'}, {'text': 'Sign in', 'href': 'https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&con
+tinue=https://chromewebstore.google.com/&followup=https://chromewebstore.google.com/&ec=GAZApQM'}, {'text': '', 'href': 'https://www.google.com/chrome/?brand=GG
+RF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/jetbrai
+ns-grazie-writing/fonaoompfjljjllgccccgjnhnoghohgc'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/wordtune-ai-paraphrasing/nllcnknpjnininkleg
+doijpljgdjkijc'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/jetwriter-ai-reply-emails/pdnenlnelpdomajfejgapbdpmjkfpjkp'}, {'text': '', 'hre
+f': 'https://chromewebstore.google.com/detail/compose-ai-ai-powered-wri/ddlbpiadoechcolndfeaonajmngmhblj'}, {'text': '', 'href': 'https://chromewebstore.google.
+com/detail/grammarly-ai-writing-assi/kbfnbcaeplbcioakkpcpgfkobkghlhen'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/quillbot-ai-writing-assi
+s/iidnbdjijdkbmajdffnidomddglmieko'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/ai_content'}, {'text': '', 'href': 'https://chromewebst
+ore.google.com/collection/ai_content'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb'}, {'te
+xt': '', 'href': 'https://chromewebstore.google.com/detail/shazam-find-song-names-fr/mmioliijnhnoblpgimnlajmefafdfilb'}, {'text': '', 'href': 'https://chromeweb
+store.google.com/detail/adobe-photoshop/kjchkpkjpiloipaonppkmepcbhcncedo'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/click-and-clean/mgngm
+ngjioknlgjjaiiamcdbahombpfb'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/grammarly-ai-writing-assi/kbfnbcaeplbcioakkpcpgfkobkghlhen'}, {'te
+xt': '', 'href': 'https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj'}, {'text': '', 'href': 'https://chromeweb
+store.google.com/collection/get_started'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/get_started'}, {'text': '', 'href': 'https://chrom
+ewebstore.google.com/collection/2025_favorites'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/2025_favorites'}, {'text': '', 'href': 'htt
+ps://chromewebstore.google.com/detail/faircado-second-hand-shop/gngckpdhcngilcedefiiiapkhocojghm'}, {'text': '', 'href': 'https://chromewebstore.google.com/deta
+il/pebble-digital-carbon-emi/oeamjgnkoelgkegbphiminanlbegaaga'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/ecosia-the-search-engine/eedlgdl
+ajadkbbjoobobefphmfkcchfk'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'}, {'text': '', 'hr
+ef': 'https://chromewebstore.google.com/detail/askbelynda-sustainable-sh/pcmbjnfbjkeieekkahdfgchcbjfhhgdi'}]
+agent@715dad585543:/app$

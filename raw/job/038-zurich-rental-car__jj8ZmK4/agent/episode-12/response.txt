@@ -1,0 +1,10 @@
+{
+  "analysis": "The exact accessible-name match may be waiting because of whitespace differences.",
+  "plan": "Inspect the current page and location button markup to resolve the selector.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; print(page.locator('body').inner_text()[:5000]); print(page.locator('button').filter(has_text='Zürich').evaluate_all('(es)=>es.map(e=>e.outerHTML)'))\nPY\n",
+      "duration": 1
+    }
+  ]
+}

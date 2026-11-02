@@ -1,0 +1,6 @@
+New Terminal Output:
+
+agent@3f82e4733fd5:/app$ xdotool windowmap 0x20021f windowfocus --sync 0x20021f; xdotool key slash; xdotool type --delay 100 vignette; sleep 1; xwininfo -root -
+tree; xdotool key Return
+xwininfo -root -tree
+

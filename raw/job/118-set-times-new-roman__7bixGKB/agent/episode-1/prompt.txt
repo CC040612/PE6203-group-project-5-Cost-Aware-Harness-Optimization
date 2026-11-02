@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@1cf89a095885:/app$ ls -l /app/Dublin_Zoo_Intro.docx
+-rw-r--r-- 1 agent agent 11047 Oct 22 03:16 /app/Dublin_Zoo_Intro.docx
+agent@1cf89a095885:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree
+> p='/app/Dublin_Zoo_Intro.docx'
+> with ZipFile(p) as z:
+>  print('\n'.join(z.namelist()))
+>  for name in ['word/document.xml','word/styles.xml']:
+>   root=etree.fromstring(z.read(name))
+>   ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+>   print(name, 'runs:',len(root.findall('.//w:r',ns)), 'font settings:',len(root.findall('.//w:rFonts',ns)))
+> PY
+word/numbering.xml
+word/settings.xml
+word/fontTable.xml
+word/styles.xml
+customXML/itemProps1.xml
+customXML/item1.xml
+customXML/_rels/item1.xml.rels
+word/document.xml
+word/_rels/document.xml.rels
+_rels/.rels
+word/theme/theme1.xml
+[Content_Types].xml
+word/document.xml runs: 47 font settings: 85
+word/styles.xml runs: 0 font settings: 3
+agent@1cf89a095885:/app$
+
+
+
+
+
+
+
+
+
+
+
+

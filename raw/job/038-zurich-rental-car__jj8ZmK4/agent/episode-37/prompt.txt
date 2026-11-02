@@ -1,0 +1,41 @@
+Current Terminal Screen:
+Automatic
+3 checked bags
+Unlimited mileage
+Online check-in
+Zurich Airport
+9.2 km from center
+Price for 4 days:
+S$ 221
+Free cancellation
+View deal
+Customer rating 8.1 Very good, for Enterprise at Zurich Airport
+8.1
+Very good
+Open 1000+ reviews
+Important info
+Email quote
+Privacy Notice
+Cookies
+Terms of service
+Help
+Modern Slavery Statement
+Human Rights Statement
+Accessibility Statement
+How we Work
+Supply Partner Inquiry
+Affiliate Programme
+Careers
+Contact Us
+Rentalcars.com is a trading name of Booking.com Transport Limited which is a limited company registered in England and Wales (Number: 05179829) whose registered
+ address is at 6 Goods Yard Street, Manchester, M3 3BG, United Kingdom. VAT number: GB 855349007.
+Rentalcars.com is part of Booking Holdings Inc., the world leader in online travel & related services.
+Copyright © 2025 Booking.com Transport Limited trading as Rentalcars.com. All rights reserved
+Recommended
+Price (lowest first)
+Review score (highest first)
+Distance
+['Compare prices, specs, ratings, and more', 'Price per day', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 d
+ays:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price
+ for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:', 'Price for 4 days:']
+agent@c20a90688c47:/app$

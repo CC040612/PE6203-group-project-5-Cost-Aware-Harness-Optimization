@@ -1,0 +1,86 @@
+[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ ps aux | grep -i '[t]hunderbird'; ls -la ~/.thunderbird; command -v thunderbird
+[?2004ltotal 32
+drwx------  6 agent agent 4096 Jan  4  2024  [0m[01;34m.[0m
+drwxr-x---  1 agent agent 4096 Oct 22 02:54  [01;34m..[0m
+drwx------  3 agent agent 4096 Jul  4  2025 [01;34m'Crash Reports'[0m
+drwx------  2 agent agent 4096 Jan  4  2024 [01;34m'Pending Pings'[0m
+drwx------  2 agent agent 4096 Jan 10  2024  [01;34mcidfb56c.default[0m
+-rw-rw-r--  1 agent agent   62 Jan  4  2024  installs.ini
+-rw-rw-r--  1 agent agent  259 Jan  4  2024  profiles.ini
+drwx------ 12 agent agent 4096 Jul  4  2025  [01;34mt5q2a5hp.default-release[0m
+/usr/bin/thunderbird
+[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ cat ~/.thunderbird/profiles.ini; grep -E 'mail\.(server|account|root)|storeContract' ~/.thunderbird/t5q2a5hp.default-release/prefs.js; find ~/.thunderbird/t5q2a5hp.default-release/Mail -maxdepth 3 -type f
+[?2004l[Profile1]
+Name=default
+IsRelative=1
+Path=cidfb56c.default
+Default=1
+
+[InstallFDC34C9F024745EB]
+Default=t5q2a5hp.default-release
+Locked=1
+
+[Profile0]
+Name=default-release
+IsRelative=1
+Path=t5q2a5hp.default-release
+
+[General]
+StartWithLastProfile=1
+Version=2
+
+user_pref("[01;31m[Kmail.account[m[K.account1.identities", "id1");
+user_pref("[01;31m[Kmail.account[m[K.account1.server", "server1");
+user_pref("[01;31m[Kmail.account[m[K.account2.server", "server2");
+user_pref("[01;31m[Kmail.account[m[K.lastKey", 2);
+user_pref("[01;31m[Kmail.account[m[Kmanager.accounts", "account1,account2");
+user_pref("[01;31m[Kmail.account[m[Kmanager.defaultaccount", "account1");
+user_pref("[01;31m[Kmail.account[m[Kmanager.localfoldersserver", "server2");
+user_pref("[01;31m[Kmail.root[m[K.imap", "/home/david/.thunderbird/t5q2a5hp.default-release/ImapMail");
+user_pref("[01;31m[Kmail.root[m[K.imap-rel", "[ProfD]ImapMail");
+user_pref("[01;31m[Kmail.root[m[K.none", "/home/david/.thunderbird/t5q2a5hp.default-release/Mail");
+user_pref("[01;31m[Kmail.root[m[K.none-rel", "[ProfD]Mail");
+user_pref("[01;31m[Kmail.server[m[K.server1.check_new_mail", false);
+user_pref("[01;31m[Kmail.server[m[K.server1.clientid", "ec909625-423d-44a2-bceb-92a4e7e7abca");
+user_pref("[01;31m[Kmail.server[m[K.server1.directory", "/home/user/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com");
+user_pref("[01;31m[Kmail.server[m[K.server1.directory-rel", "[ProfD]ImapMail/outlook.office365.com");
+user_pref("[01;31m[Kmail.server[m[K.server1.hostname", "outlook.office365.com");
+user_pref("[01;31m[Kmail.server[m[K.server1.lastFilterTime", 29193675);
+user_pref("[01;31m[Kmail.server[m[K.server1.max_cached_connections", 5);
+user_pref("[01;31m[Kmail.server[m[K.server1.name", "anonym-x2024@outlook.com");
+user_pref("[01;31m[Kmail.server[m[K.server1.namespace.personal", "\"\"");
+user_pref("[01;31m[Kmail.server[m[K.server1.nextFilterTime", 29193685);
+user_pref("[01;31m[Kmail.server[m[K.server1.port", 994);
+user_pref("[01;31m[Kmail.server[m[K.server1.serverIDResponse", "(\"name\" \"Microsoft.Exchange.Imap4.Imap4Server\" \"version\" \"15.20\")");
+user_pref("[01;31m[Kmail.server[m[K.server1.socketType", 3);
+user_pref("[01;31m[Kmail.server[m[K.server1.spamActionTargetAccount", "imap://anonym-x2024%40outlook.com@outlook.office365.com");
+user_pref("[01;31m[Kmail.server[m[K.server1.[01;31m[KstoreContract[m[KID", "@mozilla.org/msgstore/berkeleystore;1");
+user_pref("[01;31m[Kmail.server[m[K.server1.timeout", 29);
+user_pref("[01;31m[Kmail.server[m[K.server1.trash_folder_name", "Deleted");
+user_pref("[01;31m[Kmail.server[m[K.server1.type", "imap");
+user_pref("[01;31m[Kmail.server[m[K.server1.userName", "anonym-x2024@outlook.com");
+user_pref("[01;31m[Kmail.server[m[K.server2.directory", "/home/david/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders");
+user_pref("[01;31m[Kmail.server[m[K.server2.directory-rel", "[ProfD]Mail/Local Folders");
+user_pref("[01;31m[Kmail.server[m[K.server2.hostname", "Local Folders");
+user_pref("[01;31m[Kmail.server[m[K.server2.lastFilterTime", 29193675);
+user_pref("[01;31m[Kmail.server[m[K.server2.name", "Local Folders");
+user_pref("[01;31m[Kmail.server[m[K.server2.nextFilterTime", 29193685);
+user_pref("[01;31m[Kmail.server[m[K.server2.spamActionTargetAccount", "mailbox://nobody@Local%20Folders");
+user_pref("[01;31m[Kmail.server[m[K.server2.[01;31m[KstoreContract[m[KID", "@mozilla.org/msgstore/berkeleystore;1");
+user_pref("[01;31m[Kmail.server[m[K.server2.type", "none");
+user_pref("[01;31m[Kmail.server[m[K.server2.userName", "nobody");
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages.msf
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills.msf
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/msgFilterRules.dat
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash
+/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash.msf
+[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ touch "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY" "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY"; ls -l "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY" "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY"; pgrep -a thunderbird || true
+[?2004l-rw-r--r-- 1 agent agent 0 Oct 22 02:54 '/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY'
+-rw-r--r-- 1 agent agent 0 Oct 22 02:54 '/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY'
+[?2004h[01;32magent@1d512c9b2066[00m:[01;34m/app[00m$ 

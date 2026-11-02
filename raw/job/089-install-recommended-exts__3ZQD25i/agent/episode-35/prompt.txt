@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ pkill -TERM -x chromium; sleep 2; google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1 &
+pkill -TERM -x chromium; sleep 2; google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1 &
+[1]+  Done                    google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,)" c
+hrome://extensions/ > /tmp/chrome.log 2>&1
+[1] 2383
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+

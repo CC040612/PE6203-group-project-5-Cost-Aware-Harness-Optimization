@@ -1,0 +1,40 @@
+New Terminal Output:
+
+agent@6bea6e6417e9:/app$ mkdir -p ~/.config/Code/User
+agent@6bea6e6417e9:/app$ cat > ~/.config/Code/User/keybindings.json <<'EOF'
+> [
+>     {
+>         "key": "ctrl+f",
+>         "command": "-list.find"
+>     }
+> ]
+> EOF
+agent@6bea6e6417e9:/app$ python3 -m json.tool ~/.config/Code/User/keybindings.json
+[
+    {
+        "key": "ctrl+f",
+        "command": "-list.find"
+    }
+]
+agent@6bea6e6417e9:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

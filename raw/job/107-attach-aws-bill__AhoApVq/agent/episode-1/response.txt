@@ -1,0 +1,10 @@
+{
+  "analysis": "The bill exists at ~/aws-bill.pdf, and the environment appears to have Thunderbird and a graphical display.",
+  "plan": "Find the open compose window and available desktop automation tools, then use the attachment dialog without changing or sending the message.",
+  "commands": [
+    {
+      "keystrokes": "which xdotool wmctrl import python3; ps -ef | grep -E 'thunderbird|firefox' | grep -v grep; xdotool search --onlyvisible --name . getwindowname\n",
+      "duration": 0.1
+    }
+  ]
+}

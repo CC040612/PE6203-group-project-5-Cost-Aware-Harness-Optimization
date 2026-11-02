@@ -1,0 +1,11 @@
+{
+  "analysis": "We need to identify which process has my_document.odt open before stopping anything, so unrelated applications and work are not affected.",
+  "plan": "List processes associated with the document and common LibreOffice executables. Once the correct process is identified, terminate only that process, escalating to a forced kill if necessary.",
+  "commands": [
+    {
+      "keystrokes": "ps -eo user,pid,ppid,stat,args | grep -E '[m]y_document\\.odt|[s]office|[l]ibreoffice|[o]owriter'\n",
+      "duration": 0.1
+    }
+  ],
+  "task_complete": false
+}

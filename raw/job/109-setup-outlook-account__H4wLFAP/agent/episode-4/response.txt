@@ -1,0 +1,10 @@
+{
+  "analysis": "The setup form now exposes the email and password fields. No display name was provided, so only the supplied credentials will be entered.",
+  "plan": "Fill the email and password fields through accessibility, verify their contents without displaying the password, and leave the setup page open without clicking Continue.",
+  "commands": [
+    {
+      "keystrokes": "/usr/bin/python3 - <<'PY'\nimport pyatspi\ndef walk(o):\n if o.getRoleName()=='entry' and o.name=='Email address':\n  o.queryEditableText().setTextContents('anonym-x2024@outlook.com')\n  print('Email filled:',o.queryText().getText(0,-1))\n if o.getRoleName()=='password text' and o.name=='Password':\n  o.queryEditableText().setTextContents('password')\n  print('Password filled; length:',o.queryText().characterCount)\n for c in o: walk(c)\nwalk(pyatspi.Registry.getDesktop(0))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

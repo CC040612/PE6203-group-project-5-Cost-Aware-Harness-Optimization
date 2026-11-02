@@ -1,0 +1,25 @@
+New Terminal Output:
+
+agent@2950419b9bc9:/app$ /tmp/contactenv/bin/python - <<'PY'
+> import openpyxl
+> from openpyxl.comments import Comment
+> p='/home/user/Desktop/Professor_Contact.xlsx'
+> w=openpyxl.load_workbook(p)
+> s=w['Sheet1']
+> entries=[(3,'liuqi@cs.hku.hk','https://leuchine.github.io/'),(4,'tao.yu.nlp@gmail.com','https://taoyds.github.io/'),(5,'lpk@cs.hku.hk','https://ikekonglp.gith
+ub.io/contact.html')]
+> for row,email,source in entries:
+>  s.cell(row,6,email)
+>  s.cell(row,6).comment=Comment('Source: '+source,'Source')
+> w.save(p)
+> v=openpyxl.load_workbook(p)
+> for row in v['Sheet1'].iter_rows(min_row=3,max_row=5):
+>  print(row[1].value, row[5].value)
+> assert all(v['Sheet1'].cell(r,6).value==e for r,e,_ in entries)
+> print('Saved and verified:',p)
+> PY
+Qi Liu liuqi@cs.hku.hk
+Tao Yu tao.yu.nlp@gmail.com
+Lingpeng Kong lpk@cs.hku.hk
+Saved and verified: /home/user/Desktop/Professor_Contact.xlsx
+agent@2950419b9bc9:/app$

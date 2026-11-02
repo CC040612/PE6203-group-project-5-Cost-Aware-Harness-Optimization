@@ -1,0 +1,5 @@
+{
+  "analysis": "The results are loading.",
+  "plan": "Wait for listings.",
+  "commands": [{"keystrokes":"","duration":2}]
+}

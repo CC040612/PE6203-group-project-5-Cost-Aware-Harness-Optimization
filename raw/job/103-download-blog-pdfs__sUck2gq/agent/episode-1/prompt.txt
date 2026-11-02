@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@83e3666913d5:/app$ ls -la /app; ps aux | head -35; ls -la /home/user; which chromium chromium-browser google-chrome firefox wkhtmltopdf; env | grep -Ei 'd
+isplay|browser|chrome'
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:50 .
+drwxr-xr-x 1 root  root  4096 Oct 22 02:55 ..
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+agent          1  0.4  0.0   3940  2948 ?        Ss   02:54   0:00 bash /usr/local/bin/task-entrypoint.sh sh -c sleep infinity
+agent         12  0.8  0.8 229716 71388 ?        S    02:54   0:00 Xvfb :99 -screen 0 1440x900x24
+agent         24  0.0  0.0   9012  2180 ?        Ss   02:54   0:00 dbus-daemon --session --address=unix:path=/tmp/tua-dbus-session --fork
+agent         25  1.1  0.3 111196 29172 ?        Sl   02:54   0:00 python3 /usr/local/bin/task_state.py task
+agent         32  4.6  0.9 1055012 72212 ?       Sl   02:54   0:00 /opt/venv/lib/python3.11/site-packages/playwright/driver/node /opt/venv/lib/python3.11/site-p
+ackages/playwright/driver/package/cli.js run-driver
+agent        249  0.0  0.0   5852  3852 ?        Ss   02:55   0:00 tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /
+logs/agent/terminus_2.pane
+agent        250  0.0  0.0   4204  3520 pts/0    Ss   02:55   0:00 bash --login
+agent        252  0.0  0.0   2592  1660 ?        S    02:55   0:00 sh -c cat > /logs/agent/terminus_2.pane
+agent        253  0.0  0.0   2640  1328 ?        S    02:55   0:00 cat
+agent        268  1.5  0.2 101760 22472 pts/0    Sl+  02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        269  0.0  0.2  28000 16136 pts/0    S+   02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        270  0.0  0.2  28012 16824 pts/0    S+   02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        271  0.0  0.0   2592  1636 pts/1    Ss   02:55   0:00 sh -c /bin/bash
+agent        272  0.0  0.0   4580  3636 pts/1    S    02:55   0:00 /bin/bash
+agent        307  0.0  0.0   8496  4516 pts/1    R+   02:55   0:00 ps aux
+agent        308  0.0  0.0   2884  1584 pts/1    S+   02:55   0:00 head -35
+lrwxrwxrwx 1 root root 11 Oct 22 02:50 /home/user -> /home/agent
+/usr/local/bin/chromium
+/usr/local/bin/google-chrome
+DISPLAY=:99
+agent@83e3666913d5:/app$
+
+
+
+
+
+
+
+
+
+
+

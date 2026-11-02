@@ -1,0 +1,10 @@
+New Terminal Output:
+
+ux-gnu TESSDATA_PREFIX=/tmp/ocr-local/usr/share/tesseract-ocr/5/tessdata ./usr/bin/tesseract /tmp/test_orientation.png stdout 2>&1; done
+Get:1 http://archive.ubuntu.com/ubuntu noble/universe amd64 liblept5 amd64 1.82.0-3build4 [1099 kB]
+Fetched 1099 kB in 2s (486 kB/s)
+=== vflip ===
+./usr/bin/tesseract: error while loading shared libraries: libgif.so.7: cannot open shared object file: No such file or directory
+=== hflip,vflip ===
+./usr/bin/tesseract: error while loading shared libraries: libgif.so.7: cannot open shared object file: No such file or directory
+agent@1ab03f642dd9:/tmp/ocr-local$

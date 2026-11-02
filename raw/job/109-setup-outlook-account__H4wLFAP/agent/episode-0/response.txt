@@ -1,0 +1,10 @@
+{
+  "analysis": "We need to locate Thunderbird and determine how to interact with its account setup screen, then enter the supplied account details without proceeding beyond that page.",
+  "plan": "Inspect running applications and available desktop automation tools.",
+  "commands": [
+    {
+      "keystrokes": "ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\n",
+      "duration": 0.1
+    }
+  ]
+}

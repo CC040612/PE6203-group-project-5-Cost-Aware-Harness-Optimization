@@ -1,0 +1,10 @@
+{
+  "analysis": "The exact Zoom extension was found, with ID kgjfgplpablkjnlkjmjdecgdpfankdle.",
+  "plan": "Open its listing and inspect installation controls.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/install.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\npage.goto('https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle')\npage.wait_for_timeout(1500)\nprint(page.locator('body').inner_text()[:7000])\nprint(page.get_by_role('button').all_text_contents())\nPY\n/opt/venv/bin/python /tmp/install.py\n",
+      "duration": 3
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The extracted frame contains upside-down end-card text. To distinguish a vertical flip from a full 180-degree rotation reliably, I will use OCR on the transformed frames.",
+  "plan": "Install the small OCR utility, then test both upside-down corrections.",
+  "commands": [
+    {
+      "keystrokes": "sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr >/tmp/ocr-install.log 2>&1\n",
+      "duration": 1
+    }
+  ]
+}

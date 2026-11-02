@@ -1,0 +1,83 @@
+New Terminal Output:
+
+agent@2950419b9bc9:/app$ /tmp/contactenv/bin/python - <<'PY'
+> import requests,bs4,concurrent.futures
+> urls=['https://leuchine.github.io/','https://taoyds.github.io/','https://ikekonglp.github.io/']
+> def fetch(u):
+>  try:
+>   r=requests.get(u,timeout=30); s=bs4.BeautifulSoup(r.text,'html.parser')
+>   print('\nURL',u,'STATUS',r.status_code,'\n',s.get_text(' ',strip=True)[:18000], '\nMAILTO',[a.get('href') for a in s.select('a[href^="mailto:"]')])
+>   open('/tmp/'+u.split('/')[2]+'.html','w').write(r.text)
+>  except Exception as e: print(u,e)
+> with concurrent.futures.ThreadPoolExecutor() as ex: list(ex.map(fetch,urls))
+> PY
+
+URL https://ikekonglp.github.io/ STATUS 200
+ Lingpeng Kong Home Group Publications Contact Lingpeng Kong I am an assistant professor in the Department of Computer Science at the University of Hong Kong (H
+KU), and a co-director of the HKU NLP Lab . My work lies at the intersection of natural language processing (NLP) and machine learning (ML), with a focus on rep
+resentation learning, structured prediction, and generative models. Before joining HKU, I was a research scientist at DeepMind ( London ). I obtained my Ph.D. f
+rom Carnegie Mellon University . For more details, see my academic c.v. Teaching COMP3270: Introduction to Artificial Intelligence (for undergraduates), autumn
+2025 COMP3361: Natural Language Processing (for undergraduates), autumn 2021, autumn 2022, spring 2026 COMP3314: Machine Learning (for undergraduates), spring 2
+022, spring 2023, autumn 2023 COMP7607: Natural Language Processing (for masters), autumn 2022, autumn 2023, autumn 2024, autumn 2025 COMP8505: Advanced Topics
+in Language Models (for PhDs), spring 2025, spring 2026 In my hour of need, I chose Erasmus of Rotterdam to help me -- a man of the centre and a man of reason w
+ho was also caught between the millstones of Protestantism and Catholicism, just as we are caught between the great opposing movements of our day. I found conso
+lation in realising ... that one is not alone, when one is troubled out of a sense of decency by having to make difficult decisions and resolutions, instead of
+just taking the easy way out by jumping onto the back of some party. Stefan Zweig wrote to Hermann Hesse on September 9, 1933
+MAILTO []
+
+URL https://leuchine.github.io/ STATUS 200
+ Qi Liu's Homepage Search Qi Liu's Homepage Qi Liu's Homepage Home Experience Award Publication Light Dark Automatic Qi Liu Assistant Professor at the Universit
+y of Hong Kong The University of Hong Kong Biography I am an assistant professor at the Department of Computer Science , the University of Hong Kong , and a cof
+ounder of Reka . I earned my Ph.D. in
+computer science from the University of Oxford . In the past, I obtained a Master of Science degree from the National University of Singapore , and a Bachelor o
+f Engineering degree from Shandong University . My research interests include natural language processing and machine learning. My research is centered on enabl
+ing computers to comprehend human language. I also spent some time at Google DeepMind , Facebook AI Research , and Microsoft Research before and during my PhD s
+tudy. I have multiple fully-funded PhD, MPhil, postdoc, RA, and intern positions available at the University of Hong Kong. Email me for more information. Reka i
+s hiring for platform and machine learning. Email us for more information. We are an AGI company committed to the development of large foundation models. Intere
+sts Natural Language Processing Machine Learning Artificial Intelligence Education Ph.D. in Artificial Intelligence University of Oxford, Advisors: Phil Blunsom
+, Matt Kusner M.Sc in Computer Science National University of Singapore, Advisor: Anthony K.H. Tung BEng in Computer Science Shandong University Experiences Res
+earch Scientist Intern Google DeepMind Jul 2020 –
+Jun 2021 London Advisors: Phil Blunsom, Dani Yogatama, Lei Yu, Laura Rimell Researcher Facebook AI Research Aug 2018 –
+Aug 2019 New York City Advisors: Douwe Kiela, Maximilian Nickel Research Intern Microsoft Research Mar 2018 –
+Jun 2018 Cambridge Advisors: Alexander Gaunt, Marc Brockschmidt, Miltos Allamanis Research Assistant SUTD Feb 2017 –
+Feb 2018 Singapore Advisor: Yue Zhang Research Intern Microsoft Research Sep 2016 –
+Dec 2016 Beijing Advisors: Ying Yan, Thomas Moscibroda Selected Awards Forbes 30 Under 30 Asia List Forbes Feb 2023 AMiner AI Most Influential Scholar AMiner Ja
+n 2022 Google DeepMind Scholarship Google DeepMind Sep 2019 Lee Kuan Yew Global Business Plan Competition Winner (3 out of 550) SMU Aug 2017 NUS Research Schola
+rship NUS Sep 2014 Publications Quickly discover relevant content by filtering publications . Linli Yao , Yuancheng Wei , Yaojie Zhang , Lei Li , Xinlong Chen ,
+ Feifan Song , Ziyue Wang , Kun Ouyang , Yuanxin Liu , Lingpeng Kong , Qi Liu , Pengfei Wan , Kun Gai , Yuanxing Zhang , Xu Sun (2026). OmniDenseCap: Scripting
+Multi-Scene Videos with Time-Aware and Structural Audi
+[... output limited to 10000 bytes; 71 interior bytes omitted ...]
+ Jiacheng Ye, Zhiyong Wu, Jiangtao Feng, Tao Yu , and Lingpeng Kong ICML 2023 Paper
+Code Binding Language Models in Symbolic Languages Zhoujun Cheng*, Tianbao Xie*, Peng Shi, Chengzu Li, Rahul Nadkarni, Yushi Hu, Caiming Xiong, Dragomir Radev,
+Mari Ostendorf, Luke Zettlemoyer, Noah A Smith, Tao Yu ICLR 2023 (Spotlight, top 5%) Paper Poster Code Selective Annotation Makes Language Models Better Few-Sho
+t Learners Hongjin Su, Jungo Kasai, Chen Henry Wu, Weijia Shi, Tianlu Wang, Jiayi Xin, Rui Zhang, Mari Ostendorf, Luke Zettlemoyer, Noah A. Smith, Tao Yu ICLR 2
+023 Paper Poster Code Automated Self-Supervised Learning for Recommendation Lianghao Xia, Chao Huang, Chunzhen Huang, Kangyi Lin, Tao Yu , Ben Kao WWW 2023 Pape
+r Code UnifiedSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models Tianbao Xie*, Chen Henry Wu*, Peng Shi, Ruiqi Zho
+ng, Torsten Scholak, Michihiro Yasunaga, Chien-Sheng Wu, Ming Zhong, Pengcheng Yin, Sida Wang, Victor Zhong, Bailin Wang, Chengzu Li, Connor Boyle, Ansong Ni, Z
+iyu Yao, Dragomir Radev, Caiming Xiong, Lingpeng Kong, Rui Zhang, Noah A. Smith, Luke Zettlemoyer, Tao Yu EMNLP 2022 (Oral, top 4%) Paper Poster Code In-Context
+ Learning for Few-Shot Dialogue State Tracking Yushi Hu, Chia-Hsuan Lee, Tianbao Xie, Tao Yu , Noah A. Smith, Mari Ostendorf EMNLP Findings 2022 Paper Code Zero
+Gen: Efficient Zero-shot Learning via Dataset Generation Jiacheng Ye*, Jiahui Gao*, Qintong Li, Hang Xu, Jiangtao Feng, Zhiyong Wu, Tao Yu , Lingpeng Kong EMNLP
+ 2022 Paper Code ProGen: Progressive Zero-shot Dataset Generation via In-context Feedback Jiacheng Ye, Jiahui Gao, Zhiyong Wu, Jiangtao Feng, Tao Yu , and Lingp
+eng Kong EMNLP Findings 2022 Paper Code Augmenting Multi-Turn Text-to-SQL Datasets with Self-Play Qi Liu, Zihuiwen Ye, Tao Yu , Phil Blunsom, Linfeng Song EMNLP
+ Findings 2022 Paper Code NL2INTERFACE: Interactive Visualization Interface Generation from Natural Language Queries Yiru Chen, Ryan Li, Austin Mac, Tianbao Xie
+, Tao Yu , Eugene Wu IEEE Visualization Conference NLVIZ Workshop, 2022 Paper DYLE: Dynamic Latent Extraction for Abstractive Long-Input Summarization Ziming Ma
+o*, Chen Henry Wu*, Ansong Ni, Yusen Zhang, Rui Zhang, Tao Yu , Budhaditya Deb, Chenguang Zhu, Ahmed H Awadallah, Dragomir Radev ACL 2022 Paper Code An Explorat
+ory Study on Long Dialogue Summarization: What Works and What's Next Yusen Zhang*, Ansong Ni*, Tao Yu , Rui Zhang, Chenguang Zhu, Budhaditya Deb, Asli Celikyilm
+az, Ahmed Hassan Awadallah, Dragomir Radev EMNLP Findings 2021 , Short Paper Paper Code SummerTime: Text Summarization Toolkit for Non-experts Ansong Ni, Zhangi
+r Azerbayev, Mutethia Mutuma, Troy Feng, Yusen Zhang, Tao Yu , Ahmed Hassan Awadallah, Dragomir Radev EMNLP 2021 . Demo Track Paper Code Testing Cross-Database
+Semantic Parsers Using Canonical Utterances Heather Lent, Semih Yavuz, Tao Yu , Tong Niu, Yingbo Zhou, Dragomir Radev, Xi Victoria Lin EMNLP 2021 Workshop: Eval
+uation & Comparison of NLP Systems. Best Paper Award Paper Code Logic-Consistency Text Generation from Semantic Parses Chang Shu, Yusen Zhang, Xiangyu Dong, Pen
+g Shi, Tao Yu , Rui Zhang ACL Findings 2021 Paper Code QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization Ming Zhong*, Da Yin*, Tao Yu ,
+Ahmad Zaidi, Mutethia Mutuma, Rahul Jha, Ahmed Hassan Awadallah, Asli Celikyilmaz, Yang Liu, Xipeng Qiu and Dragomir Radev NAACL 2021 Paper Code DART: Open-Doma
+in Structured Data Record to Text Generation with Linyong Nan, Dragomir Radev, Rui Zhang, Neha Verma, Xi Victoria Lin, Caiming Xiong, Richard Socher and many au
+thors. NAACL 2021 Paper Data SCoRe: Pre-Training for Context Representation in Conversational Semantic Parsing Tao Yu , Rui Zhang, Alex Polozov, Christopher Mee
+k, Ahmed Hassan Awadallah ICLR 2021 Paper Code GraPPa: Grammar-Augmented Pre-Training for Table Semantic Parsing Tao Yu , Chien-Sheng Wu, Xi Victoria Lin, Baili
+n Wang, Yi Chern Tan, Xinyi Yang, Dragomir Radev, Richard Socher, Caiming Xiong ICLR 2021 Paper Code Semantic Evaluation for Text-to-SQL with Distilled Test Sui
+tes Ruiqi Zhong, Tao Yu , Dan Klein EMNLP 2020 Paper Code Did You Ask a Good Question? A Cross-Domain Question Intention Classification Benchmark for Text-to-SQ
+L Yusen Zhang, Xiangyu Dong, Shuaichen Chang, Tao Yu , Peng Shi, Rui Zhang EMNLP 2020 Workshop on Interactive and Executable Semantic Parsing. Short Paper Paper
+ Data CoSQL : A Conversational Text-to-SQL Challenge Towards Cross-Domain Natural Language Interfaces to Databases Tao Yu , Rui Zhang He Yang Er, Suyi Li, Eric
+Xue, Bo Pang, Xi Victoria Lin, Yi Chern Tan, Tianze Shi, Zihan Li, Youxuan Jiang, Michihiro Yasunaga, Sungrok Shim, Tao Chen, Alexander Fabbri, Zifan Li, Luyao
+Chen, Yuwen Zhang, Shreya Dixit, Vincent Zhang, Caiming Xiong, Richard Socher, Walter Lasecki, Dragomir Radev EMNLP 2019 Paper Data Editing-Based SQL Query Gene
+ration for Cross-Domain Context-Dependent Questions Rui
+MAILTO []
+agent@2950419b9bc9:/app$

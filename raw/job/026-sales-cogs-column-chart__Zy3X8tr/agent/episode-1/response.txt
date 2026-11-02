@@ -1,0 +1,10 @@
+{
+  "analysis": "Sheet1 contains the Week labels in A2:A11, Sales in B2:B11, and COGS in C2:C11, with headers in row 1. The workbook can be edited using openpyxl.",
+  "plan": "Create Sheet2 and add a clustered column chart referencing the existing Sheet1 data, with the requested title and all ten week labels. Save the workbook in place and verify the chart's structure and references.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nimport openpyxl\nfrom openpyxl.chart import BarChart, Reference\np='/app/WeeklySales.xlsx'\nw=openpyxl.load_workbook(p)\ns=w['Sheet1']\nt=w.create_sheet('Sheet2')\nc=BarChart()\nc.type='col'\nc.grouping='clustered'\nc.overlap=0\nc.title='Sales & COGS'\nc.x_axis.title='Week'\nc.y_axis.title='Amount'\nc.add_data(Reference(s,min_col=2,max_col=3,min_row=1,max_row=11),titles_from_data=True)\nc.set_categories(Reference(s,min_col=1,min_row=2,max_row=11))\nc.width=25\nc.height=14\nc.style=10\nc.x_axis.tickLblSkip=1\nt.add_chart(c,'A1')\nw.save(p)\nr=openpyxl.load_workbook(p)\nchart=r['Sheet2']._charts[0]\nassert chart.type=='col' and chart.grouping=='clustered'\nassert len(chart.series)==2\nassert r['Sheet1'].max_row==11\nprint('Saved:',p)\nprint('Sheets:',r.sheetnames)\nprint('Chart:',chart.type,chart.grouping)\nfor series in chart.series:\n print('Series:',series.tx.strRef.f,'Values:',series.val.numRef.f,'Categories:',series.cat.numRef.f)\nPY\n",
+      "duration": 1.0
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "Both PDFs were successfully generated with substantial file sizes. The optional pdfinfo utility is unavailable; verify the PDF signatures using Python instead.",
+  "plan": "Check each output has a valid PDF header and EOF marker.",
+  "commands": [
+    {
+      "keystrokes": "python3 - <<'PY'\nfrom pathlib import Path\nfor p in Path('/home/user/Documents/Blog').glob('*.pdf'):\n    data=p.read_bytes()\n    assert data.startswith(b'%PDF-') and data.rstrip().endswith(b'%%EOF'), p\n    print('Verified:',p.name, f'({len(data):,} bytes)')\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

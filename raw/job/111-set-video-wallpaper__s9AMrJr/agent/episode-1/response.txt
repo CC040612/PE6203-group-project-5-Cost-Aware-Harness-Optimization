@@ -1,0 +1,10 @@
+{
+  "analysis": "The trailer and ffmpeg are available, but there is no desktop session environment or standard wallpaper-setting tool visible in the current shell.",
+  "plan": "Inspect running processes, installed desktop applications, and display sockets to determine how the graphical desktop is managed. Also inspect the video to choose an appropriate frame.",
+  "commands": [
+    {
+      "keystrokes": "ps aux | head -45; ls -la /tmp/.X11-unix /run/user/$(id -u) 2>/dev/null; ls /usr/bin | grep -Ei 'wall|desktop|xfce|xrandr|xset|dconf|gsettings|vlc'; ls -la ~; ffprobe -v error -show_entries format=duration:stream=width,height -of default=noprint_wrappers=1 ~/Desktop/*.mp4\n",
+      "duration": 0.1
+    }
+  ]
+}

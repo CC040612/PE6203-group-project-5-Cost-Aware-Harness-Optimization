@@ -1,0 +1,14 @@
+{
+  "analysis": "The image finished loading after a slow color conversion, and the Search Actions window is open. It needs explicit focus because no window manager is running.",
+  "plan": "Focus Search Actions, type Vignette, and activate the matching filter.",
+  "commands": [
+    {
+      "keystrokes": "xdotool windowfocus 0x20038b; xdotool key ctrl+a; xdotool type --delay 100 vignette; sleep 1; xdotool key Return\n",
+      "duration": 2
+    },
+    {
+      "keystrokes": "xwininfo -root -tree\n",
+      "duration": 0.1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "analysis": "The category control and menu are being opened.",
+  "plan": "Read the menu.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

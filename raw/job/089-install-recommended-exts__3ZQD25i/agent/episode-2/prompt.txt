@@ -1,0 +1,72 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ python3 - <<'PY'
+> from zipfile import ZipFile
+> from xml.etree import ElementTree as E
+> with ZipFile('/home/user/Desktop/Recommended_plugin_list.docx') as z:
+>  r=E.fromstring(z.read('word/document.xml'))
+>  for p in r.findall('.//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
+>   print(''.join(p.itertext()))
+>  print(z.read('word/_rels/document.xml.rels').decode())
+> PY
+Recommended plugin list
+Zoom Chrome Extension
+Speechify Text to Speech Voice Reader
+React Developer Tools
+Momentum
+Google Translate
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocume
+nt/2006/relationships/settings" Target="settings.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles"
+ Target="styles.xml"/><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/><Rela
+tionship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/><Relationship Id="rId5" Type="htt
+p://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/><Relationship Id="rId4" Type="http://schemas.openxmlformats.
+org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/></Relationships>
+agent@715dad585543:/app$ ls -l /usr/local/bin/google-chrome /usr/local/bin/chromium; cat /usr/local/bin/google-chrome; ls -la /home/user/.config/google-chrome;
+ls /opt; ls /app
+lrwxrwxrwx 1 root root  28 Oct 21 16:13 /usr/local/bin/chromium -> /usr/local/bin/google-chrome
+-rwxr-xr-x 1 root root 959 Oct 20 08:35 /usr/local/bin/google-chrome
+#!/usr/bin/env bash
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+set -euo pipefail
+
+export DISPLAY="${DISPLAY:-:99}"
+PROFILE_DIR="${CHROME_USER_DATA_DIR:-$HOME/.config/google-chrome}"
+mkdir -p "$PROFILE_DIR"
+
+declare -a EXTRA_ARGS
+EXTRA_ARGS=(
+  "--user-data-dir=$PROFILE_DIR"
+  "--profile-directory=Default"
+  "--no-first-run"
+  "--no-default-browser-check"
+  "--password-store=basic"
+  "--disable-dev-shm-usage"
+  "--no-sandbox"
+)
+
+has_remote_debugging_port=0
+for arg in "$@"; do
+  if [[ "$arg" == --remote-debugging-port=* ]]; then
+    has_remote_debugging_port=1
+    break
+  fi
+done
+
+if [ "$has_remote_debugging_port" -eq 0 ]; then
+  EXTRA_ARGS+=("--remote-debugging-port=${TUA_CHROME_REMOTE_DEBUGGING_PORT:-${CHROME_REMOTE_DEBUGGING_PORT:-1337}}")
+fi
+
+exec /usr/bin/chromium "${EXTRA_ARGS[@]}" "$@"
+total 12
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 .
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 ..
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:13 Default
+venv
+agent@715dad585543:/app$

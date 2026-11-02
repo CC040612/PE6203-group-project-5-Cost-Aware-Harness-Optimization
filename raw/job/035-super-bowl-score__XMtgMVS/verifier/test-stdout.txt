@@ -1,0 +1,17 @@
+F
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+        active_tab_url = get_active_url_from_accessTree(RESULT_CONFIG)
+>       assert (
+            is_expected_active_tab(active_tab_url, RULE) == 1.0
+        ), "Chrome active tab URL does not satisfy OSWorld is_expected_active_tab"
+E       AssertionError: Chrome active tab URL does not satisfy OSWorld is_expected_active_tab
+E       assert 0.0 == 1.0
+E        +  where 0.0 = is_expected_active_tab('https://www.nfl.com/scores/2019/super-bowl-sunday', {'accepted_urls': ['https://www.nfl.com/scores/2019/post4', 'https://www.nfl.com/games/49ers-at-chiefs-2019-post-4?tab=recap'], 'type': 'url', 'url': 'https://www.nfl.com/scores/2019/post4'})
+
+/tests/test_outputs.py:218: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_main - AssertionError: Chrome active ta...
+1 failed in 0.90s

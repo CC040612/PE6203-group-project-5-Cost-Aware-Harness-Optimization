@@ -1,0 +1,41 @@
+Current Terminal Screen:
+8.2
+Very good
+Open 1000+ reviews
+Important info
+Email quote
+Mini Cooper
+or similar medium car
+5 seats
+Automatic
+2 checked bags
+Unlimited mileage
+Online check-in
+Zurich Airport
+9.2 km from center
+Price for 4 days:
+S$ 196
+Free cancellation
+View deal
+Customer rating 8.2 Very good, for Alamo at Zurich Airport
+8.2
+Very good
+Open 1000+ reviews
+Important info
+Email quote
+Ford Puma
+or similar SUV
+5 seats
+Automatic
+3 checked bags
+Unlimited mileage
+Online check-in
+Zurich Airport
+9.2 km from center
+Pri
+BUTTONS ['Singapore DollarSGD', 'English (US)', 'Manage booking', '', '', 'Pick-up dateMon, Oct 26', 'Drop-off dateFri, Oct 30', 'Search', 'Zürich - ZürichMon,
+Oct 26, 10:00 - Fri, Oct 30, 10:00', 'Show on map', 'Clear all filters', 'Show all 8', 'Show all 8', 'Sort by: Recommended', 'Mid-size car', 'Compact car', 'Lar
+ge car', 'SUVs', 'Minivans', 'Luxury car', 'Station wagon', '', '', 'or similar small car', 'Zurich Airport', 'View deal', 'Customer rating 8.2 Very good, for G
+reen Motion at Zurich Airport8.2Very goodOpen 300+ reviews', 'Important info', 'Email quote', 'or similar medium car', 'Zurich Airport', 'View deal', 'Customer
+rating 8.2 Very good, for Green Motion at Zurich Airport8.2Very goodOpen 300+ reviews', 'Important info', 'Email quote']
+agent@c20a90688c47:/app$

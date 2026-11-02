@@ -1,0 +1,69 @@
+[?2004h[01;32magent@f578696fd619[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@f578696fd619[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@f578696fd619[00m:[01;34m/app[00m$ ls -l /app/PeriodRate.xlsx; python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> w=openpyxl.load_workbook('/app/PeriodRate.xlsx')
+[?2004l[?2004h> for s in w:
+[?2004l[?2004h>  print(s.title,s.max_row,s.max_column)
+[?2004l[?2004h>  for row in s:
+[?2004l[?2004h>   print([(c.coordinate,c.value,c.number_format) for c in row if c.value is not None])
+[?2004l[?2004h> PY
+[?2004l-rw-r--r-- 1 agent agent 9226 Oct 21 14:40 /app/PeriodRate.xlsx
+Sheet1 25 2
+[('A1', 'Annual Rate (%)', 'General'), ('B1', 'Period per year', 'General')]
+[('A2', 11.25, 'General'), ('B2', 2, 'General')]
+[('A3', 7.776, 'General'), ('B3', 6, 'General')]
+[('A4', 15.496, 'General'), ('B4', 6, 'General')]
+[('A5', 9.32, 'General'), ('B5', 2, 'General')]
+[('A6', 18.584, 'General'), ('B6', 6, 'General')]
+[('A7', 18.198, 'General'), ('B7', 8, 'General')]
+[('A8', 17.812, 'General'), ('B8', 5, 'General')]
+[('A9', 14.724, 'General'), ('B9', 2, 'General')]
+[('A10', 16.268, 'General'), ('B10', 7, 'General')]
+[('A11', 13.565999999999999, 'General'), ('B11', 8, 'General')]
+[('A12', 14.338000000000001, 'General'), ('B12', 5, 'General')]
+[('A13', 9.706, 'General'), ('B13', 5, 'General')]
+[('A14', 13.565999999999999, 'General'), ('B14', 2, 'General')]
+[('A15', 9.706, 'General'), ('B15', 5, 'General')]
+[('A16', 13.565999999999999, 'General'), ('B16', 7, 'General')]
+[('A17', 7.776, 'General'), ('B17', 7, 'General')]
+[('A18', 15.11, 'General'), ('B18', 5, 'General')]
+[('A19', 15.496, 'General'), ('B19', 3, 'General')]
+[('A20', 14.724, 'General'), ('B20', 1, 'General')]
+[('A21', 12.794, 'General'), ('B21', 7, 'General')]
+[('A22', 9.32, 'General'), ('B22', 5, 'General')]
+[('A23', 16.268, 'General'), ('B23', 7, 'General')]
+[('A24', 10.478, 'General'), ('B24', 2, 'General')]
+[('A25', 18.584, 'General'), ('B25', 7, 'General')]
+[?2004h[01;32magent@f578696fd619[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> from copy import copy
+[?2004l[?2004h> p='/app/PeriodRate.xlsx'
+[?2004l[?2004h> w=openpyxl.load_workbook(p)
+[?2004l[?2004h> s=w['Sheet1']
+[?2004l[?2004h> s['C1']='Period Rate (%)'
+[?2004l[?2004h> s['C1']._style=copy(s['A1']._style)
+[?2004l[?2004h> for r in range(2,s.max_row+1):
+[?2004l[?2004h>  c=s.cell(r,3,s.cell(r,1).value/s.cell(r,2).value)
+[?2004l[?2004h>  c._style=copy(s.cell(r,1)._style)
+[?2004l[?2004h>  c.number_format='0.0000'
+[?2004l[?2004h> maximum=max(s.cell(r,3).value for r in range(2,s.max_row+1))
+[?2004l[?2004h> for r in range(2,s.max_row+1):
+[?2004l[?2004h>  c=s.cell(r,3)
+[?2004l[?2004h>  if c.value==maximum:
+[?2004l[?2004h>   f=copy(c.font)
+[?2004l[?2004h>   f.color='FF00FF00'
+[?2004l[?2004h>   c.font=f
+[?2004l[?2004h> s.column_dimensions['C'].width=20
+[?2004l[?2004h> w.save(p)
+[?2004l[?2004h> w=openpyxl.load_workbook(p)
+[?2004l[?2004h> s=w['Sheet1']
+[?2004l[?2004h> assert s['C1'].value=='Period Rate (%)'
+[?2004l[?2004h> assert all(s.cell(r,3).data_type=='n' for r in range(2,26))
+[?2004l[?2004h> assert s['C20'].font.color.rgb=='FF00FF00'
+[?2004l[?2004h> print('Saved:',p,'; maximum:',s['C20'].value,'at C20')
+[?2004l[?2004h> PY
+[?2004lSaved: /app/PeriodRate.xlsx ; maximum: 14.724 at C20
+[?2004h[01;32magent@f578696fd619[00m:[01;34m/app[00m$ 

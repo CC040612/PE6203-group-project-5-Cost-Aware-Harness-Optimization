@@ -1,0 +1,10 @@
+{
+  "analysis": "The terminal is idle. I need to determine the current date and available browser-control tools before opening Rentalcars and setting the Zurich search.",
+  "plan": "Inspect the environment for browser automation tools and confirm the date so that next Monday through Friday is interpreted correctly.",
+  "commands": [
+    {
+      "keystrokes": "date -I; ls -la /app; ls /tmp; env | grep -Ei 'chrome|browser|playwright|display'\n",
+      "duration": 0.1
+    }
+  ]
+}

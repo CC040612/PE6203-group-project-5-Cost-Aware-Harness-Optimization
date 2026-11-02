@@ -1,0 +1,10 @@
+{
+  "analysis": "The document needs a font-only change in place. Editing the DOCX XML directly will avoid altering its text or layout through an application conversion.",
+  "plan": "Inspect the document archive, then set font properties throughout its Word XML parts to Times New Roman while preserving all other document content.",
+  "commands": [
+    {
+      "keystrokes": "ls -l /app/Dublin_Zoo_Intro.docx\npython - <<'PY'\nfrom zipfile import ZipFile\nfrom lxml import etree\np='/app/Dublin_Zoo_Intro.docx'\nwith ZipFile(p) as z:\n print('\\n'.join(z.namelist()))\n for name in ['word/document.xml','word/styles.xml']:\n  root=etree.fromstring(z.read(name))\n  ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}\n  print(name, 'runs:',len(root.findall('.//w:r',ns)), 'font settings:',len(root.findall('.//w:rFonts',ns)))\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

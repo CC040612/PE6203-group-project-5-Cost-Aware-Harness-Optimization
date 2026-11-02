@@ -1,0 +1,10 @@
+{
+  "analysis": "All IDs are identified except Momentum, where two similarly named results need publisher verification.",
+  "plan": "Inspect Momentum's publisher and retry Zoom installation on the correct Web Store tab while capturing browser console events.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/details.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\npage=c.new_page()\nfor id in ['laookkfknpbbblfpciffpaejjkokdgca','kgjfgplpablkjnlkjmjdecgdpfankdle']:\n page.goto('https://chromewebstore.google.com/detail/'+id); page.wait_for_timeout(1000)\n print(page.locator('body').inner_text()[:6500],flush=True)\n if id.startswith('kg'):\n  print(page.evaluate('({keys:Object.keys(chrome),ua:navigator.userAgent})'))\n  page.on('console',lambda m:print('console',m.text,flush=True))\n  page.get_by_role('button',name='Add to Chrome',exact=True).click(); page.wait_for_timeout(3000)\n  print('buttons',page.get_by_role('button').all_text_contents(),flush=True)\nPY\n/opt/venv/bin/python /tmp/details.py\n",
+      "duration": 3
+    }
+  ]
+}

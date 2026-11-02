@@ -1,0 +1,97 @@
+New Terminal Output:
+
+agent@2950419b9bc9:/app$ /tmp/contactenv/bin/python - <<'PY'
+> from bs4 import BeautifulSoup
+> import re
+> for name in ['leuchine','taoyds','ikekonglp']:
+>  h=open('/tmp/'+name+'.github.io.html').read(); s=BeautifulSoup(h,'html.parser')
+>  print('\n',name,'INTRO',s.get_text(' ',strip=True)[:3300])
+>  for a in s.find_all('a',href=True):
+>   if re.search('email|contact|mailto|@',a.get('href','')+' '+a.get_text(),re.I): print(str(a)[:1500])
+>  for m in re.finditer(r'.{0,100}(?:@|\[at\]| at |email).{0,150}',h,re.I): print(m.group()[:300])
+> PY
+
+ leuchine INTRO Qi Liu's Homepage Search Qi Liu's Homepage Qi Liu's Homepage Home Experience Award Publication Light Dark Automatic Qi Liu Assistant Professor a
+t the University of Hong Kong The University of Hong Kong Biography I am an assistant professor at the Department of Computer Science , the University of Hong K
+ong , and a cofounder of Reka . I earned my Ph.D. in
+computer science from the University of Oxford . In the past, I obtained a Master of Science degree from the National University of Singapore , and a Bachelor o
+f Engineering degree from Shandong University . My research interests include natural language processing and machine learning. My research is centered on enabl
+ing computers to comprehend human language. I also spent some time at Google DeepMind , Facebook AI Research , and Microsoft Research before and during my PhD s
+tudy. I have multiple fully-funded PhD, MPhil, postdoc, RA, and intern positions available at the University of Hong Kong. Email me for more information. Reka i
+s hiring for platform and machine learning. Email us for more information. We are an AGI company committed to the development of large foundation models. Intere
+sts Natural Language Processing Machine Learning Artificial Intelligence Education Ph.D. in Artificial Intelligence University of Oxford, Advisors: Phil Blunsom
+, Matt Kusner M.Sc in Computer Science National University of Singapore, Advisor: Anthony K.H. Tung BEng in Computer Science Shandong University Experiences Res
+earch Scientist Intern Google DeepMind Jul 2020 –
+Jun 2021 London Advisors: Phil Blunsom, Dani Yogatama, Lei Yu, Laura Rimell Researcher Facebook AI Research Aug 2018 –
+Aug 2019 New York City Advisors: Douwe Kiela, Maximilian Nickel Research Intern Microsoft Research Mar 2018 –
+Jun 2018 Cambridge Advisors: Alexander Gaunt, Marc Brockschmidt, Miltos Allamanis Research Assistant SUTD Feb 2017 –
+Feb 2018 Singapore Advisor: Yue Zhang Research Intern Microsoft Research Sep 2016 –
+Dec 2016 Beijing Advisors: Ying Yan, Thomas Moscibroda Selected Awards Forbes 30 Under 30 Asia List Forbes Feb 2023 AMiner AI Most Influential Scholar AMiner Ja
+n 2022 Google DeepMind Scholarship Google DeepMind Sep 2019 Lee Kuan Yew Global Business Plan Competition Winner (3 out of 550) SMU Aug 2017 NUS Research Schola
+rship NUS Sep 2014 Publications Quickly discover relevant content by filtering publications . Linli Yao , Yuancheng Wei , Yaojie Zhang , Lei Li , Xinlong Chen ,
+ Feifan Song , Ziyue Wang , Kun Ouyang , Yuanxin Liu , Lingpeng Kong , Qi Liu , Pengfei Wan , Kun Gai , Yuanxing Zhang , Xu Sun (2026). OmniDenseCap: Scripting
+Multi-Scene Videos with Time-Aware and Structural Audio-Visual Captions .
+In ICML . PDF Fengyuan Liu , Huang Yi , Sichun Luo , Yuqi Wang , Yazheng Yang , Xinye Li , Zefa Hu , Junlan Feng , Qi Liu (2026). Cognitive Alpha Mining via LLM
+-Driven Code-Based Evolution .
+In ACL . PDF Mukai Li , Linfeng Song , Zhenwen Liang , Jiahao Xu , Shansan Gong , Qi Liu , Haitao Mi , Dong Yu (2026). EconProver: Towards More Economical Test-
+Time Scaling for Automated Theorem Proving .
+In ACL . PDF Mukai Li , Qingcheng Zeng , Tianqing Fang , Zhenwen Liang , Linfeng Song , Qi Liu , Haitao Mi , Dong Yu (2026). Verified Critical Step Optimization
+ for LLM Agents .
+In ACL findings . PDF Qiushi Sun , Mukai Li , Zhoumianz
+<a aria-label="envelope" href="mailto:liuqi@cs.hku.hk"><i class="fas fa-envelope big-icon"></i></a>
+<a href="mailto:liuqi@cs.hku.hk">Email</a>
+<a href="mailto:contact@reka.ai">Email</a>
+rossorigin><link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&displ
+ay=swap"><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wgh
+t@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media=print onload='this.media="all"'><meta name=author content="Qi Liu"><meta name=descri
+ption content="A highly-customizable H
+a=print onload='this.media="all"'><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css integrity="sha512-W0xM4mr6dEP
+9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin=
+oad='this.media="all"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css crossorigin=anonymous ti
+tle=hl-light media=print onload='thi
+[... output limited to 10000 bytes; 70 interior bytes omitted ...]
+g, Jixuan Chen, Yuxiao Ye, Danyang Zhang, Dikang Du, Hao Hu, Huarong Chen, Zaida Zhou, Haotian
+ Yao, Ziwei Chen, Qizheng Gu, Yipu Wang, Heng Wang, Diyi Yang, Victor Zhong, Flood Sung, Y.Charles, Zhilin Yang, Tao Yu NeurIPS 2025 (Spotlight, top 3%) Paper P
+oster Code Aguvis: Unified Pure Vision Agents for Autonomous GUI Interactio
+<a class="button" href="https://medium.com/@tao.yu/spider-one-more-step-towards-natural-language-interfaces-to-databases-62298dc6df3c" target="_blank">Poster</a
+>
+<a class="button" href="https://medium.com/@tao.yu/spider-one-more-step-towards-natural-language-interfaces-to-databases-62298dc6df3c" target="_blank">Poster</a
+>
+  <meta name="description" content="Homepage of Tao Yu, Assistant Professor at The University of Hong Kong (HKU), Postdoc at UW NLP. Yale PhD working on Natural
+ Language Processing (NLP).">
+            <p>tao.yu.nlp [AT] gmail.com</p>
+u is an Assistant Professor of <a href="https://www.cs.hku.hk/" target="_blank">Computer Science</a> at <a href="https://www.hku.hk/" target="_blank">The Univer
+sity of Hong Kong</a> and a director of the <a href="https://www.xlang.ai/" target="_blank">XL
+ersity</a>, advised by <a href="http://www.cs.yale.edu/homes/radev/">Dragomir Radev</a> and master's at <a href="https://www.columbia.edu/">Columbia University<
+/a> advised by <a href="https://owenrambow.com/">Owen Rambow</a> and <a href="http://www.cs.co
+form</a> with thoughts on extensions. Sorry, I'm afraid I generally can't respond to all individual emails.
+              <a class="button" href="https://medium.com/@tao.yu/spider-one-more-step-towards-natural-language-interfaces-to-databases-62298dc6df3c" target="_bl
+ank">Poster</a>
+              <a class="button" href="https://medium.com/@tao.yu/spider-one-more-step-towards-natural-language-interfaces-to-databases-62298dc6df3c" target="_bl
+ank">Poster</a>
+          <p class="title"><b>The Columbia-GWU System at the 2016 TAC KBP BeSt Evaluation</b></p>
+r Committee, ICLR 2025 <br/> Demonstration Chair, ACL 2025 <br/> Agentic AI for Enterprise Workshop @ KDD 2025 <br/> AI Verification in the Wild Workshop @ ICLR
+ 2025 <br/> Multi-Agent Workshop @ AAAI 2025 <br/> Student Volunteer Chair, ACL 2023 <br/>
+Structured and Unstructured Knowledge Integration Workshop @ NAACL 2022 <br/> Interactive and Executable Semantic Parsing Workshop @ EMNLP 2020 </p>
+    I did a <a href="/assets/pics/cycliing.jpeg">cycling tour</a> (~2 weeks) at the top of the world, <a href="/assets/pics/tibet.jpeg">Tibet</a> (avg elevation
+: ~4500 meters). I am also a <a href="/assets/pics/pilot.jpeg">student
+          tao.yu.nlp [AT] gmail.com
+
+ ikekonglp INTRO Lingpeng Kong Home Group Publications Contact Lingpeng Kong I am an assistant professor in the Department of Computer Science at the University
+ of Hong Kong (HKU), and a co-director of the HKU NLP Lab . My work lies at the intersection of natural language processing (NLP) and machine learning (ML), wit
+h a focus on representation learning, structured prediction, and generative models. Before joining HKU, I was a research scientist at DeepMind ( London ). I obt
+ained my Ph.D. from Carnegie Mellon University . For more details, see my academic c.v. Teaching COMP3270: Introduction to Artificial Intelligence (for undergra
+duates), autumn 2025 COMP3361: Natural Language Processing (for undergraduates), autumn 2021, autumn 2022, spring 2026 COMP3314: Machine Learning (for undergrad
+uates), spring 2022, spring 2023, autumn 2023 COMP7607: Natural Language Processing (for masters), autumn 2022, autumn 2023, autumn 2024, autumn 2025 COMP8505:
+Advanced Topics in Language Models (for PhDs), spring 2025, spring 2026 In my hour of need, I chose Erasmus of Rotterdam to help me -- a man of the centre and a
+ man of reason who was also caught between the millstones of Protestantism and Catholicism, just as we are caught between the great opposing movements of our da
+y. I found consolation in realising ... that one is not alone, when one is troubled out of a sense of decency by having to make difficult decisions and resoluti
+ons, instead of just taking the easy way out by jumping onto the back of some party. Stefan Zweig wrote to Hermann Hesse on September 9, 1933
+<a href="contact.html">Contact</a>
+am an assistant professor in the <a href="https://www.cs.hku.hk/">Department of Computer Science</a> at the <a href="https://www.hku.hk/">University of Hong Kon
+g</a> (HKU), and a co-director of the <a href="https://nlp.cs.hku.hk/">HKU NLP Lab</a>. My wor
+k lies at the intersection of natural language processing (NLP) and machine learning (ML), with a focus on representation learning, structured prediction, and g
+enerative models. Before joining HKU, I was a research scientist at <a href="https://deepmind.com/">DeepMind</a> (<a href="https://www.kingscross.co.uk/pancras-
+square">London</a>). I obtained my Ph.D. from <a href="htt
+<!-- Email: <a href="mailto:lingpenk@google.com">lingpenk@google.com</a> -->
+agent@2950419b9bc9:/app$

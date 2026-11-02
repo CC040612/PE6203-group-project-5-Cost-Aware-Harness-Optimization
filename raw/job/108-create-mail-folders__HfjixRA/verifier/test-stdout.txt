@@ -1,0 +1,18 @@
+Terminated
+F
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+        listing_path = Path("/tmp/thunderbird-listing.txt")
+        snapshot_listing(RESULT_PATH, listing_path)
+>       assert check_list(str(listing_path), RULES) == 1.0, "Thunderbird output listing does not satisfy the exact OSWorld rule"
+E       AssertionError: Thunderbird output listing does not satisfy the exact OSWorld rule
+E       assert 0.0 == 1.0
+E        +  where 0.0 = check_list('/tmp/thunderbird-listing.txt', {'expect': ['\\bCOMPANY\\.msf\\b', '\\bCOMPANY/?(?!\\.msf)', '\\bUNIVERSITY\\.msf\\b', '\\bUNIVERSITY/?(?!\\.msf)']})
+E        +    where '/tmp/thunderbird-listing.txt' = str(PosixPath('/tmp/thunderbird-listing.txt'))
+
+/tests/test_outputs.py:96: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_main - AssertionError: Thunderbird outp...
+1 failed in 0.02s

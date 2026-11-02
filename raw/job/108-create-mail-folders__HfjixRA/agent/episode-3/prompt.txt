@@ -1,0 +1,8 @@
+New Terminal Output:
+
+agent@1d512c9b2066:/app$ touch "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY" "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local
+Folders/UNIVERSITY"; ls -l "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY" "$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Fold
+ers/UNIVERSITY"; pgrep -a thunderbird || true
+-rw-r--r-- 1 agent agent 0 Oct 22 02:54 '/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY'
+-rw-r--r-- 1 agent agent 0 Oct 22 02:54 '/home/agent/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY'
+agent@1d512c9b2066:/app$

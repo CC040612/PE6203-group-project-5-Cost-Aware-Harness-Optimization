@@ -1,0 +1,28 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', 'See more', '', '', '']
+laookkfknpbbblfpciffpaejjkokdgca ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '
+', '', 'See more', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '']
+aapbdbdomjkkjkaonfhkkikfgjllcleb ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more
+', '', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+agent@715dad585543:/app$ ls -la /home/user/.config/google-chrome/Default/Extensions; cat > /tmp/verify.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(1000)
+print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,name:e.data.name,state:e.data.state,location:e.data.location,disableReasons:e.data.di
+sableReasons}))'))
+PY
+/opt/venv/bin/python /tmp/verify.py
+ls -la /home/user/.config/google-chrome/Default/Extensions; cat > /tmp/verify.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(1000)
+> print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,name:e.data.name,state:e.data.state,location:e.data.location,disableReasons:e.data.
+disableReasons}))'))
+> PY
+ls: cannot access '/home/user/.config/google-chrome/Default/Extensions': No such file or directory
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/verify.py
+

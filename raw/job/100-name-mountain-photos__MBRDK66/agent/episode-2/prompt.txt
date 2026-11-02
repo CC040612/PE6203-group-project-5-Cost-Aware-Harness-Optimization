@@ -1,0 +1,37 @@
+New Terminal Output:
+
+agent@7dd7f81c65a3:/app$ ls -la /home/agent/Pictures; file /home/agent/Pictures/*; which exiftool; which chafa; which python3
+total 1176
+drwxr-xr-x 2 agent agent   4096 Oct 22 02:32 .
+drwxr-xr-x 1 agent agent   4096 Oct 22 02:33 ..
+-rw-r--r-- 1 agent agent 214237 Oct 22 02:32 picture1.jpg
+-rw-r--r-- 1 agent agent  44543 Oct 22 02:32 picture2.jpg
+-rw-r--r-- 1 agent agent 927632 Oct 22 02:32 picture3.jpg
+/home/agent/Pictures/picture1.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 96x96, segment length 16, comment: "CREATOR: gd-jpeg v1.0 (usi
+ng IJG JPEG v62), quality = 82", baseline, precision 8, 1536x1056, components 3
+/home/agent/Pictures/picture2.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 300x300, segment length 16, Exif Standard: [TIFF image data, l
+ittle-endian, direntries=3, description=75MPix XXXXL size panorama of Mount Ama Dablam - probably the most beautiful peak in Himalayas. , xresolution=760, yreso
+lution=768], progressive, precision 8, 612x344, components 3
+/home/agent/Pictures/picture3.jpg: JPEG image data, Exif standard: [TIFF image data, little-endian, direntries=8, manufacturer=NIKON CORPORATION, model=NIKON D3
+100, xresolution=140, yresolution=148, resolutionunit=2, software=Adobe Photoshop Lightroom 4.4 (Macintosh), datetime=2019:08:30 11:56:02], baseline, precision
+8, 1400x933, components 3
+/usr/bin/python3
+agent@7dd7f81c65a3:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

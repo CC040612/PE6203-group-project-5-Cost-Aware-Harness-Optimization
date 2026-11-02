@@ -1,0 +1,10 @@
+{
+  "analysis": "The NFL page has loaded and redirects to its canonical 2019 Super Bowl Sunday scores URL. It lists the 49ers–Chiefs game as final. I will dismiss the cookie banner and ensure the game record is visible.",
+  "plan": "Dismiss the optional cookie overlay, scroll to the Super Bowl result, and check the score card while keeping this exact scores page active.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337')\n page=next(x for x in b.contexts[0].pages if '/scores/2019/' in x.url)\n try: page.get_by_role('button',name='Reject Non-Essential Cookies',exact=True).click(timeout=3000)\n except Exception: pass\n game=page.get_by_role('link',name='View 49ers Chiefs game')\n print(game.count())\n if game.count():\n  game.scroll_into_view_if_needed()\n  print(game.evaluate('(el)=>el.outerHTML'))\n page.bring_to_front()\n print(page.url)\nPY\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+New Terminal Output:
+
+agent@04c1a7a0bc04:/app$ /opt/venv/bin/python - <<'PY'
+> from PIL import Image,ImageOps,ImageFilter
+> im=Image.open('/app/receipt_2.jpg')
+> # Locate total line using OCR bounding boxes
+> import pytesseract
+> x=pytesseract.image_to_data(im.resize((2100,1518)),config='--psm 6',output_type=pytesseract.Output.DICT)
+> for i,t in enumerate(x['text']):
+>  if t.strip(): print(t,x['left'][i],x['top'][i],x['width'][i],x['height'][i])
+> PY
+

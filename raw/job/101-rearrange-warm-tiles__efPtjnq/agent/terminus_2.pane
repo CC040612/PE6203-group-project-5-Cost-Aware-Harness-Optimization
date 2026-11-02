@@ -1,0 +1,36 @@
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from PIL import Image
+[?2004l[?2004h> im=Image.open('/app/tilearray.png').convert('RGB')
+[?2004l[?2004h> print('Dimensions:', im.size)
+[?2004l[?2004h> import numpy as np
+[?2004l[?2004h> for i, a in enumerate(np.array_split(np.array(im),3,axis=1)):
+[?2004l[?2004h>  print(i, 'mean RGB:',a.mean(axis=(0,1)), 'median RGB:',np.median(a,axis=(0,1)))
+[?2004l[?2004h> print('Image info:',Image.open('/app/tilearray.png').info)
+[?2004l[?2004h> PY
+[?2004lTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'PIL'
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ command -v magick convert identify ffmpeg; identify /app/tilearray.png
+[?2004l/usr/bin/convert
+/usr/bin/identify
+/usr/bin/ffmpeg
+/app/tilearray.png JPEG 962x1280 962x1280+0+0 8-bit sRGB 123231B 0.000u 0:00.000
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ for geom in 321x1280+0+0 320x1280+321+0 321x1280+641+0; do convert /app/tilearray.png -crop "$geom" +repage -resize 1x1\! -depth 8 txt:-; done
+[?2004l# ImageMagick pixel enumeration: 1,1,255,srgb
+0,0: (142,118,102)  #8E7666  srgb(142,118,102)
+# ImageMagick pixel enumeration: 1,1,255,srgb
+0,0: (127,109,85)  #7F6D55  srgb(127,109,85)
+# ImageMagick pixel enumeration: 1,1,255,srgb
+0,0: (138,112,87)  #8A7057  srgb(138,112,87)
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ for geom in 321x1280+0+0 320x1280+321+0 321x1280+641+0; do convert /app/tilearray.png -crop "$geom" +repage -colorspace HSL -format 'Hue=%[fx:mean.r] Saturation=%[fx:mean.g] Lightness=%[fx:mean.b]\n' info:; done
+[?2004lHue=0.420723 Saturation=0.717584 Lightness=0.484787
+Hue=0.348414 Saturation=0.710128 Lightness=0.420552
+Hue=0.438259 Saturation=0.738147 Lightness=0.45227
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ convert \( /app/tilearray.png -crop 321x1280+0+0 +repage \) \( /app/tilearray.png -crop 320x1280+321+0 +repage \) \( /app/tilearray.png -crop 321x1280+641+0 +repage \) +append /app/rearranged.png
+[?2004l[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ identify /app/rearranged.png
+[?2004l/app/rearranged.png PNG 962x1280 962x1280+0+0 8-bit sRGB 881239B 0.000u 0:00.000
+[?2004h[01;32magent@4c1ed4f20e3f[00m:[01;34m/app[00m$ 

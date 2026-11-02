@@ -1,0 +1,1513 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-21T15:19:12.390107Z",
+  "harbor": {
+    "version": "0.6.3",
+    "is_editable": false
+  },
+  "invocation": [
+    "/home/member2/TUA-Bench/.venv/bin/harbor",
+    "run",
+    "--config",
+    "/mnt/d/夏嫣然/6203/group project/member2/config/generated/gpt61sol-cockpit-formal-20261021-231816-860550.json",
+    "--env-file",
+    "/mnt/d/夏嫣然/6203/group project/member2/config/cockpit-local.env",
+    "--yes"
+  ],
+  "n_concurrent_trials": 2,
+  "retry": {
+    "max_retries": 0,
+    "exclude_exceptions": [
+      "RewardFileEmptyError",
+      "RewardFileNotFoundError",
+      "AgentTimeoutError",
+      "VerifierOutputParseError",
+      "VerifierTimeoutError"
+    ],
+    "wait_multiplier": 1.0,
+    "min_wait_sec": 1.0,
+    "max_wait_sec": 60.0
+  },
+  "trials": [
+    {
+      "task": {
+        "name": "020-calculate-period-rate",
+        "type": "local",
+        "digest": "sha256:1e625b58502a6f3479c4ff7272a8fded97bbca448ea058e295a73a95bfd96c86",
+        "path": "/home/member2/TUA-Bench/tasks/020-calculate-period-rate"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "026-sales-cogs-column-chart",
+        "type": "local",
+        "digest": "sha256:e79aea26901d7c1de98d2e72a8403dd38715dbd8dd960703d9693265d9762539",
+        "path": "/home/member2/TUA-Bench/tasks/026-sales-cogs-column-chart"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "035-super-bowl-score",
+        "type": "local",
+        "digest": "sha256:f4510f44c9dd2727213dd60b8929204d5f1138b3d600919518ca452007be2336",
+        "path": "/home/member2/TUA-Bench/tasks/035-super-bowl-score"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "038-zurich-rental-car",
+        "type": "local",
+        "digest": "sha256:4856ff5400cc40d96f674012b5785c5721e0c42fc306993a2be0a45c4b2c5492",
+        "path": "/home/member2/TUA-Bench/tasks/038-zurich-rental-car"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "052-vignette-filter-window",
+        "type": "local",
+        "digest": "sha256:4a2dff8f622c72ee0e9045ae76cf25e030bf9f769d8ab51fcf47c11f92e1e411",
+        "path": "/home/member2/TUA-Bench/tasks/052-vignette-filter-window"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "056-move-textbox-left",
+        "type": "local",
+        "digest": "sha256:9a5ceb7e06b6ec47f4d0f69bffe54aeb2239c6161d7aaf7559bfb031258fa9dc",
+        "path": "/home/member2/TUA-Bench/tasks/056-move-textbox-left"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "062-add-baseball-audio",
+        "type": "local",
+        "digest": "sha256:cce50f93647f10fa93a8576946b1b2308b476f5e9dac2dd65b3b24938088a914",
+        "path": "/home/member2/TUA-Bench/tasks/062-add-baseball-audio"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "068-strike-first-two-lines",
+        "type": "local",
+        "digest": "sha256:0070681a3ac9e7e0ee1353d3d0d82543cf38612456d2a195a9307e28958e03b6",
+        "path": "/home/member2/TUA-Bench/tasks/068-strike-first-two-lines"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "070-edit-friend-image",
+        "type": "local",
+        "digest": "sha256:6dd2e479cd6b8916ae149e33eddde6dd1de4e74b2178fb1447fac6b60d0af738",
+        "path": "/home/member2/TUA-Bench/tasks/070-edit-friend-image"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "073-force-quit-frozen-doc",
+        "type": "local",
+        "digest": "sha256:5adc8782d1757631fcc01af45b897676790305ab9120fcf8f347ef44c39dce36",
+        "path": "/home/member2/TUA-Bench/tasks/073-force-quit-frozen-doc"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "074-apa-references-review",
+        "type": "local",
+        "digest": "sha256:91d7c538170cbc6f0378b4b32c6cc6fe3f9a8339c8a463cd31a78d952a5e08cc",
+        "path": "/home/member2/TUA-Bench/tasks/074-apa-references-review"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "076-make-src-gif-clip",
+        "type": "local",
+        "digest": "sha256:7fe9e33bc4ecd7efd49637edd2b68d90fa6d5accd192127641cd6e0d4a6719ae",
+        "path": "/home/member2/TUA-Bench/tasks/076-make-src-gif-clip"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "078-add-wednesday-lecture",
+        "type": "local",
+        "digest": "sha256:a3059e2ca6fa87664ac668c6fba2c180d0e9b3be72777c7ee844903de5b717e8",
+        "path": "/home/member2/TUA-Bench/tasks/078-add-wednesday-lecture"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "080-convert-novel-epub",
+        "type": "local",
+        "digest": "sha256:890953a0e34059457f51d00472e7fecbec3593bcc74141e5614d38a8b793d4a1",
+        "path": "/home/member2/TUA-Bench/tasks/080-convert-novel-epub"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "081-video-frame-slide-bg",
+        "type": "local",
+        "digest": "sha256:251b3a7918b934e2fbbb299447a39e490955b4014c4808dfa28a6e5f99003444",
+        "path": "/home/member2/TUA-Bench/tasks/081-video-frame-slide-bg"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "082-brighten-slide-image",
+        "type": "local",
+        "digest": "sha256:3e9cbadade8c58f2c634b9791da28ece80de0f56a39dd11f435fc48f7688b4a3",
+        "path": "/home/member2/TUA-Bench/tasks/082-brighten-slide-image"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "083-gemini-responses-docx",
+        "type": "local",
+        "digest": "sha256:2b455ed9e817f2071c8fc55de8a47434ebe9af2a269d08e7fa7942b533a6fae3",
+        "path": "/home/member2/TUA-Bench/tasks/083-gemini-responses-docx"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "088-extract-presenter-photos",
+        "type": "local",
+        "digest": "sha256:23a3b1be4393e7eeac537b0e7498dcea7c76c61e7584affed08af884904257bd",
+        "path": "/home/member2/TUA-Bench/tasks/088-extract-presenter-photos"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "089-install-recommended-exts",
+        "type": "local",
+        "digest": "sha256:d53d97d59be9f19a8c22725a6d598a7d08da6a119dad64df551fcde1fc940f28",
+        "path": "/home/member2/TUA-Bench/tasks/089-install-recommended-exts"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "091-add-receipts-bookkeeping",
+        "type": "local",
+        "digest": "sha256:1d4aaf0659a296c268572e390e129cf0d0971cdcdb30d59d019ab4e4037a9bc0",
+        "path": "/home/member2/TUA-Bench/tasks/091-add-receipts-bookkeeping"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "092-fix-tetris-bug",
+        "type": "local",
+        "digest": "sha256:f26cc5ed5044ce425ed577b9f087103e0168b66968bf8d03fda06805f76de338",
+        "path": "/home/member2/TUA-Bench/tasks/092-fix-tetris-bug"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "093-merge-txt-document",
+        "type": "local",
+        "digest": "sha256:54fb67e5ec2cafd7b446b3dd3b82d13607f852e1104f4ab2e5ece9700b819bc5",
+        "path": "/home/member2/TUA-Bench/tasks/093-merge-txt-document"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "098-extract-email-doc-image",
+        "type": "local",
+        "digest": "sha256:0788eb359608ab73138c3f8db7b0e3719d029d2c894220036b9995e4696fbdbe",
+        "path": "/home/member2/TUA-Bench/tasks/098-extract-email-doc-image"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "099-professor-contact-info",
+        "type": "local",
+        "digest": "sha256:b03a7b3a662504d088d4e22160aa60d42aa696a720e8b2abab5f296e821cd8b9",
+        "path": "/home/member2/TUA-Bench/tasks/099-professor-contact-info"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "100-name-mountain-photos",
+        "type": "local",
+        "digest": "sha256:9ac0b779ebcfed35b80a8ac56db7400bc2689b64ca8e0fe2333d53e89970535a",
+        "path": "/home/member2/TUA-Bench/tasks/100-name-mountain-photos"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "101-rearrange-warm-tiles",
+        "type": "local",
+        "digest": "sha256:be63e2b6886f418f476676d5df4b8b3c76ad4040699902a9891673c6dc67dd93",
+        "path": "/home/member2/TUA-Bench/tasks/101-rearrange-warm-tiles"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "102-daily-email-report",
+        "type": "local",
+        "digest": "sha256:7fe3fea0e420d9c148a4e97f5fab5b8652ed40b9fc0176e08c10f0c50112530b",
+        "path": "/home/member2/TUA-Bench/tasks/102-daily-email-report"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "103-download-blog-pdfs",
+        "type": "local",
+        "digest": "sha256:ec1ddae42152066e0337254c4f18c1b25f9aba035a1aec7a6254822f1cd72378",
+        "path": "/home/member2/TUA-Bench/tasks/103-download-blog-pdfs"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "106-create-charles-ssh-user",
+        "type": "local",
+        "digest": "sha256:d9d5390f5b8388bc960efba88f8b8aeffbcc8b0baa5482d14ed1cd931bdb0d82",
+        "path": "/home/member2/TUA-Bench/tasks/106-create-charles-ssh-user"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "107-attach-aws-bill",
+        "type": "local",
+        "digest": "sha256:d6cd7a71278b323e5e7e11d2a406ed61296a1c13f4e71300091f006ba1ac3d85",
+        "path": "/home/member2/TUA-Bench/tasks/107-attach-aws-bill"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "108-create-mail-folders",
+        "type": "local",
+        "digest": "sha256:906bb43cbdff83992c9bd4ba3254619a6469693ce5c54ae491067abcf1ba6551",
+        "path": "/home/member2/TUA-Bench/tasks/108-create-mail-folders"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "109-setup-outlook-account",
+        "type": "local",
+        "digest": "sha256:95bf06b875534407bbe7251f2764caebf4c4bb6160341fd3d9318bd7bdbb0c19",
+        "path": "/home/member2/TUA-Bench/tasks/109-setup-outlook-account"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "110-rotate-macintosh-video",
+        "type": "local",
+        "digest": "sha256:24b98f1e64590391232c8bf0234ffe41906667e21276c9ac71c4aab20dc7b497",
+        "path": "/home/member2/TUA-Bench/tasks/110-rotate-macintosh-video"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "111-set-video-wallpaper",
+        "type": "local",
+        "digest": "sha256:7672f093c2d3f1fadb4ad91d5f72cc86b69d6de45258e5bd6e52056425881779",
+        "path": "/home/member2/TUA-Bench/tasks/111-set-video-wallpaper"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "112-capture-video-frame",
+        "type": "local",
+        "digest": "sha256:ef99756a6f2cb7f132b3bc625af3b8b3758663120cccf843f077690a22c3ec76",
+        "path": "/home/member2/TUA-Bench/tasks/112-capture-video-frame"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "113-add-folders-workspace",
+        "type": "local",
+        "digest": "sha256:674c07ec568dfd47d7e8a733ebb854920ada70437de69c81197c5d74b6275bca",
+        "path": "/home/member2/TUA-Bench/tasks/113-add-folders-workspace"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "115-remove-explorer-find-key",
+        "type": "local",
+        "digest": "sha256:573332153f9c2287ecab802899d6c15d61d7e5e650c4788320dd91a39a1e859d",
+        "path": "/home/member2/TUA-Bench/tasks/115-remove-explorer-find-key"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "117-comma-text-to-table",
+        "type": "local",
+        "digest": "sha256:21d65d8fec52aa0e40ee14c7ee697e7a57ef679dc91f81841b4eab4eb36c7299",
+        "path": "/home/member2/TUA-Bench/tasks/117-comma-text-to-table"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "118-set-times-new-roman",
+        "type": "local",
+        "digest": "sha256:26dba9f7b04b17ce67dd467fafe380fc2a846b2a3851039ceada12a830b5265c",
+        "path": "/home/member2/TUA-Bench/tasks/118-set-times-new-roman"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    },
+    {
+      "task": {
+        "name": "119-tabstop-sentence-split",
+        "type": "local",
+        "digest": "sha256:8a7d831219440d2464c09ff39f7e99855736e188489b6d95b9657196ea346cef",
+        "path": "/home/member2/TUA-Bench/tasks/119-tabstop-sentence-split"
+      },
+      "timeout_multiplier": 1.0,
+      "agent_timeout_multiplier": 1.0,
+      "agent": {
+        "name": "terminus-2",
+        "model_name": "openai/gpt-6.1-sol",
+        "kwargs": {
+          "temperature": null,
+          "reasoning_effort": "medium",
+          "api_base": "http://127.0.0.1:58429/v1",
+          "llm_kwargs": {
+            "allowed_openai_params": [
+              "reasoning_effort"
+            ]
+          }
+        },
+        "env": {}
+      },
+      "environment": {
+        "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+        "force_build": false,
+        "delete": true,
+        "suppress_override_warnings": false,
+        "env": {},
+        "kwargs": {}
+      },
+      "verifier": {
+        "env": {},
+        "disable": false
+      }
+    }
+  ]
+}

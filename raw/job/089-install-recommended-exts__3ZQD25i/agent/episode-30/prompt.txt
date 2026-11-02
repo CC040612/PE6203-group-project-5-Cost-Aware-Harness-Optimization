@@ -1,0 +1,20 @@
+New Terminal Output:
+
+key restored laookkfknpbbblfpciffpaejjkokdgca
+key restored aapbdbdomjkkjkaonfhkkikfgjllcleb
+agent@715dad585543:/app$ cat > /tmp/loadui.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> import subprocess,time
+> from pathlib import Path
+> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)
+> e.evaluate('chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true})')
+> for path in (Path.home()/'.local/share/chrome-extensions').iterdir():
+>  e.bring_to_front()
+>  e.evaluate('chrome.developerPrivate.loadUnpacked({failQuietly:true},()=>{window.loadResult=chrome.runtime.lastError?.message||"ok"})')
+>  time.sleep(1)
+>  subprocess.run(['xdotool','key','ctrl+l']);subprocess.run(['xdotool','type','--clearmodifiers',str(path)]);subprocess.run(['xdotool','key','Return']);time.sl
+eep(1);subprocess.run(['xdotool','key','Return']);time.sleep(2)
+>  print(path.name,e.evaluate('window.loadResult'),flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/loadui.py
+

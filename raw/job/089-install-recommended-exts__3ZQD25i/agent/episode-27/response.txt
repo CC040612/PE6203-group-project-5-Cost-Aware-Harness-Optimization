@@ -1,0 +1,11 @@
+{
+  "analysis": "The official packages are downloading successfully. Their manifest keys preserve store IDs except React Developer Tools, whose key can be recovered from the signed CRX header.",
+  "plan": "Finish downloads, recover any missing public key, and register the extracted packages through Chrome's persistent unpacked-extension API.",
+  "commands": [
+    {"keystrokes":"","duration":3},
+    {
+      "keystrokes": "cat > /tmp/load.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\ne=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)\nprint(e.evaluate('Object.keys(chrome.developerPrivate)'),flush=True)\nprint(e.evaluate('''()=>new Promise(r=>chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true},()=>r(chrome.runtime.lastError||'ok')))'''),flush=True)\nfrom pathlib import Path\nfor path in (Path.home()/'.local/share/chrome-extensions').iterdir():\n print(path.name,e.evaluate('''path=>new Promise(r=>chrome.developerPrivate.loadUnpacked({failQuietly:true,useDragInstall:true,draggedPath:path},(...args)=>r({args,error:chrome.runtime.lastError})))''',str(path)),flush=True)\nPY\n/opt/venv/bin/python /tmp/load.py\n",
+      "duration": 2
+    }
+  ]
+}

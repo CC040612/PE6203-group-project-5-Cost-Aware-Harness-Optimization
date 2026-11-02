@@ -1,0 +1,286 @@
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ ls -la /app; ps aux | head -35; ls -la /home/user; which chromium chromium-browser google-chrome firefox wkhtmltopdf; env | grep -Ei 'display|browser|chrome'
+[?2004ltotal 8
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:50 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 22 02:55 [01;34m..[0m
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+agent          1  0.4  0.0   3940  2948 ?        Ss   02:54   0:00 bash /usr/local/bin/task-entrypoint.sh sh -c sleep infinity
+agent         12  0.8  0.8 229716 71388 ?        S    02:54   0:00 Xvfb :99 -screen 0 1440x900x24
+agent         24  0.0  0.0   9012  2180 ?        Ss   02:54   0:00 dbus-daemon --session --address=unix:path=/tmp/tua-dbus-session --fork
+agent         25  1.1  0.3 111196 29172 ?        Sl   02:54   0:00 python3 /usr/local/bin/task_state.py task
+agent         32  4.6  0.9 1055012 72212 ?       Sl   02:54   0:00 /opt/venv/lib/python3.11/site-packages/playwright/driver/node /opt/venv/lib/python3.11/site-packages/playwright/driver/package/cli.js run-driver
+agent        249  0.0  0.0   5852  3852 ?        Ss   02:55   0:00 tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /logs/agent/terminus_2.pane
+agent        250  0.0  0.0   4204  3520 pts/0    Ss   02:55   0:00 bash --login
+agent        252  0.0  0.0   2592  1660 ?        S    02:55   0:00 sh -c cat > /logs/agent/terminus_2.pane
+agent        253  0.0  0.0   2640  1328 ?        S    02:55   0:00 cat
+agent        268  1.5  0.2 101760 22472 pts/0    Sl+  02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        269  0.0  0.2  28000 16136 pts/0    S+   02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        270  0.0  0.2  28012 16824 pts/0    S+   02:55   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        271  0.0  0.0   2592  1636 pts/1    Ss   02:55   0:00 sh -c /bin/bash
+agent        272  0.0  0.0   4580  3636 pts/1    S    02:55   0:00 /bin/bash
+agent        307  0.0  0.0   8496  4516 pts/1    R+   02:55   0:00 ps aux
+agent        308  0.0  0.0   2884  1584 pts/1    S+   02:55   0:00 head -35
+lrwxrwxrwx 1 root root 11 Oct 22 02:50 [0m[01;36m/home/user[0m -> [01;34m/home/agent[0m
+/usr/local/bin/chromium
+/usr/local/bin/google-chrome
+DISPLAY=:99
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ cat /usr/local/bin/chromium; ls -la /usr/local/bin; cat /usr/local/bin/task_state.py | head -100; ls -la ~/.config; ss -ltnp
+[?2004l#!/usr/bin/env bash
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+set -euo pipefail
+
+export DISPLAY="${DISPLAY:-:99}"
+PROFILE_DIR="${CHROME_USER_DATA_DIR:-$HOME/.config/google-chrome}"
+mkdir -p "$PROFILE_DIR"
+
+declare -a EXTRA_ARGS
+EXTRA_ARGS=(
+  "--user-data-dir=$PROFILE_DIR"
+  "--profile-directory=Default"
+  "--no-first-run"
+  "--no-default-browser-check"
+  "--password-store=basic"
+  "--disable-dev-shm-usage"
+  "--no-sandbox"
+)
+
+has_remote_debugging_port=0
+for arg in "$@"; do
+  if [[ "$arg" == --remote-debugging-port=* ]]; then
+    has_remote_debugging_port=1
+    break
+  fi
+done
+
+if [ "$has_remote_debugging_port" -eq 0 ]; then
+  EXTRA_ARGS+=("--remote-debugging-port=${TUA_CHROME_REMOTE_DEBUGGING_PORT:-${CHROME_REMOTE_DEBUGGING_PORT:-1337}}")
+fi
+
+exec /usr/bin/chromium "${EXTRA_ARGS[@]}" "$@"
+total 44
+drwxr-xr-x 1 root root 4096 Oct 22 02:50 [0m[01;34m.[0m
+drwxr-xr-x 1 root root 4096 Oct 20 21:32 [01;34m..[0m
+-rwxr-xr-x 1 root root 6966 Oct 20 08:35 [01;32mbuild_setup.py[0m
+lrwxrwxrwx 1 root root   28 Oct 22 02:50 [01;36mchromium[0m -> [01;32m/usr/local/bin/google-chrome[0m
+-rwxr-xr-x 1 root root 4374 Oct 20 08:35 [01;32mcode[0m
+-rwxr-xr-x 1 root root  959 Oct 20 08:35 [01;32mgoogle-chrome[0m
+lrwxrwxrwx 1 root root   28 Oct 22 02:50 [01;36mgoogle-chrome-stable[0m -> [01;32m/usr/local/bin/google-chrome[0m
+-rwxr-xr-x 1 root root 2597 Oct 20 08:35 [01;32mgsettings[0m
+-rwxr-xr-x 1 root root 1263 Oct 20 08:35 [01;32mtask-entrypoint.sh[0m
+-rwxr-xr-x 1 root root 4875 Oct 20 08:35 [01;32mtask_state.py[0m
+#!/opt/venv/bin/python
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import shutil
+import subprocess
+import time
+from pathlib import Path
+
+from playwright.sync_api import sync_playwright
+
+
+SPEC = json.loads(Path("/usr/local/share/tua/task_spec.json").read_text(encoding="utf-8"))
+REMOTE_DEBUGGING_URL = os.environ.get(
+    "REMOTE_DEBUGGING_URL",
+    f"http://127.0.0.1:{os.environ.get('TUA_CHROME_REMOTE_DEBUGGING_PORT', '1337')}",
+)
+PROFILE_DIR = Path.home() / ".config" / "google-chrome"
+
+
+def launch_browser() -> subprocess.Popen:
+    PROFILE_DIR.mkdir(parents=True, exist_ok=True)
+    for path in PROFILE_DIR.glob("Singleton*"):
+        if path.is_dir():
+            shutil.rmtree(path, ignore_errors=True)
+        else:
+            path.unlink(missing_ok=True)
+    command = [
+        "/usr/local/bin/google-chrome",
+        f"--user-data-dir={PROFILE_DIR}",
+        "--profile-directory=Default",
+        f"--remote-debugging-port={os.environ.get('TUA_CHROME_REMOTE_DEBUGGING_PORT', '1337')}",
+    ]
+    return subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def connect_browser(playwright):
+    deadline = time.time() + 30
+    while time.time() < deadline:
+        try:
+            browser = playwright.chromium.connect_over_cdp(REMOTE_DEBUGGING_URL)
+            if browser.contexts:
+                return browser
+        except Exception:
+            pass
+        time.sleep(1)
+    raise RuntimeError("Timed out connecting to Chromium")
+
+
+def ensure_browser_running(playwright):
+    try:
+        return connect_browser(playwright), None
+    except RuntimeError:
+        process = launch_browser()
+        return connect_browser(playwright), process
+
+
+def reset_tabs(context):
+    pages = list(context.pages)
+    first_page = pages[0] if pages else context.new_page()
+    for page in pages[1:]:
+        try:
+            page.close()
+        except Exception:
+            pass
+    return first_page
+
+
+def navigate(page, url: str) -> None:
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=30000)
+    except Exception:
+        pass
+
+
+def set_chrome_urls(urls: list[str]) -> None:
+    if not urls:
+        return
+    with sync_playwright() as playwright:
+        browser, _ = ensure_browser_running(playwright)
+        context = browser.contexts[0]
+        first = reset_tabs(context)
+        navigate(first, urls[0])
+        for url in urls[1:]:
+            page = context.new_page()
+            navigate(page, url)
+        time.sleep(2)
+
+
+def resolve_profile_dir() -> Path:
+    thunderbird_root = Path.home() / ".thunderbird"
+    profiles_ini = thunderbird_root / "profiles.ini"
+total 24
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:55 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:54 [01;34m..[0m
+drwxr-xr-x 3 agent agent 4096 Oct 22 02:50 [01;34mCode[0m
+drwxr-xr-x 2 agent agent 4096 Oct 22 02:55 [01;34masciinema[0m
+drwxr-xr-x 3 agent agent 4096 Oct 22 02:50 [01;34mgoogle-chrome[0m
+bash: ss: command not found
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ curl -s http://127.0.0.1:1337/json/list; ps aux | grep -E 'chrom|task_state'; ls -la ~/.config/google-chrome/Default; ls -la /home/user/Documents
+[?2004lagent         25  0.6  0.3 111196 29212 ?        Sl   02:54   0:00 python3 /usr/local/bin/task_state.py task
+agent        350 77.2  1.1 54993064 94352 ?      Rl   02:55   0:01 /usr/lib/chromium/chromium --show-component-extension-options --enable-gpu-rasterization --no-default-browser-check --disable-pings --media-router=0 --disable-dev-shm-usage --enable-remote-extensions --load-extension --user-data-dir=/home/agent/.config/google-chrome --profile-directory=Default --no-first-run --no-default-browser-check --password-store=basic --disable-dev-shm-usage --no-sandbox --user-data-dir=/home/agent/.config/google-chrome --profile-directory=Default --remote-debugging-port=1337
+agent        366  0.7  0.0 54541956 4152 ?       Sl   02:55   0:00 /usr/lib/chromium/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/agent/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=Debian GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=155.0.8059.79 --initial-client-fd=5 --shared-client-connection
+agent        368  0.0  0.0 54533744 3764 ?       S    02:55   0:00 /usr/lib/chromium/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/agent/.config/chromium/Crash Reports --annotation=channel=built on Debian GNU/Linux 12 (bookworm) --annotation=lsb-release=Debian GNU/Linux 12 (bookworm) --annotation=plat=Linux --annotation=prod=Chrome_Linux --annotation=ver=155.0.8059.79 --initial-client-fd=4 --shared-client-connection
+agent        371 21.1  0.8 54898736 71592 ?      S    02:55   0:00 /usr/lib/chromium/chromium --type=zygote --no-zygote-sandbox --no-sandbox --crashpad-handler-pid=366 --enable-crash-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/home/agent/.config/google-chrome --change-stack-guard-on-fork=enable
+agent        372 12.1  0.8 54898736 71312 ?      S    02:55   0:00 /usr/lib/chromium/chromium --type=zygote --no-sandbox --crashpad-handler-pid=366 --enable-crash-reporter=,built on Debian GNU/Linux 12 (bookworm) --user-data-dir=/home/agent/.config/google-chrome --change-stack-guard-on-fork=enable
+agent        390  0.0  0.0   3716  2016 pts/1    S+   02:55   0:00 grep -E chrom|task_state
+total 16
+drwxr-xr-x 2 agent agent 4096 Oct 22 02:50 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:55 [01;34m..[0m
+-rw-r--r-- 1 agent agent  229 Oct 22 02:50 Bookmarks
+-rw-r--r-- 1 agent agent    3 Oct 22 02:50 Preferences
+total 12
+drwxr-xr-x 2 agent agent 4096 Oct 22 02:50 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 22 02:55 [01;34m..[0m
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ sleep 5; curl -s http://127.0.0.1:1337/json/list
+[?2004l[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/devtools/page/521BBBCD7A14381875411D7BB922E323",
+   "faviconUrl": "https://lilianweng.github.io/favicon_wine.ico",
+   "id": "521BBBCD7A14381875411D7BB922E323",
+   "title": "Thinking about High-Quality Human Data | Lil&#39;Log",
+   "type": "page",
+   "url": "https://lilianweng.github.io/posts/2024-02-05-human-data-quality/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/521BBBCD7A14381875411D7BB922E323"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/devtools/page/479291FB1774351494C12C7E4E1AFFA5",
+   "faviconUrl": "https://lilianweng.github.io/favicon_wine.ico",
+   "id": "479291FB1774351494C12C7E4E1AFFA5",
+   "title": "LLM Powered Autonomous Agents | Lil&#39;Log",
+   "type": "page",
+   "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/479291FB1774351494C12C7E4E1AFFA5"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/devtools/page/9528F7DAE14E6DA8D054D92F5FDDB514",
+   "id": "9528F7DAE14E6DA8D054D92F5FDDB514",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/9528F7DAE14E6DA8D054D92F5FDDB514"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/devtools/page/7D2F081A272E1B2A0A2BFC08DB19C4C4",
+   "id": "7D2F081A272E1B2A0A2BFC08DB19C4C4",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/7D2F081A272E1B2A0A2BFC08DB19C4C4"
+} ]
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ mkdir -p /home/user/Documents/Blog
+[?2004l[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ cat > /tmp/export_blogs.py <<'PY'
+[?2004l[?2004h> from playwright.sync_api import sync_playwright
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> import re, html
+[?2004l[?2004h> out = Path('/home/user/Documents/Blog')
+[?2004l[?2004h> with sync_playwright() as p:
+[?2004l[?2004h>     browser = p.chromium.connect_over_cdp('http://127.0.0.1:1337')
+[?2004l[?2004h>     pages = [page for ctx in browser.contexts for page in ctx.pages if page.url.startswith(('https://','http://'))]
+[?2004l[?2004h>     print('Open article tabs:', len(pages), flush=True)
+[?2004l[?2004h>     for page in pages:
+[?2004l[?2004h>         page.wait_for_load_state('load', timeout=60000)
+[?2004l[?2004h>         title = page.locator('h1').first.inner_text() if page.locator('h1').count() else html.unescape(page.title()).split(' | ')[0]
+[?2004l[?2004h>         print(title, page.url, flush=True)
+[?2004l[?2004h>         page.evaluate("""async () => {
+[?2004l[?2004h>             document.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
+[?2004l[?2004h>             await document.fonts.ready;
+[?2004l[?2004h>             await Promise.race([Promise.all(Array.from(document.images).map(img => img.complete ? Promise.resolve() : new Promise(resolve => {img.onload = resolve; img.onerror = resolve;}))), new Promise(r => setTimeout(r, 15000))]);
+[?2004l[?2004h>         }""")
+[?2004l[?2004h>         name = re.sub(r'[/\\\x00-\x1f]', '-', title).strip()
+[?2004l[?2004h>         target = out / (name + '.pdf')
+[?2004l[?2004h>         page.pdf(path=str(target), format='A4', print_background=True, margin={'top':'15mm','bottom':'15mm','left':'12mm','right':'12mm'})
+[?2004l[?2004h>         print('Saved:', target, target.stat().st_size, 'bytes', flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/export_blogs.py
+[?2004lOpen article tabs: 2
+LLM Powered Autonomous Agents https://lilianweng.github.io/posts/2023-06-23-agent/
+Saved: /home/user/Documents/Blog/LLM Powered Autonomous Agents.pdf 5740252 bytes
+Thinking about High-Quality Human Data https://lilianweng.github.io/posts/2024-02-05-human-data-quality/
+Saved: /home/user/Documents/Blog/Thinking about High-Quality Human Data.pdf 3235867 bytes
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ ls -lh /home/user/Documents/Blog; for f in /home/user/Documents/Blog/*.pdf; do echo "--- $f"; pdfinfo "$f" | head -18; done
+[?2004ltotal 8.6M
+-rw-r--r-- 1 agent agent 5.5M Oct 22 02:56 'LLM Powered Autonomous Agents.pdf'
+-rw-r--r-- 1 agent agent 3.1M Oct 22 02:56 'Thinking about High-Quality Human Data.pdf'
+--- /home/user/Documents/Blog/LLM Powered Autonomous Agents.pdf
+bash: pdfinfo: command not found
+--- /home/user/Documents/Blog/Thinking about High-Quality Human Data.pdf
+bash: pdfinfo: command not found
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> for p in Path('/home/user/Documents/Blog').glob('*.pdf'):
+[?2004l[?2004h>     data=p.read_bytes()
+[?2004l[?2004h>     assert data.startswith(b'%PDF-') and data.rstrip().endswith(b'%%EOF'), p
+[?2004l[?2004h>     print('Verified:',p.name, f'({len(data):,} bytes)')
+[?2004l[?2004h> PY
+[?2004lVerified: LLM Powered Autonomous Agents.pdf (5,740,252 bytes)
+Verified: Thinking about High-Quality Human Data.pdf (3,235,867 bytes)
+[?2004h[01;32magent@83e3666913d5[00m:[01;34m/app[00m$ 

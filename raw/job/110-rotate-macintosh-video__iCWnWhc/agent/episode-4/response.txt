@@ -1,0 +1,10 @@
+{
+  "analysis": "Administrative installation is unavailable because sudo is absent. The OCR package can instead be downloaded and extracted locally without changing system packages.",
+  "plan": "Download and unpack Tesseract and its English language data into /tmp, then run OCR locally.",
+  "commands": [
+    {
+      "keystrokes": "mkdir -p /tmp/ocr-local; cd /tmp/ocr-local; apt-get download tesseract-ocr tesseract-ocr-eng libtesseract5 2>&1; for p in *.deb; do dpkg-deb -x \"$p\" .; done; LD_LIBRARY_PATH=/tmp/ocr-local/usr/lib/x86_64-linux-gnu ./usr/bin/tesseract --version\n",
+      "duration": 1
+    }
+  ]
+}

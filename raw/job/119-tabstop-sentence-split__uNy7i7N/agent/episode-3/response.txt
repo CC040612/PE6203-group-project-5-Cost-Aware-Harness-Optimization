@@ -1,0 +1,10 @@
+{
+  "analysis": "The verification correctly stopped the save because it concatenated text across the inserted tabs without treating tabs as word separators. The original file remains unchanged. I will correct the verification to include tab separators and rerun.",
+  "plan": "Update the validation to interpret tab elements as whitespace, then save the formatted document in place.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\np='/tmp/format_doc.py'\ns=open(p).read().replace(\"newtexts=[''.join(p.xpath('.//w:t/text()',namespaces=ns)) for p in root.xpath('//w:p',namespaces=ns)]\", \"newtexts=[''.join(('\\\\t' if n.tag==tag('tab') else (n.text or '')) for n in p.iter() if n.tag in (tag('t'),tag('tab'))) for p in root.xpath('//w:p',namespaces=ns)]\")\nopen(p,'w').write(s)\nPY\npython /tmp/format_doc.py\n",
+      "duration": 0.1
+    }
+  ]
+}

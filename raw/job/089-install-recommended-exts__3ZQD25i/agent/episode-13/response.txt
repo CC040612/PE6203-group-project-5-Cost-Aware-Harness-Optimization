@@ -1,0 +1,10 @@
+{
+  "analysis": "No native confirmation text is visible. We should inspect Chrome's extension manager to determine whether the installation completed.",
+  "plan": "Read the installed extension list from chrome://extensions and check profile files.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/check.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\ne=c.new_page(); e.goto('chrome://extensions/'); e.wait_for_timeout(1000)\nprint(e.locator('body').inner_text())\nprint(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,data:e.data,text:e.shadowRoot.innerText}))'))\nPY\n/opt/venv/bin/python /tmp/check.py\nls /home/user/.config/google-chrome/Default/Extensions\n",
+      "duration": 2
+    }
+  ]
+}

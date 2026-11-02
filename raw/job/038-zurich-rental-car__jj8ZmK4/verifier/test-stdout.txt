@@ -1,0 +1,6 @@
+{'relativeTime': {'from': 'next Monday split', 'to': 'next Friday split'}, 'timezone': 'Europe/Zurich', 'expected': {'puDay': '26', 'puMonth': '10', 'puYear': '2026', 'doDay': '30', 'doMonth': '10', 'doYear': '2026'}}
+.
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_main
+1 passed in 1.59s

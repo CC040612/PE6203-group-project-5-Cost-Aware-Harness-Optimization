@@ -1,0 +1,60 @@
+{
+  "task": {
+    "path": "/home/member2/TUA-Bench/tasks/099-professor-contact-info",
+    "git_url": null,
+    "git_commit_id": null,
+    "name": null,
+    "ref": null,
+    "overwrite": false,
+    "download_dir": null,
+    "source": null
+  },
+  "trial_name": "099-professor-contact-info__ouwjQMd",
+  "trials_dir": "/home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550",
+  "timeout_multiplier": 1.0,
+  "agent_timeout_multiplier": 1.0,
+  "verifier_timeout_multiplier": null,
+  "agent_setup_timeout_multiplier": null,
+  "environment_build_timeout_multiplier": null,
+  "agent": {
+    "name": "terminus-2",
+    "import_path": null,
+    "model_name": "openai/gpt-6.1-sol",
+    "override_timeout_sec": null,
+    "override_setup_timeout_sec": null,
+    "max_timeout_sec": null,
+    "kwargs": {
+      "temperature": null,
+      "reasoning_effort": "medium",
+      "api_base": "http://127.0.0.1:58429/v1",
+      "llm_kwargs": {
+        "allowed_openai_params": [
+          "reasoning_effort"
+        ]
+      }
+    },
+    "env": {}
+  },
+  "environment": {
+    "type": null,
+    "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+    "force_build": false,
+    "delete": true,
+    "override_cpus": null,
+    "override_memory_mb": null,
+    "override_storage_mb": null,
+    "override_gpus": null,
+    "suppress_override_warnings": false,
+    "mounts_json": null,
+    "env": {},
+    "kwargs": {}
+  },
+  "verifier": {
+    "override_timeout_sec": null,
+    "max_timeout_sec": null,
+    "env": {},
+    "disable": false
+  },
+  "artifacts": [],
+  "job_id": "3ef0e199-d9f6-4db6-a650-12679aa3d871"
+}

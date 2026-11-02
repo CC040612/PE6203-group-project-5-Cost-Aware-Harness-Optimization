@@ -1,0 +1,10 @@
+{
+  "analysis": "Chrome is installed and appears to have existing browser state. I will check the browser debugging endpoint and available automation libraries.",
+  "plan": "Identify the running Chrome session so I can use its existing foreground window rather than create an unrelated browser session.",
+  "commands": [
+    {
+      "keystrokes": "ps aux | grep -E 'chrome|chromium' | head; curl -s http://localhost:9222/json/list; python -c \"import playwright; print('playwright available')\"\n",
+      "duration": 0.1
+    }
+  ]
+}

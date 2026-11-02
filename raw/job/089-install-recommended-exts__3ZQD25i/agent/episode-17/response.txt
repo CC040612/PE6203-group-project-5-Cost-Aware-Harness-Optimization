@@ -1,0 +1,14 @@
+{
+  "analysis": "The active page chosen by the script is now the extension manager, so the listing inspection needs an explicit Web Store tab selection.",
+  "plan": "Stop the blocked inspection and run searches using a dedicated new tab.",
+  "commands": [
+    {
+      "keystrokes": "C-c",
+      "duration": 0.1
+    },
+    {
+      "keystrokes": "sed -i '/print(page.evaluate/,$!b' /dev/null 2>/dev/null || true\ncat > /tmp/findids.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\npage=c.new_page()\nfrom urllib.parse import quote\nfor name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:\n page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1500)\n print(name,page.locator('a[href*=\"/detail/\"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'),flush=True)\nPY\n/opt/venv/bin/python /tmp/findids.py\n",
+      "duration": 3
+    }
+  ]
+}

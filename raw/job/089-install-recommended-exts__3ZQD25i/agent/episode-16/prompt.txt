@@ -1,0 +1,36 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/inspect.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> print(page.evaluate('({ua:navigator.userAgent,chrome:Object.keys(window.chrome||{}),webstore:typeof chrome.webstore})'))
+> print(page.get_by_role('button',name='Add to Chrome',exact=True).evaluate('(e)=>e.outerHTML'))
+> from urllib.parse import quote
+> for name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:
+>  page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1200)
+>  print(name,page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'))
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/inspect.py
+Traceback (most recent call last):
+  File "/tmp/inspect.py", line 1, in <module>
+    exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+  File "<string>", line 1, in <module>
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/__init__.py", line 25, in <module>
+    import playwright.sync_api._generated
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 21, in <module>
+    from playwright._impl._accessibility import Accessibility as AccessibilityImpl
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_accessibility.py", line 17, in <module>
+    from playwright._impl._connection import Channel
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 15, in <module>
+    import asyncio
+  File "/usr/lib/python3.11/asyncio/__init__.py", line 8, in <module>
+    from .base_events import *
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 39, in <module>
+    from . import coroutines
+  File "/usr/lib/python3.11/asyncio/coroutines.py", line 4, in <module>
+    import inspect
+  File "/tmp/inspect.py", line 1, in <module>
+    exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+  File "<string>", line 1, in <module>
+ImportError: cannot import name 'sync_playwright' from partially initialized module 'playwright.sync_api' (most likely due to a circular import) (/opt/venv/lib/
+python3.11/site-packages/playwright/sync_api/__init__.py)
+agent@715dad585543:/app$

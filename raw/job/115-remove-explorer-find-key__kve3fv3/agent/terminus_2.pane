@@ -1,0 +1,23 @@
+[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ ls -l ~/.config/Code/User/keybindings.json && cat ~/.config/Code/User/keybindings.json
+[?2004lls: cannot access '/home/agent/.config/Code/User/keybindings.json': No such file or directory
+[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ mkdir -p ~/.config/Code/User
+[?2004l[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ cat > ~/.config/Code/User/keybindings.json <<'EOF'
+[?2004l[?2004h> [
+[?2004l[?2004h>     {
+[?2004l[?2004h>         "key": "ctrl+f",
+[?2004l[?2004h>         "command": "-list.find"
+[?2004l[?2004h>     }
+[?2004l[?2004h> ]
+[?2004l[?2004h> EOF
+[?2004l[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ python3 -m json.tool ~/.config/Code/User/keybindings.json
+[?2004l[
+    {
+        "key": "ctrl+f",
+        "command": "-list.find"
+    }
+]
+[?2004h[01;32magent@6bea6e6417e9[00m:[01;34m/app[00m$ 

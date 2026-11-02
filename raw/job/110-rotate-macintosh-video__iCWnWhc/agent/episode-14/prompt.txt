@@ -1,0 +1,4 @@
+New Terminal Output:
+
+ration,size -show_entries stream=codec_name,width,height -of json ~/1984_Apple_Macintosh_Commercial.mp4
+

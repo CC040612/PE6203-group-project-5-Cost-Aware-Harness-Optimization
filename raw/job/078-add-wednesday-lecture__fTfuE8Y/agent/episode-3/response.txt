@@ -1,0 +1,10 @@
+{
+  "analysis": "The system Python environment prevents direct package installation. A temporary virtual environment will avoid changing system packages.",
+  "plan": "Create a virtual environment, install openpyxl there, and inspect the workbook.",
+  "commands": [
+    {
+      "keystrokes": "python3 -m venv /tmp/timetable-env && /tmp/timetable-env/bin/pip install openpyxl\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Current Terminal Screen:
+        "*://docs.google.com/document/*",
+        "https://*.frame.claudeusercontent.com/*"
+      ],
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "14.12.0"
+      },
+      "serviceworkerevents": [
+        "action.onClicked",
+        "alarms.onAlarm",
+        "commands.onCommand",
+        "contextMenus.onClicked",
+        "permissions.onAdded",
+        "permissions.onRemoved",
+        "runtime.onConnectExternal",
+        "runtime.onInstalled",
+        "runtime.onStartup",
+        "runtime.onUpdateAvailable",
+        "storage.onChanged",
+        "tabs.onActivated",
+        "tabs.onHighlighted",
+        "tabs.onRemoved",
+        "tabs.onUpdated"
+      ],
+      "uninstall_url": "https://speechify.com/onboarding/uninstall/?extensionId=ljflmlehinmoeknoonhibbjpldiijjmm&appVersion=14.12.0&deviceId=b084b9d7-3972-4302-
+8c90-794f8247ee62",
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "mhjfbmdgcfjbbpaeojofohoefgiehjai": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "contentSettings",
+          "fileSystem",
+
+Secure Preferences null
+agent@715dad585543:/app$

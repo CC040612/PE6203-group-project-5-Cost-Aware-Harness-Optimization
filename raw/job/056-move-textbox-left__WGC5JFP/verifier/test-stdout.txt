@@ -1,0 +1,14 @@
+F
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+>       assert check_textbox_on_leftside(OUTPUT_PATH) == 1.0, "Output does not satisfy OSWorld check_textbox_on_leftside"
+E       AssertionError: Output does not satisfy OSWorld check_textbox_on_leftside
+E       assert 0.0 == 1.0
+E        +  where 0.0 = check_textbox_on_leftside(PosixPath('/app/leftside_textbox.png'))
+
+/tests/test_outputs.py:494: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_main - AssertionError: Output does not ...
+1 failed in 1.88s

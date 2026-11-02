@@ -1,0 +1,10 @@
+{
+  "analysis": "The homepage is loading.",
+  "plan": "Wait for its search controls.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

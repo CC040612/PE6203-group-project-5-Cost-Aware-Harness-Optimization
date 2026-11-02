@@ -1,0 +1,10 @@
+{
+  "analysis": "Startup-loaded extensions were not retained on a normal restart. We need persistent unpacked registrations rather than command-line-only registrations.",
+  "plan": "Inspect the profile extension settings to identify why the registrations were removed and use a persistent registration mechanism.",
+  "commands": [
+    {
+      "keystrokes": "python3 - <<'PY'\nimport json\nfrom pathlib import Path\np=Path.home()/'.config/google-chrome/Default'\nfor f in ['Preferences','Secure Preferences']:\n d=json.loads((p/f).read_text()); print(f,json.dumps(d.get('extensions'),indent=2)[:12000])\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

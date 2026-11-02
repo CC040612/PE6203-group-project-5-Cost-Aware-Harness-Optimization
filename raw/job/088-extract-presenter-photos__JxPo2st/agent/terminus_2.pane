@@ -1,0 +1,32 @@
+[?2004h[01;32magent@5724321cc949[00m:[01;34m~/Desktop[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@5724321cc949[00m:[01;34m~/Desktop[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@5724321cc949[00m:[01;34m~/Desktop[00m$ pwd; ls -la; find 'IDS LLM seminar' -maxdepth 2 -type f | head -60
+[?2004l/home/agent/Desktop
+total 16
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:12  [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:17  [01;34m..[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:12 [01;34m'IDS LLM seminar'[0m
+IDS LLM seminar/DSC00495.jpg
+IDS LLM seminar/DSC00659.jpg
+IDS LLM seminar/DSC00454.jpg
+IDS LLM seminar/DSC00574.jpg
+IDS LLM seminar/DSC00554.jpg
+IDS LLM seminar/DSC00657.jpg
+[?2004h[01;32magent@5724321cc949[00m:[01;34m~/Desktop[00m$ which python3 curl wget magick convert chafa viu firefox chromium; python3 - <<'PY'
+[?2004l[?2004h> import importlib.util
+[?2004l[?2004h> for m in ['PIL','cv2','torch','transformers','face_recognition','insightface']:
+[?2004l[?2004h>  print(m, bool(importlib.util.find_spec(m)))
+[?2004l[?2004h> PY
+[?2004l/usr/bin/python3
+/usr/bin/curl
+/usr/bin/convert
+/usr/local/bin/chromium
+PIL False
+cv2 False
+torch False
+transformers False
+face_recognition False
+insightface False
+[?2004h[01;32magent@5724321cc949[00m:[01;34m~/Desktop[00m$ 

@@ -1,0 +1,19 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/search.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page.goto('https://chromewebstore.google.com/search/Zoom%20Chrome%20Extension')
+page.wait_for_timeout(2000)
+print(page.locator('body').inner_text()[:12000])
+print(page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.map(e=>({text:e.innerText,href:e.href}))'))
+PY
+/opt/venv/bin/python /tmp/search.py
+cat > /tmp/search.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> page.goto('https://chromewebstore.google.com/search/Zoom%20Chrome%20Extension')
+> page.wait_for_timeout(2000)
+> print(page.locator('body').inner_text()[:12000])
+> print(page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.map(e=>({text:e.innerText,href:e.href}))'))
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/search.py
+

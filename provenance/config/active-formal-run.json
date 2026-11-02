@@ -1,0 +1,303 @@
+{
+  "status": "finished",
+  "started_utc": "2026-10-22T02:32:12.634249+00:00",
+  "job_name": "gpt61sol-cockpit-formal-20261021-231816-860550",
+  "config": "/mnt/d/夏嫣然/6203/group project/member2/config/generated/gpt61sol-cockpit-formal-20261021-231816-860550.json",
+  "job_directory": "/home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550",
+  "planned_tasks": 40,
+  "attempts_per_task": 1,
+  "concurrency": 2,
+  "agent_timeout_sec": 2400,
+  "max_turns": "original default",
+  "completed_trial_results": 40,
+  "authorization": "[REDACTED]",
+  "automatic_reruns": false,
+  "stop_policy": "Stop on structured API/auth/connection/quota faults; normal failed tasks remain in the round",
+  "updated_utc": "2026-10-22T03:19:58.891353+00:00",
+  "supervisor_pid": 85011,
+  "harbor_process_pid": 85012,
+  "trial_summaries": [
+    {
+      "trial": "038-zurich-rental-car__jj8ZmK4",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "115-remove-explorer-find-key__kve3fv3",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "092-fix-tetris-bug__uGV64YB",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "073-force-quit-frozen-doc__FiyYWnd",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "056-move-textbox-left__WGC5JFP",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "099-professor-contact-info__ouwjQMd",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "113-add-folders-workspace__WjwrqXs",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "109-setup-outlook-account__H4wLFAP",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "083-gemini-responses-docx__ZyJJYzJ",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "076-make-src-gif-clip__bYrSBjA",
+      "rewards": {
+        "reward": 0.8439513677924382
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "026-sales-cogs-column-chart__Zy3X8tr",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "111-set-video-wallpaper__s9AMrJr",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "118-set-times-new-roman__7bixGKB",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "106-create-charles-ssh-user__AG7dD33",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "070-edit-friend-image__FyYk8Db",
+      "rewards": {
+        "reward": 0.9072818921527955
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "101-rearrange-warm-tiles__efPtjnq",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "110-rotate-macintosh-video__iCWnWhc",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "062-add-baseball-audio__h8oparS",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "089-install-recommended-exts__3ZQD25i",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "117-comma-text-to-table__tXevoKb",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "107-attach-aws-bill__AhoApVq",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "103-download-blog-pdfs__sUck2gq",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "035-super-bowl-score__XMtgMVS",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "068-strike-first-two-lines__y7nnAnc",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "108-create-mail-folders__HfjixRA",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "091-add-receipts-bookkeeping__YtDv9QF",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "093-merge-txt-document__4or48u9",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "052-vignette-filter-window__SnVSE6i",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "102-daily-email-report__QukU74P",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "080-convert-novel-epub__B6Q4qzB",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "020-calculate-period-rate__Htbw554",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "119-tabstop-sentence-split__uNy7i7N",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "078-add-wednesday-lecture__fTfuE8Y",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "088-extract-presenter-photos__JxPo2st",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": "AgentTimeoutError"
+    },
+    {
+      "trial": "100-name-mountain-photos__MBRDK66",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "082-brighten-slide-image__XJN4gaL",
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "081-video-frame-slide-bg__mpbmT8i",
+      "rewards": {
+        "reward": 0.8035433081070689
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "098-extract-email-doc-image__hmsRRJN",
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "074-apa-references-review__6v4Tbud",
+      "rewards": {
+        "reward": 0.73311628485422
+      },
+      "exception_type": null
+    },
+    {
+      "trial": "112-capture-video-frame__fgWZ5C4",
+      "rewards": {
+        "reward": 0.750595692951772
+      },
+      "exception_type": null
+    }
+  ],
+  "exit_code": 0,
+  "finished_utc": "2026-10-22T03:19:58.891327+00:00"
+}

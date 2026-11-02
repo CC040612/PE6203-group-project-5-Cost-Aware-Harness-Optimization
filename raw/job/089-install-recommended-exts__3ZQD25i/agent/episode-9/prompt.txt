@@ -1,0 +1,19 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/install.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page.goto('https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle')
+page.wait_for_timeout(1500)
+print(page.locator('body').inner_text()[:7000])
+print(page.get_by_role('button').all_text_contents())
+PY
+/opt/venv/bin/python /tmp/install.py
+cat > /tmp/install.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> page.goto('https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle')
+> page.wait_for_timeout(1500)
+> print(page.locator('body').inner_text()[:7000])
+> print(page.get_by_role('button').all_text_contents())
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/install.py
+

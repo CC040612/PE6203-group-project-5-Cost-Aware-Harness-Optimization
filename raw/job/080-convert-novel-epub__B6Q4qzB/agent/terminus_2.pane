@@ -1,0 +1,144 @@
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ ls -lah '/home/user/Documents/Novels/Pass Through/'
+[?2004ltotal 68K
+drwxr-xr-x 2 agent agent 4.0K Oct 21 15:59 [0m[01;34m.[0m
+drwxr-xr-x 4 agent agent 4.0K Oct 21 15:59 [01;34m..[0m
+-rw-r--r-- 1 agent agent 9.7K Mar  6  2024 Chapter0.txt
+-rw-r--r-- 1 agent agent 9.8K Mar  6  2024 Chapter1.txt
+-rw-r--r-- 1 agent agent 9.1K Mar  6  2024 Chapter2.txt
+-rw-r--r-- 1 agent agent 9.2K Mar  6  2024 Chapter3.txt
+-rw-r--r-- 1 agent agent 9.0K Mar  6  2024 Chapter4.txt
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ which ebook-convert pandoc python3; python3 -c "import importlib.util; print({x:bool(importlib.util.find_spec(x)) for x in ['ebooklib','chardet']})"
+[?2004l/usr/bin/python3
+{'ebooklib': False, 'chardet': False}
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ file '/home/user/Documents/Novels/Pass Through/'*.txt; for f in '/home/user/Documents/Novels/Pass Through/'*.txt; do echo "--- $f"; head -n 12 "$f"; done
+[?2004lbash: file: command not found
+--- /home/user/Documents/Novels/Pass Through/Chapter0.txt
+Chapter 1 Passing through the book
+
+As soon as Chi Qingluo opened his eyes, he found that he was sleeping in the bathtub, and the cell phone placed on the cabinet next to him was ringing alarmingly.
+
+
+
+
+
+                 She leaned half of her body out of the water and took the phone.
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter1.txt
+Chapter 2 Change
+
+Qin Yan paused and frowned slightly.
+
+
+
+
+
+                 "Just a few minutes!"
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter2.txt
+Chapter 3 Plan
+
+Um? ?
+
+
+
+
+
+                 Chi Qingluo paused while biting the lion's head. The original owner was on a diet?
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter3.txt
+Chapter 4 Black Material
+
+"Silence does not mean admitting defeat, but public relations still need to be done. Let's lower the heat first."
+
+
+
+
+
+                 Sister Ji thought for a while and nodded, "Okay, I will do the public relations for this matter, and I will also negotiate with the endorsement company. Now I will send you home first, and you stay at home and don't act like a monster."
+
+
+
+--- /home/user/Documents/Novels/Pass Through/Chapter4.txt
+Chapter 5: Ask him to pay back the money
+
+In the Qin family's study room, the man was working hard at the table. The cold lights in the room outlined his thin outline, and the breath on his body became colder and colder.
+
+
+
+
+
+                 "Ayan."
+
+
+
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ cat > /tmp/build_pass_through.py <<'PY'
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> import re, uuid, zipfile, html
+[?2004l[?2004h> import xml.etree.ElementTree as ET
+[?2004l[?2004h> from datetime import datetime, timezone
+[?2004l[?2004h> 
+[?2004lw[?2004h> root = Path('/home/user/Documents/Novels/Pass Through')
+[?2004l[?2004h> files = sorted(root.glob('Chapter*.txt'), key=lambda p: int(re.search(r'\d+', p.stem).group()))
+[?2004l[?2004h> esc = html.escape
+[?2004l[?2004h> chapters = []
+[?2004l[?2004h> for path in files:
+[?2004lar[?2004h>     text = path.read_text(encoding='utf-8-sig')
+[?2004l[?2004h>     blocks = [re.sub(r'\s+', ' ', b).strip() for b in re.split(r'\n\s*\n', text.strip()) if b.strip()]
+[?2004l[?2004h>     chapters.append((blocks[0], blocks[1:]))
+[?2004l[?2004h> uid = 'urn:uuid:' + str(uuid.uuid4())
+[?2004l[?2004h> modified = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+[?2004l[?2004h> 
+[?2004l[?2004h> def xhtml(title, body):
+[?2004l[?2004h>     return '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en"><head><title>' + esc(title) + '</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>' + body + '</body></html>'
+[?2004l[?2004h> 
+[?2004l[?2004h> entries = {}
+[?2004l[?2004h> entries['META-INF/container.xml'] = '<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>'
+[?2004l[?2004h> entries['OEBPS/style.css'] = 'body {font-family: serif; line-height: 1.5; margin: 5%;} h1 {font-size: 1.5em; text-align: center; margin: 1.5em 0;} p {margin: 0 0 0.6em; text-indent: 1.2em;} nav ol {padding-left: 1.5em;} nav li {margin: 0.8em 0;}'
+[?2004l[?2004h> links = ''.join(f'<li><a href="chapter{i}.xhtml">{esc(title)}</a></li>' for i, (title, _) in enumerate(chapters, 1))
+[?2004l[?2004h> entries['OEBPS/nav.xhtml'] = xhtml('Pass Through — Contents', '<h1>Pass Through</h1><nav epub:type="toc" id="toc"><h2>Contents</h2><ol>' + links + '</ol></nav>')
+[?2004l[?2004h> for i, (title, paragraphs) in enumerate(chapters, 1):
+[?2004l[?2004h>     entries[f'OEBPS/chapter{i}.xhtml'] = xhtml(title, '<h1>' + esc(title) + '</h1>' + ''.join('<p>' + esc(p) + '</p>' for p in paragraphs))
+[?2004l[?2004h> manifest = '<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/><item id="css" href="style.css" media-type="text/css"/>'
+[?2004l[?2004h> manifest += ''.join(f'<item id="ch{i}" href="chapter{i}.xhtml" media-type="application/xhtml+xml"/>' for i in range(1, len(chapters)+1))
+[?2004l[?2004h> spine = '<itemref idref="nav"/>' + ''.join(f'<itemref idref="ch{i}"/>' for i in range(1,len(chapters)+1))
+[?2004l[?2004h> entries['OEBPS/content.opf'] = f'''<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" xml:lang="en"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">{uid}</dc:identifier><dc:title>Pass Through</dc:title><dc:language>en</dc:language><meta property="dcterms:modified">{modified}</meta></metadata><manifest>{manifest}</manifest><spine toc="ncx">{spine}</spine></package>''' M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K'
+[?2004l[?2004h> points = ''.join(f'<navPoint id="ch{i}" playOrder="{i}"><navLabel><text>{esc(title)}</text></navLabel><content src="chapter{i}.xhtml"/></navPoint>' for i,(title,_) in enumerate(chapters,1))
+[?2004l[?2004h> entries['OEBPS/toc.ncx'] = f'<?xml version="1.0" encoding="utf-8"?><ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:uid" content="{uid}"/><meta name="dtb:depth" content="1"/><meta name="dtb:totalPageCount" content="0"/><meta name="dtb:maxPageNumber" content="0"/></head><docTitle><text>Pass Through</text></docTitle><navMap>{points}</navMap></ncx>'
+[?2004l[?2004h> out = root / 'Pass Through.epub'
+[?2004l[?2004h> with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED) as z:
+[?2004l[?2004h>     z.writestr('mimetype', 'application/epub+zip', compress_type=zipfile.ZIP_STORED)
+[?2004l[?2004h>     for name, data in entries.items():
+[?2004l[?2004h>         z.writestr(name, data.encode('utf-8'))
+[?2004l[?2004h> with zipfile.ZipFile(out) as z:
+[?2004l[?2004h>     assert z.testzip() is None
+[?2004l[?2004h>     assert z.infolist()[0].filename == 'mimetype'
+[?2004l[?2004h>     assert z.infolist()[0].compress_type == zipfile.ZIP_STORED
+[?2004l[?2004h>     for name in z.namelist():
+[?2004l[?2004h>         if name.endswith(('.xml', '.opf', '.ncx', '.xhtml')):
+[?2004l[?2004h>             ET.fromstring(z.read(name))
+[?2004l[?2004h>     for i,(title,paragraphs) in enumerate(chapters,1):
+[?2004l[?2004h>         doc = ET.fromstring(z.read(f'OEBPS/chapter{i}.xhtml'))
+[?2004l[?2004h>         ns = {'h':'http://www.w3.org/1999/xhtml'}
+[?2004l[?2004h>         assert doc.find('.//h:h1',ns).text == title
+[?2004l[?2004h>         assert [p.text for p in doc.findall('.//h:p',ns)] == paragraphs
+[?2004l[?2004h>         print(f'Validated: {title} ({len(paragraphs)} paragraphs)')
+[?2004l[?2004h> print(f'Saved: {out} ({out.stat().st_size:,} bytes)')
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ python3 /tmp/build_pass_through.py
+[?2004lValidated: Chapter 1 Passing through the book (82 paragraphs)
+Validated: Chapter 2 Change (86 paragraphs)
+Validated: Chapter 3 Plan (68 paragraphs)
+Validated: Chapter 4 Black Material (67 paragraphs)
+Validated: Chapter 5: Ask him to pay back the money (68 paragraphs)
+Saved: /home/user/Documents/Novels/Pass Through/Pass Through.epub (21,612 bytes)
+[?2004h[01;32magent@6934aa39976b[00m:[01;34m/app[00m$ 

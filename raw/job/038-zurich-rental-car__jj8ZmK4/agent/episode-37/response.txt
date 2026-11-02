@@ -1,0 +1,10 @@
+{
+  "analysis": "The sorting menu offers Price (lowest first).",
+  "plan": "Select lowest price, verify the large-car filter and URL, and leave the page foregrounded.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.get_by_text('Price (lowest first)',exact=True).click(); page.wait_for_timeout(1000); print(page.url); print('large checked:',page.get_by_test_id('carCategory-filter-option-large').is_checked()); print(page.locator('button').filter(has_text='Sort by:').inner_text()); page.evaluate('window.scrollTo(0,0)'); page.bring_to_front()\nPY\n",
+      "duration": 1
+    }
+  ]
+}

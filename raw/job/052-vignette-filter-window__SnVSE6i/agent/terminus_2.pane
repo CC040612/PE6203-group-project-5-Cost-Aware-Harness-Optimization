@@ -1,0 +1,312 @@
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ which gimp xdotool wmctrl; echo "$DISPLAY"; ls -l /app/dog_with_background.png
+[?2004l/usr/bin/gimp
+/usr/bin/xdotool
+
+-rw-r--r-- 1 agent agent 1139372 Oct 21 15:27 [0m[01;35m/app/dog_with_background.png[0m
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ ls -la /tmp/.X11-unix; ps aux | grep -E 'Xvfb|Xorg|Xwayland|gimp|vnc' | grep -v grep; which gnome-screenshot import; ls -la /tmp | head M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kd
+[?2004lls: cannot access '/tmp/.X11-unix': No such file or directory
+total 16
+drwxrwxrwt 1 root   root   4096 Oct 21 15:28 .
+drwxr-xr-x 1 root   root   4096 Oct 21 15:28 ..
+-rw-r--r-- 1 ubuntu ubuntu  923 Oct 20 08:37 get-asciinema-timestamp.sh
+drwx------ 2 agent  agent  4096 Oct 21 15:28 tmux-1001
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ which Xvfb xvfb-run Xorg Xwayland sudo; gimp --version; id; ls /usr/bin | grep -Ei 'xvfb|weston|broadway|xserver'; sudo -n true; echo sudo_status=$?
+[?2004l/usr/bin/Xvfb
+/usr/bin/xvfb-run
+GNU Image Manipulation Program version 2.10.36
+uid=1001(agent) gid=1001(agent) groups=1001(agent)
+[01;31m[KXvfb[m[K
+[01;31m[Kxvfb[m[K-run
+bash: sudo: command not found
+sudo_status=127
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ Xvfb :99 -screen 0 1280x900x24 > /tmp/xvfb.log 2>&1 &
+[?2004l[1] 168
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ export DISPLAY=:99
+[?2004l[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ gimp /app/dog_with_background.png > /tmp/gimp.log 2>&1 &
+[?2004l[2] 169
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool search --onlyvisible --name '.*' getwindowname; cat /tmp/gimp.log
+[?2004l
+gimp: Gimp-Widgets-WARNING: parse_iso_codes: error parsing '/usr/share/xml/iso-codes/iso_639.xml': No such file or directory
+
+
+(gimp:169): Gtk-WARNING **: 15:29:13.224: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.225: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.226: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+
+(gimp:169): Gtk-WARNING **: 15:29:13.227: Unable to locate theme engine in module_path: "pixmap",
+GIMP-Warning: Module '/usr/lib/gimp/2.0/modules/libcontroller-midi.so' load error: libasound.so.2: cannot open shared object file: No such file or directory
+
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.684: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.686: Unable to locate theme engine in module_path: "pixmap",
+gimp_color_transform_new: using babl for 'Display' -> 'GIMP built-in sRGB'
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool search --onlyvisible --name '.*' getwindowname
+[?2004l
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ w=$(xdotool search --onlyvisible --name 'dog_with_background' | head -1); xdotool windowfocus --sync "$w"; xdotool key slash; xdotool type --delay 100 'vignette'; sleep 1; xdotool key Return
+[?2004l[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool search --onlyvisible --name '.*' getwindowname
+[?2004l
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ which xwininfo; xwininfo -root -tree; ps -p 169 -o pid,stat,cmd; xdotool search --name '.*' getwindowname; tail -5 /tmp/gimp.log
+[?2004l/usr/bin/xwininfo
+
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     5 children:
+     0x200320 "Convert to RGB Working Space?": ("gimp" "Gimp")  567x308+0+0  +0+0
+        1 child:
+        0x200321 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x20021f "GNU Image Manipulation Program": ("gimp" "Gimp")  1024x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+    PID STAT CMD
+    169 Sl   gimp /app/dog_with_background.png
+
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.686: Unable to locate theme engine in module_path: "pixmap",
+gimp_color_transform_new: using babl for 'Display' -> 'GIMP built-in sRGB'
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool windowmap 0x200320 windowfocus --sync 0x200320 key Return; sleep 1; xwininfo -root -tree
+[?2004l
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     4 children:
+     0x20021f "GNU Image Manipulation Program": ("gimp" "Gimp")  1024x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool windowmap 0x20021f windowfocus --sync 0x20021f; xdotool key slash; xdotool type --delay 100 vignette; sleep 1; xwininfo -root -tree; xdotool key Return
+[?2004lxwininfo -root -tree
+
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     5 children:
+     0x20021f "[dog_with_background] (imported)-1.0 (RGB color 8-bit gamma integer, GIMP built-in sRGB, 1 layer) 1578x948 – GIMP": ("gimp" "Gimp")  1223x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x20038b "Search Actions": ("gimp" "Gimp")  158x25+561+438  +561+438
+        1 child:
+        0x20038c (has no name): ()  1x1+-1+-1  +560+437
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xwininfo -root -tree
+[?2004l
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     5 children:
+     0x20021f "[dog_with_background] (imported)-1.0 (RGB color 8-bit gamma integer, GIMP built-in sRGB, 1 layer) 1578x948 – GIMP": ("gimp" "Gimp")  1223x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x20038b "Search Actions": ("gimp" "Gimp")  158x25+561+438  +561+438
+        1 child:
+        0x20038c (has no name): ()  1x1+-1+-1  +560+437
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xwininfo -root -tree; tail -8 /tmp/gimp.log
+[?2004l
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     5 children:
+     0x20021f "[dog_with_background] (imported)-1.0 (RGB color 8-bit gamma integer, GIMP built-in sRGB, 1 layer) 1578x948 – GIMP": ("gimp" "Gimp")  1223x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x20038b "Search Actions": ("gimp" "Gimp")  158x25+561+438  +561+438
+        1 child:
+        0x20038c (has no name): ()  1x1+-1+-1  +560+437
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.685: Unable to locate theme engine in module_path: "pixmap",
+
+(file-png:330): Gtk-WARNING **: 15:29:16.686: Unable to locate theme engine in module_path: "pixmap",
+gimp_color_transform_new: using babl for 'Display' -> 'GIMP built-in sRGB'
+gimp_color_transform_new: using babl for 'Display' -> 'GIMP built-in sRGB'
+void gimp_gegl_convert_color_profile(GeglBuffer*, const GeglRectangle*, GimpColorProfile*, GeglBuffer*, const GeglRectangle*, GimpColorProfile*, GimpColorRenderingIntent, gboolean, GimpProgress*): converting buffer took 19.5602 seconds
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool windowfocus 0x20038b; xdotool key ctrl+a; xdotool type --delay 100 vignette; sleep 1; xdotool key Return
+[?2004l[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xwininfo -root -tree
+[?2004l
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     5 children:
+     0x20051e "Vignette": ("gimp" "Gimp")  370x469+455+359  +455+359
+        1 child:
+        0x20051f (has no name): ()  1x1+-1+-1  +454+358
+     0x20021f "[dog_with_background] (imported)-1.0 (RGB color 8-bit gamma integer, GIMP built-in sRGB, 1 layer) 1578x948 – GIMP": ("gimp" "Gimp")  1223x768+200+100  +200+100
+        2 children:
+        0x200255 (has no name): ()  188x84+0+52  +200+152
+        0x200220 (has no name): ()  1x1+-1+-1  +199+99
+     0x200022 (has no name): ()  1x1+-1+-1  +-1+-1
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+     0x200001 "GNU Image Manipulation Program": ("gimp" "Gimp")  10x10+10+10  +10+10
+        1 child:
+        0x200002 (has no name): ()  1x1+-1+-1  +9+9
+
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ xdotool windowfocus 0x20051e key Escape; xdotool windowfocus 0x20021f key ctrl+q
+[?2004l[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ ps -p 169 -o pid,stat,cmd; xwininfo -root -tree
+[?2004l    PID STAT CMD
+[2]+  Done                    gimp /app/dog_with_background.png > /tmp/gimp.log 2>&1
+
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     1 child:
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+
+[?2004h[01;32magent@3f82e4733fd5[00m:[01;34m/app[00m$ 

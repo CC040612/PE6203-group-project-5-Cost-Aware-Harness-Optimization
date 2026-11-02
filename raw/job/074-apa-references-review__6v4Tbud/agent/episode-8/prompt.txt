@@ -1,0 +1,8 @@
+New Terminal Output:
+
+ce the challenges of the 21st century (Dwivedi et al., 2017; United Nations, 2018).
+{'title': ['Defining digital transformation: Results from expert interviews'], 'volume': '36', 'issue': '4', 'article-number': '101385', 'page': '101385', 'DOI'
+: '10.1016/j.giq.2019.06.002'}
+HTTP Error 403: Forbidden
+HTTP Error 403: Forbidden
+agent@32f08de7ccee:/app$

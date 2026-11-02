@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@f2848db5c646:/app$ ls -la /home/user/Desktop && find /home/user/Desktop -maxdepth 2 -type f
+total 52
+drwxr-xr-x 2 agent agent  4096 Oct 21 15:44 .
+drwxr-xr-x 1 agent agent  4096 Oct 21 15:49 ..
+-rw-r--r-- 1 agent agent 32702 Oct 21 15:44 ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg
+-rw-r--r-- 1 agent agent  4473 Oct 21 15:44 requirment.docx
+/home/user/Desktop/ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg
+/home/user/Desktop/requirment.docx
+agent@f2848db5c646:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

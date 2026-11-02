@@ -1,0 +1,14 @@
+{
+  "analysis": "Passwordless sudo is available. The charles account does not exist, and /home/test1 already exists but is owned by root. Bash is available as a normal login shell.",
+  "plan": "Create charles using the existing home directory and Bash, set the requested password, and give charles ownership and owner write access to the directory. Verify the account and its ability to write to its home.",
+  "commands": [
+    {
+      "keystrokes": "sudo useradd -d /home/test1 -s /usr/bin/bash -M charles && printf '%s\\n' 'charles:Ex@mpleP@55w0rd!' | sudo chpasswd && sudo chown charles:$(id -gn charles) /home/test1 && sudo chmod u+rwx /home/test1\n",
+      "duration": 0.1
+    },
+    {
+      "keystrokes": "getent passwd charles; sudo passwd -S charles; ls -ld /home/test1; sudo -u charles /usr/bin/bash -c 'test -w /home/test1 && touch /home/test1/.write-test && rm /home/test1/.write-test && echo \"Home directory is writable\"'\n",
+      "duration": 0.1
+    }
+  ]
+}

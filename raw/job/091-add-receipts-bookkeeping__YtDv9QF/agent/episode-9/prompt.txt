@@ -1,0 +1,84 @@
+New Terminal Output:
+
+====PSM3
+P-1
+1 Carrot & Ginger Soup $5.25
+SUBTOTAL $5.25
+TAX $0.45
+
+- - ELS eS SS ee Om Set OES ee ee Se 6S a et Om Om Oe es ee ot ee ee ee ee a oe a ee
+
+_ Wake up Neo. The Matrix has you.
+
+====PSM6
+Seams sshessssscoes —
+| Carrot & Ginger Soup $5.25
+SUBTOTAL $5.25
+TAX $0.45
+TOTAL $5.10
+_ Wake up Neo. The Matrix has you.
+====PSM11
+—
+
+—
+
+= r —
+
+Carrot & Ginger Soup
+
+$5.25
+
+SUBTOTAL
+
+$5.2
+
+- - A a see SS ctl An ste ste mma samen
+
+ee
+
+_— — — ee eee ee _~—
+
+— -— — — Sn
+
+$0.45
+
+—_—— a
+
+TOTAL
+
+$5.10
+
+“> alee eden eR aatata
+====PSM12
+—
+
+—
+
+= r —
+
+Carrot & Ginger Soup
+
+$5.25
+
+SUBTOTAL
+
+$5.2
+
+- - A a see SS ctl An ste ste mma samen
+
+ee
+
+_— — — ee eee ee _~—
+
+— -— — — Sn
+
+$0.45
+
+—_—— a
+
+TOTAL
+
+$5.10
+
+“> alee eden eR aatata
+agent@04c1a7a0bc04:/app$

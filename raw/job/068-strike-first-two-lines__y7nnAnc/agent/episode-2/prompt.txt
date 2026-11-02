@@ -1,0 +1,67 @@
+New Terminal Output:
+
+agent@806aaa1948ca:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree
+> with ZipFile('/app/New_Club_Spring_2018_Training.pptx') as z:
+>  for n in z.namelist():
+>   if n.startswith('ppt/slides/slide') and n.endswith('.xml'):
+>    root=etree.fromstring(z.read(n))
+>    print('\n',n)
+>    ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main'}
+>    for p in root.findall('.//a:p',ns):
+>     print(repr(''.join(p.xpath('.//a:t/text()',namespaces=ns))))
+> PY
+
+ ppt/slides/slide1.xml
+'New Club and Organization Training'
+'SPRING 2018 '
+
+ ppt/slides/slide2.xml
+'Overview'
+'Introductions'
+'Club Rights, Responsibilities & Resources'
+'Policies and Procedures'
+'FIT Link - Program and Activity Form'
+'FIT Link - Event Form '
+'Important Dates'
+'Important Resources & Links'
+
+ ppt/slides/slide3.xml
+'Name  '
+'Club or Organization '
+
+ ppt/slides/slide4.xml
+'Director of Student Organizations'
+'MARTY SULLIVAN II '
+'Office Hours:'
+'Monday 4PM to 5PM'
+'Wednesday 12PM to 1PM'
+
+ ppt/slides/slide5.xml
+'What I do:'
+'Finance Meetings:'
+'Providing another perspective for the clubs and organizations.'
+'Advocating for student Budget Requests.'
+'Tracking budgets to reflect attendance and participation.'
+'Meetings with the Program Coordinator:'
+'Touching base with what clubs and organizations are planning.'
+'Assisting during the planning process.'
+'Board of Directors Meetings:'
+'Sharing the agendas of clubs and organizations with the members of FIT SGA'
+
+ ppt/slides/slide6.xml
+'Club Rights, Responsibilities, and Resources '
+
+ ppt/slides/slide7.xml
+'Clubs and Organizations Have the Right to… '
+'Request campus space for approved meetings, programs, and activities'
+'Assignment and usage of a campus space for meetings  '
+'Spaces may change year-year based on availability'
+'Additional meeting requests for separate E-board meetings are a privilege and are not guaranteed. '
+''
+'Requests approval to host a Program or Activity ON or OFF Campus'
+'Use designated campus posting areas & bulletin boards for approved materials'
+''
+''
+agent@806aaa1948ca:/app$

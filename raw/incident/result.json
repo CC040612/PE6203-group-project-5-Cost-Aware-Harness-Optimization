@@ -1,0 +1,79 @@
+{
+  "id": "3ef0e199-d9f6-4db6-a650-12679aa3d871",
+  "started_at": "2026-10-21T23:19:12.030679",
+  "updated_at": "2026-10-21T16:58:02.744004Z",
+  "finished_at": null,
+  "n_total_trials": 40,
+  "stats": {
+    "n_completed_trials": 25,
+    "n_errored_trials": 3,
+    "n_running_trials": 0,
+    "n_pending_trials": 15,
+    "n_cancelled_trials": 2,
+    "n_retries": 0,
+    "evals": {
+      "terminus-2__gpt-6.1-sol__adhoc": {
+        "n_trials": 23,
+        "n_errors": 3,
+        "metrics": [
+          {
+            "mean": 0.45151571411626096
+          }
+        ],
+        "pass_at_k": {},
+        "reward_stats": {
+          "reward": {
+            "0.0": [
+              "020-calculate-period-rate__Htbw554",
+              "026-sales-cogs-column-chart__Zy3X8tr",
+              "035-super-bowl-score__XMtgMVS",
+              "056-move-textbox-left__WGC5JFP",
+              "068-strike-first-two-lines__y7nnAnc",
+              "073-force-quit-frozen-doc__FiyYWnd",
+              "080-convert-novel-epub__B6Q4qzB",
+              "089-install-recommended-exts__3ZQD25i",
+              "091-add-receipts-bookkeeping__YtDv9QF",
+              "098-extract-email-doc-image__hmsRRJN",
+              "088-extract-presenter-photos__JxPo2st"
+            ],
+            "1.0": [
+              "052-vignette-filter-window__SnVSE6i",
+              "038-zurich-rental-car__jj8ZmK4",
+              "062-add-baseball-audio__h8oparS",
+              "078-add-wednesday-lecture__fTfuE8Y",
+              "083-gemini-responses-docx__ZyJJYzJ",
+              "082-brighten-slide-image__XJN4gaL",
+              "092-fix-tetris-bug__uGV64YB",
+              "093-merge-txt-document__4or48u9"
+            ],
+            "0.9072818921527955": [
+              "070-edit-friend-image__FyYk8Db"
+            ],
+            "0.8439513677924382": [
+              "076-make-src-gif-clip__bYrSBjA"
+            ],
+            "0.73311628485422": [
+              "074-apa-references-review__6v4Tbud"
+            ],
+            "0.8035433081070689": [
+              "081-video-frame-slide-bg__mpbmT8i"
+            ]
+          }
+        },
+        "exception_stats": {
+          "AgentTimeoutError": [
+            "088-extract-presenter-photos__JxPo2st"
+          ],
+          "CancelledError": [
+            "100-name-mountain-photos__StHvEY6",
+            "099-professor-contact-info__SGkDxXB"
+          ]
+        }
+      }
+    },
+    "n_input_tokens": 9496097,
+    "n_cache_tokens": 4934784,
+    "n_output_tokens": 72626,
+    "cost_usd": 10.342364400000001
+  }
+}

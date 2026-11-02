@@ -1,0 +1,9 @@
+{
+  "analysis": "The environment cancels native file selection automatically. We can use Chromium's supported load-extension startup option to register these official packages, then test persistence without that option.",
+  "plan": "Close Chrome cleanly, launch once with the five package paths, and inspect installed state.",
+  "commands": [
+    {"keystrokes":"","duration":5},
+    {"keystrokes":"pkill -TERM -x chromium; sleep 2; google-chrome --load-extension=\"$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,)\" chrome://extensions/ > /tmp/chrome.log 2>&1 &\n","duration":3},
+    {"keystrokes":"/opt/venv/bin/python /tmp/verify.py\n","duration":2}
+  ]
+}

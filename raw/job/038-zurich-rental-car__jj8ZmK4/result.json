@@ -1,0 +1,158 @@
+{
+  "id": "979a8ddb-04f0-4854-a419-d2b3ce9f115f",
+  "task_name": "local/038-zurich-rental-car",
+  "trial_name": "038-zurich-rental-car__jj8ZmK4",
+  "trial_uri": "file:///home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550/038-zurich-rental-car__jj8ZmK4",
+  "task_id": {
+    "path": "/home/member2/TUA-Bench/tasks/038-zurich-rental-car"
+  },
+  "source": null,
+  "task_checksum": "592d90a543f848c7edcf6a408fb38b553fedff51d739bfe5473dd8416cc2de37",
+  "config": {
+    "task": {
+      "path": "/home/member2/TUA-Bench/tasks/038-zurich-rental-car",
+      "git_url": null,
+      "git_commit_id": null,
+      "name": null,
+      "ref": null,
+      "overwrite": false,
+      "download_dir": null,
+      "source": null
+    },
+    "trial_name": "038-zurich-rental-car__jj8ZmK4",
+    "trials_dir": "/home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550",
+    "timeout_multiplier": 1.0,
+    "agent_timeout_multiplier": 1.0,
+    "verifier_timeout_multiplier": null,
+    "agent_setup_timeout_multiplier": null,
+    "environment_build_timeout_multiplier": null,
+    "agent": {
+      "name": "terminus-2",
+      "import_path": null,
+      "model_name": "openai/gpt-6.1-sol",
+      "override_timeout_sec": null,
+      "override_setup_timeout_sec": null,
+      "max_timeout_sec": null,
+      "kwargs": {
+        "temperature": null,
+        "reasoning_effort": "medium",
+        "api_base": "http://127.0.0.1:58429/v1",
+        "llm_kwargs": {
+          "allowed_openai_params": [
+            "reasoning_effort"
+          ]
+        }
+      },
+      "env": {}
+    },
+    "environment": {
+      "type": null,
+      "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+      "force_build": false,
+      "delete": true,
+      "override_cpus": null,
+      "override_memory_mb": null,
+      "override_storage_mb": null,
+      "override_gpus": null,
+      "suppress_override_warnings": false,
+      "mounts_json": null,
+      "env": {},
+      "kwargs": {}
+    },
+    "verifier": {
+      "override_timeout_sec": null,
+      "max_timeout_sec": null,
+      "env": {},
+      "disable": false
+    },
+    "artifacts": [],
+    "job_id": "3ef0e199-d9f6-4db6-a650-12679aa3d871"
+  },
+  "agent_info": {
+    "name": "terminus-2",
+    "version": "2.0.0",
+    "model_info": {
+      "name": "gpt-6.1-sol",
+      "provider": "openai"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 673559,
+    "n_cache_tokens": 74880,
+    "n_output_tokens": 5597,
+    "cost_usd": 1.260816,
+    "rollout_details": [],
+    "metadata": {
+      "n_episodes": 41,
+      "api_request_times_msec": [
+        7223.575592041016,
+        6858.168363571167,
+        5578.578233718872,
+        10728.216171264648,
+        4908.393621444702,
+        6833.24122428894,
+        8116.277694702148,
+        7458.601713180542,
+        7336.932897567749,
+        4159.300327301025,
+        6964.884519577026,
+        4068.3085918426514,
+        7016.815185546875,
+        5321.328639984131,
+        8101.294755935669,
+        8351.8385887146,
+        4055.229663848877,
+        6336.4996910095215,
+        7597.1832275390625,
+        3985.895872116089,
+        6253.399133682251,
+        8078.771591186523,
+        5658.6925983428955,
+        9618.895292282104,
+        3690.809488296509,
+        6396.596670150757,
+        7246.826648712158,
+        7594.304323196411,
+        4239.168882369995,
+        9653.08403968811,
+        4011.476993560791,
+        8797.65796661377,
+        4680.577516555786,
+        7783.942937850952,
+        4810.583591461182,
+        7893.912076950073,
+        3917.76704788208,
+        12312.237739562988,
+        3904.486656188965,
+        4649.686336517334,
+        4759.157180786133
+      ],
+      "summarization_count": 0
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "reward": 1.0
+    }
+  },
+  "exception_info": null,
+  "started_at": "2026-10-21T15:22:23.716013Z",
+  "finished_at": "2026-10-21T15:31:00.781531Z",
+  "environment_setup": {
+    "started_at": "2026-10-21T15:22:23.717368Z",
+    "finished_at": "2026-10-21T15:25:11.009440Z"
+  },
+  "agent_setup": {
+    "started_at": "2026-10-21T15:25:11.009456Z",
+    "finished_at": "2026-10-21T15:25:18.925435Z"
+  },
+  "agent_execution": {
+    "started_at": "2026-10-21T15:25:18.925495Z",
+    "finished_at": "2026-10-21T15:30:53.971940Z"
+  },
+  "verifier": {
+    "started_at": "2026-10-21T15:30:54.172231Z",
+    "finished_at": "2026-10-21T15:30:56.609919Z"
+  },
+  "step_results": null
+}

@@ -1,0 +1,58 @@
+New Terminal Output:
+
+> PY
+Seams 156 71 183 3
+sshessssscoes 415 53 497 22
+— 959 52 365 144
+| 147 233 12 61
+Carrot 301 232 235 61
+& 591 228 39 62
+Ginger 679 231 232 71
+Soup 973 232 159 72
+$5.25 1657 238 200 64
+SUBTOTAL 289 528 330 65
+$5.25 1661 540 204 66
+TAX 293 628 113 66
+$0.45 1661 641 206 67
+TOTAL 201 841 201 130
+$5.10 1703 857 207 131
+_ 237 1225 2 2
+Wake 284 1178 225 87
+up 551 1200 82 49
+Neo. 676 1183 161 60
+The 894 1186 121 60
+Matrix 1058 1186 256 62
+has 1355 1192 126 56
+you. 1525 1208 156 47
+agent@04c1a7a0bc04:/app$ /opt/venv/bin/python - <<'PY'
+> from copy import copy
+> import openpyxl
+> from openpyxl.comments import Comment
+> p='/app/my_bookkeeping.xlsx'
+> w=openpyxl.load_workbook(p);s=w.active
+> rows=[
+>  ('Harris Teeter Grocery Purchase','Groceries','Expense',-186.93,'receipt_0.jpeg','Total paid by debit: $186.93, including $5.10 tax.'),
+>  ('Cash Out to Bank of America','Transfer','Transfer',-3670.00,'receipt_1.jpg','Completed cash-out to Bank of America; outgoing transfer, not an operating exp
+ense.'),
+>  ('Carrot & Ginger Soup','Meals','Expense',-5.70,'receipt_2.jpg','Subtotal $5.25 plus tax $0.45 = $5.70. Printed total is degraded.'),
+>  ('East Repair Inc. - Bicycle Repairs','Repairs and Maintenance','Expense',-154.06,'receipt_3.pdf','Receipt US-001: subtotal $145.00 plus sales tax $9.06; tot
+al $154.06.'),
+>  ("McDonald’s Meal Purchase",'Meals','Expense',-8.10,'receipt_4.jpg','Take-out total $8.10; cash tendered $10.00, change $1.90. Receipt dated 12/10/2018.')
+> ]
+> for r,(desc,cat,typ,amt,source,note) in enumerate(rows,9):
+>  for col in range(1,6): s.cell(r,col)._style=copy(s.cell(8,col)._style)
+>  for col,value in enumerate([desc,cat,typ,amt,f'=E{r-1}+D{r}'],1):s.cell(r,col,value)
+>  s.cell(r,1).comment=Comment(source+'\n'+note,'Receipt reference')
+> w.save(p)
+> v=openpyxl.load_workbook(p)
+> assert v.active.max_row==13
+> for row in v.active.iter_rows(min_row=9,values_only=True):print(row)
+> print('Saved',p)
+> PY
+('Harris Teeter Grocery Purchase', 'Groceries', 'Expense', -186.93, '=E8+D9')
+('Cash Out to Bank of America', 'Transfer', 'Transfer', -3670, '=E9+D10')
+('Carrot & Ginger Soup', 'Meals', 'Expense', -5.7, '=E10+D11')
+('East Repair Inc. - Bicycle Repairs', 'Repairs and Maintenance', 'Expense', -154.06, '=E11+D12')
+('McDonald’s Meal Purchase', 'Meals', 'Expense', -8.1, '=E12+D13')
+Saved /app/my_bookkeeping.xlsx
+agent@04c1a7a0bc04:/app$

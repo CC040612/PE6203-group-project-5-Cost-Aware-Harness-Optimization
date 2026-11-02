@@ -1,0 +1,4 @@
+Launching: /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile
+[68] Sandbox: CanCreateUserNamespace() clone() failure: EPERM
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: glxtest: libEGL missing

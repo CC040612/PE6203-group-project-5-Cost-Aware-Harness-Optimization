@@ -1,0 +1,64 @@
+[?2004h[01;32magent@5c8e614d8183[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@5c8e614d8183[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@5c8e614d8183[00m:[01;34m/app[00m$ ls -l /app/WeeklySales.xlsx; python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> w=openpyxl.load_workbook('/app/WeeklySales.xlsx')
+[?2004l[?2004h> for s in w:
+[?2004l[?2004h>  print(s.title,s.max_row,s.max_column)
+[?2004l[?2004h>  for row in s.iter_rows():
+[?2004l[?2004h>   print(row[0].row, [c.value for c in row])
+[?2004l[?2004h> PY
+[?2004l-rw-r--r-- 1 agent agent 9162 Oct 21 15:21 /app/WeeklySales.xlsx
+Sheet1 11 3
+1 ['Week', 'Sales', 'COGS']
+2 ['Week 1', 92808, 81230.8227540488]
+3 ['Week 2', 103740, 32966.53024452376]
+4 ['Week 3', 92828, 10560.387001610548]
+5 ['Week 4', 56032, 51268.67027326688]
+6 ['Week 5', 83685, 33203.656522195364]
+7 ['Week 6', 89271, 26838.67679965224]
+8 ['Week 7', 120530, 79725.77832282588]
+9 ['Week 8', 81764, 61115.56073419186]
+10 ['Week 9', 101728, 3733.34560276964]
+11 ['Week 10', 79359, 50690.05780948359]
+[?2004h[01;32magent@5c8e614d8183[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> from openpyxl.chart import BarChart, Reference
+[?2004l[?2004h> p='/app/WeeklySales.xlsx'
+[?2004l[?2004h> w=openpyxl.load_workbook(p)
+[?2004l[?2004h> s=w['Sheet1']
+[?2004l[?2004h> t=w.create_sheet('Sheet2')
+[?2004l[?2004h> c=BarChart()
+[?2004l[?2004h> c.type='col'
+[?2004l[?2004h> c.grouping='clustered'
+[?2004l[?2004h> c.overlap=0
+[?2004l[?2004h> c.title='Sales & COGS'
+[?2004l[?2004h> c.x_axis.title='Week'
+[?2004l[?2004h> c.y_axis.title='Amount'
+[?2004l[?2004h> c.add_data(Reference(s,min_col=2,max_col=3,min_row=1,max_row=11),titles_from_data=True)
+[?2004l[?2004h> c.set_categories(Reference(s,min_col=1,min_row=2,max_row=11))
+[?2004l[?2004h> c.width=25
+[?2004l[?2004h> c.height=14
+[?2004l[?2004h> c.style=10
+[?2004l[?2004h> c.x_axis.tickLblSkip=1
+[?2004l[?2004h> t.add_chart(c,'A1')
+[?2004l[?2004h> w.save(p)
+[?2004l[?2004h> r=openpyxl.load_workbook(p)
+[?2004l[?2004h> chart=r['Sheet2']._charts[0]
+[?2004l[?2004h> assert chart.type=='col' and chart.grouping=='clustered'
+[?2004l[?2004h> assert len(chart.series)==2
+[?2004l[?2004h> assert r['Sheet1'].max_row==11
+[?2004l[?2004h> print('Saved:',p)
+[?2004l[?2004h> print('Sheets:',r.sheetnames)
+[?2004l[?2004h> print('Chart:',chart.type,chart.grouping)
+[?2004l[?2004h> for series in chart.series:
+[?2004l[?2004h>  print('Series:',series.tx.strRef.f,'Values:',series.val.numRef.f,'Categories:',series.cat.numRef.f)
+[?2004l[?2004h> PY
+[?2004lSaved: /app/WeeklySales.xlsx
+Sheets: ['Sheet1', 'Sheet2']
+Chart: col clustered
+Series: 'Sheet1'!B1 Values: 'Sheet1'!$B$2:$B$11 Categories: 'Sheet1'!$A$2:$A$11
+Series: 'Sheet1'!C1 Values: 'Sheet1'!$C$2:$C$11 Categories: 'Sheet1'!$A$2:$A$11
+[?2004h[01;32magent@5c8e614d8183[00m:[01;34m/app[00m$ 

@@ -1,0 +1,20 @@
+New Terminal Output:
+
+agent@04c1a7a0bc04:/app$ pip install openpyxl pymupdf
+bash: pip: command not found
+agent@04c1a7a0bc04:/app$ for f in /app/receipt_*.jp*g; do echo "==== $f ===="; tesseract "$f" stdout 2>/dev/null; done
+==== /app/receipt_0.jpeg ====
+
+
+
+
+
+
+
+
+
+
+
+
+
+

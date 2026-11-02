@@ -1,0 +1,24 @@
+New Terminal Output:
+
+agent@f2848db5c646:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> import xml.etree.ElementTree as E
+> p='/home/user/Desktop/'
+> with ZipFile(p+'requirment.docx') as z:
+>  r=E.fromstring(z.read('word/document.xml'))
+>  ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+>  for para in r.findall('.//w:p',ns): print(''.join(para.itertext()))
+> PY
+Please modify my picture as follows:
+
+
+* This is a photo I took when I went travelling last month. Now I want to make a video clip about my trip and would like to shift this picture with different ba
+ckground.
+
+* So first I want to make the background of this picture transparent so that I can have it with different scenarios.
+agent@f2848db5c646:/app$ which convert magick identify python3; identify /home/user/Desktop/*.jpg
+/usr/bin/convert
+/usr/bin/identify
+/usr/bin/python3
+/home/user/Desktop/ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg JPEG 320x510 320x510+0+0 8-bit sRGB 32702B 0.010u 0:00.000
+agent@f2848db5c646:/app$

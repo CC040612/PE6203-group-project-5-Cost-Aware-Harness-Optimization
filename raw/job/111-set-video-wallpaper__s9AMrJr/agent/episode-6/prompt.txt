@@ -1,0 +1,28 @@
+New Terminal Output:
+
+agent@2355408990bd:/app$ dbus-run-session -- /usr/bin/python3 - <<'PY'
+> from gi.repository import Gio
+> from pathlib import Path
+> p = Path.home()/'.local/share/backgrounds/interstellar.jpg'
+> assert p.stat().st_size > 0
+> s = Gio.Settings.new('org.gnome.desktop.background')
+> for k in ('picture-uri', 'picture-uri-dark'):
+>     assert s.set_string(k, p.as_uri())
+> assert s.set_string('picture-options', 'zoom')
+> Gio.Settings.sync()
+> print('Wallpaper preferences saved:', p)
+> PY
+dbus-daemon[537]: [session uid=1001 pid=537] Activating service name='ca.desrt.dconf' requested by ':1.0' (uid=1001 pid=538 comm="/usr/bin/python3 -" label="ker
+nel")
+dbus-daemon[537]: [session uid=1001 pid=537] Successfully activated service 'ca.desrt.dconf'
+Wallpaper preferences saved: /home/agent/.local/share/backgrounds/interstellar.jpg
+agent@2355408990bd:/app$ dbus-run-session -- /usr/bin/python3 - <<'PY'
+> from gi.repository import Gio
+> s = Gio.Settings.new('org.gnome.desktop.background')
+> for k in ('picture-uri','picture-uri-dark','picture-options'):
+>     print(k, s.get_string(k))
+> PY
+picture-uri file:///home/agent/.local/share/backgrounds/interstellar.jpg
+picture-uri-dark file:///home/agent/.local/share/backgrounds/interstellar.jpg
+picture-options zoom
+agent@2355408990bd:/app$

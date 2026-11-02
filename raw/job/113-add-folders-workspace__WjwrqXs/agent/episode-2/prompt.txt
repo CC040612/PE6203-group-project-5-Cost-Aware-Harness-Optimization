@@ -1,0 +1,29 @@
+New Terminal Output:
+
+agent@e1ca203d1a82:/app$ python3 - <<'PY'
+> import json
+> from pathlib import Path
+> p = Path('/app/project.code-workspace')
+> workspace = json.loads(p.read_text())
+> folders = workspace.setdefault('folders', [])
+> for target in ['/app/data1', '/app/data2']:
+>     if not any((p.parent / f['path']).resolve() == Path(target).resolve() for f in folders if 'path' in f):
+>         folders.append({'path': target})
+> p.write_text(json.dumps(workspace, indent=8) + '\n')
+> PY
+agent@e1ca203d1a82:/app$ cat /app/project.code-workspace
+{
+        "folders": [
+                {
+                        "path": "project"
+                },
+                {
+                        "path": "/app/data1"
+                },
+                {
+                        "path": "/app/data2"
+                }
+        ],
+        "settings": {}
+}
+agent@e1ca203d1a82:/app$

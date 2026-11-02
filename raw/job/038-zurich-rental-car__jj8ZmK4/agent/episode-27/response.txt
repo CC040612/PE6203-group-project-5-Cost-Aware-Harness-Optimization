@@ -1,0 +1,10 @@
+{
+  "analysis": "There is a Large car category button and a Recommended sorting menu.",
+  "plan": "Apply Large car and open the sorting menu.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.get_by_role('button',name='Large car',exact=True).click(); page.get_by_role('button',name='Sort by: Recommended',exact=True).click(); print(page.locator('body').inner_text()[:4700])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

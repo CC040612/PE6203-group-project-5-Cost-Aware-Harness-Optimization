@@ -1,0 +1,73 @@
+New Terminal Output:
+
+agent@6934aa39976b:/app$ cat > /tmp/build_pass_through.py <<'PY'
+> from pathlib import Path
+> import re, uuid, zipfile, html
+> import xml.etree.ElementTree as ET
+> from datetime import datetime, timezone
+>
+w> root = Path('/home/user/Documents/Novels/Pass Through')
+> files = sorted(root.glob('Chapter*.txt'), key=lambda p: int(re.search(r'\d+', p.stem).group()))
+> esc = html.escape
+> chapters = []
+> for path in files:
+ar>     text = path.read_text(encoding='utf-8-sig')
+>     blocks = [re.sub(r'\s+', ' ', b).strip() for b in re.split(r'\n\s*\n', text.strip()) if b.strip()]
+>     chapters.append((blocks[0], blocks[1:]))
+> uid = 'urn:uuid:' + str(uuid.uuid4())
+> modified = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+>
+> def xhtml(title, body):
+>     return '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE html>\n<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:
+lang="en" lang="en"><head><title>' + esc(title) + '</title><link rel="stylesheet" type="text/css" href="style.css"/></head><body>' + body + '</body></html>'
+>
+> entries = {}
+> entries['META-INF/container.xml'] = '<?xml version="1.0"?><container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfil
+e full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles></container>'
+> entries['OEBPS/style.css'] = 'body {font-family: serif; line-height: 1.5; margin: 5%;} h1 {font-size: 1.5em; text-align: center; margin: 1.5em 0;} p {margin:
+0 0 0.6em; text-indent: 1.2em;} nav ol {padding-left: 1.5em;} nav li {margin: 0.8em 0;}'
+> links = ''.join(f'<li><a href="chapter{i}.xhtml">{esc(title)}</a></li>' for i, (title, _) in enumerate(chapters, 1))
+> entries['OEBPS/nav.xhtml'] = xhtml('Pass Through — Contents', '<h1>Pass Through</h1><nav epub:type="toc" id="toc"><h2>Contents</h2><ol>' + links + '</ol></nav
+>')
+> for i, (title, paragraphs) in enumerate(chapters, 1):
+>     entries[f'OEBPS/chapter{i}.xhtml'] = xhtml(title, '<h1>' + esc(title) + '</h1>' + ''.join('<p>' + esc(p) + '</p>' for p in paragraphs))
+> manifest = '<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="ncx" href="toc.ncx" media-type="application/x-dtbnc
+x+xml"/><item id="css" href="style.css" media-type="text/css"/>'
+> manifest += ''.join(f'<item id="ch{i}" href="chapter{i}.xhtml" media-type="application/xhtml+xml"/>' for i in range(1, len(chapters)+1))
+> spine = '<itemref idref="nav"/>' + ''.join(f'<itemref idref="ch{i}"/>' for i in range(1,len(chapters)+1))
+> entries['OEBPS/content.opf'] = f'''<?xml version="1.0" encoding="utf-8"?><package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-i
+d" xml:lang="en"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">{uid}</dc:identifier><dc:title>Pass Through</dc:title><dc:lan
+guage>en</dc:language><meta property="dcterms:modified">{modified}</meta></metadata><manifest>{manifest}</manifest><spine toc="ncx">{spine}</spine></package>'''
+> points = ''.join(f'<navPoint id="ch{i}" playOrder="{i}"><navLabel><text>{esc(title)}</text></navLabel><content src="chapter{i}.xhtml"/></navPoint>' for i,(tit
+le,_) in enumerate(chapters,1))
+> entries['OEBPS/toc.ncx'] = f'<?xml version="1.0" encoding="utf-8"?><ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1"><head><meta name="dtb:ui
+d" content="{uid}"/><meta name="dtb:depth" content="1"/><meta name="dtb:totalPageCount" content="0"/><meta name="dtb:maxPageNumber" content="0"/></head><docTitl
+e><text>Pass Through</text></docTitle><navMap>{points}</navMap></ncx>'
+> out = root / 'Pass Through.epub'
+> with zipfile.ZipFile(out, 'w', compression=zipfile.ZIP_DEFLATED) as z:
+>     z.writestr('mimetype', 'application/epub+zip', compress_type=zipfile.ZIP_STORED)
+>     for name, data in entries.items():
+>         z.writestr(name, data.encode('utf-8'))
+> with zipfile.ZipFile(out) as z:
+>     assert z.testzip() is None
+>     assert z.infolist()[0].filename == 'mimetype'
+>     assert z.infolist()[0].compress_type == zipfile.ZIP_STORED
+>     for name in z.namelist():
+>         if name.endswith(('.xml', '.opf', '.ncx', '.xhtml')):
+>             ET.fromstring(z.read(name))
+>     for i,(title,paragraphs) in enumerate(chapters,1):
+>         doc = ET.fromstring(z.read(f'OEBPS/chapter{i}.xhtml'))
+>         ns = {'h':'http://www.w3.org/1999/xhtml'}
+>         assert doc.find('.//h:h1',ns).text == title
+>         assert [p.text for p in doc.findall('.//h:p',ns)] == paragraphs
+>         print(f'Validated: {title} ({len(paragraphs)} paragraphs)')
+> print(f'Saved: {out} ({out.stat().st_size:,} bytes)')
+> PY
+agent@6934aa39976b:/app$ python3 /tmp/build_pass_through.py
+Validated: Chapter 1 Passing through the book (82 paragraphs)
+Validated: Chapter 2 Change (86 paragraphs)
+Validated: Chapter 3 Plan (68 paragraphs)
+Validated: Chapter 4 Black Material (67 paragraphs)
+Validated: Chapter 5: Ask him to pay back the money (68 paragraphs)
+Saved: /home/user/Documents/Novels/Pass Through/Pass Through.epub (21,612 bytes)
+agent@6934aa39976b:/app$

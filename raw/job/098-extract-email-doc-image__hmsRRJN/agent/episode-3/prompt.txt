@@ -1,0 +1,28 @@
+New Terminal Output:
+
+agent@d9c0c32180f1:/app$ python3 - <<'PY'
+> import zipfile,xml.etree.ElementTree as E,posixpath,io
+> from PIL import Image
+> p='/tmp/doc-extract/lecture-notes.docx'
+> with zipfile.ZipFile(p) as z:
+>  ns={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','r':'http://schemas.openxmlformats.org/officeDocument/2006/relationships'}
+>  root=E.fromstring(z.read('word/document.xml'))
+>  rels={e.attrib['Id']:e.attrib['Target'] for e in E.fromstring(z.read('word/_rels/document.xml.rels'))}
+>  images=[]
+>  for e in root.iter():
+>   rid=e.get('{'+ns['r']+'}embed') or (e.get('{'+ns['r']+'}id') if e.tag.endswith('imagedata') else None)
+>   if rid: images.append(rels[rid])
+>  print('Images in document order:',images)
+>  target=images[0]
+>  name=posixpath.normpath(posixpath.join('word',target)) if not target.startswith('/') else target.lstrip('/')
+>  data=z.read(name)
+>  im=Image.open(io.BytesIO(data));print('First image:',name,im.format,im.size)
+>  if im.format=='PNG': open('/app/background.png','wb').write(data)
+>  else: im.save('/app/background.png','PNG')
+> PY
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+ModuleNotFoundError: No module named 'PIL'
+agent@d9c0c32180f1:/app$ file /app/background.png
+/app/background.png: cannot open `/app/background.png' (No such file or directory)
+agent@d9c0c32180f1:/app$

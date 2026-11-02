@@ -1,0 +1,9 @@
+New Terminal Output:
+
+> PY
+https://www.rentalcars.com/search-results?intent=direct&location=&dropLocation=&locationName=Z%C3%BCrich&dropLocationName=Z%C3%BCrich&coordinates=47.36714935302
+7344%2C8.544272422790527&dropCoordinates=47.367149353027344%2C8.544272422790527&driversAge=30&puDay=26&puMonth=10&puYear=2026&puMinute=0&puHour=10&doDay=30&doMo
+nth=10&doYear=2026&doMinute=0&doHour=10&ftsType=C&dropFtsType=C&filterCriteria_carCategory=large
+large checked: True
+Sort by: Price (lowest first)
+agent@c20a90688c47:/app$

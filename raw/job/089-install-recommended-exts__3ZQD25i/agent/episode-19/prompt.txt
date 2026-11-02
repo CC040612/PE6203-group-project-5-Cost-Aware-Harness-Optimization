@@ -1,0 +1,25 @@
+Previous response had warnings:
+WARNINGS: - Command 1 should end with newline when followed by another command. Otherwise the two commands will be concatenated together on the same line.
+
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/findids.py
+Speechify Text to Speech Voice Reader ['https://chromewebstore.google.com/detail/speechify-%E2%80%94-text-to-speec/ljflmlehinmoeknoonhibbjpldiijjmm']
+React Developer Tools ['https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi', 'https://chromewebstore.google.com/det
+ail/react-hook-form-developer/cangfmbpembbepmmechnanpmddndpaji', 'https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd']
+Momentum ['https://chromewebstore.google.com/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca', 'https://chromewebstore.google.com/detail/momentum/hdkgmkicdpmnf
+capchaabckmcmjldieo', 'https://chromewebstore.google.com/detail/mindful-momentum/palidfpmacconbkcjgeahehkkbgooach']
+Google Translate ['https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb', 'https://chromewebstore.google.com/detail/google
+-translate-in-side/lopnbnfpjmgpbppclhclehhgafnifija', 'https://chromewebstore.google.com/detail/google-translate-plus-ai/jomhcfmjbfkigcepcfkcpknnppmdopmc']
+agent@715dad585543:/app$ curl -s http://localhost:1337/json/version; /usr/bin/chromium --version
+curl -s http://localhost:1337/json/version; /usr/bin/chromium --version
+{
+   "Browser": "Chrome/155.0.8059.79",
+   "Protocol-Version": "1.3",
+   "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+   "V8-Version": "15.5.35.23",
+   "WebKit-Version": "537.36 (@a49e2e3d4addfd84e765b52afe230bedb81096db)",
+   "webSocketDebuggerUrl": "ws://localhost:1337/devtools/browser/bba0e096-cfc2-4276-be1b-bce8a5266e3d"
+}
+Chromium 155.0.8059.79 built on Debian GNU/Linux 12 (bookworm)
+agent@715dad585543:/app$

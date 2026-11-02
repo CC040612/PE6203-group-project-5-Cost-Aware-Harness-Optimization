@@ -1,0 +1,34 @@
+New Terminal Output:
+
+agent@f2848db5c646:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree
+> from PIL import Image
+> p='/home/user/Desktop/'
+> with ZipFile(p+'requirment.docx') as z:
+>  r=etree.fromstring(z.read('word/document.xml'))
+>  for para in r.xpath('//*[local-name()="p"]'):
+>   print(''.join(para.xpath('.//*[local-name()="t"]/text()')))
+> im=Image.open(p+'ChMkKV8wsR6IBfEtABYfc0Tgu9cAAA1lQHO_78AFh-L733.jpg')
+> print('IMAGE',im.size, im.mode)
+> PY
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+ModuleNotFoundError: No module named 'lxml'
+agent@f2848db5c646:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

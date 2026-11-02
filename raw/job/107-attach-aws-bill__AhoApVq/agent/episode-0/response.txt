@@ -1,0 +1,10 @@
+{
+  "analysis": "We need attach ~/aws-bill.pdf to the existing email draft without sending or closing it. We first need to identify the available application interaction tools.",
+  "plan": "Inspect the working directory and available tools to determine how to access the email application and attach the file.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /app; ls -la ~; which chromium google-chrome firefox; env | grep -Ei 'DISPLAY|BROWSER|PORT'\n",
+      "duration": 0.1
+    }
+  ]
+}

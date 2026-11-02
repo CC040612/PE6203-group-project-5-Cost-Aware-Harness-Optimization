@@ -1,0 +1,10 @@
+{
+  "analysis": "The terminal output is truncated by verbose form markup.",
+  "plan": "Extract only the filter region and sorting buttons.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; t=page.locator('body').inner_text(); print(t[2000:6500]); print('BUTTONS',page.locator('button').all_text_contents()[:35])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

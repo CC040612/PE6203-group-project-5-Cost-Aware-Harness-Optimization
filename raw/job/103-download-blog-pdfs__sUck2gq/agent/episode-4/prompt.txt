@@ -1,0 +1,43 @@
+New Terminal Output:
+
+agent@83e3666913d5:/app$ sleep 5; curl -s http://127.0.0.1:1337/json/list
+[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/dev
+tools/page/521BBBCD7A14381875411D7BB922E323",
+   "faviconUrl": "https://lilianweng.github.io/favicon_wine.ico",
+   "id": "521BBBCD7A14381875411D7BB922E323",
+   "title": "Thinking about High-Quality Human Data | Lil&#39;Log",
+   "type": "page",
+   "url": "https://lilianweng.github.io/posts/2024-02-05-human-data-quality/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/521BBBCD7A14381875411D7BB922E323"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/dev
+tools/page/479291FB1774351494C12C7E4E1AFFA5",
+   "faviconUrl": "https://lilianweng.github.io/favicon_wine.ico",
+   "id": "479291FB1774351494C12C7E4E1AFFA5",
+   "title": "LLM Powered Autonomous Agents | Lil&#39;Log",
+   "type": "page",
+   "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/479291FB1774351494C12C7E4E1AFFA5"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/dev
+tools/page/9528F7DAE14E6DA8D054D92F5FDDB514",
+   "id": "9528F7DAE14E6DA8D054D92F5FDDB514",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/9528F7DAE14E6DA8D054D92F5FDDB514"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=127.0.0.1:1337/dev
+tools/page/7D2F081A272E1B2A0A2BFC08DB19C4C4",
+   "id": "7D2F081A272E1B2A0A2BFC08DB19C4C4",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+   "webSocketDebuggerUrl": "ws://127.0.0.1:1337/devtools/page/7D2F081A272E1B2A0A2BFC08DB19C4C4"
+} ]
+agent@83e3666913d5:/app$

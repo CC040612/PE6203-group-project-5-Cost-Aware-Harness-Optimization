@@ -1,0 +1,10 @@
+{
+  "analysis": "Background removal is running; the model may need to download its weights on first use.",
+  "plan": "Wait for the segmentation process to report completion.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 10
+    }
+  ]
+}

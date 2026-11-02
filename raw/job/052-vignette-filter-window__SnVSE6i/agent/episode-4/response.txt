@@ -1,0 +1,14 @@
+{
+  "analysis": "GIMP has loaded the PNG on the virtual display; the log contains nonfatal theme warnings.",
+  "plan": "Focus the image window and invoke the Vignette filter through action search.",
+  "commands": [
+    {
+      "keystrokes": "xdotool search --onlyvisible --name '.*' getwindowname\nw=$(xdotool search --onlyvisible --name 'dog_with_background' | head -1); xdotool windowfocus --sync \"$w\"; xdotool key slash; xdotool type --delay 100 'vignette'; sleep 1; xdotool key Return\n",
+      "duration": 2
+    },
+    {
+      "keystrokes": "xdotool search --onlyvisible --name '.*' getwindowname\n",
+      "duration": 0.1
+    }
+  ]
+}

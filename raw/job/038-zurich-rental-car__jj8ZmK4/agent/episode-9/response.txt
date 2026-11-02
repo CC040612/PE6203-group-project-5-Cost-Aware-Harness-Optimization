@@ -1,0 +1,10 @@
+{
+  "analysis": "The location suggestions are being retrieved.",
+  "plan": "Read the available suggestions.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

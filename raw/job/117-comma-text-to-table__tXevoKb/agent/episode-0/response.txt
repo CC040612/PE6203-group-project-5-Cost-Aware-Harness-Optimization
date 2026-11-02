@@ -1,0 +1,10 @@
+{
+  "analysis": "The document has not yet been inspected. I will examine its paragraphs and existing tables to identify the comma-separated content and preserve all unrelated content.",
+  "plan": "List the file and inspect the document XML using Python to locate the text that should become a table.",
+  "commands": [
+    {
+      "keystrokes": "ls -l /app/Graphemes_Sound_Letter_Patterns.docx\npython - <<'PY'\nfrom docx import Document\np='/app/Graphemes_Sound_Letter_Patterns.docx'\nd=Document(p)\nfor i,b in enumerate(d.element.body):\n print(i,b.tag.split('}')[-1],repr(''.join(b.itertext()))[:3000])\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

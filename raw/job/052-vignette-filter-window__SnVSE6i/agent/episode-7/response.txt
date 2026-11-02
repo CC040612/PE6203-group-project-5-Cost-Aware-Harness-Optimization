@@ -1,0 +1,14 @@
+{
+  "analysis": "The profile dialog has closed. I will focus and map the main GIMP window directly, then search for Vignette.",
+  "plan": "Use the known main-window ID to invoke action search and inspect the resulting dialog.",
+  "commands": [
+    {
+      "keystrokes": "xdotool windowmap 0x20021f windowfocus --sync 0x20021f; xdotool key slash; xdotool type --delay 100 vignette; sleep 1; xwininfo -root -tree; xdotool key Return\n",
+      "duration": 2
+    },
+    {
+      "keystrokes": "xwininfo -root -tree\n",
+      "duration": 0.1
+    }
+  ]
+}

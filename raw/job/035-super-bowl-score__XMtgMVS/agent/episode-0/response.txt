@@ -1,0 +1,10 @@
+{
+  "analysis": "I need to locate the official NFL game record for Super Bowl LIV, the championship of the 2019 season played in February 2020, and leave that page open in the browser.",
+  "plan": "Inspect the available browser-control tools and then navigate to the official NFL Super Bowl LIV game page.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /app; which chromium google-chrome; env | grep -i -E 'browser|playwright|chrome'; ls /tmp\n",
+      "duration": 0.1
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ ls -la /app; ls -la ~/Desktop; find /mnt /tmp /home/agent /app -maxdepth 3 -type f \( -iname '*.pptx' -o -iname '*.ppt' -o -iname '*.odp' \) 2>/dev/null
+[?2004ltotal 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 15:44 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root  4096 Oct 21 16:05 [01;34m..[0m
+total 12292
+drwxr-xr-x 2 agent agent     4096 Oct 21 16:04 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent     4096 Oct 21 16:05 [01;34m..[0m
+-rw-r--r-- 1 agent agent 12570766 Oct 21 16:04 PPT-Template_widescreen.pptx
+/tmp/082-brighten-slide-image/build/PPT-Template_widescreen.pptx
+/home/agent/Desktop/PPT-Template_widescreen.pptx
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from pptx import Presentation
+[?2004l[?2004h> from PIL import Image, ImageStat
+[?2004l[?2004h> from io import BytesIO
+[?2004l[?2004h> p='/home/agent/Desktop/PPT-Template_widescreen.pptx'
+[?2004l[?2004h> r=Presentation(p)
+[?2004l[?2004h> s=r.slides[1]
+[?2004l[?2004h> print('Slide size:',r.slide_width,r.slide_height)
+[?2004l[?2004h> for sh in s.shapes:
+[?2004l[?2004h>  print('Shape:',sh.shape_id,sh.name,sh.shape_type,sh.left,sh.top,sh.width,sh.height)
+[?2004l[?2004h>  if sh.shape_type==13:
+[?2004l[?2004h>   im=Image.open(BytesIO(sh.image.blob));print('Image:',sh.image.ext,im.size,ImageStat.Stat(im.convert('RGB')).mean)
+[?2004l[?2004h> print('Relationships:')
+[?2004l[?2004h> for rel in s.part.rels.values():
+[?2004l[?2004h>  print(rel.rId,rel.reltype,rel.target_ref)
+[?2004l[?2004h> print(s._element.xml[:20000])
+[?2004l[?2004h> PY
+[?2004lbash: python: command not found
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> from pptx import Presentation
+[?2004l[?2004h> from PIL import Image, ImageStat
+[?2004l[?2004h> from io import BytesIO
+[?2004l[?2004h> r=Presentation('/home/agent/Desktop/PPT-Template_widescreen.pptx')
+[?2004l[?2004h> s=r.slides[1]
+[?2004l[?2004h> print('Slide size:',r.slide_width,r.slide_height)
+[?2004l[?2004h> for sh in s.shapes:
+[?2004l[?2004h>  print('Shape:',sh.shape_id,sh.name,sh.shape_type,sh.left,sh.top,sh.width,sh.height)
+[?2004l[?2004h>  if sh.shape_type==13:
+[?2004l[?2004h>   im=Image.open(BytesIO(sh.image.blob));print('Image:',sh.image.ext,im.size,ImageStat.Stat(im.convert('RGB')).mean)
+[?2004l[?2004h> print('Relationships:')
+[?2004l[?2004h> for rel in s.part.rels.values():
+[?2004l[?2004h>  print(rel.rId,rel.reltype,rel.target_ref)
+[?2004l[?2004h> print(s._element.xml[:16000])
+[?2004l[?2004h> PY
+[?2004lTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'pptx'
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import zipfile
+[?2004l[?2004h> z=zipfile.ZipFile('/home/agent/Desktop/PPT-Template_widescreen.pptx')
+[?2004l[?2004h> for p in ['ppt/slides/slide2.xml','ppt/slides/_rels/slide2.xml.rels']:
+[?2004l[?2004h>  print(p);print(z.read(p).decode())
+[?2004l[?2004h> from PIL import Image
+[?2004l[?2004h> print('Pillow available')
+[?2004l[?2004h> PY
+[?2004lppt/slides/slide2.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" xmlns:p15="http://schemas.microsoft.com/office/powerpoint/2012/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><p:cSld><p:spTree><p:nvGrpSpPr>        <p:cNvPr id="1" name=""/>        <p:cNvGrpSpPr/>        <p:nvPr/>      </p:nvGrpSpPr>      <p:grpSpPr>        <a:xfrm>          <a:off x="0" y="0"/>          <a:ext cx="0" cy="0"/>          <a:chOff x="0" y="0"/>          <a:chExt cx="0" cy="0"/>        </a:xfrm>      </p:grpSpPr><p:pic><p:nvPicPr><p:cNvPr id="88" name="" descr=""></p:cNvPr><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId1"></a:blip><a:stretch/></p:blipFill><p:spPr><a:xfrm><a:off x="-5669640" y="360"/><a:ext cx="10286640" cy="6857640"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:ln w="0"><a:noFill/></a:ln></p:spPr></p:pic><p:pic><p:nvPicPr><p:cNvPr id="89" name="Picture 13" descr=""></p:cNvPr><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId2"></a:blip><a:stretch/></p:blipFill><p:spPr><a:xfrm><a:off x="8384760" y="1861560"/><a:ext cx="1936440" cy="428400"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:ln w="0"><a:noFill/></a:ln></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id="90" name="TextBox 3"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="6095880" y="1182960"/><a:ext cx="4570920" cy="299160"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:solidFill><a:schemeClr val="bg1"/></a:solidFill><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:style><a:lnRef idx="0"></a:lnRef><a:fillRef idx="0"/><a:effectRef idx="0"></a:effectRef><a:fontRef idx="minor"/></p:style></p:sp><p:sp><p:nvSpPr><p:cNvPr id="91" name="TextBox 4"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="5040000" y="308520"/><a:ext cx="4492800" cy="5451480"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:noFill/><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:style><a:lnRef idx="0"></a:lnRef><a:fillRef idx="0"/><a:effectRef idx="0"></a:effectRef><a:fontRef idx="minor"/></p:style><p:txBody><a:bodyPr lIns="90000" rIns="90000" tIns="45000" bIns="45000" anchor="t"><a:spAutoFit/></a:bodyPr><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" lang="en-US" sz="3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="124172"/></a:solidFill><a:latin typeface="Franklin Gothic Demi"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>HEADING 1 USES FRANKLIN GOTHIC DEMI</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" lang="en-US" sz="3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="404040"/></a:solidFill><a:latin typeface="Franklin Gothic Demi"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>Heading 2 uses Franklin Gothic Demi</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" lang="en-US" sz="3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="404040"/></a:solidFill><a:latin typeface="Franklin Gothic Book"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>Regular text uses Franklin Gothic Book</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr marL="171360" indent="-171360"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buClr><a:srgbClr val="ee8f40"/></a:buClr><a:buFont typeface="Arial"/><a:buChar char="•"/></a:pPr><a:r><a:rPr b="0" lang="en-US" sz="3200" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="404040"/></a:solidFill><a:latin typeface="Franklin Gothic Book"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>Bulleted list uses Franklin Gothic book</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:endParaRPr b="0" lang="en-HK" sz="3200" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="92" name="Rectangle 11"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="4617000" y="0"/><a:ext cx="7574040" cy="324720"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:solidFill><a:srgbClr val="a1d1d0"/></a:solidFill><a:ln><a:noFill/></a:ln><a:effectLst><a:outerShdw blurRad="39960" dir="5400000" dist="23040" rotWithShape="0"><a:srgbClr val="000000"><a:alpha val="35000"/></a:srgbClr></a:outerShdw></a:effectLst></p:spPr><p:style><a:lnRef idx="1"><a:schemeClr val="accent1"/></a:lnRef><a:fillRef idx="3"><a:schemeClr val="accent1"/></a:fillRef><a:effectRef idx="2"><a:schemeClr val="accent1"/></a:effectRef><a:fontRef idx="minor"/></p:style></p:sp><p:sp><p:nvSpPr><p:cNvPr id="93" name="Rectangle 15"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="738720" y="2839680"/><a:ext cx="2935080" cy="1232280"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:noFill/><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:style><a:lnRef idx="0"></a:lnRef><a:fillRef idx="0"/><a:effectRef idx="0"></a:effectRef><a:fontRef idx="minor"/></p:style><p:txBody><a:bodyPr lIns="90000" rIns="90000" tIns="45000" bIns="45000" anchor="t"><a:spAutoFit/></a:bodyPr><a:p><a:pPr algn="ctr"><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" lang="en-US" sz="3750" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="ffffff"/></a:solidFill><a:latin typeface="Franklin Gothic Demi"/><a:ea typeface="ＭＳ Ｐゴシック"/></a:rPr><a:t>SLIDE TITLE</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="3750" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p></p:txBody></p:sp><p:sp><p:nvSpPr><p:cNvPr id="94" name="Rectangle 16"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="738720" y="2757960"/><a:ext cx="2935080" cy="832320"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:noFill/><a:ln w="28575"><a:solidFill><a:srgbClr val="ffffff"/></a:solidFill><a:round/></a:ln><a:effectLst><a:outerShdw blurRad="39960" dir="5400000" dist="23040" rotWithShape="0"><a:srgbClr val="000000"><a:alpha val="35000"/></a:srgbClr></a:outerShdw></a:effectLst></p:spPr><p:style><a:lnRef idx="1"><a:schemeClr val="accent1"/></a:lnRef><a:fillRef idx="3"><a:schemeClr val="accent1"/></a:fillRef><a:effectRef idx="2"><a:schemeClr val="accent1"/></a:effectRef><a:fontRef idx="minor"/></p:style></p:sp><p:sp><p:nvSpPr><p:cNvPr id="95" name="Rectangle 17"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="-13320" y="6532200"/><a:ext cx="12204360" cy="324720"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:solidFill><a:srgbClr val="a1d1d0"/></a:solidFill><a:ln><a:noFill/></a:ln><a:effectLst><a:outerShdw blurRad="39960" dir="5400000" dist="23040" rotWithShape="0"><a:srgbClr val="000000"><a:alpha val="35000"/></a:srgbClr></a:outerShdw></a:effectLst></p:spPr><p:style><a:lnRef idx="1"><a:schemeClr val="accent1"/></a:lnRef><a:fillRef idx="3"><a:schemeClr val="accent1"/></a:fillRef><a:effectRef idx="2"><a:schemeClr val="accent1"/></a:effectRef><a:fontRef idx="minor"/></p:style></p:sp><p:pic><p:nvPicPr><p:cNvPr id="96" name="Picture 18" descr=""></p:cNvPr><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId3"></a:blip><a:stretch/></p:blipFill><p:spPr><a:xfrm><a:off x="11033640" y="6584400"/><a:ext cx="1059840" cy="234000"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:ln w="0"><a:noFill/></a:ln></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id="97" name="TextBox 20"></p:cNvPr><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="-13320" y="6501960"/><a:ext cx="7234560" cy="698760"/></a:xfrm><a:prstGeom prst="rect"><a:avLst></a:avLst></a:prstGeom><a:noFill/><a:ln w="0"><a:noFill/></a:ln></p:spPr><p:style><a:lnRef idx="0"></a:lnRef><a:fillRef idx="0"/><a:effectRef idx="0"></a:effectRef><a:fontRef idx="minor"/></p:style><p:txBody><a:bodyPr lIns="90000" rIns="90000" tIns="45000" bIns="45000" anchor="t"><a:spAutoFit/></a:bodyPr><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" i="1" lang="en-US" sz="1000" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="404040"/></a:solidFill><a:latin typeface="Calibri"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>The UF CTSI is supported in part by NIH Clinical and Translational Science Awards UL1TR001427, KL2TR001429 and TL1TR001428. </a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1000" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p><a:p><a:pPr><a:lnSpc><a:spcPct val="100000"/></a:lnSpc><a:buNone/></a:pPr><a:r><a:rPr b="0" i="1" lang="en-US" sz="1000" spc="-1" strike="noStrike"><a:solidFill><a:srgbClr val="404040"/></a:solidFill><a:latin typeface="Calibri"/><a:ea typeface="DejaVu Sans"/></a:rPr><a:t>This content is solely the responsibility of the UF CTSI and does not necessarily represent the official views of the NIH.</a:t></a:r><a:endParaRPr b="0" lang="en-HK" sz="1000" spc="-1" strike="noStrike"><a:latin typeface="Arial"/></a:endParaRPr></a:p></p:txBody></p:sp></p:spTree></p:cSld><mc:AlternateContent><mc:Choice Requires="p14"><p:transition spd="slow" p14:dur="2000"></p:transition></mc:Choice><mc:Fallback><p:transition spd="slow"></p:transition></mc:Fallback></mc:AlternateContent></p:sld>
+ppt/slides/_rels/slide2.xml.rels
+<?xml version="1.0" encoding="UTF-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image3.png"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image4.png"/><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image5.png"/><Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout" Target="../slideLayouts/slideLayout1.xml"/>
+</Relationships>
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+ModuleNotFoundError: No module named 'PIL'
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ which convert magick ffmpeg pip3; ls /opt; find /opt -maxdepth 4 -name python -o -name python3; python3 -m pip --version
+[?2004l/usr/bin/ffmpeg
+/usr/bin/pip3
+[0m[01;34mvenv[0m
+/opt/venv/bin/python
+/opt/venv/bin/python3
+pip 23.0.1 from /usr/lib/python3/dist-packages/pip (python 3.11)
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import zipfile,io
+[?2004l[?2004h> from PIL import Image,ImageEnhance,ImageStat
+[?2004l[?2004h> p='/home/agent/Desktop/background.png'
+[?2004l[?2004h> with zipfile.ZipFile('/home/agent/Desktop/PPT-Template_widescreen.pptx') as z:
+[?2004l[?2004h>  im=Image.open(io.BytesIO(z.read('ppt/media/image3.png')))
+[?2004l[?2004h>  im.load()
+[?2004l[?2004h> print('Source:', im.size, im.mode)
+[?2004l[?2004h> out=ImageEnhance.Brightness(im).enhance(1.25)
+[?2004l[?2004h> out.save(p,'PNG')
+[?2004l[?2004h> with Image.open(p) as check:
+[?2004l[?2004h>  check.verify()
+[?2004l[?2004h> print('Saved:',p)
+[?2004l[?2004h> print('Mean RGB before:',ImageStat.Stat(im.convert('RGB')).mean)
+[?2004l[?2004h> print('Mean RGB after:',ImageStat.Stat(out.convert('RGB')).mean)
+[?2004l[?2004h> PY
+[?2004lSource: (2433, 1622) RGBA
+Saved: /home/agent/Desktop/background.png
+Mean RGB before: [39.90112296855354, 39.90112296855354, 39.90112296855354]
+Mean RGB after: [48.94444072790743, 48.94444072790743, 48.94444072790743]
+[?2004h[01;32magent@c918d826cef3[00m:[01;34m/app[00m$ 

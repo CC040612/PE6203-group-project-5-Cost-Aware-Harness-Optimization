@@ -1,0 +1,84 @@
+New Terminal Output:
+
+agent@c88500295499:/app$ cat > /tmp/convert_graphemes.py <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree as E
+> from copy import deepcopy
+> import os
+> path='/app/Graphemes_Sound_Letter_Patterns.docx'
+> W='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+> ns={'w':W}
+> def tag(s): return '{'+W+'}'+s
+> def el(s, **attrs):
+>  e=E.Element(tag(s))
+>  for k,v in attrs.items(): e.set(tag(k),str(v))
+>  return e
+> with ZipFile(path) as z:
+>  infos=z.infolist(); data={i.filename:z.read(i.filename) for i in infos}
+> root=E.fromstring(data['word/document.xml'])
+> body=root.find('w:body',ns)
+> original=list(body)
+> selected=original[4:9]
+> expected=[''.join(p.xpath('.//w:t/text()',namespaces=ns)).split(',') for p in selected]
+> assert all(len(r)==4 for r in expected)
+> sect=body.find('w:sectPr',ns)
+> size=sect.find('w:pgSz',ns); mar=sect.find('w:pgMar',ns)
+> width=int(size.get(tag('w')))-int(mar.get(tag('left')))-int(mar.get(tag('right')))
+> widths=[int(width*f) for f in (.34,.18,.24)]
+> widths.append(width-sum(widths))
+> table=el('tbl'); props=el('tblPr'); table.append(props)
+> props.append(el('tblW',w=width,type='dxa'))
+> borders=el('tblBorders')
+> for side in ['top','left','bottom','right','insideH','insideV']:
+>  borders.append(el(side,val='single',sz=4,color='000000'))
+> props.append(borders)
+> props.append(el('tblLayout',type='fixed'))
+> grid=el('tblGrid')
+> for w in widths: grid.append(el('gridCol',w=w))
+> table.append(grid)
+> for rownum,p in enumerate(selected):
+>  row=el('tr'); table.append(row)
+>  if rownum==0:
+>   rp=el('trPr'); rp.append(el('tblHeader')); row.append(rp)
+>  paragraphs=[]
+>  for width in widths:
+>   cell=el('tc'); cp=el('tcPr'); cp.append(el('tcW',w=width,type='dxa')); cell.append(cp)
+>   para=el('p')
+>   if p.find('w:pPr',ns) is not None: para.append(deepcopy(p.find('w:pPr',ns)))
+>   cell.append(para); row.append(cell); paragraphs.append(para)
+>  col=0
+>  for run in p.findall('w:r',ns):
+>   text=''.join(run.xpath('./w:t/text()',namespaces=ns))
+>   chunks=text.split(',')
+>   for j,chunk in enumerate(chunks):
+>    if j: col+=1
+>    if not chunk: continue
+>    newrun=deepcopy(run)
+>    for child in list(newrun):
+>     if child.tag!=tag('rPr'): newrun.remove(child)
+>    t=el('t'); t.set('{http://www.w3.org/XML/1998/namespace}space','preserve'); t.text=chunk
+>    newrun.append(t); paragraphs[col].append(newrun)
+>  assert col==3
+> body.insert(4,table)
+> for p in selected: body.remove(p)
+> actual=[[''.join(c.xpath('.//w:t/text()',namespaces=ns)) for c in r.findall('w:tc',ns)] for r in table.findall('w:tr',ns)]
+> assert actual==expected
+> assert [E.tostring(x) for x in body if x is not table]==[E.tostring(x) for i,x in enumerate(original) if not 4<=i<9]
+> data['word/document.xml']=E.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+> tmp=path+'.tmp'
+> with ZipFile(tmp,'w') as z:
+>  for info in infos: z.writestr(info,data[info.filename])
+> with ZipFile(tmp) as z:
+>  assert z.testzip() is None
+>  for info in infos:
+>   assert z.read(info.filename)==data[info.filename]
+> os.replace(tmp,path)
+> from docx import Document
+> doc=Document(path)
+> assert any([[c.text for c in r.cells] for r in t.rows]==expected for t in doc.tables)
+> print('Saved and verified:',path)
+> print('New table: 5 rows x 4 columns; other document content preserved.')
+> for row in actual: print(row)
+> PY
+agent@c88500295499:/app$ python /tmp/convert_graphemes.py
+

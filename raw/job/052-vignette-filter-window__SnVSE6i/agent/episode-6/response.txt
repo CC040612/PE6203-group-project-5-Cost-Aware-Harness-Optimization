@@ -1,0 +1,10 @@
+{
+  "analysis": "GIMP is waiting at a color-profile conversion dialog. Its window ID is available from xwininfo, so I can focus it directly and accept the default.",
+  "plan": "Dismiss the profile prompt and inspect the image window, then launch action search.",
+  "commands": [
+    {
+      "keystrokes": "xdotool windowmap 0x200320 windowfocus --sync 0x200320 key Return; sleep 1; xwininfo -root -tree\n",
+      "duration": 1.5
+    }
+  ]
+}

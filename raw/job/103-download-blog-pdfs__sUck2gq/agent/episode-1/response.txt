@@ -1,0 +1,10 @@
+{
+  "analysis": "No normal browser process is visible, so the environment may expose browser state through a local service. Chromium is installed via a wrapper.",
+  "plan": "Inspect browser launch wrappers and task tooling, and list local listening services and profile directories.",
+  "commands": [
+    {
+      "keystrokes": "cat /usr/local/bin/chromium; ls -la /usr/local/bin; cat /usr/local/bin/task_state.py | head -100; ls -la ~/.config; ss -ltnp\n",
+      "duration": 0.1
+    }
+  ]
+}

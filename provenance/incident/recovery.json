@@ -1,0 +1,269 @@
+{
+  "created_utc": "2026-10-22T02:31:51.557570+00:00",
+  "job_name": "gpt61sol-cockpit-formal-20261021-231816-860550",
+  "cause": "Supervisor regex scanned traceback: Python line 401 and litellm text falsely classified AgentTimeoutError as an API fault",
+  "model_quota_exhaustion_proven": false,
+  "scored_results_preserved": 23,
+  "interrupted_trials_to_restart": 2,
+  "never_started_tasks": 15,
+  "remaining_tasks": 17,
+  "existing_result_sha256": {
+    "038-zurich-rental-car__jj8ZmK4": "8fd89ecdf2ea6faa72ef6e26cb289ffd2711e9cb34fbed6f4ae5f44eef541594",
+    "092-fix-tetris-bug__uGV64YB": "b06d6e6f19b512ff02729a6b74ccc4bd33aec8b99590df8bab114f389f93f43c",
+    "073-force-quit-frozen-doc__FiyYWnd": "b774f04c2efd380ca9504cca90b9425702ef7bc63ae55edfa74de52d0a2c92d2",
+    "056-move-textbox-left__WGC5JFP": "d9f64a5f166f26ab93a863d2124749de057c91da17fd1c0c37d9f0c043ae0575",
+    "083-gemini-responses-docx__ZyJJYzJ": "d1553b75d1ad6063d6e6120612e0c8047ce003da57a291431ec07c356327cf4e",
+    "076-make-src-gif-clip__bYrSBjA": "b40cbee05b6885f00ce298a8237f5a70dbc86a9090fec0390e987ae70a67371e",
+    "026-sales-cogs-column-chart__Zy3X8tr": "61ba9c50c36c8718983413d57f71775a6fda930a43a2600dfce71468eb653938",
+    "070-edit-friend-image__FyYk8Db": "df96a3877b3b6a3df83b7d5915aa2669201790032f3c4121d6422da9cf95958f",
+    "062-add-baseball-audio__h8oparS": "7c53d83eadf55f39b1a1f17e8a1a6b622a98ce8c67015e4b9829f35558cd647d",
+    "089-install-recommended-exts__3ZQD25i": "1035988bdadd3babea8a52b51a961a73ac624e4794aeffb4eff6286c2f1fede9",
+    "035-super-bowl-score__XMtgMVS": "7c1aa6c0f03a136beb8b9be300f4d2df6ead0eaafd051498726eadeb2eabf7b5",
+    "068-strike-first-two-lines__y7nnAnc": "e21406325928a1e332547e8c24bb465739b179c4df39395704962f19fc4476e7",
+    "091-add-receipts-bookkeeping__YtDv9QF": "d27b8e0a5384961f070dd680906d617bfb4833936cbfd7669d07bd497e3ad684",
+    "093-merge-txt-document__4or48u9": "915520979f86426ea2b92c300c42d5e70032381238443d3fa74ed0c494aaeac8",
+    "052-vignette-filter-window__SnVSE6i": "db6ebb8fe8f52c10e97808cf33b33966f8815921669628e04d7f288b419b73fa",
+    "080-convert-novel-epub__B6Q4qzB": "8e82b96761d6b1d375e7f4d95b77b078ee1014274b8edb8b646f451c89eb698d",
+    "020-calculate-period-rate__Htbw554": "4f9357319b90c727ff03df5bfa742e842a4c7218c077b4c15f3aa3762470a47f",
+    "078-add-wednesday-lecture__fTfuE8Y": "d7f694c6f37d9529a15beb1c2d7ff8606339cc05119f613a0970d3f2f6e62b9c",
+    "088-extract-presenter-photos__JxPo2st": "b3e8cc6871731c5435c7da73656d6c0b576eb2ddbf0d730f6d8c9502e766cdcb",
+    "082-brighten-slide-image__XJN4gaL": "be4bc57639207e409c10388bf43cfe542a8d19368929a9dddf4d59f20219fd3a",
+    "081-video-frame-slide-bg__mpbmT8i": "a9eb8df1055a69e3b2dbadc17c53a6e823870774e8290c6a80d1c0ec707b6bd2",
+    "098-extract-email-doc-image__hmsRRJN": "9b2d3605dde9633bce0b0ce5840bf3982bfe1df23ac37be924cf1683c0784894",
+    "074-apa-references-review__6v4Tbud": "161fcb237cede67283a3c159a21e49294d613583333021c409756fc7714f60a7"
+  },
+  "archived_interrupted_trials": [
+    {
+      "old_trial": "100-name-mountain-photos__StHvEY6",
+      "original_archive": "/home/member2/experiments/incidents/20261022-0058/100-name-mountain-photos__StHvEY6",
+      "old_result": {
+        "id": "d340f473-6860-4bcf-8ace-05933ecdc671",
+        "task_name": "local/100-name-mountain-photos",
+        "trial_name": "100-name-mountain-photos__StHvEY6",
+        "trial_uri": "file:///home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550/100-name-mountain-photos__StHvEY6",
+        "task_id": {
+          "path": "/home/member2/TUA-Bench/tasks/100-name-mountain-photos"
+        },
+        "source": null,
+        "task_checksum": "fd3f536a6d84392cf0fa681ac2ef0a58ca3146226fce3b4ebfaa440437f4d6b5",
+        "config": {
+          "task": {
+            "path": "/home/member2/TUA-Bench/tasks/100-name-mountain-photos",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+          },
+          "trial_name": "100-name-mountain-photos__StHvEY6",
+          "trials_dir": "/home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550",
+          "timeout_multiplier": 1.0,
+          "agent_timeout_multiplier": 1.0,
+          "verifier_timeout_multiplier": null,
+          "agent_setup_timeout_multiplier": null,
+          "environment_build_timeout_multiplier": null,
+          "agent": {
+            "name": "terminus-2",
+            "import_path": null,
+            "model_name": "openai/gpt-6.1-sol",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+              "temperature": null,
+              "reasoning_effort": "medium",
+              "api_base": "http://127.0.0.1:58429/v1",
+              "llm_kwargs": {
+                "allowed_openai_params": [
+                  "reasoning_effort"
+                ]
+              }
+            },
+            "env": {}
+          },
+          "environment": {
+            "type": null,
+            "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+          },
+          "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+          },
+          "artifacts": [],
+          "job_id": "3ef0e199-d9f6-4db6-a650-12679aa3d871"
+        },
+        "agent_info": {
+          "name": "terminus-2",
+          "version": "2.0.0",
+          "model_info": {
+            "name": "gpt-6.1-sol",
+            "provider": "openai"
+          }
+        },
+        "agent_result": null,
+        "verifier_result": null,
+        "exception_info": {
+          "exception_type": "CancelledError",
+          "exception_message": "",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 951, in run\n    await self._setup_environment()\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 313, in _setup_environment\n    await self._start_environment_with_retry()\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 325, in _start_environment_with_retry\n    await asyncio.wait_for(\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/mnt/d/夏嫣然/6203/group project/member2/adapters/log_permissions_env.py\", line 7, in start\n    await super().start(force_build)\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 478, in start\n    await self._run_docker_compose_command([\"build\"])\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 346, in _run_docker_compose_command\n    process = await asyncio.create_subprocess_exec(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/subprocess.py\", line 224, in create_subprocess_exec\n    transport, protocol = await loop.subprocess_exec(\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/base_events.py\", line 1756, in subprocess_exec\n    transport = await self._make_subprocess_transport(\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/unix_events.py\", line 218, in _make_subprocess_transport\n    await waiter\nasyncio.exceptions.CancelledError\n",
+          "occurred_at": "2026-10-22T00:58:02.573627"
+        },
+        "started_at": "2026-10-21T16:58:00.427573Z",
+        "finished_at": "2026-10-21T16:58:02.741674Z",
+        "environment_setup": {
+          "started_at": "2026-10-21T16:58:00.445825Z",
+          "finished_at": "2026-10-21T16:58:02.557892Z"
+        },
+        "agent_setup": null,
+        "agent_execution": null,
+        "verifier": null,
+        "step_results": null
+      },
+      "replacement_reason": "supervisor false positive interrupted this trial",
+      "replacement_trial": "100-name-mountain-photos__MBRDK66"
+    },
+    {
+      "old_trial": "099-professor-contact-info__SGkDxXB",
+      "original_archive": "/home/member2/experiments/incidents/20261022-0058/099-professor-contact-info__SGkDxXB",
+      "old_result": {
+        "id": "e469af1b-e676-40f5-ac10-f1a8772cba94",
+        "task_name": "local/099-professor-contact-info",
+        "trial_name": "099-professor-contact-info__SGkDxXB",
+        "trial_uri": "file:///home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550/099-professor-contact-info__SGkDxXB",
+        "task_id": {
+          "path": "/home/member2/TUA-Bench/tasks/099-professor-contact-info"
+        },
+        "source": null,
+        "task_checksum": "5e3f6b0419a221694dc2d2c4cf197425e8901fc843c5a316e4df0b18d79ffb0b",
+        "config": {
+          "task": {
+            "path": "/home/member2/TUA-Bench/tasks/099-professor-contact-info",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+          },
+          "trial_name": "099-professor-contact-info__SGkDxXB",
+          "trials_dir": "/home/member2/experiments/jobs/gpt61sol-cockpit-formal-20261021-231816-860550",
+          "timeout_multiplier": 1.0,
+          "agent_timeout_multiplier": 1.0,
+          "verifier_timeout_multiplier": null,
+          "agent_setup_timeout_multiplier": null,
+          "environment_build_timeout_multiplier": null,
+          "agent": {
+            "name": "terminus-2",
+            "import_path": null,
+            "model_name": "openai/gpt-6.1-sol",
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "kwargs": {
+              "temperature": null,
+              "reasoning_effort": "medium",
+              "api_base": "http://127.0.0.1:58429/v1",
+              "llm_kwargs": {
+                "allowed_openai_params": [
+                  "reasoning_effort"
+                ]
+              }
+            },
+            "env": {}
+          },
+          "environment": {
+            "type": null,
+            "import_path": "log_permissions_env:WritableLogsDockerEnvironment",
+            "force_build": false,
+            "delete": true,
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "suppress_override_warnings": false,
+            "mounts_json": null,
+            "env": {},
+            "kwargs": {}
+          },
+          "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {},
+            "disable": false
+          },
+          "artifacts": [],
+          "job_id": "3ef0e199-d9f6-4db6-a650-12679aa3d871"
+        },
+        "agent_info": {
+          "name": "terminus-2",
+          "version": "2.0.0",
+          "model_info": {
+            "name": "gpt-6.1-sol",
+            "provider": "openai"
+          }
+        },
+        "agent_result": null,
+        "verifier_result": null,
+        "exception_info": {
+          "exception_type": "CancelledError",
+          "exception_message": "",
+          "exception_traceback": "Traceback (most recent call last):\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 951, in run\n    await self._setup_environment()\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 313, in _setup_environment\n    await self._start_environment_with_retry()\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 193, in async_wrapped\n    return await copy(fn, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 112, in __call__\n    do = await self.iter(retry_state=retry_state)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 157, in iter\n    result = await action(retry_state)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/_utils.py\", line 111, in inner\n    return call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/__init__.py\", line 393, in <lambda>\n    self._add_action_func(lambda rs: rs.outcome.result())\n                                     ^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py\", line 116, in __call__\n    result = await fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/trial/trial.py\", line 325, in _start_environment_with_retry\n    await asyncio.wait_for(\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/mnt/d/夏嫣然/6203/group project/member2/adapters/log_permissions_env.py\", line 7, in start\n    await super().start(force_build)\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 478, in start\n    await self._run_docker_compose_command([\"build\"])\n  File \"/home/member2/TUA-Bench/.venv/lib/python3.12/site-packages/harbor/environments/docker/docker.py\", line 360, in _run_docker_compose_command\n    stdout_bytes, stderr_bytes = await process.communicate()\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/streams.py\", line 706, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/streams.py\", line 713, in read\n    await self._wait_for_data('read')\n  File \"/home/member2/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/asyncio/streams.py\", line 545, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n",
+          "occurred_at": "2026-10-22T00:58:02.550080"
+        },
+        "started_at": "2026-10-21T16:55:56.715405Z",
+        "finished_at": "2026-10-21T16:58:02.743137Z",
+        "environment_setup": {
+          "started_at": "2026-10-21T16:55:56.729050Z",
+          "finished_at": "2026-10-21T16:58:02.512234Z"
+        },
+        "agent_setup": null,
+        "agent_execution": null,
+        "verifier": null,
+        "step_results": null
+      },
+      "replacement_reason": "supervisor false positive interrupted this trial",
+      "replacement_trial": "099-professor-contact-info__ouwjQMd"
+    }
+  ],
+  "source_config_sha256": "001c277d568c418e8cc61eda72ac5c24d5d234e7b6eceb68693f897a4f1d8198",
+  "cost_accounting": "Include archived interrupted-trial usage plus resumed usage; do not treat API-equivalent USD estimates as cash charges",
+  "normal_failures_rerun": false,
+  "extra_pilots": 0,
+  "pending_task_paths": [
+    "/home/member2/TUA-Bench/tasks/099-professor-contact-info",
+    "/home/member2/TUA-Bench/tasks/100-name-mountain-photos",
+    "/home/member2/TUA-Bench/tasks/101-rearrange-warm-tiles",
+    "/home/member2/TUA-Bench/tasks/102-daily-email-report",
+    "/home/member2/TUA-Bench/tasks/103-download-blog-pdfs",
+    "/home/member2/TUA-Bench/tasks/106-create-charles-ssh-user",
+    "/home/member2/TUA-Bench/tasks/107-attach-aws-bill",
+    "/home/member2/TUA-Bench/tasks/108-create-mail-folders",
+    "/home/member2/TUA-Bench/tasks/109-setup-outlook-account",
+    "/home/member2/TUA-Bench/tasks/110-rotate-macintosh-video",
+    "/home/member2/TUA-Bench/tasks/111-set-video-wallpaper",
+    "/home/member2/TUA-Bench/tasks/112-capture-video-frame",
+    "/home/member2/TUA-Bench/tasks/113-add-folders-workspace",
+    "/home/member2/TUA-Bench/tasks/115-remove-explorer-find-key",
+    "/home/member2/TUA-Bench/tasks/117-comma-text-to-table",
+    "/home/member2/TUA-Bench/tasks/118-set-times-new-roman",
+    "/home/member2/TUA-Bench/tasks/119-tabstop-sentence-split"
+  ],
+  "harbor_pending_plan_verified": true,
+  "resume_started_utc": "2026-10-22T02:32:12.634249+00:00",
+  "scored_result_hashes_verified_after_resume": true
+}

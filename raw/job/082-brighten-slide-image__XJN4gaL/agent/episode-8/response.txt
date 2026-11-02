@@ -1,0 +1,6 @@
+{
+  "analysis": "The requested brightened image is saved and verified at /home/agent/Desktop/background.png.",
+  "plan": "Mark the task complete.",
+  "commands": [],
+  "task_complete": true
+}

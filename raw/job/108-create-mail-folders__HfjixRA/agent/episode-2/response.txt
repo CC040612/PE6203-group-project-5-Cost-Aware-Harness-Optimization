@@ -1,0 +1,10 @@
+{
+  "analysis": "The active Thunderbird profile uses mbox storage for Local Folders. Thunderbird is already closed, so creating empty mbox files named COMPANY and UNIVERSITY in that store will safely create the requested local mail folders without opening the application.",
+  "plan": "Create the two folders without altering existing mail, verify that both files exist, and confirm Thunderbird remains closed.",
+  "commands": [
+    {
+      "keystrokes": "touch \"$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY\" \"$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY\"; ls -l \"$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/COMPANY\" \"$HOME/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/UNIVERSITY\"; pgrep -a thunderbird || true\n",
+      "duration": 0.1
+    }
+  ]
+}

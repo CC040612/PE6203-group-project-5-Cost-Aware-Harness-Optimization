@@ -1,0 +1,10 @@
+{
+  "analysis": "The background image was loaded at its original 2433 × 1622 resolution and is being brightened and saved.",
+  "plan": "Wait briefly for saving and verification to finish.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

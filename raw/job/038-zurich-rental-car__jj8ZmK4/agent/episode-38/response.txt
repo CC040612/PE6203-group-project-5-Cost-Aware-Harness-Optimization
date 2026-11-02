@@ -1,0 +1,5 @@
+{
+  "analysis": "The final price-sort selection is processing.",
+  "plan": "Wait for verification.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

@@ -1,0 +1,29 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ cat > /tmp/allinstall.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page=c.new_page()
+ids=['ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']
+for id in ids:
+ page.goto('https://chromewebstore.google.com/detail/'+id);page.wait_for_timeout(1000)
+ print(id,page.get_by_role('button').all_text_contents(),flush=True)
+ btn=page.get_by_role('button',name='Add to Chrome',exact=True)
+ if btn.count(): btn.click()
+ page.wait_for_timeout(4000)
+ print('after',page.get_by_role('button').all_text_contents(),flush=True)
+PY
+/opt/venv/bin/python /tmp/allinstall.py
+cat > /tmp/allinstall.py <<'PY'
+> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+> page=c.new_page()
+> ids=['ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']
+> for id in ids:
+>  page.goto('https://chromewebstore.google.com/detail/'+id);page.wait_for_timeout(1000)
+>  print(id,page.get_by_role('button').all_text_contents(),flush=True)
+>  btn=page.get_by_role('button',name='Add to Chrome',exact=True)
+>  if btn.count(): btn.click()
+>  page.wait_for_timeout(4000)
+>  print('after',page.get_by_role('button').all_text_contents(),flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/allinstall.py
+

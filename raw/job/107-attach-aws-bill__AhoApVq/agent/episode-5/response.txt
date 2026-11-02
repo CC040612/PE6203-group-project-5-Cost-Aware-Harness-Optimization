@@ -1,0 +1,6 @@
+{
+  "analysis": "The attachment was verified in Thunderbird as aws-bill.pdf (22.8 KB). The email remains open and unsent, as requested.",
+  "plan": "Leave the compose window unchanged for the user to finish editing.",
+  "commands": [],
+  "task_complete": true
+}

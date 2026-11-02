@@ -1,0 +1,1 @@
+{"analysis":"The metadata extraction is still running; the third image appears to contain a prominent cliff and may require orientation correction to interpret its silhouette.","plan":"Wait for metadata output, then render a smaller grayscale preview in the correct orientation.","commands":[{"keystrokes":"","duration":1}]}

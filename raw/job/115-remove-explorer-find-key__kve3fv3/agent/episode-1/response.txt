@@ -1,0 +1,10 @@
+{
+  "analysis": "The keybindings file does not exist yet. VS Code's Tree View Find shortcut is a default binding, so disabling it requires adding a negative keybinding for the list.find command rather than deleting an existing user entry.",
+  "plan": "Create the user keybindings file with an override removing ctrl+f from Tree View Find. This leaves the editor's normal Find shortcut untouched. Then display the file and validate its JSON.",
+  "commands": [
+    {
+      "keystrokes": "mkdir -p ~/.config/Code/User\ncat > ~/.config/Code/User/keybindings.json <<'EOF'\n[\n    {\n        \"key\": \"ctrl+f\",\n        \"command\": \"-list.find\"\n    }\n]\nEOF\npython3 -m json.tool ~/.config/Code/User/keybindings.json\n",
+      "duration": 0.1
+    }
+  ]
+}

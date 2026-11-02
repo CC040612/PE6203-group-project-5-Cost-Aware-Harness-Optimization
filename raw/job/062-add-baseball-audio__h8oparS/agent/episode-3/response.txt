@@ -1,0 +1,10 @@
+{
+  "analysis": "The presentation has eight slides. The title slide has clear space in its lower-right corner for a small audio control. The library supports embedded media, which can be adapted to an audio object.",
+  "plan": "Create an embedded audio object on the title slide, inspect its playback timing, and preserve all other slides and existing presentation content.",
+  "commands": [
+    {
+      "keystrokes": "python - <<'PY'\nfrom pptx import Presentation\nfrom pptx.util import Inches\np=Presentation('/app/Mady_and_Mia_Baseball.pptx')\ns=p.slides[0]\na=s.shapes.add_movie('/app/Baseball.mp3', Inches(9.0), Inches(6.55), Inches(.6), Inches(.6), mime_type='audio/mpeg')\nprint(a._element.xml)\nprint(s._element.xml[s._element.xml.index('<p:timing'):])\np.save('/tmp/baseball_audio_draft.pptx')\nPY\n",
+      "duration": 1
+    }
+  ]
+}

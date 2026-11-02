@@ -1,0 +1,97 @@
+New Terminal Output:
+
+agent@77da5446c3f2:/app$ /tmp/timetable-env/bin/python - <<'PY'
+> import openpyxl
+> w=openpyxl.load_workbook('/home/user/Desktop/Course Timetable.xlsx');s=w.active
+> for r in range(1,14):
+>  print('row',r,'height',s.row_dimensions[r].height,[(s.cell(r,c).coordinate,s.cell(r,c).value,s.cell(r,c).style_id) for c in range(1,9)])
+> for pos in ['B2','D2','D5','B5']:
+>  c=s[pos];print(pos,'alignment',c.alignment,'fill',c.fill,'font',c.font)
+> PY
+row 1 height 42.75 [('A1', None, 1), ('B1', 'Mon', 2), ('C1', 'Tue', 2), ('D1', 'Wed', 2), ('E1', 'Thu', 2), ('F1', 'Fri', 2), ('G1', 'Sat', 2), ('H1', 'Sun', 2
+)]
+row 2 height 37.5 [('A2', datetime.time(8, 0), 3), ('B2', 'Lec 1 (8:00-10:00)', 4), ('C2', None, 5), ('D2', None, 1), ('E2', None, 5), ('F2', None, 1), ('G2', N
+one, 5), ('H2', None, 1)]
+row 3 height 18.75 [('A3', datetime.time(10, 0), 3), ('B3', 'Tutorial 1 (10:00-11:00)', 7), ('C3', None, 5), ('D3', None, 5), ('E3', None, 5), ('F3', None, 5),
+('G3', None, 5), ('H3', None, 5)]
+row 4 height 18.75 [('A4', None, 13), ('B4', None, 5), ('C4', None, 13), ('D4', None, 13), ('E4', None, 13), ('F4', None, 13), ('G4', None, 13), ('H4', None, 13
+)]
+row 5 height 37.5 [('A5', datetime.time(12, 0), 3), ('B5', None, 5), ('C5', None, 5), ('D5', None, 1), ('E5', None, 1), ('F5', None, 1), ('G5', None, 5), ('H5',
+ None, 1)]
+row 6 height 18.75 [('A6', datetime.time(14, 0), 3), ('B6', None, 5), ('C6', 'Tutorial 2 (14:00-15:00)', 7), ('D6', None, 5), ('E6', None, 5), ('F6', None, 5),
+('G6', None, 5), ('H6', None, 5)]
+row 7 height 18.75 [('A7', None, 13), ('B7', None, 13), ('C7', None, 5), ('D7', None, 13), ('E7', None, 13), ('F7', None, 13), ('G7', None, 13), ('H7', None, 13
+)]
+row 8 height 18.75 [('A8', datetime.time(16, 0), 3), ('B8', None, 5), ('C8', None, 5), ('D8', None, 5), ('E8', None, 5), ('F8', None, 5), ('G8', 'Tutorial 4 (16
+:00-17:00)', 10), ('H8', None, 5)]
+row 9 height 18.75 [('A9', None, 13), ('B9', None, 13), ('C9', None, 13), ('D9', None, 13), ('E9', None, 13), ('F9', None, 13), ('G9', 'Tutorial 5 (17:00-18:00)
+', 7), ('H9', None, 13)]
+row 10 height 18.75 [('A10', datetime.time(18, 0), 3), ('B10', None, 5), ('C10', None, 5), ('D10', None, 5), ('E10', None, 5), ('F10', None, 5), ('G10', None, 5
+), ('H10', None, 5)]
+row 11 height 18.75 [('A11', None, 13), ('B11', None, 13), ('C11', 'Tutorial 3 (17:00-18:00)', 7), ('D11', None, 13), ('E11', None, 13), ('F11', None, 13), ('G1
+1', None, 13), ('H11', None, 13)]
+row 12 height 18.75 [('A12', datetime.time(20, 0), 3), ('B12', None, 5), ('C12', None, 14), ('D12', None, 5), ('E12', None, 5), ('F12', None, 5), ('G12', 'Tutor
+ial 6 (20:00-21:00)', 10), ('H12', None, 5)]
+row 13 height 18.75 [('A13', None, 13), ('B13', None, 13), ('C13', None, 13), ('D13', None, 13), ('E13', None, 13), ('F13', None, 13), ('G13', None, 5), ('H13',
+ None, 13)]
+B2 alignment <openpyxl.styles.alignment.Alignment object>
+Parameters:
+horizontal='center', vertical='center', textRotation=0, wrapText=None, shrinkToFit=None, indent=0.0, relativeIndent=0.0, justifyLastLine=None, readingOrder=0.0
+fill <openpyxl.styles.fills.PatternFill object>
+Parameters:
+patternType='solid', fgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='FFFFFF00', indexed=None, auto=None, theme=None, tint=0.0, type='rgb' font <openpyxl.styles.fonts.Font object>
+Parameters:
+name='Times New Roman', charset=None, family=None, b=False, i=False, strike=None, outline=None, shadow=None, condense=None, color=<openpyxl.styles.colors.Color
+object>
+Parameters:
+rgb=None, indexed=None, auto=None, theme=1, tint=0.0, type='theme', extend=None, sz=12.0, u=None, vertAlign=None, scheme=None
+D2 alignment <openpyxl.styles.alignment.Alignment object>
+Parameters:
+horizontal=None, vertical='center', textRotation=0, wrapText=None, shrinkToFit=None, indent=0.0, relativeIndent=0.0, justifyLastLine=None, readingOrder=0.0 fill
+ <openpyxl.styles.fills.PatternFill object>
+Parameters:
+patternType=None, fgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb' font <openpyxl.styles.fonts.Font object>
+Parameters:
+name='Times New Roman', charset=None, family=None, b=False, i=False, strike=None, outline=None, shadow=None, condense=None, color=<openpyxl.styles.colors.Color
+object>
+Parameters:
+rgb=None, indexed=None, auto=None, theme=1, tint=0.0, type='theme', extend=None, sz=12.0, u=None, vertAlign=None, scheme=None
+D5 alignment <openpyxl.styles.alignment.Alignment object>
+Parameters:
+horizontal=None, vertical='center', textRotation=0, wrapText=None, shrinkToFit=None, indent=0.0, relativeIndent=0.0, justifyLastLine=None, readingOrder=0.0 fill
+ <openpyxl.styles.fills.PatternFill object>
+Parameters:
+patternType=None, fgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb' font <openpyxl.styles.fonts.Font object>
+Parameters:
+name='Times New Roman', charset=None, family=None, b=False, i=False, strike=None, outline=None, shadow=None, condense=None, color=<openpyxl.styles.colors.Color
+object>
+Parameters:
+rgb=None, indexed=None, auto=None, theme=1, tint=0.0, type='theme', extend=None, sz=12.0, u=None, vertAlign=None, scheme=None
+B5 alignment <openpyxl.styles.alignment.Alignment object>
+Parameters:
+horizontal='center', vertical='center', textRotation=0, wrapText=None, shrinkToFit=None, indent=0.0, relativeIndent=0.0, justifyLastLine=None, readingOrder=0.0
+fill <openpyxl.styles.fills.PatternFill object>
+Parameters:
+patternType=None, fgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb', bgColor=<openpyxl.styles.colors.Color object>
+Parameters:
+rgb='00000000', indexed=None, auto=None, theme=None, tint=0.0, type='rgb' font <openpyxl.styles.fonts.Font object>
+Parameters:
+name='Times New Roman', charset=None, family=None, b=False, i=False, strike=None, outline=None, shadow=None, condense=None, color=<openpyxl.styles.colors.Color
+object>
+Parameters:
+rgb=None, indexed=None, auto=None, theme=1, tint=0.0, type='theme', extend=None, sz=12.0, u=None, vertAlign=None, scheme=None
+agent@77da5446c3f2:/app$

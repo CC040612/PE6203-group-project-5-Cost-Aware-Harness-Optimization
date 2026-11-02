@@ -1,0 +1,10 @@
+{
+  "analysis": "All five source files are readable ASCII text. The virtual environment includes python-docx, so LibreOffice is unnecessary.",
+  "plan": "Concatenate files in numeric order without inserting separators, create the DOCX with 10-point formatting, then reopen it to verify both its contents and font size.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python - <<'PY'\nfrom pathlib import Path\nfrom docx import Document\nfrom docx.shared import Pt\nfrom docx.oxml import OxmlElement\nfrom docx.oxml.ns import qn\nroot = Path('/home/user/Desktop/doc_proc')\nfiles = sorted(root.glob('*.txt'), key=lambda p: int(p.stem))\ntext = ''.join(p.read_text(encoding='utf-8') for p in files)\ndoc = Document()\nfor style in doc.styles:\n    if style.type in (1, 2):\n        style.font.size = Pt(10)\nrun = doc.add_paragraph().add_run(text)\nrun.font.size = Pt(10)\ncs = OxmlElement('w:szCs')\ncs.set(qn('w:val'), '20')\nrun._element.get_or_add_rPr().append(cs)\noutput = Path('/home/user/Desktop/concat.docx')\ndoc.save(output)\ncheck = Document(output)\nassert '\\n'.join(p.text for p in check.paragraphs) == text\nassert all(r.font.size == Pt(10) for p in check.paragraphs for r in p.runs)\nprint(f'Created and verified {output}: {len(files)} files, {len(text)} characters, 10-point font, {output.stat().st_size} bytes')\nPY\n",
+      "duration": 1
+    }
+  ]
+}

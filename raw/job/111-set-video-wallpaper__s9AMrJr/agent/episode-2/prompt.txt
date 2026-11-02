@@ -1,0 +1,47 @@
+New Terminal Output:
+
+agent@2355408990bd:/app$ ps aux | head -45; ls -la /tmp/.X11-unix /run/user/$(id -u) 2>/dev/null; ls /usr/bin | grep -Ei 'wall|desktop|xfce|xrandr|xset|dconf|gs
+ettings|vlc'; ls -la ~; ffprobe -v error -show_entries format=duration:stream=width,height -of default=noprint_wrappers=1 ~/Desktop/*.mp4
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+agent          1  0.0  0.0   2812  1812 ?        Ss   03:07   0:00 sh -c sleep infinity
+agent          7  0.0  0.0   2708  1488 ?        S    03:07   0:00 sleep infinity
+agent        263  0.0  0.0   9792  4168 ?        Ss   03:07   0:00 tmux new-session -x 160 -y 40 -d -s terminus-2 bash --login ; pipe-pane -t terminus-2 cat > /
+logs/agent/terminus_2.pane
+agent        264  0.0  0.0   4600  4028 pts/0    Ss   03:07   0:00 bash --login
+agent        266  0.0  0.0   2812  1864 ?        S    03:07   0:00 sh -c cat > /logs/agent/terminus_2.pane
+agent        267  0.0  0.0   2852  1500 ?        S    03:07   0:00 cat
+agent        283  0.4  0.2 103352 22952 pts/0    Sl+  03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        284  0.0  0.1  29588 15844 pts/0    S+   03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        285  0.0  0.2  29600 16472 pts/0    S+   03:07   0:00 /usr/bin/python3 /usr/bin/asciinema rec --stdin /logs/agent/recording.cast
+agent        286  0.0  0.0   2812  1764 pts/1    Ss   03:07   0:00 sh -c /bin/bash
+agent        287  0.0  0.0   4984  4256 pts/1    S    03:07   0:00 /bin/bash
+agent        345  0.0  0.0   8300  4304 pts/1    R+   03:07   0:00 ps aux
+agent        346  0.0  0.0   3104  1868 pts/1    S+   03:07   0:00 head -45
+cvlc
+nvlc
+qvlc
+rvlc
+svlc
+vlc
+vlc-wrapper
+wall
+xdg-desktop-icon
+xdg-desktop-menu
+xrandr
+xset
+xsetmode
+xsetpointer
+xsetroot
+total 52
+drwxr-x--- 1 agent agent 4096 Oct 22 03:04 .
+drwxr-xr-x 1 root  root  4096 Oct 22 03:04 ..
+-rw-r--r-- 1 agent agent  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 agent agent 3771 Mar 31  2024 .bashrc
+drwxr-xr-x 1 agent agent 4096 Oct 22 03:07 .config
+drwxr-xr-x 3 agent agent 4096 Oct 22 03:04 .local
+-rw-r--r-- 1 agent agent  807 Mar 31  2024 .profile
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 Desktop
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 Documents
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 Downloads
+drwxr-xr-x 2 agent agent 4096 Oct 22 03:04 Videos
+

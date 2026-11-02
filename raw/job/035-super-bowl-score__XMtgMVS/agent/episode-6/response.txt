@@ -1,0 +1,10 @@
+{
+  "analysis": "The correct scores page is open; the final foreground and cookie-banner adjustments are still running.",
+  "plan": "Wait for the final browser adjustment to finish.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

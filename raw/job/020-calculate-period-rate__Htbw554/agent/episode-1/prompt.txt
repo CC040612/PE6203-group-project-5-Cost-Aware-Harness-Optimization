@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@f578696fd619:/app$ ls -l /app/PeriodRate.xlsx; python - <<'PY'
+> import openpyxl
+> w=openpyxl.load_workbook('/app/PeriodRate.xlsx')
+> for s in w:
+>  print(s.title,s.max_row,s.max_column)
+>  for row in s:
+>   print([(c.coordinate,c.value,c.number_format) for c in row if c.value is not None])
+> PY
+-rw-r--r-- 1 agent agent 9226 Oct 21 14:40 /app/PeriodRate.xlsx
+Sheet1 25 2
+[('A1', 'Annual Rate (%)', 'General'), ('B1', 'Period per year', 'General')]
+[('A2', 11.25, 'General'), ('B2', 2, 'General')]
+[('A3', 7.776, 'General'), ('B3', 6, 'General')]
+[('A4', 15.496, 'General'), ('B4', 6, 'General')]
+[('A5', 9.32, 'General'), ('B5', 2, 'General')]
+[('A6', 18.584, 'General'), ('B6', 6, 'General')]
+[('A7', 18.198, 'General'), ('B7', 8, 'General')]
+[('A8', 17.812, 'General'), ('B8', 5, 'General')]
+[('A9', 14.724, 'General'), ('B9', 2, 'General')]
+[('A10', 16.268, 'General'), ('B10', 7, 'General')]
+[('A11', 13.565999999999999, 'General'), ('B11', 8, 'General')]
+[('A12', 14.338000000000001, 'General'), ('B12', 5, 'General')]
+[('A13', 9.706, 'General'), ('B13', 5, 'General')]
+[('A14', 13.565999999999999, 'General'), ('B14', 2, 'General')]
+[('A15', 9.706, 'General'), ('B15', 5, 'General')]
+[('A16', 13.565999999999999, 'General'), ('B16', 7, 'General')]
+[('A17', 7.776, 'General'), ('B17', 7, 'General')]
+[('A18', 15.11, 'General'), ('B18', 5, 'General')]
+[('A19', 15.496, 'General'), ('B19', 3, 'General')]
+[('A20', 14.724, 'General'), ('B20', 1, 'General')]
+[('A21', 12.794, 'General'), ('B21', 7, 'General')]
+[('A22', 9.32, 'General'), ('B22', 5, 'General')]
+[('A23', 16.268, 'General'), ('B23', 7, 'General')]
+[('A24', 10.478, 'General'), ('B24', 2, 'General')]
+[('A25', 18.584, 'General'), ('B25', 7, 'General')]
+agent@f578696fd619:/app$
+
+
+
+

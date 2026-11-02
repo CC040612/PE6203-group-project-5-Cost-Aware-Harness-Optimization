@@ -1,0 +1,203 @@
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ ls -la /app; find /app/.thunderbird -maxdepth 5 -type f | head -80
+[?2004ltotal 2200
+drwxr-xr-x 1 agent agent    4096 Oct 22 02:38 [0m[01;34m.[0m
+drwxr-xr-x 1 root  root     4096 Oct 22 02:43 [01;34m..[0m
+drwx------ 6 agent agent    4096 Jan  4  2024 [01;34m.thunderbird[0m
+-rw-r--r-- 1 agent agent 2239429 Oct 22 02:38 [01;31mthunderbird-profile.tar.gz[0m
+/app/.thunderbird/cidfb56c.default/.parentlock
+/app/.thunderbird/cidfb56c.default/times.json
+/app/.thunderbird/profiles.ini
+/app/.thunderbird/installs.ini
+/app/.thunderbird/t5q2a5hp.default-release/extension-preferences.json
+/app/.thunderbird/t5q2a5hp.default-release/folderTree.json
+/app/.thunderbird/t5q2a5hp.default-release/global-messages-db.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/addonStartup.json.lz4
+/app/.thunderbird/t5q2a5hp.default-release/permissions.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/handlers.json
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Sent.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Drafts.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Notes.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Outbox.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Archives.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Deleted.sbd/POP.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Templates.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/&XAFbWA-.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/Junk.msf
+/app/.thunderbird/t5q2a5hp.default-release/ImapMail/outlook.office365.com/INBOX.msf
+/app/.thunderbird/t5q2a5hp.default-release/places.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/virtualFolders.dat
+/app/.thunderbird/t5q2a5hp.default-release/prefs.js
+/app/.thunderbird/t5q2a5hp.default-release/favicons.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/folderCache.json
+/app/.thunderbird/t5q2a5hp.default-release/.parentlock
+/app/.thunderbird/t5q2a5hp.default-release/key4.db
+/app/.thunderbird/t5q2a5hp.default-release/content-prefs.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/logins.json
+/app/.thunderbird/t5q2a5hp.default-release/search.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/openpgp.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/cert9.db
+/app/.thunderbird/t5q2a5hp.default-release/SiteSecurityServiceState.txt
+/app/.thunderbird/t5q2a5hp.default-release/storage/ls-archive.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/storage/permanent/chrome/.metadata-v2
+/app/.thunderbird/t5q2a5hp.default-release/mailViews.dat
+/app/.thunderbird/t5q2a5hp.default-release/webappsstore.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/extensions.json
+/app/.thunderbird/t5q2a5hp.default-release/addons.json
+/app/.thunderbird/t5q2a5hp.default-release/times.json
+/app/.thunderbird/t5q2a5hp.default-release/settings/data.safe.bin
+/app/.thunderbird/t5q2a5hp.default-release/storage.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/session-state.json
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624638739.0dcb49d3-9750-45af-b780-e8b41144049d.main.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/archived/2025-07/1751624638740.4faa5117-3349-4ca8-9a64-42dd94c24718.first-shutdown.jsonlz4
+/app/.thunderbird/t5q2a5hp.default-release/datareporting/state.json
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/daily.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Bills.msf
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/daily
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Unsent Messages
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/msgFilterRules.dat
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash
+/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/Trash.msf
+/app/.thunderbird/t5q2a5hp.default-release/crashes/store.json.mozlz4
+/app/.thunderbird/t5q2a5hp.default-release/cookies.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/sessionCheckpoints.json
+/app/.thunderbird/t5q2a5hp.default-release/pkcs11.txt
+/app/.thunderbird/t5q2a5hp.default-release/xulstore.json
+/app/.thunderbird/t5q2a5hp.default-release/session.json.backup
+/app/.thunderbird/t5q2a5hp.default-release/blist.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/AlternateServices.txt
+/app/.thunderbird/t5q2a5hp.default-release/directoryTree.json
+/app/.thunderbird/t5q2a5hp.default-release/formhistory.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/session.json
+/app/.thunderbird/t5q2a5hp.default-release/compatibility.ini
+/app/.thunderbird/t5q2a5hp.default-release/calendar-data/local.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/history.sqlite
+/app/.thunderbird/t5q2a5hp.default-release/encrypted-openpgp-passphrase.txt
+/app/.thunderbird/t5q2a5hp.default-release/abook.sqlite
+/app/.thunderbird/Crash Reports/InstallTime20240417192958
+/app/.thunderbird/Crash Reports/InstallTime20231215200246
+/app/.thunderbird/Crash Reports/InstallTime20231120220011
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> import importlib.util
+[?2004l[?2004h> for m in ['openpyxl','xlsxwriter']:
+[?2004l[?2004h>  print(m, bool(importlib.util.find_spec(m)))
+[?2004l[?2004h> PY
+[?2004lopenpyxl False
+xlsxwriter False
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> import mailbox,email.policy
+[?2004l[?2004h> from email.parser import BytesParser
+[?2004l[?2004h> from email.utils import parsedate_to_datetime
+[?2004l[?2004h> p='/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/daily'
+[?2004l[?2004h> b=mailbox.mbox(p, factory=lambda f: BytesParser(policy=email.policy.default).parse(f))
+[?2004l[?2004h> msgs=list(b)
+[?2004l[?2004h> print('Messages:',len(msgs))
+[?2004l[?2004h> msgs.sort(key=lambda m: parsedate_to_datetime(m['Date']).timestamp())
+[?2004l[?2004h> for m in msgs[-5:]:
+[?2004l[?2004h>  print('\nDATE:',m['Date'],'STATUS:',m['X-Mozilla-Status'])
+[?2004l[?2004h>  for h in ['From','Subject','Cc']: print(h,':',m[h])
+[?2004l[?2004h>  for part in m.walk():
+[?2004l[?2004h>   print('PART',part.get_content_type(),part.get_content_disposition(),repr(part.get_filename()))
+[?2004l[?2004h> PY
+[?2004lMessages: 9
+
+DATE: Thu, 25 Jan 2024 07:07:17 +0800 STATUS: 0001
+From : HKU Bulk Email Delivery System <mail.service@intranet.hku.hk>
+Subject : HKU Daily Email Digest (25 JAN 2024)
+Cc : None
+PART text/html None None
+
+DATE: Sat, 27 Jan 2024 00:10:50 +0800 STATUS: 0001
+From : eNotices System <enotices.daily.digest@hku.hk>
+Subject : HKU Daily Notices (27 JAN 2024)
+Cc : mail.service@intranet.hku.hk
+PART multipart/alternative None None
+PART text/plain None None
+PART text/html None None
+
+DATE: Sun, 28 Jan 2024 00:13:25 +0800 STATUS: 0001
+From : eNotices System <enotices.daily.digest@hku.hk>
+Subject : HKU Daily Notices (28 JAN 2024)
+Cc : mail.service@intranet.hku.hk
+PART multipart/alternative None None
+PART text/plain None None
+PART text/html None None
+
+DATE: Mon, 29 Jan 2024 07:07:55 +0800 STATUS: 0001
+From : HKU Bulk Email Delivery System <mail.service@intranet.hku.hk>
+Subject : HKU Daily Email Digest (29 JAN 2024)
+Cc : None
+PART text/html None None
+
+DATE: Tue, 30 Jan 2024 07:09:17 +0800 STATUS: 0001
+From : HKU Bulk Email Delivery System <mail.service@intranet.hku.hk>
+Subject : HKU Daily Email Digest (30 JAN 2024)
+Cc : None
+PART text/html None None
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ pip -q install openpyxl
+[?2004l[1;31merror[0m: [1mexternally-managed-environment[0m
+
+[31m×[0m This environment is externally managed
+[31m╰─>[0m To install Python packages system-wide, try apt install
+[31m   [0m python3-xyz, where xyz is the package you are trying to
+[31m   [0m install.
+[31m   [0m 
+[31m   [0m If you wish to install a non-Debian-packaged Python package,
+[31m   [0m create a virtual environment using python3 -m venv path/to/venv.
+[31m   [0m Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+[31m   [0m sure you have python3-full installed.
+[31m   [0m 
+[31m   [0m If you wish to install a non-Debian packaged Python application,
+[31m   [0m it may be easiest to use pipx install xyz, which will manage a
+[31m   [0m virtual environment for you. Make sure you have pipx installed.
+[31m   [0m 
+[31m   [0m See /usr/share/doc/python3.11/README.venv for more information.
+
+[1;35mnote[0m: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+[1;36mhint[0m: See PEP 668 for the detailed specification.
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ pip -q install --target /tmp/report-libs openpyxl
+[?2004l[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ PYTHONPATH=/tmp/report-libs python - <<'PY'
+[?2004l[?2004h> import mailbox,email.policy
+[?2004l[?2004h> from email.parser import BytesParser
+[?2004l[?2004h> from email.utils import parsedate_to_datetime,parseaddr
+[?2004l[?2004h> from openpyxl import Workbook,load_workbook
+[?2004l[?2004h> from openpyxl.styles import Font,PatternFill
+[?2004l[?2004h> from openpyxl.utils import get_column_letter
+[?2004l[?2004h> p='/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/daily'
+[?2004l[?2004h> messages=list(mailbox.mbox(p,factory=lambda f: BytesParser(policy=email.policy.default).parse(f)))
+[?2004l[?2004h> messages=[m for m in messages if not (int(m.get('X-Mozilla-Status','0000'),16)&8)]
+[?2004l[?2004h> messages.sort(key=lambda m:parsedate_to_datetime(m['Date']).timestamp())
+[?2004l[?2004h> w=Workbook(); s=w.active; s.title='daily'
+[?2004l[?2004h> s.append(['sender_name','sender_address','subject','CC','number_of_attachments'])
+[?2004l[?2004h> for m in messages[-5:]:
+[?2004l[?2004h>  name,address=parseaddr(str(m['From']))
+[?2004l[?2004h>  cc=', '.join(str(h) for h in m.get_all('Cc',[]))
+[?2004l[?2004h>  attachments=sum(1 for part in m.walk() if part.get_content_disposition()=='attachment' or (part.get_filename() is not None and part.get_content_disposition()!='inline'))
+[?2004l[?2004h>  s.append([name,address,str(m['Subject']),cc,attachments])
+[?2004l[?2004h> for c in s[1]:
+[?2004l[?2004h>  c.font=Font(bold=True,color='FFFFFF'); c.fill=PatternFill('solid',fgColor='305496')
+[?2004l[?2004h> for i,width in enumerate([34,37,43,36,25],1): s.column_dimensions[get_column_letter(i)].width=width
+[?2004l[?2004h> s.freeze_panes='A2'; s.auto_filter.ref=s.dimensions
+[?2004l[?2004h> w.save('/app/report.xlsx')
+[?2004l[?2004h> r=load_workbook('/app/report.xlsx'); assert r.active.max_row==6 and r.active.max_column==5
+[?2004l[?2004h> for row in r.active.values: print(row)
+[?2004l[?2004h> PY
+[?2004l('sender_name', 'sender_address', 'subject', 'CC', 'number_of_attachments')
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (25 JAN 2024)', None, 0)
+('eNotices System', 'enotices.daily.digest@hku.hk', 'HKU Daily Notices (27 JAN 2024)', 'mail.service@intranet.hku.hk', 0)
+('eNotices System', 'enotices.daily.digest@hku.hk', 'HKU Daily Notices (28 JAN 2024)', 'mail.service@intranet.hku.hk', 0)
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (29 JAN 2024)', None, 0)
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (30 JAN 2024)', None, 0)
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ rm -rf /tmp/report-libs
+[?2004l[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ ls -l /app/report.xlsx
+[?2004l-rw-r--r-- 1 agent agent 5343 Oct 22 02:44 /app/report.xlsx
+[?2004h[01;32magent@1b01909f3e52[00m:[01;34m/app[00m$ 

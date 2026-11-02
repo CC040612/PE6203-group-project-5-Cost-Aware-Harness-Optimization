@@ -1,0 +1,811 @@
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ ls -lh /app; which python3 tesseract pdftotext convert
+[?2004ltotal 508K
+-rw-r--r-- 1 agent agent 6.1K Oct 21 16:27 my_bookkeeping.xlsx
+-rw-r--r-- 1 agent agent 334K Oct 21 16:27 [0m[01;35mreceipt_0.jpeg[0m
+-rw-r--r-- 1 agent agent  22K Oct 21 16:27 [01;35mreceipt_1.jpg[0m
+-rw-r--r-- 1 agent agent  28K Oct 21 16:27 [01;35mreceipt_2.jpg[0m
+-rw-r--r-- 1 agent agent  40K Oct 21 16:28 receipt_3.pdf
+-rw-r--r-- 1 agent agent  72K Oct 21 16:28 [01;35mreceipt_4.jpg[0m
+/usr/bin/python3
+/usr/bin/tesseract
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> w=openpyxl.load_workbook('/app/my_bookkeeping.xlsx')
+[?2004l[?2004h> for s in w:
+[?2004l[?2004h>  print(s.title,s.max_row,s.max_column)
+[?2004l[?2004h>  for row in s:
+[?2004l[?2004h>   v=['%s:%s'%(c.column_letter,c.value) for c in row if c.value is not None]
+[?2004l[?2004h>   if v: print(row[0].row,' | '.join(v))
+[?2004l[?2004h> PY
+[?2004lTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'openpyxl'
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ pip install openpyxl pymupdf
+[?2004lbash: pip: command not found
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ for f in /app/receipt_*.jp*g; do echo "==== $f ===="; tesseract "$f" stdout 2>/dev/null; done
+[?2004l==== /app/receipt_0.jpeg ====
+FRAGE IU Fre
+
+SWEET PEPPERS 3.99 B
+UDI S 3 CHEESE 7.99 B
+HT MULTIGR WAFF 3.97 B
+eae om ia
+AT Pl
+SC 6633 HONEY WHEAT ‘ 100-8
+PRICE YOU PAY 249°
+mime eee
+2.851598 "= ee
+HT SOUR CREAM PC 3.98 B
+28 0.22
+SC 9235 HT SOUR CREAM 0.44-B
+PRICE YOU PAY FOR 2 3.54
+ORG BARTLETT PE 2.99 B
+2 @ 3.69
+FE HEART ROMAIN PC 7.38 B
+2 @ 1.85
+SC 8521 FE HEART ROMAIN 3.70-B
+PRICE YOU PAY FOR 2 3.68
+BABY BELLA MUSH 2.99 B
+4.36.(4.36) Ib @ 0.59 /1b
+wT YELLOW BANANAS 2.57 B
+2@ 099
+ra WHE TE) GARL 1035 i 1,18 B
+‘a e246 eel) TOMATOES 3.62 B
+2 2 piss #00 8
+4 @ 277700
+CUCUMBERS 2.00 B
+GALA APPLE 3B CPCCié«‘K«C BB
+sc 9280 GALA APPLE 3L3 1.00-B
+PRICE YOU PAY 3.99
+SMUCKER FRL 3.69 B
+2.85 B
+Q PC 1,89 B
+$C 1269 HT APPLE SAUCE 0.22-B
+PRICE YOU PAY 1.67
+RAY S NY BIALYS 5.59 B
+2.49 T
+PC «4,99 B
+SC 7135 NEUMAN S 0.50-B
+PRICE YOU PAY 4.49
+HT NTRL_PNUT BU 2,29 B
+T 8.99 T
+AGE vERIF
+TAX 5.10
+wane BALANCE 186.93
+US DEBIT Pu
+EAR EKOD 3 -
+REFS
+PURCHASE
+41D: A000000
+TC: 17E91962A28AS
+DEBIT 186.93
+CHANGE 0.00
+7, 25% NC SALES TAX 2.38
+1% NC SALES TAX 0.08
+2% NC SALES TAX 2.64
+TOTAL TAX i 5.10
+TOTAL NUMBER OF ITEMS SOLD = 52
+ee yc SAVINGS a
+WIC SAVINGS $ 13.64
+TOTAL COUPONS 5 13.64
+
+TOT WINGS (5 % i
+Uae VIC SAVINGS EE
+
+==== /app/receipt_1.jpg ====
+12:1 us
+
+Cash Out
+To Bank of America
+
+$3,670.00
+
+Wednesday at 2:34 PM
+
+v Completed
+==== /app/receipt_2.jpg ====
+P-1
+1 Carrot & Ginger Soup $5.25
+SUBTOTAL $5.25
+TAX $0.45
+
+Wake up Neo. The Matrix has you.
+
+==== /app/receipt_4.jpg ====
+112
+
+Rate Us HIGHLY SATISFIED anc
+Receive ONE FREE ITEM
+purchase any sandwich and receive an
+iter of equal or lesser value
+Go to ##w.mcdynice.com within 7 days
+and tell us about your visit.
+
+Validation Code:
+
+expires 30 days after receipt date.
+
+‘id at participating US McDonald's.
+Survey Code:
+
+31278-01121-21018-20481-00081-0.
+
+McDonald's Restaurant #31278
+2378 PINE RD NW
+RICE, MN 56367-9740
+TEL# 320 393 4600
+
+KS# 1 12/10/2018 08:48 PM
+Sidel Order 12
+
+1 Happy Meal 6 Pc 4,69
+| 61 Creamy Ranch Cup
+1 Extra Kids Fry
+1 Wreck It Ralph 2
+1 $ Coke
+1 Snack Oreo McFlurry
+
+Subtotal a
+
+Tax
+Take-Out Total 8.10
+
+d 10,00
+Cash Tenderet 1/90
+
+Change
+
+Jonalds Restaurant Rice
+door ACCEPTING APPLICATIONS#+
+
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ ls /usr/local/bin /opt; python3 -m pip --version; python3 -m ensurepip --version; which uv; ls /usr/bin/*pdf* 2>/dev/null
+[?2004l/opt:
+[0m[01;34mvenv[0m
+
+/usr/local/bin:
+[01;32mbuild_setup.py[0m
+/usr/bin/python3: No module named pip
+pip 23.0.1
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ ls /opt/venv/bin; /opt/venv/bin/python -m pip list
+[?2004lActivate.ps1  activate.csh   [0m[01;32mf2py[0m  [01;32mnormalizer[0m    [01;32mpip[0m   [01;32mpip3.11[0m  [01;32mpytesseract[0m  [01;36mpython3[0m     [01;32mschedula[0m
+activate      activate.fish  [01;32midna[0m  [01;32mnumpy-config[0m  [01;32mpip3[0m  [01;32mpymupdf[0m  [01;36mpython[0m       [01;36mpython3.11[0m  [01;32mtldextract[0m
+/opt/venv/bin/python - <<'PY'
+import openpyxl
+w=openpyxl.load_workbook('/app/my_bookkeeping.xlsx')
+for s in w:
+ print(s.title,s.max_row,s.max_column)
+ for row in s:
+  v=['%s:%s'%(c.column_letter,c.value) for c in row if c.value is not None]
+  if v: print(row[0].row,' | '.join(v))
+PY
+Package            Version
+------------------ -----------
+certifi            2026.10.19
+charset-normalizer 3.5.2
+cssselect          1.2.0
+et_xmlfile         2.0.0
+filelock           4.2.4
+formulas           1.2.9
+idna               3.20
+lxml               5.3.0
+numpy              2.4.6
+numpy-financial    1.0.0
+openpyxl           3.1.5
+packaging          26.3
+pandas             2.2.3
+pillow             10.4.0
+pip                26.2.2
+PyMuPDF            1.25.1
+pytesseract        0.3.13
+python-dateutil    2.9.0.post0
+pytz               2026.5
+RapidFuzz          3.10.1
+regex              2026.9.29
+requests           2.34.2
+requests-file      3.0.1
+schedula           1.6.15
+setuptools         66.1.1
+six                1.17.0
+tldextract         5.1.2
+tzdata             2026.5
+urllib3            2.8.0
+xmltodict          0.13.0
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> w=openpyxl.load_workbook('/app/my_bookkeeping.xlsx')
+[?2004l[?2004h> for s in w:
+[?2004l[?2004h>  print(s.title,s.max_row,s.max_column)
+[?2004l[?2004h>  for row in s:
+[?2004l[?2004h>   v=['%s:%s'%(c.column_letter,c.value) for c in row if c.value is not None]
+[?2004l[?2004h>   if v: print(row[0].row,' | '.join(v))
+[?2004l[?2004h> PY
+[?2004lSheet1 8 5
+1 A:Bookkeeping simple
+2 A:Description | B:Category | C:Type | D:Amount | E:Balance
+3 A:Office Supplies Purchase | B:Office Supplies | C:Expense | D:-150 | E:850
+4 A:Client Payment Received | B:Sales | C:Income | D:500 | E:=E3+D4
+5 A:Internet Bill | B:Utilities | C:Expense | D:-60 | E:=E4+D5
+6 A:Freelance Services | B:Services | C:Income | D:300 | E:=E5+D6
+7 A:Rent Payment | B:Rent | C:Expense | D:-700 | E:=E6+D7
+8 A:Software Subscription | B:Software | C:Expense | D:-100 | E:=E7+D8
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import fitz
+[?2004l[?2004h> from PIL import Image
+[?2004l[?2004h> p=fitz.open('/app/receipt_3.pdf')
+[?2004l[?2004h> for page in p:
+[?2004l[?2004h>  print(page.get_text())
+[?2004l[?2004h>  if not page.get_text().strip(): page.get_pixmap(matrix=fitz.Matrix(3,3)).save('/app/pdf_receipt.png')
+[?2004l[?2004h> for f in ['/app/receipt_0.jpeg','/app/receipt_1.jpg','/app/receipt_2.jpg','/app/receipt_4.jpg']:
+[?2004l[?2004h>  im=Image.open(f);print(f, im.size)
+[?2004l[?2004h> PY
+[?2004l
+/app/receipt_0.jpeg (900, 1383)
+/app/receipt_1.jpg (564, 1219)
+/app/receipt_2.jpg (700, 506)
+/app/receipt_4.jpg (736, 981)
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ if [ -f /app/pdf_receipt.png ]; then tesseract /app/pdf_receipt.png stdout 2>/dev/null; fi
+[?2004lreceipt
+
+FROM RECEIPT #
+East Repair Inc. RECEIPT DATE
+1912 Harvest Lane
+P.O0.#
+
+New York, NY¥ 12210
+
+DUE DATE
+BILL TO SHIP TO
+John Smith John Smith
+2 Court Square 3787 Pineview Drive
+New York, NY¥ 12210 Cambridge, MA 12210
+
+QTY DESCRIPTION UNIT PRICE
+
+Front and rear brake cables
+
+US-001
+
+AMOUNT
+
+New set of pedal arms
+
+Subtotal
+
+Sales Tax 6.25%
+
+145.00
+9.06
+
+TOTAL $154.06
+
+TERMS & CONDITIONS
+
+Payment is due within 15 days
+
+Please make checks payable to: East Repair Inc.
+
+Smith
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ tesseract /app/receipt_0.jpeg stdout --psm 11 2>/dev/null; tesseract /app/receipt_2.jpg stdout --psm 11 2>/dev/null
+[?2004lNal
+
+Le
+
+Wives
+
+SWEET PEPPERS
+
+3.99 B
+
+UDI S 3 CHEESE
+
+7.99 B
+
+HT MULTIGR WAFF
+
+3.97 B
+
+GROUND GRITS
+
+3.69 B
+
+HONEY WHEAT
+
+PC
+
+3.49 B
+
+SC 6633 HONEY WHEAT
+
+1.00-
+
+PRICE YOU PAY
+
+2.49)
+
+MZ BLUE CHESE
+
+3.99 B
+
+MOZZ BALLS
+
+5.99 B
+
+@ 1.99
+
+HT SOUR CREAM
+
+PC
+
+3.98 B
+
+2 8 0.22
+
+SC 9235 HT SOUR CREAM
+
+0.44-B
+
+PRICE YOU PAY FOR
+
+2
+
+3.54
+
+99 B
+
+@ 3.69
+
+ORG BARTLETT PE
+
+FE HEART ROMAIN
+
+PC
+
+7.38 B
+
+2 @ 1.85
+
+SC 8521 FE HEART ROMAIN
+
+3.70-B
+
+PRICE YOU PAY FOR
+
+BABY BELLA MUSH
+
+2
+
+3.68
+
+49
+
+4.36
+
+4.369 Ib @ 0.59
+
+1b
+
+T
+
+YELLOW BANANAS
+
+2.57
+
+@
+
+sor)
+
+1.18
+
+32
+
+WHITE GARLIC
+
+9 1b @ 1.99
+
+1b
+
+wT
+
+82
+
+ROMA TOMATOES
+
+3.62
+
+3 @°10210,00
+
+00
+
+MANGOS
+
+4 @ 2/100
+
+2.00
+
+UCUMBER
+
+4.99
+
+GALA APPLE 313
+
+PC
+
+$C 9280 GALA APPLE 3L3
+
+1.00-B
+
+PRICE YOU PAY
+
+3.99
+
+U
+
+3.69 B
+
+(ADE
+
+85 B
+
+AT APP
+
+UCE
+
+PC
+
+1,89 B
+
+0.22-B
+
+SC 1269 HT APPLE SAUCE
+
+1.67
+
+PRICE YOU PAY
+
+BIALYS
+
+59 B
+
+RAY S_N
+
+IN NAPKN
+
+2.49 T
+
+NSAT
+
+PC
+
+4.99 B
+
+NEUMAN S
+
+SC 7135 NEUMAN S
+
+0.50-B
+
+PRICE YOU PAY
+
+4.49
+
+HT NTRL_PNUT
+
+U
+
+2.29 B
+
+A HOP NOT
+
+8.99 T
+
+AGE VERIF
+
+TION BYPA!
+
+TAX
+
+6.10
+
+xaaee BALANCE
+
+186.93
+
+1ase
+
+US DEBIT
+
+$I IRHO02S -
+
+TOT
+
+REF#
+
+0510
+
+186.93
+
+PURCHA:
+
+86
+
+K
+
+0.00
+
+aT
+
+#000000!
+
+0840
+
+oi
+
+7E91962A28A5
+
+186.93
+
+DEBIT
+
+0.00
+
+CHANGE
+
+7.25% NC SALES TAX
+
+2.38
+
+1% NC SALES
+
+TAX
+
+0.08
+
+TAX
+
+2.64
+
+2% NC SALES
+
+5.10
+
+TOTAL TAX
+
+62
+
+TOTAL NUMBER
+
+OF ITEMS SOLD
+
+SHAKER KK IKE
+
+vic SAVING:
+
+5 SII
+
+13.64
+
+VIC SAVINGS
+
+$
+
+13.64
+
+TOTAL COUPONS
+
+D
+
+$
+
+13.64
+
+TOTAL SAVINGS ‘
+
+IRI RIE
+
+teen eee VIC
+
+SAVINGS
+=
+
+Pr
+
+1
+
+Carrot & Ginger Soup
+
+$5.25
+
+SUBTOTAL
+
+$5.2
+
+SaSsesonssaasseesaeea sss
+
+ps
+
+atte
+
+Se eee
+
+Seas
+
+$0.45
+
+———
+
+TOTAL
+
+6.10
+
+Wake up mee ipa Match has you.
+
+ie
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> w=openpyxl.load_workbook('/app/my_bookkeeping.xlsx');s=w.active
+[?2004l[?2004h> for row in s:
+[?2004l[?2004h>  print(row[0].row,[(c.coordinate,c.style_id,c.number_format) for c in row])
+[?2004l[?2004h> print('tables',list(s.tables),'merged',s.merged_cells)
+[?2004l[?2004h> PY
+[?2004l1 [('A1', 5, 'General'), ('B1', 6, 'General'), ('C1', 6, 'General'), ('D1', 6, 'General'), ('E1', 6, 'General')]
+2 [('A2', 7, 'General'), ('B2', 7, 'General'), ('C2', 7, 'General'), ('D2', 7, 'General'), ('E2', 7, 'General')]
+3 [('A3', 8, 'General'), ('B3', 8, 'General'), ('C3', 8, 'General'), ('D3', 9, 'General'), ('E3', 9, 'General')]
+4 [('A4', 8, 'General'), ('B4', 8, 'General'), ('C4', 8, 'General'), ('D4', 9, 'General'), ('E4', 9, 'General')]
+5 [('A5', 8, 'General'), ('B5', 8, 'General'), ('C5', 8, 'General'), ('D5', 9, 'General'), ('E5', 9, 'General')]
+6 [('A6', 8, 'General'), ('B6', 8, 'General'), ('C6', 8, 'General'), ('D6', 9, 'General'), ('E6', 9, 'General')]
+7 [('A7', 8, 'General'), ('B7', 8, 'General'), ('C7', 8, 'General'), ('D7', 9, 'General'), ('E7', 9, 'General')]
+8 [('A8', 8, 'General'), ('B8', 8, 'General'), ('C8', 8, 'General'), ('D8', 9, 'General'), ('E8', 9, 'General')]
+tables [] merged A1:E1
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> from PIL import Image,ImageEnhance,ImageFilter
+[?2004l[?2004h> im=Image.open('/app/receipt_2.jpg').resize((2100,1518))
+[?2004l[?2004h> im.save('/tmp/soup.png')
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ for p in 3 6 11 12; do echo ====PSM$p; tesseract /tmp/soup.png stdout --psm $p 2>/dev/null; done
+[?2004l====PSM3
+P-1
+1 Carrot & Ginger Soup $5.25
+SUBTOTAL $5.25
+TAX $0.45
+
+- - ELS eS SS ee Om Set OES ee ee Se 6S a et Om Om Oe es ee ot ee ee ee ee a oe a ee
+
+_ Wake up Neo. The Matrix has you.
+
+====PSM6
+Seams sshessssscoes —
+| Carrot & Ginger Soup $5.25
+SUBTOTAL $5.25
+TAX $0.45
+TOTAL $5.10
+_ Wake up Neo. The Matrix has you.
+====PSM11
+—
+
+—
+
+= r —
+
+Carrot & Ginger Soup
+
+$5.25
+
+SUBTOTAL
+
+$5.2
+
+- - A a see SS ctl An ste ste mma samen
+
+ee
+
+_— — — ee eee ee _~—
+
+— -— — — Sn
+
+$0.45
+
+—_—— a
+
+TOTAL
+
+$5.10
+
+“> alee eden eR aatata
+====PSM12
+—
+
+—
+
+= r —
+
+Carrot & Ginger Soup
+
+$5.25
+
+SUBTOTAL
+
+$5.2
+
+- - A a see SS ctl An ste ste mma samen
+
+ee
+
+_— — — ee eee ee _~—
+
+— -— — — Sn
+
+$0.45
+
+—_—— a
+
+TOTAL
+
+$5.10
+
+“> alee eden eR aatata
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> from PIL import Image,ImageOps,ImageFilter
+[?2004l[?2004h> im=Image.open('/app/receipt_2.jpg')
+[?2004l[?2004h> # Locate total line using OCR bounding boxes
+[?2004l[?2004h> import pytesseract
+[?2004l[?2004h> x=pytesseract.image_to_data(im.resize((2100,1518)),config='--psm 6',output_type=pytesseract.Output.DICT)
+[?2004l[?2004h> for i,t in enumerate(x['text']):
+[?2004l[?2004h>  if t.strip(): print(t,x['left'][i],x['top'][i],x['width'][i],x['height'][i])
+[?2004l[?2004h> PY
+[?2004lSeams 156 71 183 3
+sshessssscoes 415 53 497 22
+— 959 52 365 144
+| 147 233 12 61
+Carrot 301 232 235 61
+& 591 228 39 62
+Ginger 679 231 232 71
+Soup 973 232 159 72
+$5.25 1657 238 200 64
+SUBTOTAL 289 528 330 65
+$5.25 1661 540 204 66
+TAX 293 628 113 66
+$0.45 1661 641 206 67
+TOTAL 201 841 201 130
+$5.10 1703 857 207 131
+_ 237 1225 2 2
+Wake 284 1178 225 87
+up 551 1200 82 49
+Neo. 676 1183 161 60
+The 894 1186 121 60
+Matrix 1058 1186 256 62
+has 1355 1192 126 56
+you. 1525 1208 156 47
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> from copy import copy
+[?2004l[?2004h> import openpyxl
+[?2004l[?2004h> from openpyxl.comments import Comment
+[?2004l[?2004h> p='/app/my_bookkeeping.xlsx'
+[?2004l[?2004h> w=openpyxl.load_workbook(p);s=w.active
+[?2004l[?2004h> rows=[
+[?2004l[?2004h>  ('Harris Teeter Grocery Purchase','Groceries','Expense',-186.93,'receipt_0.jpeg','Total paid by debit: $186.93, including $5.10 tax.'),
+[?2004l[?2004h>  ('Cash Out to Bank of America','Transfer','Transfer',-3670.00,'receipt_1.jpg','Completed cash-out to Bank of America; outgoing transfer, not an operating expense.'),
+[?2004l[?2004h>  ('Carrot & Ginger Soup','Meals','Expense',-5.70,'receipt_2.jpg','Subtotal $5.25 plus tax $0.45 = $5.70. Printed total is degraded.'),
+[?2004l[?2004h>  ('East Repair Inc. - Bicycle Repairs','Repairs and Maintenance','Expense',-154.06,'receipt_3.pdf','Receipt US-001: subtotal $145.00 plus sales tax $9.06; total $154.06.'),
+[?2004l[?2004h>  ("McDonald’s Meal Purchase",'Meals','Expense',-8.10,'receipt_4.jpg','Take-out total $8.10; cash tendered $10.00, change $1.90. Receipt dated 12/10/2018.')
+[?2004l[?2004h> ]
+[?2004l[?2004h> for r,(desc,cat,typ,amt,source,note) in enumerate(rows,9):
+[?2004l[?2004h>  for col in range(1,6): s.cell(r,col)._style=copy(s.cell(8,col)._style)
+[?2004l[?2004h>  for col,value in enumerate([desc,cat,typ,amt,f'=E{r-1}+D{r}'],1):s.cell(r,col,value)
+[?2004l[?2004h>  s.cell(r,1).comment=Comment(source+'\n'+note,'Receipt reference')
+[?2004l[?2004h> w.save(p)
+[?2004l[?2004h> v=openpyxl.load_workbook(p)
+[?2004l[?2004h> assert v.active.max_row==13
+[?2004l[?2004h> for row in v.active.iter_rows(min_row=9,values_only=True):print(row)
+[?2004l[?2004h> print('Saved',p)
+[?2004l[?2004h> PY
+[?2004l('Harris Teeter Grocery Purchase', 'Groceries', 'Expense', -186.93, '=E8+D9')
+('Cash Out to Bank of America', 'Transfer', 'Transfer', -3670, '=E9+D10')
+('Carrot & Ginger Soup', 'Meals', 'Expense', -5.7, '=E10+D11')
+('East Repair Inc. - Bicycle Repairs', 'Repairs and Maintenance', 'Expense', -154.06, '=E11+D12')
+('McDonald’s Meal Purchase', 'Meals', 'Expense', -8.1, '=E12+D13')
+Saved /app/my_bookkeeping.xlsx
+[?2004h[01;32magent@04c1a7a0bc04[00m:[01;34m/app[00m$ 

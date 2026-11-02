@@ -1,0 +1,60 @@
+New Terminal Output:
+
+agent@7dd7f81c65a3:/app$ python3 - <<'PY'
+> import subprocess
+> for n in [1,3]:
+>  print('\nPICTURE',n)
+>  raw=subprocess.check_output(['ffmpeg','-v','error','-i',f'/home/agent/Pictures/picture{n}.jpg','-vf','scale=110:45','-f','rawvideo','-pix_fmt','gray','-'])
+>  chars=' .,:;irsXA253hMHGS#9B&@'
+>  for y in range(45): print(''.join(chars[v*(len(chars)-1)//256] for v in raw[y*110:(y+1)*110]))
+> PY
+
+PICTURE 1
+,,,,,,,,,::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;:::;;;;;
+,,,,,,,,,::::::,,,,::::::::::::,:::::::::::::::::::::::::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;;;;;;;
+,,,,,,::::::::::::::::::::::::::::::::::::::::::::::::::;:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+,,,,,:::::::::::::::::::::::::::::::::::::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;iiiii;;;;;;iiiiii;;iiiiiiiiiiiii;;;;;;
+::::::::::,:::::::::::::::::::::::;;;;;;;;;;;;;;;iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii;;;;;
+::::;;:::;;;;;;;;;;;;;;;;;i;;;;;;;;;;;;;;;;iiiiiiiirrrrrrrrrrrriiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii;;;
+;;;;;;;iiiiiirrrrrrrrrrrrrrrrrrrrrrrrrrrrrssssrrrrrrrrsssssssssrrrrsssssssssssssssssrrrrrrrrriiiiiiiiiiiiiii;;
+sssssssXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX25533552AXXXXXXXXXXXXXXXXXXXXXXXXXXXXssssssrrrriiiiiiiiiiiiiiii
+XXXXXXXXXXXXXXXXXXXXAAAAAAAXXXXXAAAAAAAAAAXX5MHGSGGSSGHMh5AAAAAAAAAAAAAAAAAAAAAAXXXXXXXssssssrrrrrrrrrriiiiiir
+XXXAXXXXXXXXXXXXXXXXAAAAAAAAAAAAXXXXXXAAAX2HSGHHHHHSSGGHGHh222222AAAAAAAAAAAAXXXXXXXXXXsssssssssssssssssssrrrr
+AAAAAXXXXXXXXAAAAAAAAAA2AAAAAAAAAAAAAXXAX5GGHHGGHMMMMMMHMMGH2AAAAAAAAAAAAAAAAAXXXXXXXXXXXXXXXXXXXXXXXsssssssss
+AAAAAAAAAAAAAA2222AAA2222222222222AAAAAA2GGHMMHHHhhMhhhHGHHGM222222222222222AAAAAAAAAAAAAAAAAAAAAXXXXXXXXXXXss
+2222222222222222222222222225555555222222hHGMhhMHHHMMHHHHGHGSS355555555555222222AAAAAAAAAAAAAAAAAAAAAAXXXXXXXXX
+2225555555555555555555555555535333333335hMHMhhMMHMMHSSSSSSSSS3255555555555552222AAAAAAAAAAAAAAAAAAAAAAAAAAAAXX
+5555533555333333333333333333333333333355hMMMhMHGHMMGGGSSSSSSS35555555555555522222AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+53333333333333333553333333333333335555555MMMMMHHHMHHHGSSSSSSH55555555555522222222222AAAAAA2AAAAAAAAAAAAAAAAAAA
+55555353335335533333333333333355555533hHGGGG5MhHHHh3hMMSGMSSHM5M3555333555555555552222222222222222222222222222
+55555533333333333333333333333333555HSSS#SGShM33#MMM553h5H3hSMH55h532XA2553333355555555555555555555552222222222
+55555533333333333333333333hh3352333MHMMM5h3MH5h32MH2XXh5hH3MM3hAX2232XssXA253333333333555555555555555555555555
+55555555553333333333hhhhh35AXsssXAXXAX5XAAhh5AAXs22X5235A33s3M2AssX2h22XXXXXAAA2533333333333555555555555555555
+33333355333333333hh3352AXsrssssssrrssXsrsXXXssXrsXXAAXXssXssAAssXXXssX22AAXXsXAsXsXA53333333333333333333555555
+3333333333333352AAXssrrrrsssssrrrrssssssssXssssssssssssssXsssXsrssssrrrXXssssssssssrrsXA2553333333333333333333
+3333335522AXssrrrrrssssssssssssXssssXXXXXXXXssssXXXXXssXXssssXXsrssXsssrrsssssssrrrssrsrrrssXA2552A22525333333
+XXssssssrrrssssssssssssssssssXssXXssXXXXXXssssXXXsssssssssssssXssssXXXXssssssXssXsssssssssssssssrrrrrrrssXA555
+rrsrrrrssssssssssssssssssssssssssssssssssssssXXXXssXsXXXXXXssssXXXXXsssssssXXXssssrsXssXXXssssssssssssssssrsss
+rrrssssssssssssssssssssssssssssssssssssssssssssXXXsssXXssssXXsssXXXsssssXsXXXXssXsssXXXXXXssssssssssssssssssss
+sssssssssssssssssssssXsssssssssXsXXssXssXsssXXXsXXXXXXXXXsXXXXXsXXXXXXXXXXXXXXssXXssssssssXssXXXXXXsssssssssss
+sssssssssssssssssssssXXXXsssXXXXXXXXXXXXssXXXXXXXXXXXXXXXXXsssXsssXXXXssXsssssXXssXXXXssssXsXXXXsXXXXXXXXXssss
+ssssssssssssssssssXXsXXXXXXsssXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXsXXsssssssssXssssssssssXXXXsXXXXXXXXXXXXXssXsssssX
+ssssssssssssssXXXXXXXXXXXsssssXXXXXXssrssssssssXAXXXXXXXXXXXssXsssXXsssssssssssXXXXXXXXXXXXXXXXXXXXsssssssssss
+sssssssssssssXsrrrrssssXXssssXXXsr;:::,,;:i:,:;rriiirsAXXXXXXXXXXXXXXsssssssXXXsrrrrrsXXssssrii;irssssssssssss
+ssssssssssXXXXs;::,::,::::,::;si:,::iii;:::,:;i;::::::iiii::;;;;i;;;;sssssXsssr:,..,,::,..,,,,::,:;rssssssssss
+rrsrsrrrssssrri;::,:,:::,,.....,::::;i:;i;ii;;;:,,,,,,,,,,,,......,,isXssXXsi;:,...::,,,,,.. ,..,...,:rsssssss
+...,,,,,::::;;:::,,,,:.........,:,:,,,:;r;;;;::,.,,,....,,........,.:;sXXXr;::::,,.::,:,,,,,,.  .......,::::;i
+...     . ......::,,,,.,......,:;:::::;:,.,,,,::;;;;;;,::,,.....,::,,.,;rAAr:,,,:,... .. ...,.  ...
+:,,...  . ..  ..,,::,,,....,..,:::,,,,:,,:,..:;;;:,,....,:;:;;:;;;::,.  .:rsii:,:,... . ,,,,...,...,,:,,::::;;
+,:,.:::,::::,..,,,::.,.,...........,,,,,,,,..,:,........,,,:,,,,,......... .:;:,:,...:,,:::...,,.:;;;;;;;::,::
+,,,.:,,,,,,.,,..:,:,,,,,,..       ...... ...,,...     .:;;ii;:,,,,,,.,.     .,,::,...;r:,,,,. ,.,i;::,,,,....,
+,.,.:,,,:,,.,,:;;,,,:;i;;,,. ...   .. . . .          ,;iiiii::,..............,,,...,.,;:..,:;,i;;ri,.....,:,,,
+;;;;iiirirrssrrriiiiirsrr;;;iri;;;;i;;i;;;i;;;::::::;rii::::,:,,,,..::,..,,,,::,....,,,,,.,,:;iii;:...::;;::::
+Xsii;;;iirssssssssXsXsXssXXXXXXXXssrrrrrrrsrrrrrrrriii;rirrrrsri;;;:;i;i;iiiirrrirrrriirsri;;;i;;;;:iiriri::;:
+sr;;;;;;;:;;irrsXXXssrssssrirrsXsXsrsXXsiirrssssrsrrrrrsXXXAXXXXsssssssrssssXAXXsssssssriii;i:;::,;;;i;;;;;;;;
+;:;iriii;;;;isXXsXsssssssrrrrirrsXsssssrrsrirXssrirssrssssssssssXXssrrr;irsssXXXsssssriiii;ir;;;;;::;:,.,:;::;
+,.,::::::ii;;;iiiirrrrri;i;;;;;;sriiiii;:ii;;;::::;;:::;;::;:::;ii;;i;i;;iisssrrsrsssssrrssrrriissirriiriii;;;
+,.....,,,,,,,,,,,,::,::::::,:::;r;;:,:,:::;i;,.,,:i;;;::,:::i;:,:;ii;,.:;;::::;;i;:,:::::;::irirr;:;;iiii;;i;;
+
+PICTURE 3
+

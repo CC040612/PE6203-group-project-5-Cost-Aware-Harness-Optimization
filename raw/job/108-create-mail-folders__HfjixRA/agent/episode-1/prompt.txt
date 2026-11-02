@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@1d512c9b2066:/app$ ps aux | grep -i '[t]hunderbird'; ls -la ~/.thunderbird; command -v thunderbird
+total 32
+drwx------  6 agent agent 4096 Jan  4  2024  .
+drwxr-x---  1 agent agent 4096 Oct 22 02:54  ..
+drwx------  3 agent agent 4096 Jul  4  2025 'Crash Reports'
+drwx------  2 agent agent 4096 Jan  4  2024 'Pending Pings'
+drwx------  2 agent agent 4096 Jan 10  2024  cidfb56c.default
+-rw-rw-r--  1 agent agent   62 Jan  4  2024  installs.ini
+-rw-rw-r--  1 agent agent  259 Jan  4  2024  profiles.ini
+drwx------ 12 agent agent 4096 Jul  4  2025  t5q2a5hp.default-release
+/usr/bin/thunderbird
+agent@1d512c9b2066:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

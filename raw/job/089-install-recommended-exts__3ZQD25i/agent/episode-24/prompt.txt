@@ -1,0 +1,9 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/allinstall.py
+ljflmlehinmoeknoonhibbjpldiijjmm ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '
+', '', 'See more', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '']
+fmkadmapgofadopljbjfkapdkoienihi ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', 'See more', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', 'See more', '', '', '']
+

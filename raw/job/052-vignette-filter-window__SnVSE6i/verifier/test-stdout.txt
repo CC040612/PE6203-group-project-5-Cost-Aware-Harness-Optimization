@@ -1,0 +1,16 @@
+# GIMP action-history
+
+(history-item "tools-text" 0)
+(history-item "tools-ellipse-select" 1)
+(history-item "tools-iscissors" 0)
+(history-item "tools-gradient" 0)
+(history-item "tools-pencil" 0)
+(history-item "filters-vignette" 1)
+
+# end of action-history
+ {'exclude': ['error', 'failed', 'not found'], 'include': ['filters-vignette']}
+.
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_main
+1 passed in 0.01s

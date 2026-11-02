@@ -1,0 +1,5 @@
+{
+  "analysis": "The registrations were command-line location 8 and have been converted to persistent unpacked location 4. Chrome is now running normally.",
+  "plan": "Read the verification result to confirm all five survived the normal launch.",
+  "commands": [{"keystrokes":"","duration":3}]
+}

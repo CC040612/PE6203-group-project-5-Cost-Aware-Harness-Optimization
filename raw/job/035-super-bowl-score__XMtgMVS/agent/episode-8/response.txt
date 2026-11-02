@@ -1,0 +1,6 @@
+{
+  "analysis": "The relevant official NFL page for the 2019 season’s Super Bowl is open at https://www.nfl.com/scores/2019/super-bowl-sunday and has been brought to the foreground.",
+  "plan": "Leave this page selected as requested.",
+  "commands": [],
+  "task_complete": true
+}

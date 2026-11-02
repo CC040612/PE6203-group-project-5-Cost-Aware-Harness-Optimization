@@ -1,0 +1,5 @@
+New Terminal Output:
+
+agent@1ab03f642dd9:/app$ mkdir -p /tmp/ocr-local; cd /tmp/ocr-local; apt-get download tesseract-ocr tesseract-ocr-eng libtesseract5 2>&1; for p in *.deb; do dpk
+g-deb -x "$p" .; done; LD_LIBRARY_PATH=/tmp/ocr-local/usr/lib/x86_64-linux-gnu ./usr/bin/tesseract --version
+

@@ -1,0 +1,10 @@
+{
+  "analysis": "All three homepages are accessible. Lingpeng Kong has a separate Contact page; the other pages need targeted extraction because the publication lists obscured the contact details.",
+  "plan": "Inspect email-related HTML links and contact text, and follow the Contact page.",
+  "commands": [
+    {
+      "keystrokes": "/tmp/contactenv/bin/python - <<'PY'\nfrom bs4 import BeautifulSoup\nimport re\nfor name in ['leuchine','taoyds','ikekonglp']:\n h=open('/tmp/'+name+'.github.io.html').read(); s=BeautifulSoup(h,'html.parser')\n print('\\n',name,'INTRO',s.get_text(' ',strip=True)[:3300])\n for a in s.find_all('a',href=True):\n  if re.search('email|contact|mailto|@',a.get('href','')+' '+a.get_text(),re.I): print(str(a)[:1500])\n for m in re.finditer(r'.{0,100}(?:@|\\[at\\]| at |email).{0,150}',h,re.I): print(m.group()[:300])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

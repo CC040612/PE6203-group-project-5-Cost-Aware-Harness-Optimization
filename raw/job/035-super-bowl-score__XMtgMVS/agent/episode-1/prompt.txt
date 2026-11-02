@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@6556a8550dfc:/app$ ls -la /app; which chromium google-chrome; env | grep -i -E 'browser|playwright|chrome'; ls /tmp
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 15:21 .
+drwxr-xr-x 1 root  root  4096 Oct 21 15:22 ..
+/usr/local/bin/chromium
+/usr/local/bin/google-chrome
+chrome_state.log             playwright-artifacts-2KNwxq  playwright-artifacts-X3GQ5h  playwright-artifacts-hRCL18  xvfb.log
+dbus.log                     playwright-artifacts-FVHrpo  playwright-artifacts-Xlb3uG  playwright-artifacts-iriSq3
+get-asciinema-timestamp.sh   playwright-artifacts-P19VzY  playwright-artifacts-edXkaj  tmux-1000
+playwright-artifacts-16iHDn  playwright-artifacts-PzYsfR  playwright-artifacts-gCBImt  tua-dbus-session
+agent@6556a8550dfc:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

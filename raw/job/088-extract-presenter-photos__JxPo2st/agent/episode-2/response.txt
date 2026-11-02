@@ -1,0 +1,6 @@
+{
+  "analysis": "No files have been copied or archived. Selecting photos by matching a person’s face to a reference image is not something I can do.",
+  "plan": "Please supply the filenames to include: DSC00495.jpg, DSC00659.jpg, DSC00454.jpg, DSC00574.jpg, DSC00554.jpg, or DSC00657.jpg. Once you select them, I can create the presenter/ folder and presenter.zip on the Desktop.",
+  "commands": [],
+  "task_complete": false
+}

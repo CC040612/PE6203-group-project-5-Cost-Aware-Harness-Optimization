@@ -1,0 +1,31 @@
+New Terminal Output:
+
+agent@c20a90688c47:/app$ ps aux | grep -E 'chrome|chromium' | head; curl -s localhost:9222/json/list; python -c "import importlib.util; print(importlib.util.fin
+d_spec('playwright'))"; node -e "try{console.log(require.resolve('playwright'))}catch(e){console.log('no')}"
+agent         21  1.1  0.3 111136 29452 ?        Sl   15:25   0:00 /opt/venv/bin/python /usr/local/bin/chrome_state.py task
+agent        375  0.0  0.0   3716  2072 pts/1    S+   15:25   0:00 grep -E chrome|chromium
+bash: curl: command not found
+bash: python: command not found
+bash: node: command not found
+agent@c20a90688c47:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

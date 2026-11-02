@@ -1,0 +1,10 @@
+{
+  "analysis": "The sidebar input is covered by its label. The carousel button avoids that overlay.",
+  "plan": "Click the carousel category button directly and open sorting.",
+  "commands": [
+    {
+      "keystrokes": "/opt/venv/bin/python -u - <<'PY'\nfrom playwright.sync_api import sync_playwright\nwith sync_playwright() as p:\n b=p.chromium.connect_over_cdp('http://127.0.0.1:1337'); page=b.contexts[0].pages[0]; page.set_default_timeout(5000); page.locator('button[role=\"checkbox\"]').filter(has_text='Large car').click(); page.locator('button').filter(has_text='Sort by:').click(); print(page.locator('body').inner_text()[-3000:]); print(page.get_by_text('Price',exact=False).all_text_contents()[:20])\nPY\n",
+      "duration": 1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The terminal is idle in /app. I need to identify the Thunderbird profile and its Local Folders storage, then create the requested mail folders and ensure Thunderbird is closed.",
+  "plan": "Check whether Thunderbird is running or installed and inspect its profile locations before making changes.",
+  "commands": [
+    {
+      "keystrokes": "ps aux | grep -i '[t]hunderbird'; ls -la ~/.thunderbird; command -v thunderbird\n",
+      "duration": 0.1
+    }
+  ]
+}

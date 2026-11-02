@@ -1,0 +1,10 @@
+{
+  "analysis": "The library uses a different package name on this system.",
+  "plan": "Download liblept5 and repeat the orientation tests.",
+  "commands": [
+    {
+      "keystrokes": "apt-get download liblept5; for p in liblept5*.deb; do dpkg-deb -x \"$p\" .; done; for f in vflip hflip,vflip; do echo \"=== $f ===\"; ffmpeg -v error -i /tmp/orientation.png -vf \"$f,scale=1280:944\" -frames:v 1 -y /tmp/test_orientation.png; LD_LIBRARY_PATH=/tmp/ocr-local/usr/lib/x86_64-linux-gnu TESSDATA_PREFIX=/tmp/ocr-local/usr/share/tesseract-ocr/5/tessdata ./usr/bin/tesseract /tmp/test_orientation.png stdout 2>&1; done\n",
+      "duration": 1
+    }
+  ]
+}

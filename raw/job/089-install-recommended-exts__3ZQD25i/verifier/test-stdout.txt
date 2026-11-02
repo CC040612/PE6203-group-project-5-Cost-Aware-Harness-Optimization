@@ -1,0 +1,2 @@
+INFO:desktopenv.metrics.chrome:installed_extensions: 
+INFO:desktopenv.metrics.chrome:[None, None, None, None, None, 'Chromium PDF Viewer']

@@ -1,0 +1,14 @@
+{
+  "analysis": "The export script identified both open article tabs and is processing the first PDF.",
+  "plan": "Allow printing to finish, then verify the saved PDFs and their page counts.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 5
+    },
+    {
+      "keystrokes": "ls -lh /home/user/Documents/Blog; for f in /home/user/Documents/Blog/*.pdf; do echo \"--- $f\"; pdfinfo \"$f\" | head -18; done\n",
+      "duration": 1
+    }
+  ]
+}

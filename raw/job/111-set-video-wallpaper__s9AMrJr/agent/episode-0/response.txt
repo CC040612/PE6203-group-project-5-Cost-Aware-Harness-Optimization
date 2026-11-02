@@ -1,0 +1,10 @@
+{
+  "analysis": "We need extract a suitable still from the trailer and set it as the desktop wallpaper. The desktop environment and available video tools need to be identified first.",
+  "plan": "Locate the video, inspect desktop configuration tools, and check for ffmpeg so a frame can be extracted and applied as wallpaper.",
+  "commands": [
+    {
+      "keystrokes": "ls -lh ~/Desktop; printenv | grep -E 'DISPLAY|DBUS|DESKTOP'; command -v ffmpeg ffprobe gsettings xfconf-query pcmanfm feh; pgrep -a -f 'xfdesktop|plasmashell|gnome-shell|pcmanfm|dbus-daemon'\n",
+      "duration": 0.1
+    }
+  ]
+}

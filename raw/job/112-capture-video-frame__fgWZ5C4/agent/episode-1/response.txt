@@ -1,0 +1,14 @@
+{
+  "analysis": "The trailer exists and ffmpeg is available, so a frame can be extracted directly without VLC.",
+  "plan": "Inspect the video duration, extract a scene at 60 seconds, and verify that the resulting file is a valid PNG.",
+  "commands": [
+    {
+      "keystrokes": "ffprobe -v error -show_entries format=duration -show_entries stream=width,height -of default=noprint_wrappers=1 \"$HOME/Desktop/Interstellar Movie - Official Trailer.mp4\"\n",
+      "duration": 0.1
+    },
+    {
+      "keystrokes": "ffmpeg -hide_banner -loglevel error -ss 00:01:00 -i \"$HOME/Desktop/Interstellar Movie - Official Trailer.mp4\" -frames:v 1 -update 1 \"$HOME/Desktop/interstellar.png\" && file \"$HOME/Desktop/interstellar.png\" && ls -lh \"$HOME/Desktop/interstellar.png\"\n",
+      "duration": 1
+    }
+  ]
+}

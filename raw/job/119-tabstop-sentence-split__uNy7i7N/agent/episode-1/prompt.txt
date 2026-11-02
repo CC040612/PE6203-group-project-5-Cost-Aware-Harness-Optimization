@@ -1,0 +1,117 @@
+New Terminal Output:
+agent@752b3f228563:/app$ ls -l /app
+total 16
+-rw-r--r-- 1 agent agent 13163 Oct 22 03:17 '04 CHIN9505 EBook Purchasing info 2021 Jan.docx'
+agent@752b3f228563:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree
+> p='/app/04 CHIN9505 EBook Purchasing info 2021 Jan.docx'
+> with ZipFile(p) as z:
+>  r=etree.fromstring(z.read('word/document.xml'))
+>  ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+>  for i,p in enumerate(r.xpath('//w:p',namespaces=ns)):
+>   print(i,repr(''.join(p.xpath('.//w:t/text() | .//w:tab/@w:val',namespaces=ns))))
+>  print(etree.tostring(r,pretty_print=True).decode()[-3000:])
+> PY
+0 'Please find the E-book purchase option for your reference:\xa0\xa0'
+1 'How to use BLCUP eBook for PC\xa0'
+2 'Make payment for this eBook online. '
+3 'Enter User center (Your BLCUP ID. '
+4 'Download and install Windows eBook Reader (flipviewer) on your PC.'
+5 'Enter User center (Your BLCUP ID.'
+6 'Download eBook and input Subscription ID online to open the OPZ file.'
+7 'Support Contact: service blcup.com'
+8 'This product is protected by copyright. '
+9 'Use only on paying PC.'
+10 ''
+11 ''
+C13E33" w:rsidP="00C13E33">
+      <w:pPr>
+        <w:pStyle w:val="a3"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+        <w:t>Support Contact: service</w:t>
+      </w:r>
+      <w:r w:rsidR="00C16A87">
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+        <w:t xml:space="preserve"> </w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+        <w:t>blcup.com</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="15926053" w14:textId="77777777" w:rsidR="006A14A6" w:rsidRDefault="00C13E33" w:rsidP="00C13E33">
+      <w:pPr>
+        <w:pStyle w:val="a3"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+        <w:t xml:space="preserve">This product is protected by copyright. </w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="2C2AA6EC" w14:textId="427B7709" w:rsidR="00C13E33" w:rsidRDefault="00C13E33" w:rsidP="00C13E33">
+      <w:pPr>
+        <w:pStyle w:val="a3"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+        <w:t>Use only on paying PC.</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7B526580" w14:textId="77777777" w:rsidR="00C13E33" w:rsidRDefault="00C13E33" w:rsidP="00C13E33">
+      <w:pPr>
+        <w:pStyle w:val="a3"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+      </w:pPr>
+    </w:p>
+    <w:p w14:paraId="66A6637E" w14:textId="4ED2F591" w:rsidR="00C13E33" w:rsidRPr="00490C99" w:rsidRDefault="00C13E33" w:rsidP="00490C99">
+      <w:pPr>
+        <w:pStyle w:val="a3"/>
+        <w:rPr>
+          <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>
+          <w:color w:val="000000"/>
+        </w:rPr>
+      </w:pPr>
+    </w:p>
+    <w:sectPr w:rsidR="00C13E33" w:rsidRPr="00490C99">
+      <w:pgSz w:w="12240" w:h="15840"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="720" w:footer="720" w:gutter="0"/>
+      <w:cols w:space="720"/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>
+
+agent@752b3f228563:/app$

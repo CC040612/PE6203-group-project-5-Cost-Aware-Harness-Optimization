@@ -1,0 +1,31 @@
+New Terminal Output:
+
+agent@83e3666913d5:/app$ mkdir -p /home/user/Documents/Blog
+agent@83e3666913d5:/app$ cat > /tmp/export_blogs.py <<'PY'
+> from playwright.sync_api import sync_playwright
+> from pathlib import Path
+> import re, html
+> out = Path('/home/user/Documents/Blog')
+> with sync_playwright() as p:
+>     browser = p.chromium.connect_over_cdp('http://127.0.0.1:1337')
+>     pages = [page for ctx in browser.contexts for page in ctx.pages if page.url.startswith(('https://','http://'))]
+>     print('Open article tabs:', len(pages), flush=True)
+>     for page in pages:
+>         page.wait_for_load_state('load', timeout=60000)
+>         title = page.locator('h1').first.inner_text() if page.locator('h1').count() else html.unescape(page.title()).split(' | ')[0]
+>         print(title, page.url, flush=True)
+>         page.evaluate("""async () => {
+>             document.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
+>             await document.fonts.ready;
+>             await Promise.race([Promise.all(Array.from(document.images).map(img => img.complete ? Promise.resolve() : new Promise(resolve => {img.onload = res
+olve; img.onerror = resolve;}))), new Promise(r => setTimeout(r, 15000))]);
+>         }""")
+>         name = re.sub(r'[/\\\x00-\x1f]', '-', title).strip()
+>         target = out / (name + '.pdf')
+>         page.pdf(path=str(target), format='A4', print_background=True, margin={'top':'15mm','bottom':'15mm','left':'12mm','right':'12mm'})
+>         print('Saved:', target, target.stat().st_size, 'bytes', flush=True)
+> PY
+agent@83e3666913d5:/app$ /opt/venv/bin/python /tmp/export_blogs.py
+Open article tabs: 2
+LLM Powered Autonomous Agents https://lilianweng.github.io/posts/2023-06-23-agent/
+

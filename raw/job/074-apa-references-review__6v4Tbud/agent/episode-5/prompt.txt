@@ -1,0 +1,132 @@
+New Terminal Output:
+
+agent@32f08de7ccee:/app$ /tmp/docx-env/bin/python - <<'PY'
+> from docx import Document
+> import urllib.request,json,urllib.parse
+> d=Document('/home/user/Desktop/students work/case study.docx')
+> for i in [99,113,115,117,119,123]:
+>  p=d.paragraphs[i]; print(i,p._p.xml)
+> print('NORMAL',d.styles['Normal']._element.xml)
+> for q in ['Digital Transformation of the Italian Public Administration','A generalised adoption model for services A cross-country comparison of mobile health
+','Digital Government Review of Norway']:
+>  try:
+>   u='https://api.crossref.org/works?rows=2&query.bibliographic='+urllib.parse.quote(q)
+>   data=json.load(urllib.request.urlopen(u,timeout=20))
+>   for x in data['message']['items']:
+>    print(json.dumps({k:x.get(k) for k in ['title','author','published','container-title','volume','issue','page','article-number','DOI','publisher']},ensure_a
+scii=False))
+>  except Exception as e: print(e)
+> PY
+99 <w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http:/
+/schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocume
+nt/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.ope
+nxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006
+/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://
+schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/
+drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordp
+rocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" w
+:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000064">
+  <w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+      <w:b w:val="1"/>
+      <w:sz w:val="22"/>
+      <w:szCs w:val="22"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">Successful digital transformation in Italy's public administration has the potential to bring about significant benefits for the c
+ountry and its citizens. These benefits include improved efficiency and effectiveness of public services, increased transparency and citizen engagement, cost sa
+vings for the government, and enhanced digital inclusion and access to public services for all citizens, particularly those in rural areas (Datta, 2020) Moreove
+r, a digitally transformed public administration can contribute to increased trust in government institutions and foster a more innovative and resilient society
+ that is better equipped to face the challenges of the 21st century (Dwivedi et al., 2017; United Nations, 2018).</w:t>
+  </w:r>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+  </w:r>
+</w:p>
+
+113 <w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http:
+//schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocum
+ent/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.op
+enxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/200
+6/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http:/
+/schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org
+/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/word
+processingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http:
+[... output limited to 10000 bytes; 70 interior bytes omitted ...]
+p:/
+/schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org
+/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/word
+processingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="00000078">
+  <w:pPr>
+    <w:ind w:left="420" w:hanging="420"/>
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">European Commission. (2018). Standard Eurobarometer 90: Public opinion in the European Union. October 1, 2022, https://ec.europa.e
+u/commfrontoffice/publicopinion/index.cfm/Survey/getSurveyDetail/instruments/STANDARD/surveyKy/2215</w:t>
+  </w:r>
+</w:p>
+
+123 <w:p xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:mc="http:
+//schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocum
+ent/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.op
+enxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/200
+6/wordml" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http:/
+/schemas.openxmlformats.org/drawingml/2006/picture" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org
+/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.openxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/word
+processingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+w:rsidR="00000000" w:rsidDel="00000000" w:rsidP="00000000" w:rsidRDefault="00000000" w:rsidRPr="00000000" w14:paraId="0000007C">
+  <w:pPr>
+    <w:ind w:left="420" w:hanging="420"/>
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+    </w:rPr>
+  </w:pPr>
+  <w:r w:rsidDel="00000000" w:rsidR="00000000" w:rsidRPr="00000000">
+    <w:rPr>
+      <w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="Times New Roman" w:hAnsi="Times New Roman"/>
+      <w:rtl w:val="0"/>
+    </w:rPr>
+    <w:t xml:space="preserve">Gartner. "Digital Transformation." 2021. Accessed October 1, 2022. https://www.gartner.com/en/information-technology/glossary/digi
+tal-transformation.</w:t>
+  </w:r>
+</w:p>
+
+NORMAL <w:style xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xm
+lns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlfor
+mats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xml
+ns:w10="urn:schemas-microsoft-com:office:word" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:sl="http://schemas.openxmlformats.org/sche
+maLibrary/2006/main" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:
+c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:lc="http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas" xmlns:dgm="http://schemas.op
+enxmlformats.org/drawingml/2006/diagram" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/o
+ffice/word/2010/wordprocessingGroup" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/w
+ordml" w:type="paragraph" w:styleId="a" w:default="1">
+  <w:name w:val="Normal"/>
+  <w:qFormat w:val="1"/>
+  <w:pPr>
+    <w:widowControl w:val="0"/>
+    <w:jc w:val="both"/>
+  </w:pPr>
+  <w:rPr>
+    <w:kern w:val="2"/>
+    <w:sz w:val="21"/>
+    <w:szCs w:val="24"/>
+  </w:rPr>
+</w:style>
+
+

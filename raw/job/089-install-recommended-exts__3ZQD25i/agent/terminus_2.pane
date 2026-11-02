@@ -1,0 +1,2022 @@
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ asciinema rec --stdin /logs/agent/recording.cast
+[?2004l[0;32masciinema: recording asciicast to /logs/agent/recording.cast[0m
+[0;32masciinema: press <ctrl-d> or type "exit" when you're done[0m
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ clear
+[?2004l[H[J[3J[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ python - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from xml.etree import ElementTree as E
+[?2004l[?2004h> p='/home/user/Desktop/Recommended_plugin_list.docx'
+[?2004l[?2004h> with ZipFile(p) as z:
+[?2004l[?2004h>  r=E.fromstring(z.read('word/document.xml'))
+[?2004l[?2004h>  for p in r.findall('.//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
+[?2004l[?2004h>   print(''.join(p.itertext()))
+[?2004l[?2004h> PY
+[?2004lbash: python: command not found
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ which google-chrome chromium chromium-browser; ps aux | grep -E 'chrome|chromium' | head; ls -la /home/user/.config; env | grep -E 'DISPLAY|HOME'; which xdotool
+[?2004l/usr/local/bin/google-chrome
+/usr/local/bin/chromium
+agent        298  0.0  0.0   3716  1980 pts/1    S+   16:18   0:00 grep -E chrome|chromium
+total 24
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 [01;34m..[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [01;34mCode[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:18 [01;34masciinema[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [01;34mgoogle-chrome[0m
+HOME=/home/agent
+DISPLAY=:99
+/usr/bin/xdotool
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> from zipfile import ZipFile
+[?2004l[?2004h> from xml.etree import ElementTree as E
+[?2004l[?2004h> with ZipFile('/home/user/Desktop/Recommended_plugin_list.docx') as z:
+[?2004l[?2004h>  r=E.fromstring(z.read('word/document.xml'))
+[?2004l[?2004h>  for p in r.findall('.//{http://schemas.openxmlformats.org/wordprocessingml/2006/main}p'):
+[?2004l[?2004h>   print(''.join(p.itertext()))
+[?2004l[?2004h>  print(z.read('word/_rels/document.xml.rels').decode())
+[?2004l[?2004h> PY
+[?2004lRecommended plugin list
+Zoom Chrome Extension
+Speechify Text to Speech Voice Reader
+React Developer Tools
+Momentum
+Google Translate
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/><Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/><Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/><Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/></Relationships>
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ ls -l /usr/local/bin/google-chrome /usr/local/bin/chromium; cat /usr/local/bin/google-chrome; ls -la /home/user/.config/google-chrome; ls /opt; ls /app
+[?2004llrwxrwxrwx 1 root root  28 Oct 21 16:13 [0m[01;36m/usr/local/bin/chromium[0m -> [01;32m/usr/local/bin/google-chrome[0m
+-rwxr-xr-x 1 root root 959 Oct 20 08:35 [01;32m/usr/local/bin/google-chrome[0m
+#!/usr/bin/env bash
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+
+set -euo pipefail
+
+export DISPLAY="${DISPLAY:-:99}"
+PROFILE_DIR="${CHROME_USER_DATA_DIR:-$HOME/.config/google-chrome}"
+mkdir -p "$PROFILE_DIR"
+
+declare -a EXTRA_ARGS
+EXTRA_ARGS=(
+  "--user-data-dir=$PROFILE_DIR"
+  "--profile-directory=Default"
+  "--no-first-run"
+  "--no-default-browser-check"
+  "--password-store=basic"
+  "--disable-dev-shm-usage"
+  "--no-sandbox"
+)
+
+has_remote_debugging_port=0
+for arg in "$@"; do
+  if [[ "$arg" == --remote-debugging-port=* ]]; then
+    has_remote_debugging_port=1
+    break
+  fi
+done
+
+if [ "$has_remote_debugging_port" -eq 0 ]; then
+  EXTRA_ARGS+=("--remote-debugging-port=${TUA_CHROME_REMOTE_DEBUGGING_PORT:-${CHROME_REMOTE_DEBUGGING_PORT:-1337}}")
+fi
+
+exec /usr/bin/chromium "${EXTRA_ARGS[@]}" "$@"
+total 12
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [0m[01;34m.[0m
+drwxr-xr-x 1 agent agent 4096 Oct 21 16:18 [01;34m..[0m
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:13 [01;34mDefault[0m
+[0m[01;34mvenv[0m
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ ls -ld /home/agent/.config/google-chrome /home/user; readlink -f /home/user; ls -la /home/agent/.config/google-chrome/Default; ls -la /home/user/.config/google-chrome/Default; google-chrome https://chromewebstore.google.com/ > /tmp/chrome.log 2>&1 &
+[?2004ldrwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [0m[01;34m/home/agent/.config/google-chrome[0m
+lrwxrwxrwx 1 root  root    11 Oct 21 16:13 [01;36m/home/user[0m -> [01;34m/home/agent[0m
+/home/agent
+total 16
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:13 [0m[01;34m.[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [01;34m..[0m
+-rw-r--r-- 1 agent agent  229 Oct 21 16:13 Bookmarks
+-rw-r--r-- 1 agent agent    3 Oct 21 16:13 Preferences
+total 16
+drwxr-xr-x 2 agent agent 4096 Oct 21 16:13 [0m[01;34m.[0m
+drwxr-xr-x 3 agent agent 4096 Oct 21 16:13 [01;34m..[0m
+-rw-r--r-- 1 agent agent  229 Oct 21 16:13 Bookmarks
+-rw-r--r-- 1 agent agent    3 Oct 21 16:13 Preferences
+[1] 350
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ python3 - <<'PY'
+[?2004l[?2004h> import importlib.util
+[?2004l[?2004h> for m in ['playwright','requests','websocket','PIL']:
+[?2004l[?2004h>  print(m, bool(importlib.util.find_spec(m)))
+[?2004l[?2004h> PY
+[?2004lplaywright False
+requests False
+websocket False
+PIL False
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ curl -s http://localhost:1337/json/list; cat /tmp/chrome.log | head
+[?2004l[ {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=localhost:1337/devtools/page/64337AA17D1B3C8EDE8665A94A20EC45",
+   "id": "64337AA17D1B3C8EDE8665A94A20EC45",
+   "title": "",
+   "type": "page",
+   "url": "https://chromewebstore.google.com/",
+   "webSocketDebuggerUrl": "ws://localhost:1337/devtools/page/64337AA17D1B3C8EDE8665A94A20EC45"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=localhost:1337/devtools/page/E9DC23CB0D88A216EFC99D4374590A97",
+   "id": "E9DC23CB0D88A216EFC99D4374590A97",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/",
+   "webSocketDebuggerUrl": "ws://localhost:1337/devtools/page/E9DC23CB0D88A216EFC99D4374590A97"
+}, {
+   "description": "",
+   "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@a49e2e3d4addfd84e765b52afe230bedb81096db/inspector.html?ws=localhost:1337/devtools/page/8408F46A61291189CA5052FB432FEC75",
+   "id": "8408F46A61291189CA5052FB432FEC75",
+   "title": "Omnibox Popup",
+   "type": "browser_ui",
+   "url": "chrome://omnibox-popup.top-chrome/omnibox_popup_aim.html",
+   "webSocketDebuggerUrl": "ws://localhost:1337/devtools/page/8408F46A61291189CA5052FB432FEC75"
+} ]
+[350:379:1021/161904.236275:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[350:379:1021/161905.111498:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[350:379:1021/161905.111670:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[350:379:1021/161905.111740:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[350:379:1021/161905.111965:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory
+[350:379:1021/161905.111991:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[350:379:1021/161905.111998:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[350:379:1021/161905.241617:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+
+DevTools listening on ws://127.0.0.1:1337/devtools/browser/bba0e096-cfc2-4276-be1b-bce8a5266e3d
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ ls /opt/venv/bin; /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import importlib.util
+[?2004l[?2004h> for m in ['playwright','requests','websocket','PIL']:
+[?2004l[?2004h>  print(m, bool(importlib.util.find_spec(m)))
+[?2004l[?2004h> PY
+[?2004lActivate.ps1   [0m[01;32mcsv2ods[0m                 [01;32mimageio_remove_bin[0m  [01;32mmutagen-inspect[0m  [01;32modf2xml[0m       [01;32mpdfplumber[0m  [01;32mpyftsubset[0m   [01;32mpython-barcode[0m  [01;32mtiffcomment[0m
+[01;34m__pycache__[0m    [01;32mdumppdf.py[0m              [01;32mlsm2bin[0m             [01;32mmutagen-pony[0m     [01;32modfimgimport[0m  [01;32mpip[0m         [01;32mpygmentize[0m   [01;36mpython3[0m         [01;32mtifffile[0m
+activate       [01;32mf2py[0m                    [01;32mmailodf[0m             [01;32mnormalizer[0m       [01;32modflint[0m       [01;32mpip3[0m        [01;32mpymupdf[0m      [01;36mpython3.11[0m      [01;32mtldextract[0m
+activate.csh   [01;32mfind_similar_images.py[0m  [01;32mmid3cp[0m              [01;32mnumba[0m            [01;32modfmeta[0m       [01;32mpip3.11[0m     [01;32mpypdfium2[0m    [01;32mqr[0m              [01;32mttx[0m
+activate.fish  [01;32mfonttools[0m               [01;32mmid3iconv[0m           [01;32mnumpy-config[0m     [01;32modfoutline[0m    [01;32mplaywright[0m  [01;32mpytesseract[0m  [01;32mschedula[0m        [01;32mvba_extract.py[0m
+[01;32mcffi-gen-src[0m   [01;32midna[0m                    [01;32mmid3v2[0m              [01;32modf2mht[0m          [01;32modfuserfield[0m  [01;32mpy.test[0m     [01;32mpytest[0m       [01;32msrt[0m             [01;32mxml2odf[0m
+[01;32mchardetect[0m     [01;32mimageio_download_bin[0m    [01;32mmoggsplit[0m           [01;32modf2xhtml[0m        [01;32mpdf2txt.py[0m    [01;32mpyftmerge[0m   [01;36mpython[0m       [01;32mtiff2fsspec[0m
+playwright True
+requests True
+websocket False
+PIL True
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ curl -I -L --max-time 20 https://chromewebstore.google.com/ | head
+[?2004l  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+x-frame-options: DENY
+vary: Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+x-ua-compatible: IE=edge
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: Mon, 01 Jan 1990 00:00:00 GMT
+date: Wed, 21 Oct 2026 16:19:14 GMT
+content-length: 0
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/store.py <<'PY'
+[?2004l[?2004h> from playwright.sync_api import sync_playwright
+[?2004l[?2004h> p=sync_playwright().start()
+[?2004l[?2004h> b=p.chromium.connect_over_cdp('http://localhost:1337')
+[?2004l[?2004h> c=b.contexts[0]
+[?2004l[?2004h> page=c.pages[0]
+[?2004l[?2004h> print(page.url)
+[?2004l[?2004h> print(page.locator('body').inner_text()[:18000])
+[?2004l[?2004h> print(page.locator('a').evaluate_all('(els)=>els.map(e=>({text:e.innerText,href:e.href}))')[:30])
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/store.py
+[?2004lhttps://chromewebstore.google.com/
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Welcome to Chrome Web Store
+The future of writing
+
+Elevate your writing and create engaging and high-quality content effortlessly
+
+See collection
+Welcome to the Chrome Web Store
+
+Supercharge your browser with extensions and themes for Chrome
+
+See collection
+Favorites of 2025
+
+Discover the standout AI extensions that made our year
+
+See collection
+Every day is Earth Day
+
+Plant trees, shop sustainably, and more
+
+See collection
+The future of writing
+
+Elevate your writing and create engaging and high-quality content effortlessly
+
+See collection
+Welcome to the Chrome Web Store
+
+Supercharge your browser with extensions and themes for Chrome
+
+See collection
+2
+/
+4
+Top categories
+Shopping
+Entertainment
+Tools
+Art & Design
+Recommended for you
+See more
+
+Ultimate Car Driving Game
+
+4.4
+
+Enjoy car driving simulator in a big and fascinating city.
+
+Custom Progress Bar for YouTube™
+
+4.3
+
+Change Youtube™ progress bar to custom from fun collection. Make your Youtube™ player awesome!
+
+Offline Games - No Wifi Games
+
+4.3
+
+Now you can play Offline Games - No Wifi Games right on Chrome™ Browser! Fun for all ages, and a mental workout too!
+
+Boxel Rebound
+
+4.5
+
+Play over 50 levels of box-jumping madness! Design and share your own levels.
+
+Top charts
+Trending
+Change Timezone for Google Chrome™
+Workflow & Planning
+4.1
+AI VPN – Free Fast Secure Proxy
+Privacy & Security
+4.1
+Change Timezone (Time Shift)
+Tools
+3.1
+See more
+Popular
+Volume Master
+Accessibility
+4.8
+Free VPN for Chrome - VPN Proxy VeePN
+Workflow & Planning
+4.5
+AdBlock — block ads across the web
+Workflow & Planning
+3.9
+See more
+New and notable
+Ad Blocker Pro - block ads ad blocker
+Tools
+4.2
+Chatwait: Get paid while AI thinks
+Tools
+4.2
+Editing Enhancer - Editing News & reLynth
+Tools
+4.4
+See more
+Extend your browser
+See more
+
+Discover a new level of convenience and customization with side panel extensions
+
+Chat with all AI models (Gemini, Claude, DeepSeek…) & AI Agents | AITOPIA
+
+4.8
+
+AI Agent Marketplace & AI Sidebar with all AI models (Gemini, Claude, DeepSeek & more) and hundreds of AI Agents
+
+Adobe Photoshop
+
+4.0
+
+Easily remove backgrounds, adjust colors and more.
+
+BrowserGPT: ChatGPT Anywhere Powered by GPT 4
+
+4.0
+
+Write, reword, and translate 8x faster. Reply to emails in a click. Works on Google Docs, Gmail, YouTube, Twitter, Instagram, etc.
+
+Sidebar: ChatGPT, Bookmarks, GPT-4o | Meomni
+
+4.9
+
+Ultimate Sidebar ChatGPT Assistant, Bookmarks with AI, Calendar and Tasks
+
+Eclipse your screen
+
+Dim the lights with our dark mode selections
+
+See collection
+Chrome monthly spotlight
+
+Promising extensions to try out
+
+Web Highlights: PDF & Web Highlighter + Notes & AI Summary
+
+Productivity Highlighter & Annotation Tool for Websites & PDFs with AI Summary - free, easy to use, no sign-up required.
+
+Moonlight: AI Colleague for Research Papers
+
+Everything you need to read a paper: explanation, summary, translation, chat, and reference search.
+
+Reboost - Track Water Intake and Set Reminders
+
+Track your water intake and set custom reminders. Stay hydrated, stay on track, and never miss a break! ✨
+
+Just for fun
+
+Bring some joy to your browser
+
+See collection
+Learn a new language
+See more
+
+Study while you browse
+
+Google Translate
+
+3.0
+
+View translations easily as you browse the web. By the Google Translate team.
+
+Rememberry - Translate and Memorize with Flashcards
+
+4.7
+
+Translate words while browsing and turn them into spaced repetition flashcards to build foreign language vocabulary.
+
+DeepL: translate and write with AI
+
+4.5
+
+Translate while you read and write with DeepL Translate, the world’s most accurate translator.
+
+Relingo - Master vocabulary while browsing websites and watching YouTube
+
+4.6
+
+Relingo extract words, full-text immersive translation while browsing. Also supports bilingual subtitles for Youtube, Netflix, etc.
+
+Game on
+See more
+
+Beat boredom with bite-sized games in your browser
+
+BattleTabs
+
+4.5
+
+Multiplayer Battles in your New Tab
+
+Tiny Tycoon
+
+4.7
+
+Build a tiny tycoon on a tiny planet.
+
+Tower Stacking Blocks Challenge Game
+
+4.3
+
+Tower Stacking Blocks Challenge Game on your Google Chrome!
+
+Boxel 3D
+
+4.3
+
+Boxel 3D is a speedrunning game packed with challenging levels, custom skins, online multiplayer, and a creative level editor.
+
+Work smarter, not harder with AI
+
+Automate tasks and stay focused and organized with AI-powered productivity extensions
+
+See collection
+For music lovers
+See more
+
+Equalizers, radios, playlists, and more
+
+Volume Master
+
+4.8
+
+Up to 600% volume boost
+
+SynQ for Spotify, YouTube, Amazon Music, more
+
+3.8
+
+Mini player with universal music sharing for Spotify, Apple Music, YouTube Music, and Amazon Music.
+
+Music Mode for YouTube™
+
+4.9
+
+Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music.
+
+Smart Mute
+
+4.4
+
+Listen to audio one tab at a time.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+[{'text': 'Skip to main content', 'href': ''}, {'text': 'chrome web store', 'href': 'https://chromewebstore.google.com/'}, {'text': 'My extensions & themes', 'href': 'https://chromewebstore.google.com/user/installed'}, {'text': 'Developer Dashboard', 'href': 'https://chrome.google.com/webstore/devconsole/'}, {'text': '', 'href': 'https://www.google.com.sg/intl/en/about/products'}, {'text': 'Sign in', 'href': 'https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://chromewebstore.google.com/&followup=https://chromewebstore.google.com/&ec=GAZApQM'}, {'text': '', 'href': 'https://www.google.com/chrome/?brand=GGRF&utm_source=google.com&utm_medium=material-callout&utm_campaign=cws&utm_keyword=GGRF'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/jetbrains-grazie-writing/fonaoompfjljjllgccccgjnhnoghohgc'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/wordtune-ai-paraphrasing/nllcnknpjnininklegdoijpljgdjkijc'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/jetwriter-ai-reply-emails/pdnenlnelpdomajfejgapbdpmjkfpjkp'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/compose-ai-ai-powered-wri/ddlbpiadoechcolndfeaonajmngmhblj'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/grammarly-ai-writing-assi/kbfnbcaeplbcioakkpcpgfkobkghlhen'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/quillbot-ai-writing-assis/iidnbdjijdkbmajdffnidomddglmieko'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/ai_content'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/ai_content'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/shazam-find-song-names-fr/mmioliijnhnoblpgimnlajmefafdfilb'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/adobe-photoshop/kjchkpkjpiloipaonppkmepcbhcncedo'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/click-and-clean/mgngmngjioknlgjjaiiamcdbahombpfb'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/grammarly-ai-writing-assi/kbfnbcaeplbcioakkpcpgfkobkghlhen'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/adobe-acrobat-pdf-edit-co/efaidnbmnnnibpcajpcglclefindmkaj'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/get_started'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/get_started'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/2025_favorites'}, {'text': '', 'href': 'https://chromewebstore.google.com/collection/2025_favorites'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/faircado-second-hand-shop/gngckpdhcngilcedefiiiapkhocojghm'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/pebble-digital-carbon-emi/oeamjgnkoelgkegbphiminanlbegaaga'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/ecosia-the-search-engine/eedlgdlajadkbbjoobobefphmfkcchfk'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/tab-for-a-cause/gibkoahgjfhphbmeiphbcnhehbfdlcgo'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/askbelynda-sustainable-sh/pcmbjnfbjkeieekkahdfgchcbjfhhgdi'}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/search.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page.goto('https://chromewebstore.google.com/search/Zoom%20Chrome%20Extension')
+page.wait_for_timeout(2000)
+print(page.locator('body').inner_text()[:12000])
+print(page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.map(e=>({text:e.innerText,href:e.href}))'))
+PY
+/opt/venv/bin/python /tmp/search.py
+cat > /tmp/search.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page.goto('https://chromewebstore.google.com/search/Zoom%20Chrome%20Extension')
+[?2004l[?2004h> page.wait_for_timeout(2000)
+[?2004l[?2004h> print(page.locator('body').inner_text()[:12000])
+[?2004l[?2004h> print(page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.map(e=>({text:e.innerText,href:e.href}))'))
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/search.py
+[?2004lSkip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Type
+Extensions
+Themes
+Filter by
+Featured extensions
+Established publishers
+Ratings
+& up
+& up
+& up
+Clear all
+Reset your filter options.
+Search results
+Zoom Chrome Extension
+
+Featured
+
+3.7
+
+Schedule Zoom meetings directly from Google Calendar
+
+Zoom for Google Chrome
+
+www.stefanvd.net/
+Featured
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Custom Page Zoom
+
+Featured
+
+3.8
+
+Easily set a custom zoom level for each website (or all websites)
+
+Hover Zoom+
+
+Featured
+
+4.0
+
+Zoom images/videos on all your favorite websites (Facebook, Amazon, etc). Simply hover your mouse over the image to enlarge it.
+
+Zoom Chrome Extension For Gov
+
+5.0
+
+Schedule Zoom meetings directly from Google Calendar
+
+Zoom Page WE
+
+Featured
+
+4.0
+
+Zoom web pages (either per-site or per-tab) using full-page zoom, text-only zoom, automatic fit-to-width and minimum font size.
+
+Zoom Per Tab
+
+Featured
+
+4.8
+
+Zoom one tab without affecting other tabs of the same domain!
+
+Meetings Page Auto Closer for Zoom
+
+chromeadmin.com
+Featured
+
+4.8
+
+Automatically closes the page opened by Zoom to launch meetings and restores focus to the tab you were on before opened.
+
+SmoothZoom – Quick Page Zoom
+
+Featured
+
+4.5
+
+Pinch-to-zoom convenience, now on your desktop.
+
+Image Zoom
+
+3.7
+
+Image Zoom – Simple, Fast, No-Nonsense Zooming
+
+Load more
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+Page loaded.
+[{'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-for-google-chrome/lajondecmobodlejlcjllhojikagldgd'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/custom-page-zoom/jodiabicmogcbbiocceenmeflipeelle'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/hover-zoom+/pccckmaobkjjboncdfnnofkonhgpceea'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-chrome-extension-for/pnlbnejodfpnapdpoiboebofddaejkbg'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-page-we/bcdjhkphgmiapajkphennjfgoehpodpk'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/zoom-per-tab/mnoadkhbinhiblijcedoifbejfmmkdke'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/meetings-page-auto-closer/pbgidoglkjhfgjhalbbiiahdlokjcplb'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/smoothzoom-%E2%80%93-quick-page-z/nlloamlgdioincflcopfgkbikjgaiihg'}, {'text': '', 'href': 'https://chromewebstore.google.com/detail/image-zoom/hjapegicpojdkoinhhdpjmpkomkjccaa'}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/install.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page.goto('https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle')
+page.wait_for_timeout(1500)
+print(page.locator('body').inner_text()[:7000])
+print(page.get_by_role('button').all_text_contents())
+PY
+/opt/venv/bin/python /tmp/install.py
+cat > /tmp/install.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page.goto('https://chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgplpablkjnlkjmjdecgdpfankdle')
+[?2004l[?2004h> page.wait_for_timeout(1500)
+[?2004l[?2004h> print(page.locator('body').inner_text()[:7000])
+[?2004l[?2004h> print(page.get_by_role('button').all_text_contents())
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/install.py
+[?2004lSkip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Zoom Chrome Extension
+Featured
+3.7
+(
+
+1K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+8,000,000 users
+Add to Chrome
+Overview
+
+Schedule Zoom meetings directly from Google Calendar
+
+Schedule Zoom cloud meetings directly from Google Calendar
+
+Zoom, the cloud meeting company, unifies mobile collaboration, cloud video conferencing and simple online meetings into one easy-to-use platform. Our solution offers the best video, audio and screen-sharing experience across Windows PC, Mac, iOS, Android and H.323/SIP room systems
+
+The Zoom Chrome Extension allows participants to schedule Zoom cloud meetings directly from Google Calendar. With the click of a button, you can start an instant meeting or schedule a future meeting. The meeting URL and information is sent via a Google Calendar  invitation so the attendee can join with a single-click.  
+
+Zoom Chrome Extension allows you to:
+•  Start an instant meeting
+•  Schedule a meeting
+•  Schedule a meeting for other
+
+Do we do more? 
+
+Zoom offers the following: 
+•  Unparalleled video, voice and screen sharing quality
+•  Free unlimited minutes for 1-to-1 meetings and 40 minutes for group meetings
+•  Paid service is only $14.99/month with unlimited minutes and meetings
+•  Video gallery view to see all 25 video streams at once
+•  Full online meeting functionality, including desktop and mobile screen sharing
+•  Annotations and share audio, mouse and keyboard controls
+•  Free global teleconferencing
+•  Interoperability between H.323/SIP room systems, desktop, tablet and mobile devices
+
+To learn more about Zoom, please visit <a href="https://zoom.us">https://zoom.us</a>
+
+See more
+3.7 out of 5
+1K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+1.9.16
+Updated
+August 27, 2026
+Flag concern
+Offered by
+zoom.us
+Size
+313KiB
+Languages
+3 languages
+Developer
+Zoom Communications, Inc.
+55 Almaden Blvd Ste 600 San Jose, CA 95113 US
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU laws.
+D-U-N-S
+053553307
+Privacy
+
+Zoom Chrome Extension has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's privacy policy.
+
+Zoom Chrome Extension handles the following:
+User activity
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+Visit support hub
+Related
+
+Zoom Closer
+
+3.6
+
+This extension automatically closes the launched window from Zoom meetings.
+
+Zoom for Google Chrome
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Calendly Browser Extension
+
+3.8
+
+Schedule meetings without the hassle. Never get double booked. Calendly works with your calendar to automate appointment scheduling.
+
+LinkedIn Extension
+
+3.9
+
+This extension lights up with a new notification count whenever you have new activity waiting for you at LinkedIn.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/click.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+x=page.get_by_role('button',name='Add to Chrome',exact=True)
+print('enabled',x.is_enabled())
+x.click(timeout=5000)
+page.wait_for_timeout(2000)
+print(page.locator('body').inner_text()[:2500])
+PY
+/opt/venv/bin/python /tmp/click.py
+cat > /tmp/click.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> x=page.get_by_role('button',name='Add to Chrome',exact=True)
+[?2004l[?2004h> print('enabled',x.is_enabled())
+[?2004l[?2004h> x.click(timeout=5000)
+[?2004l[?2004h> page.wait_for_timeout(2000)
+[?2004l[?2004h> print(page.locator('body').inner_text()[:2500])
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/click.py
+[?2004lenabled True
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Zoom Chrome Extension
+Featured
+3.7
+(
+
+1K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+8,000,000 users
+Overview
+
+Schedule Zoom meetings directly from Google Calendar
+
+Schedule Zoom cloud meetings directly from Google Calendar
+
+Zoom, the cloud meeting company, unifies mobile collaboration, cloud video conferencing and simple online meetings into one easy-to-use platform. Our solution offers the best video, audio and screen-sharing experience across Windows PC, Mac, iOS, Android and H.323/SIP room systems
+
+The Zoom Chrome Extension allows participants to schedule Zoom cloud meetings directly from Google Calendar. With the click of a button, you can start an instant meeting or schedule a future meeting. The meeting URL and information is sent via a Google Calendar  invitation so the attendee can join with a single-click.  
+
+Zoom Chrome Extension allows you to:
+•  Start an instant meeting
+•  Schedule a meeting
+•  Schedule a meeting for other
+
+Do we do more? 
+
+Zoom offers the following: 
+•  Unparalleled video, voice and screen sharing quality
+•  Free unlimited minutes for 1-to-1 meetings and 40 minutes for group meetings
+•  Paid service is only $14.99/month with unlimited minutes and meetings
+•  Video gallery view to see all 25 video streams at once
+•  Full online meeting functionality, including desktop and mobile screen sharing
+•  Annotations and share audio, mouse and keyboard controls
+•  Free global teleconferencing
+•  Interoperability between H.323/SIP room systems, desktop, tablet and mobile devices
+
+To learn more about Zoom, please visit <a href="https://zoom.us">https://zoom.us</a>
+
+See more
+3.7 out of 5
+1K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+1.9.16
+Updated
+August 27, 2026
+Flag concern
+Offered by
+zoom.us
+Size
+313KiB
+Languages
+3 languages
+Developer
+Zoom Communications, Inc.
+55 Almaden Blvd Ste 600 San Jose, CA 95113 US
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU laws.
+D-U-N-S
+053553307
+Privacy
+
+Zoom Chrome Extension has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ which scrot import; import -window root /tmp/screen.png; /opt/venv/bin/python - <<'PY'
+import pytesseract
+from PIL import Image
+print(pytesseract.image_to_data(Image.open('/tmp/screen.png'),output_type=pytesseract.Output.DICT))
+PY
+which scrot import; import -window root /tmp/screen.png; /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> import pytesseract
+[?2004l[?2004h> from PIL import Image
+[?2004l[?2004h> print(pytesseract.image_to_data(Image.open('/tmp/screen.png'),output_type=pytesseract.Output.DICT))
+[?2004l[?2004h> PY
+[?2004lbash: import: command not found
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+  File "/opt/venv/lib/python3.11/site-packages/PIL/Image.py", line 3431, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/screen.png'
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python - <<'PY'
+[?2004l[?2004h> from PIL import ImageGrab
+[?2004l[?2004h> import pytesseract
+[?2004l[?2004h> im=ImageGrab.grab(); im.save('/tmp/screen.png')
+[?2004l[?2004h> d=pytesseract.image_to_data(im,output_type=pytesseract.Output.DICT)
+[?2004l[?2004h> for i,t in enumerate(d['text']):
+[?2004l[?2004h>  if t.strip(): print(d['left'][i],d['top'][i],t)
+[?2004l[?2004h> PY
+[?2004l26 27 Y
+45 16 —
+60 29 @
+83 16 ZoomChrome
+172 16 Extension-©
+262 26 x
+297 25 +
+28 68 €
+169 67 chromewebstore.google.com/detail/zoom-chrome-extension/kgjfgpIpablkjnlkjimjdecgdpfankdle
+199 119 You
+228 121 are
+254 121 using
+296 121 an
+385 120 Add
+37 321 ‘Switch
+89 323 to
+108 321 Chrome
+169 322 to
+189 321 install
+234 321 extensions
+316 322 and
+347 322 themes
+50 423 Zoom
+144 423 Chrome
+276 423 Extension
+12 498 leatured
+87 498 3.7
+111 494 +
+129 494 (
+207 498 )
+224 498 @
+78 554 Workflow
+141 546 &
+155 554 Planning
+233 554 8,000,000
+308 557 users
+68 759 ‘Zoom
+94 758 Chrome
+130 759 Extension
+515 116 ne
+535 120 E:
+759 119 rity
+784 118 will
+812 118 suffer.
+772 204 Switch
+825 205 to
+845 204 Chrome?
+762 258 recommends
+848 258 using
+885 258 Chrome
+939 258 when
+977 261 using
+759 281 dns
+783 278 and
+810 278 themes.
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/check.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> e=c.new_page(); e.goto('chrome://extensions/'); e.wait_for_timeout(1000)
+[?2004l[?2004h> print(e.locator('body').inner_text())
+[?2004l[?2004h> print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,data:e.data,text:e.shadowRoot.innerText}))'))
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/check.py
+[?2004l
+[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'data': {'canUploadAsAccountExtension': False, 'commands': [], 'dependentExtensions': [], 'description': '', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}, 'errorCollection': {'isActive': False, 'isEnabled': False}, 'fileAccess': {'isActive': False, 'isEnabled': False}, 'fileAccessPendingChange': False, 'homePage': {'specified': False, 'url': ''}, 'iconUrl': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACR0lEQVR4nOyauYoiURSGf7XaBRQ3kLFHjMRAcAHBUPodJhHMjAQDA6XjiecJfIEJRLN5ARUxMhkQRTRRcEEQ1FEQcZl7bnfSNEww3qqyoD4oags8n3XrnnOKK4GRz+e/mkymH+zwhW3PeGzmbGtcLpfXSqUyM7wH/5td9EJbrJlEXHr/57UWPOGl2CW8DRut8kICjz7m/8WzERpHF1AbXUBtdAG10QXURvMCEmTCarUinU4jFovB4/HAbrdjv99js9mg1+uh3W5jt9vhXmQRCAQC1GPA5XLx8/P5jOVyCYfDgWAwyLfD4YBms4l7ES7g8/lQLBZhs9mwWq1Qr9cxHA7Band+3+l0Ih6P8ycgAuECmUyGBz8ej8E6JhyPxw/3t9stWq0WRCFUwO/3IxwO43a7oVarfQpeDoQK0NAg+v0+ZrMZlECoAI1/YrFYQCmECtBUSazXayiFUAGDwcD31+sVSiFUgOZ2ghKXUggVoGRFuN1uKIXQWmgwGPB9JBLhuUAJhApMJhM+fdLLnM1mwT48QW6EV6PVapWXDYlEAqVSCaFQCEbjx5/xer2frv0vhkKhcINgotEocrkcnp6e+PnpdOLvhyRJPFvTbFUul4VkalMqlfoOwVAR1+12eaBmsxkWi4UXcfRkptMpOp0ORqMRLznuRbZ+gJIZVaJyo7eUaqMLqI0uoDa6gNroAmqjC6gNCcyhXeYk0IB2aRhp1Qc7UO5DjjhosceriTUef5LJ5E/W4n3B26IPBx4bGvK/WPDfaLnNXwAAAP//CDba/AAAAAZJREFUAwCV37mtJ0nCUQAAAABJRU5ErkJggg==', 'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'incognitoAccess': {'isActive': True, 'isEnabled': True}, 'incognitoAccessPendingChange': False, 'installWarnings': [], 'isAffectedByMV2Deprecation': False, 'isCommandRegistrationHandledExternally': False, 'location': 'UNKNOWN', 'locationText': 'Not from Chrome Web Store.', 'manifestErrors': [], 'manifestHomePageUrl': '', 'mustRemainInstalled': False, 'name': 'Chromium PDF Viewer', 'offlineEnabled': True, 'permissions': {'simplePermissions': []}, 'runtimeErrors': [], 'runtimeWarnings': [], 'showAccessRequestsInToolbar': True, 'showSafeBrowsingAllowlistWarning': False, 'state': 'ENABLED', 'type': 'EXTENSION', 'updateUrl': '', 'userMayModify': False, 'userScriptsAccess': {'isActive': False, 'isEnabled': False}, 'version': '1', 'views': [], 'webStoreUrl': ''}, 'text': None}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ ls /home/user/.config/google-chrome/Default/Extensions
+[?2004lls: cannot access '/home/user/.config/google-chrome/Default/Extensions': No such file or directory
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/inspect.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> print(page.evaluate('({ua:navigator.userAgent,chrome:Object.keys(window.chrome||{}),webstore:typeof chrome.webstore})'))
+[?2004l[?2004h> print(page.get_by_role('button',name='Add to Chrome',exact=True).evaluate('(e)=>e.outerHTML'))
+[?2004l[?2004h> from urllib.parse import quote
+[?2004l[?2004h> for name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:
+[?2004l[?2004h>  page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1200)
+[?2004l[?2004h>  print(name,page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'))
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/inspect.py
+[?2004lTraceback (most recent call last):
+  File "/tmp/inspect.py", line 1, in <module>
+    exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+  File "<string>", line 1, in <module>
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/__init__.py", line 25, in <module>
+    import playwright.sync_api._generated
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 21, in <module>
+    from playwright._impl._accessibility import Accessibility as AccessibilityImpl
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_accessibility.py", line 17, in <module>
+    from playwright._impl._connection import Channel
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 15, in <module>
+    import asyncio
+  File "/usr/lib/python3.11/asyncio/__init__.py", line 8, in <module>
+    from .base_events import *
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 39, in <module>
+    from . import coroutines
+  File "/usr/lib/python3.11/asyncio/coroutines.py", line 4, in <module>
+    import inspect
+  File "/tmp/inspect.py", line 1, in <module>
+    exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+  File "<string>", line 1, in <module>
+ImportError: cannot import name 'sync_playwright' from partially initialized module 'playwright.sync_api' (most likely due to a circular import) (/opt/venv/lib/python3.11/site-packages/playwright/sync_api/__init__.py)
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ mv /tmp/inspect.py /tmp/probe_store.py; rm -rf /tmp/__pycache__/inspect*; /opt/venv/bin/python /tmp/probe_store.py
+[?2004l{'ua': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36', 'chrome': ['loadTimes', 'csi', 'activityLogPrivate', 'developerPrivate', 'management', 'metricsPrivate', 'runtime', 'send', 'getVariableValue', 'timeTicks'], 'webstore': 'undefined'}
+^CTraceback (most recent call last):
+  File "/tmp/probe_store.py", line 3, in <module>
+    print(page.get_by_role('button',name='Add to Chrome',exact=True).evaluate('(e)=>e.outerHTML'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 15705, in evaluate
+    self._sync(
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 113, in _sync
+    self._dispatcher_fiber.switch()
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_context_manager.py", line 56, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 607, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.11/asyncio/base_events.py", line 1884, in _run_once
+    event_list = self._selector.select(timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/selectors.py", line 468, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ sed -i '/print(page.evaluate/,$!b' /dev/null 2>/dev/null || true
+cat > /tmp/findids.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page=c.new_page()
+from urllib.parse import quote
+for name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:
+ page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1500)
+ print(name,page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'),flush=True)
+PY
+/opt/venv/bin/python /tmp/findids.py
+sed -i '/print(page.evaluate/,$!b' /dev/null 2>/dev/null || true
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/findids.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page=c.new_page()
+[?2004l[?2004h> from urllib.parse import quote
+[?2004l[?2004h> for name in ['Speechify Text to Speech Voice Reader','React Developer Tools','Momentum','Google Translate']:
+[?2004l[?2004h>  page.goto('https://chromewebstore.google.com/search/'+quote(name)); page.wait_for_timeout(1500)
+[?2004l[?2004h>  print(name,page.locator('a[href*="/detail/"]').evaluate_all('(es)=>es.slice(0,3).map(e=>e.href)'),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/findids.py
+[?2004lSpeechify Text to Speech Voice Reader ['https://chromewebstore.google.com/detail/speechify-%E2%80%94-text-to-speec/ljflmlehinmoeknoonhibbjpldiijjmm']
+React Developer Tools ['https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi', 'https://chromewebstore.google.com/detail/react-hook-form-developer/cangfmbpembbepmmechnanpmddndpaji', 'https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd']
+Momentum ['https://chromewebstore.google.com/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca', 'https://chromewebstore.google.com/detail/momentum/hdkgmkicdpmnfcapchaabckmcmjldieo', 'https://chromewebstore.google.com/detail/mindful-momentum/palidfpmacconbkcjgeahehkkbgooach']
+Google Translate ['https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb', 'https://chromewebstore.google.com/detail/google-translate-in-side/lopnbnfpjmgpbppclhclehhgafnifija', 'https://chromewebstore.google.com/detail/google-translate-plus-ai/jomhcfmjbfkigcepcfkcpknnppmdopmc']
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ curl -s http://localhost:1337/json/version; /usr/bin/chromium --version
+curl -s http://localhost:1337/json/version; /usr/bin/chromium --version
+[?2004l{
+   "Browser": "Chrome/155.0.8059.79",
+   "Protocol-Version": "1.3",
+   "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+   "V8-Version": "15.5.35.23",
+   "WebKit-Version": "537.36 (@a49e2e3d4addfd84e765b52afe230bedb81096db)",
+   "webSocketDebuggerUrl": "ws://localhost:1337/devtools/browser/bba0e096-cfc2-4276-be1b-bce8a5266e3d"
+}
+Chromium 155.0.8059.79 built on Debian GNU/Linux 12 (bookworm)
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/details.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page=c.new_page()
+[?2004l[?2004h> for id in ['laookkfknpbbblfpciffpaejjkokdgca','kgjfgplpablkjnlkjmjdecgdpfankdle']:
+[?2004l[?2004h>  page.goto('https://chromewebstore.google.com/detail/'+id); page.wait_for_timeout(1000)
+[?2004l[?2004h>  print(page.locator('body').inner_text()[:6500],flush=True)
+[?2004l[?2004h>  if id.startswith('kg'):
+[?2004l[?2004h>   print(page.evaluate('({keys:Object.keys(chrome),ua:navigator.userAgent})'))
+[?2004l[?2004h>   page.on('console',lambda m:print('console',m.text,flush=True))
+[?2004l[?2004h>   page.get_by_role('button',name='Add to Chrome',exact=True).click(); page.wait_for_timeout(3000)
+[?2004l[?2004h>   print('buttons',page.get_by_role('button').all_text_contents(),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/details.py
+[?2004lSkip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Momentum
+Momentum Dashboard
+Featured
+4.2
+(
+
+13.7K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+2,000,000 users
+Add to Chrome
+Overview
+
+Transform your browser into a beautifully designed tab that helps you feel calm, keep focus, and stay energized.
+
+⭐ Featured in Tim Ferriss’ Tools of Titans, The Wall Street Journal, Apple Worldwide Developer Conference, Product Hunt, Lifehacker, and so much more ⭐   
+
+💙 FREE features
+
+🌊 Feel inspired with a new background, mantra and quote each day
+🌊 Focus better with Focus Mode 
+🌊 Simplify work and life with easy to-do lists 
+🌊 Create shortcuts to your favorite websites
+🌊 Get local weather info
+🌊 Google/Bing and other search options on your dashboard
+🌊 Customizable (Show/hide features as you like!) 
+🌊 Private and secure (We don’t share or sell your data!) 
+
+⭐ Join over 3 million inspired users ⭐
+
+Note: For the best experience, after installing Momentum click the ‘Keep it’ button on the ‘Change back to Google’ notification. This will show Momentum on each new tab as intended. 🙂 
+
+Want more Momentum?
+
+💙 PLUS features (You can try Plus for FREE once you install the extension!)
+
+🌊 Sustain better focus all day with unlimited Focus Mode 
+🌊 Create one-of-a-kind vision board
+🌊 Vacuum your 107 tabs with Tab Stash
+🌊 Write better (and quicker) with Notes AI
+🌊 Become an idea machine with Ask AI
+🌊 Get in the zone with Soundscapes
+🌊 Seamless task manager integrations (ClickUp, Todoist, Asana, etc.) 
+🌊 Track your habits with Metrics
+🌊 Unlimited to-do lists
+
+…And Countdowns, World Clocks, premium weather info (and more!) 
+
+🛡️ Privacy & Security
+
+The Momentum team is committed to protecting your privacy. The information we gather or process is used solely for core functionality of Momentum and to improve the quality and security of our service. Your information isn’t and has never been sold to third parties. 
+
+For more information on privacy and the security of your data, visit https://momentumdash.com/privacy. 
+
+🤍 Help & Contact Resources
+Help Center: https://momentumdash.help 
+Suggestions: https://momentum.nolt.io/
+Contact us: https://momentumdash.com/contact
+
+👍 Our Social Media 
+Blog: https://momentumdash.com/blog 
+Instagram: https://instagram.com/momentumdash
+
+See more
+4.2 out of 5
+13.7K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+2.27.9
+Updated
+October 20, 2026
+Features
+Offers in-app purchases
+Flag concern
+Size
+18.04MiB
+Languages
+English
+Developer
+Momentum Dashboard
+3 Fan Tan Alley Suite 400 Victoria, BC V8W 3G9 CA
+Website
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU laws.
+D-U-N-S
+202795134
+Privacy
+
+Momentum has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's privacy policy.
+
+Momentum handles the following:
+Personally identifiable information
+Authentication information
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+
+For help with questions, suggestions, or problems, visit the developer's support site
+
+Related
+
+Forest: stay focused, be present
+
+3.0
+
+Stay focused in a pleasant way.
+
+Infinity New Tab
+
+4.5
+
+Infinity New Tab allows you to customize your New Tab page
+
+Todoist for Chrome: Planner & Calendar
+
+4.8
+
+Organize work and life with Todoist for Chrome
+
+Weava Highlighter - PDF & Web
+
+3.0
+
+Best highlighting tool for Website and PDF. FREE and easy to use.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Zoom Chrome Extension
+Featured
+3.7
+(
+
+1K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+8,000,000 users
+Add to Chrome
+Overview
+
+Schedule Zoom meetings directly from Google Calendar
+
+Schedule Zoom cloud meetings directly from Google Calendar
+
+Zoom, the cloud meeting company, unifies mobile collaboration, cloud video conferencing and simple online meetings into one easy-to-use platform. Our solution offers the best video, audio and screen-sharing experience across Windows PC, Mac, iOS, Android and H.323/SIP room systems
+
+The Zoom Chrome Extension allows participants to schedule Zoom cloud meetings directly from Google Calendar. With the click of a button, you can start an instant meeting or schedule a future meeting. The meeting URL and information is sent via a Google Calendar  invitation so the attendee can join with a single-click.  
+
+Zoom Chrome Extension allows you to:
+•  Start an instant meeting
+•  Schedule a meeting
+•  Schedule a meeting for other
+
+Do we do more? 
+
+Zoom offers the following: 
+•  Unparalleled video, voice and screen sharing quality
+•  Free unlimited minutes for 1-to-1 meetings and 40 minutes for group meetings
+•  Paid service is only $14.99/month with unlimited minutes and meetings
+•  Video gallery view to see all 25 video streams at once
+•  Full online meeting functionality, including desktop and mobile screen sharing
+•  Annotations and share audio, mouse and keyboard controls
+•  Free global teleconferencing
+•  Interoperability between H.323/SIP room systems, desktop, tablet and mobile devices
+
+To learn more about Zoom, please visit <a href="https://zoom.us">https://zoom.us</a>
+
+See more
+3.7 out of 5
+1K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+1.9.16
+Updated
+August 27, 2026
+Flag concern
+Offered by
+zoom.us
+Size
+313KiB
+Languages
+3 languages
+Developer
+Zoom Communications, Inc.
+55 Almaden Blvd Ste 600 San Jose, CA 95113 US
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU laws.
+D-U-N-S
+053553307
+Privacy
+
+Zoom Chrome Extension has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the developer's privacy policy.
+
+Zoom Chrome Extension handles the following:
+User activity
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+Visit support hub
+Related
+
+Zoom Closer
+
+3.6
+
+This extension automatically closes the launched window from Zoom meetings.
+
+Zoom for Google Chrome
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Calendly Browser Extension
+
+3.8
+
+Schedule meetings without the hassle. Never get double booked. Calendly works with your calendar to automate appointment scheduling.
+
+LinkedIn Extension
+
+3.9
+
+This extension lights up with a new notification count whenever you have new activity waiting for you at LinkedIn.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+{'keys': ['loadTimes', 'csi', 'app', 'webstorePrivate', 'management', 'runtime'], 'ua': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36'}
+buttons ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ curl -L --max-time 30 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=155.0.0.0&acceptformat=crx3&x=id%3Dkgjfgplpablkjnlkjmjdecgdpfankdle%26uc' -o /tmp/zoom.crx; ls -l /tmp/zoom.crx
+curl -L --max-time 30 'https://clients2.google.com/service/update2/crx?response=redirect&prodversion=155.0.0.0&acceptformat=crx3&x=id%3Dkgjfgplpablkjnlkjmjdecgdpfankdle%26uc' -o /tmp/zoom.crx; ls -l /tmp/zoom.crx
+[?2004l  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   468    0   468    0     0   1497      0 --:--:-- --:--:-- --:--:--  1500
+100  313k  100  313k    0     0   494k      0 --:--:-- --:--:-- --:--:--  494k
+-rw-r--r-- 1 agent agent 320595 Oct 21 16:22 /tmp/zoom.crx
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/api.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page=next(x for x in c.pages if '/detail/kg' in x.url or '/zoom-chrome-extension/' in x.url)
+[?2004l[?2004h> print(page.evaluate('Object.keys(chrome.webstorePrivate)'))
+[?2004l[?2004h> print(page.evaluate('''()=>new Promise(r=>chrome.webstorePrivate.beginInstallWithManifest3({id:'kgjfgplpablkjnlkjmjdecgdpfankdle',manifest:JSON.stringify({name:'Zoom Chrome Extension',version:'1.9.16',manifest_version:3})},(...args)=>r({args,error:chrome.runtime.lastError})))'''))
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/api.py
+[?2004l['beginInstallWithManifest3', 'completeInstall', 'enableAppLauncher', 'getBrowserLogin', 'getExtensionStatus', 'getFullChromeVersion', 'getIsLauncherEnabled', 'getMV2DeprecationStatus', 'getReferrerChain', 'getStoreLogin', 'getWebGLStatus', 'install', 'isInIncognitoMode', 'isPendingCustodianApproval', 'logEnterprisePromoShown', 'onEnterprisePromoClick', 'setStoreLogin', 'shouldShowEnterprisePromotionBanner', 'ExtensionInstallStatus', 'MV2DeprecationStatus', 'PromotionType', 'Result', 'WebGlStatus']
+{'args': ['already_installed'], 'error': {'message': 'This item is already installed'}}
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/allinstall.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+page=c.new_page()
+ids=['ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']
+for id in ids:
+ page.goto('https://chromewebstore.google.com/detail/'+id);page.wait_for_timeout(1000)
+ print(id,page.get_by_role('button').all_text_contents(),flush=True)
+ btn=page.get_by_role('button',name='Add to Chrome',exact=True)
+ if btn.count(): btn.click()
+ page.wait_for_timeout(4000)
+ print('after',page.get_by_role('button').all_text_contents(),flush=True)
+PY
+/opt/venv/bin/python /tmp/allinstall.py
+cat > /tmp/allinstall.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> page=c.new_page()
+[?2004l[?2004h> ids=['ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']
+[?2004l[?2004h> for id in ids:
+[?2004l[?2004h>  page.goto('https://chromewebstore.google.com/detail/'+id);page.wait_for_timeout(1000)
+[?2004l[?2004h>  print(id,page.get_by_role('button').all_text_contents(),flush=True)
+[?2004l[?2004h>  btn=page.get_by_role('button',name='Add to Chrome',exact=True)
+[?2004l[?2004h>  if btn.count(): btn.click()
+[?2004l[?2004h>  page.wait_for_timeout(4000)
+[?2004l[?2004h>  print('after',page.get_by_role('button').all_text_contents(),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/allinstall.py
+[?2004lljflmlehinmoeknoonhibbjpldiijjmm ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '']
+fmkadmapgofadopljbjfkapdkoienihi ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', 'See more', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', 'See more', '', '', '']
+laookkfknpbbblfpciffpaejjkokdgca ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '']
+aapbdbdomjkkjkaonfhkkikfgjllcleb ['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+after ['', '', 'No thanks', 'Install Chrome', '', 'Share', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ ls -la /home/user/.config/google-chrome/Default/Extensions; cat > /tmp/verify.py <<'PY'
+exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(1000)
+print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,name:e.data.name,state:e.data.state,location:e.data.location,disableReasons:e.data.disableReasons}))'))
+PY
+/opt/venv/bin/python /tmp/verify.py
+ls -la /home/user/.config/google-chrome/Default/Extensions; cat > /tmp/verify.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(1000)
+[?2004l[?2004h> print(e.locator('extensions-item').evaluate_all('(es)=>es.map(e=>({id:e.id,name:e.data.name,state:e.data.state,location:e.data.location,disableReasons:e.data.disableReasons}))'))
+[?2004l[?2004h> PY
+[?2004lls: cannot access '/home/user/.config/google-chrome/Default/Extensions': No such file or directory
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/verify.py
+[?2004l[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ find /home/agent/.config/google-chrome -maxdepth 3 -type f | head -35; ls -l /usr/bin/chromium; env | grep -i chrome
+find /home/agent/.config/google-chrome -maxdepth 3 -type f | head -35; ls -l /usr/bin/chromium; env | grep -i chrome
+[?2004l/home/agent/.config/google-chrome/Default/Preferences
+/home/agent/.config/google-chrome/Default/Bookmarks
+/home/agent/.config/google-chrome/Default/Login Data For Account
+/home/agent/.config/google-chrome/Default/heavy_ad_intervention_opt_out.db-journal
+/home/agent/.config/google-chrome/Default/Cookies-journal
+/home/agent/.config/google-chrome/Default/SCT Auditing Pending Reports
+/home/agent/.config/google-chrome/Default/GCM Store/000003.log
+/home/agent/.config/google-chrome/Default/GCM Store/LOCK
+/home/agent/.config/google-chrome/Default/GCM Store/LOG
+/home/agent/.config/google-chrome/Default/GCM Store/CURRENT
+/home/agent/.config/google-chrome/Default/GCM Store/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/LOCK
+/home/agent/.config/google-chrome/Default/LOG
+/home/agent/.config/google-chrome/Default/Session Storage/000003.log
+/home/agent/.config/google-chrome/Default/Session Storage/LOCK
+/home/agent/.config/google-chrome/Default/Session Storage/LOG
+/home/agent/.config/google-chrome/Default/Session Storage/CURRENT
+/home/agent/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/000003.log
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/LOCK
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/LOG
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/CURRENT
+/home/agent/.config/google-chrome/Default/Site Characteristics Database/MANIFEST-000001
+/home/agent/.config/google-chrome/Default/Affiliation Database
+/home/agent/.config/google-chrome/Default/heavy_ad_intervention_opt_out.db
+/home/agent/.config/google-chrome/Default/DIPS
+/home/agent/.config/google-chrome/Default/Web Data-journal
+/home/agent/.config/google-chrome/Default/discount_infos_db/LOCK
+/home/agent/.config/google-chrome/Default/discount_infos_db/LOG
+/home/agent/.config/google-chrome/Default/Network Action Predictor
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_1
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_0
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_3
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/index
+/home/agent/.config/google-chrome/Default/DawnGraphiteCache/data_2
+find: ‘standard output’: Broken pipe
+find: write error
+-rwxr-xr-x 1 root root 5066 Oct 14 21:13 [0m[01;32m/usr/bin/chromium[0m
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/download.py <<'PY'
+[?2004l[?2004h> import requests,zipfile,io,pathlib,json
+[?2004l[?2004h> ids=['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']
+[?2004l[?2004h> for id in ids:
+[?2004l[?2004h>  r=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&uc'});r.raise_for_status()
+[?2004l[?2004h>  path=pathlib.Path.home()/'.local/share/chrome-extensions'/id;path.mkdir(parents=True,exist_ok=True)
+[?2004l[?2004h>  z=zipfile.ZipFile(io.BytesIO(r.content));z.extractall(path)
+[?2004l[?2004h>  m=json.loads((path/'manifest.json').read_text());print(id,m.get('name'),m.get('manifest_version'),'key',bool(m.get('key')),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/download.py
+[?2004lkgjfgplpablkjnlkjmjdecgdpfankdle Zoom Chrome Extension 3 key True
+ljflmlehinmoeknoonhibbjpldiijjmm __MSG_appName__ 3 key True
+fmkadmapgofadopljbjfkapdkoienihi React Developer Tools 3 key False
+laookkfknpbbblfpciffpaejjkokdgca Momentum 3 key False
+aapbdbdomjkkjkaonfhkkikfgjllcleb __MSG_8969005060131950570__ 3 key False
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/load.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)
+[?2004l[?2004h> print(e.evaluate('Object.keys(chrome.developerPrivate)'),flush=True)
+[?2004l[?2004h> print(e.evaluate('''()=>new Promise(r=>chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true},()=>r(chrome.runtime.lastError||'ok')))'''),flush=True)
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> for path in (Path.home()/'.local/share/chrome-extensions').iterdir():
+[?2004l[?2004h>  print(path.name,e.evaluate('''path=>new Promise(r=>chrome.developerPrivate.loadUnpacked({failQuietly:true,useDragInstall:true,draggedPath:path},(...args)=>r({args,error:chrome.runtime.lastError})))''',str(path)),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/load.py
+[?2004l['onUserSiteSettingsChanged', 'onProfileStateChanged', 'onItemStateChanged', 'addHostPermission', 'addUserSpecifiedSites', 'autoUpdate', 'choosePath', 'deleteExtensionErrors', 'dismissSafetyHubExtensionsMenuNotification', 'getExtensionInfo', 'getExtensionSize', 'getExtensionsInfo', 'getMatchingExtensionsForSite', 'getProfileConfiguration', 'getUserAndExtensionSitesByEtld', 'getUserSiteSettings', 'inspect', 'installDroppedFile', 'loadDirectory', 'loadUnpacked', 'notifyDragInstallInProgress', 'openDevTools', 'openReviewPage', 'packDirectory', 'reload', 'removeHostPermission', 'removeMultipleExtensions', 'removeUserSpecifiedSites', 'repairExtension', 'requestFileSource', 'setShortcutHandlingSuspended', 'showOptions', 'showPath', 'showSiteSettings', 'updateExtensionCommand', 'updateExtensionConfiguration', 'updateProfileConfiguration', 'updateSiteAccess', 'uploadExtensionToAccount', 'CommandScope', 'ErrorLevel', 'ErrorType', 'EventType', 'ExtensionState', 'ExtensionType', 'FileType', 'HostAccess', 'Location', 'PackStatus', 'SafetyCheckWarningReason', 'SelectType', 'SiteSet', 'ViewType']
+ok
+Traceback (most recent call last):
+  File "/tmp/load.py", line 7, in <module>
+    print(path.name,e.evaluate('''path=>new Promise(r=>chrome.developerPrivate.loadUnpacked({failQuietly:true,useDragInstall:true,draggedPath:path},(...args)=>r({args,error:chrome.runtime.lastError})))''',str(path)),flush=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8536, in evaluate
+    self._sync(
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 468, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 278, in evaluate
+    await self._channel.send(
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Error in invocation of developerPrivate.loadUnpacked(optional developerPrivate.LoadUnpackedOptions options, optional function callback): Error at parameter 'options': Unexpected property: 'useDragInstall'.
+    at eval (eval at evaluate (:313:29), <anonymous>:1:46)
+    at new Promise (<anonymous>)
+    at eval (eval at evaluate (:313:29), <anonymous>:1:7)
+    at UtilityScript.evaluate (<anonymous>:320:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/keys.py <<'PY'
+exec(open('/tmp/download.py').read().split('for id in ids:')[0])
+import struct,hashlib,base64
+def var(b,i):
+ n=s=0
+ while True:
+  v=b[i];i+=1;n|=(v&127)<<s
+  if v<128:return n,i
+  s+=7
+def fields(b):
+ i=0
+ while i<len(b):
+  tag,i=var(b,i);typ=tag&7
+  if typ==2:
+   n,i=var(b,i);yield tag>>3,b[i:i+n];i+=n
+  elif typ==0:_,i=var(b,i)
+  else:raise ValueError(typ)
+for id in ids:
+ path=pathlib.Path.home()/'.local/share/chrome-extensions'/id/'manifest.json';m=json.loads(path.read_text())
+ if m.get('key'):continue
+ b=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&uc'}).content
+ n=struct.unpack('<I',b[cat > /tmp/keys.py <<'PY'8:12])[0]
+ for tag,proof in fields(b[12:12+n]):
+  if tag not in [2,3]:continue
+  for t,key in fields(proof):
+   if t!=1:continue
+   raw=hashlib.sha256(key).hexdigest()[:32];kid=''.join(chr(ord('a')+int(x,16)) for x in raw)
+   if kid==id:
+    m
+['key']=base64.b64encode(key).decode();path.wri[?2004l[?2004h> exec(open('/tmp/download.py').read().split('for id in ids:')[0])
+[?2004l[?2004h> import struct,hashlib,base64
+[?2004l[?2004h> def var(b,i):
+[?2004l[?2004h>  n=s=0
+[?2004l[?2004h>  while True:
+[?2004l[?2004h>   v=b[i];i+=1;n|=(v&127)<<s
+[?2004l[?2004h>   if v<128:return n,i
+[?2004l[?2004h>   s+=7
+[?2004l[?2004h> def fields(b):
+[?2004l[?2004h>  i=0
+[?2004l[?2004h>  while i<len(b):
+[?2004l[?2004h>   tag,i=var(b,i);typ=tag&7
+[?2004l[?2004h>   if typ==2:
+[?2004l[?2004h>    n,i=var(b,i);yield tag>>3,b[i:i+n];i+=n
+[?2004l[?2004h>   elif typ==0:_,i=var(b,i)
+[?2004l[?2004h>   else:raise ValueError(typ)
+[?2004l[?2004h> for id in ids:
+[?2004l[?2004h>  path=pathlib.Path.home()/'.local/share/chrome-extensions'/id/'manifest.json';m=json.loads(path.read_text())
+[?2004l[?2004h>  if m.get('key'):continue
+[?2004l[?2004h>  b=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&uc'}).content
+[?2004l[?2004h>  n=struct.unpack('<I',b[8:12])[0]
+[?2004l[?2004h>  for tag,proof in fields(b[12:12+n]):
+[?2004l[?2004h>   if tag not in [2,3]:continue
+[?2004l[?2004h>   for t,key in fields(proof):
+[?2004l[?2004h>    if t!=1:continue
+[?2004l[?2004h>    raw=hashlib.sha256(key).hexdigest()[:32];kid=''.join(chr(ord('a')+int(x,16)) for x in raw)
+[?2004l[?2004h>    if kid==id:
+[?2004l[?2004h>     m['key']=base64.b64encode(key).decode();path.write_text(json.dumps(m));print('key restored',id,flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/keys.py
+[?2004lkey restored fmkadmapgofadopljbjfkapdkoienihi
+key restored laookkfknpbbblfpciffpaejjkokdgca
+key restored aapbdbdomjkkjkaonfhkkikfgjllcleb
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ cat > /tmp/loadui.py <<'PY'
+[?2004l[?2004h> exec(open('/tmp/store.py').read().split('print(page.url)')[0])
+[?2004l[?2004h> import subprocess,time
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> e=c.new_page();e.goto('chrome://extensions/');e.wait_for_timeout(500)
+[?2004l[?2004h> e.evaluate('chrome.developerPrivate.updateProfileConfiguration({inDeveloperMode:true})')
+[?2004l[?2004h> for path in (Path.home()/'.local/share/chrome-extensions').iterdir():
+[?2004l[?2004h>  e.bring_to_front()
+[?2004l[?2004h>  e.evaluate('chrome.developerPrivate.loadUnpacked({failQuietly:true},()=>{window.loadResult=chrome.runtime.lastError?.message||"ok"})')
+[?2004l[?2004h>  time.sleep(1)
+[?2004l[?2004h>  subprocess.run(['xdotool','key','ctrl+l']);subprocess.run(['xdotool','type','--clearmodifiers',str(path)]);subprocess.run(['xdotool','key','Return']);time.sleep(1);subprocess.run(['xdotool','key','Return']);time.sleep(2)
+[?2004l[?2004h>  print(path.name,e.evaluate('window.loadResult'),flush=True)
+[?2004l[?2004h> PY
+[?2004l[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/loadui.py
+[?2004laapbdbdomjkkjkaonfhkkikfgjllcleb File selection was canceled.
+laookkfknpbbblfpciffpaejjkokdgca File selection was canceled.
+kgjfgplpablkjnlkjmjdecgdpfankdle File selection was canceled.
+ljflmlehinmoeknoonhibbjpldiijjmm File selection was canceled.
+fmkadmapgofadopljbjfkapdkoienihi File selection was canceled.
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ pkill -TERM -x chromium; sleep 2; google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,)" chrome://extensions/ > /tmp/chrome.log 2>&1 &
+pkill -TERM -x chromium; sleep 2; google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,)" chrome://extensions/ > /tmp/chrome.log 2>&1 &
+[?2004l[1]+  Done                    google-chrome https://chromewebstore.google.com/ > /tmp/chrome.log 2>&1
+[1] 1901
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/verify.py
+[?2004l[{'id': 'aapbdbdomjkkjkaonfhkkikfgjllcleb', 'name': 'Google Translate', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'laookkfknpbbblfpciffpaejjkokdgca', 'name': 'Momentum', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'fmkadmapgofadopljbjfkapdkoienihi', 'name': 'React Developer Tools', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'ljflmlehinmoeknoonhibbjpldiijjmm', 'name': 'Speechify — Text to Speech', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'kgjfgplpablkjnlkjmjdecgdpfankdle', 'name': 'Zoom Chrome Extension', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ pkill -TERM -x chromium; sleep 2; google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1 &
+pkill -TERM -x chromium; sleep 2; google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1 &
+[?2004l[1]+  Done                    google-chrome --load-extension="$(find /home/agent/.local/share/chrome-extensions -mindepth 1 -maxdepth 1 -type d | paste -sd,)" chrome://extensions/ > /tmp/chrome.log 2>&1
+[1] 2383
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/verify.py
+[?2004l[{'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ python3 - <<'PY'
+import json
+from pathlib import Path
+p=Path.home()/'.config/google-chrome/Default'
+for f in ['Preferences','Secure Preferences']:
+ d=json.loads((p/f).read_text()); print(f,json.dumps(d.get('extensions'),indent=2)[:12000])
+PY
+python3 - <<'PY'
+[?2004l[?2004h> import json
+[?2004l[?2004h> from pathlib import Path
+[?2004l[?2004h> p=Path.home()/'.config/google-chrome/Default'
+[?2004l[?2004h> for f in ['Preferences','Secure Preferences']:
+[?2004l[?2004h>  d=json.loads((p/f).read_text()); print(f,json.dumps(d.get('extensions'),indent=2)[:12000])
+[?2004l[?2004h> PY
+[?2004lPreferences {
+  "alerts": {
+    "initialized": true
+  },
+  "chrome_url_overrides": {
+    "newtab": []
+  },
+  "commands": {
+    "linux:Alt+A": {
+      "command_name": "play-pause-new",
+      "extension": "ljflmlehinmoeknoonhibbjpldiijjmm",
+      "global": false
+    },
+    "linux:Alt+L": {
+      "command_name": "save-to-library",
+      "extension": "ljflmlehinmoeknoonhibbjpldiijjmm",
+      "global": false
+    },
+    "linux:Alt+R": {
+      "command_name": "open-screenshot-mode",
+      "extension": "ljflmlehinmoeknoonhibbjpldiijjmm",
+      "global": false
+    },
+    "linux:Alt+S": {
+      "command_name": "voice-typing",
+      "extension": "ljflmlehinmoeknoonhibbjpldiijjmm",
+      "global": false
+    }
+  },
+  "enterprise_promotion": {
+    "expiration_time": "13437159600267653"
+  },
+  "last_chrome_version": "155.0.8059.79",
+  "settings": {
+    "aapbdbdomjkkjkaonfhkkikfgjllcleb": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "activeTab",
+          "contextMenus",
+          "storage",
+          "scripting",
+          "offscreen"
+        ],
+        "explicit_host": [],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "commands": {
+        "_execute_action": {
+          "was_assigned": true
+        }
+      },
+      "content_settings": [],
+      "creation_flags": 38,
+      "disable_reasons": [],
+      "first_install_time": "13437073529687583",
+      "from_webstore": false,
+      "granted_permissions": {
+        "api": [
+          "activeTab",
+          "contextMenus",
+          "storage",
+          "scripting",
+          "offscreen"
+        ],
+        "explicit_host": [],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "has_started_service_worker": true,
+      "incognito_content_settings": [],
+      "incognito_preferences": {},
+      "last_update_time": "13437073529687583",
+      "location": 8,
+      "newAllowFileAccess": true,
+      "path": "/home/agent/.local/share/chrome-extensions/aapbdbdomjkkjkaonfhkkikfgjllcleb",
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "2.0.18"
+      },
+      "serviceworkerevents": [
+        "contextMenus.onClicked",
+        "runtime.onInstalled",
+        "storage.onChanged"
+      ],
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "fmkadmapgofadopljbjfkapdkoienihi": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "devtools",
+          "storage",
+          "tabs",
+          "scripting"
+        ],
+        "explicit_host": [
+          "<all_urls>"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "commands": {
+        "_execute_action": {
+          "was_assigned": true
+        }
+      },
+      "content_settings": [],
+      "creation_flags": 38,
+      "disable_reasons": [],
+      "first_install_time": "13437073529698184",
+      "from_webstore": false,
+      "granted_permissions": {
+        "api": [
+          "devtools",
+          "storage",
+          "tabs",
+          "scripting"
+        ],
+        "explicit_host": [
+          "<all_urls>"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "has_started_service_worker": true,
+      "incognito_content_settings": [],
+      "incognito_preferences": {},
+      "last_update_time": "13437073529698184",
+      "location": 8,
+      "newAllowFileAccess": true,
+      "path": "/home/agent/.local/share/chrome-extensions/fmkadmapgofadopljbjfkapdkoienihi",
+      "persistent_script_url_patterns": [
+        "<all_urls>"
+      ],
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "8.0.0"
+      },
+      "serviceworkerevents": [
+        "tabs.onActivated",
+        "tabs.onCreated",
+        "tabs.onUpdated"
+      ],
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "kgjfgplpablkjnlkjmjdecgdpfankdle": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "storage",
+          "unlimitedStorage"
+        ],
+        "explicit_host": [
+          "https://*.zoom.com/*",
+          "https://*.zoom.us/*",
+          "https://calendar.google.com/*",
+          "https://www.google.com/*"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "https://*.zoom.com/myhome*",
+          "https://*.zoom.com/wc/*",
+          "https://*.zoom.com/zm/extension_login/*",
+          "https://*.zoom.us/myhome*",
+          "https://*.zoom.us/wc/*",
+          "https://*.zoom.us/zm/extension_login/*",
+          "https://calendar.google.com/calendar/*",
+          "https://www.google.com/calendar/*"
+        ]
+      },
+      "commands": {
+        "_execute_action": {
+          "was_assigned": true
+        }
+      },
+      "content_settings": [],
+      "creation_flags": 38,
+      "disable_reasons": [],
+      "first_install_time": "13437073529691945",
+      "from_webstore": false,
+      "granted_permissions": {
+        "api": [
+          "storage",
+          "unlimitedStorage"
+        ],
+        "explicit_host": [
+          "https://*.zoom.com/*",
+          "https://*.zoom.us/*",
+          "https://calendar.google.com/*",
+          "https://www.google.com/*"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "https://*.zoom.com/myhome*",
+          "https://*.zoom.com/wc/*",
+          "https://*.zoom.com/zm/extension_login/*",
+          "https://*.zoom.us/myhome*",
+          "https://*.zoom.us/wc/*",
+          "https://*.zoom.us/zm/extension_login/*",
+          "https://calendar.google.com/calendar/*",
+          "https://www.google.com/calendar/*"
+        ]
+      },
+      "has_started_service_worker": true,
+      "incognito_content_settings": [],
+      "incognito_preferences": {},
+      "last_update_time": "13437073529691945",
+      "location": 8,
+      "newAllowFileAccess": true,
+      "path": "/home/agent/.local/share/chrome-extensions/kgjfgplpablkjnlkjmjdecgdpfankdle",
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "1.9.16"
+      },
+      "serviceworkerevents": [
+        "runtime.onInstalled",
+        "storage.onChanged",
+        "tabs.onUpdated"
+      ],
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "laookkfknpbbblfpciffpaejjkokdgca": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "idle",
+          "unlimitedStorage",
+          "newTabPageOverride",
+          "offscreen"
+        ],
+        "explicit_host": [],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "https://*.momentumdash.com/*"
+        ]
+      },
+      "commands": {
+        "_execute_action": {
+          "was_assigned": true
+        }
+      },
+      "content_settings": [],
+      "creation_flags": 38,
+      "disable_reasons": [],
+      "first_install_time": "13437073529690288",
+      "from_webstore": false,
+      "granted_permissions": {
+        "api": [
+          "idle",
+          "unlimitedStorage",
+          "newTabPageOverride",
+          "offscreen"
+        ],
+        "explicit_host": [],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "https://*.momentumdash.com/*"
+        ]
+      },
+      "has_started_service_worker": true,
+      "incognito_content_settings": [],
+      "incognito_preferences": {},
+      "last_update_time": "13437073529690288",
+      "location": 8,
+      "newAllowFileAccess": true,
+      "path": "/home/agent/.local/share/chrome-extensions/laookkfknpbbblfpciffpaejjkokdgca",
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "2.27.9"
+      },
+      "serviceworkerevents": [
+        "action.onClicked",
+        "runtime.onInstalled",
+        "tabs.onRemoved",
+        "tabs.onUpdated"
+      ],
+      "uninstall_url": "https://api.momentumdash.com/account/uninstall?userUuid=null",
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "ljflmlehinmoeknoonhibbjpldiijjmm": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "alarms",
+          "contextMenus",
+          "storage",
+          "tabs",
+          "tabCapture",
+          "unlimitedStorage",
+          "system.cpu",
+          "system.memory",
+          "scripting",
+          "offscreen",
+          "sidePanel"
+        ],
+        "explicit_host": [
+          "<all_urls>",
+          "file:///*",
+          "http://*/*",
+          "https://*/*"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "commands": {
+        "_execute_action": {
+          "was_assigned": true
+        },
+        "open-screenshot-mode": {
+          "suggested_key": "Alt+R",
+          "was_assigned": true
+        },
+        "play-pause-new": {
+          "suggested_key": "Alt+A",
+          "was_assigned": true
+        },
+        "save-to-library": {
+          "suggested_key": "Alt+L",
+          "was_assigned": true
+        },
+        "voice-typing": {
+          "suggested_key": "Alt+S",
+          "was_assigned": true
+        }
+      },
+      "content_settings": [],
+      "creation_flags": 38,
+      "disable_reasons": [],
+      "first_install_time": "13437073529694080",
+      "from_webstore": false,
+      "granted_permissions": {
+        "api": [
+          "alarms",
+          "contextMenus",
+          "storage",
+          "tabs",
+          "tabCapture",
+          "unlimitedStorage",
+          "system.cpu",
+          "system.memory",
+          "scripting",
+          "offscreen",
+          "sidePanel"
+        ],
+        "explicit_host": [
+          "<all_urls>",
+          "file:///*",
+          "http://*/*",
+          "https://*/*"
+        ],
+        "manifest_permissions": [],
+        "scriptable_host": [
+          "<all_urls>"
+        ]
+      },
+      "has_started_service_worker": true,
+      "incognito_content_settings": [],
+      "incognito_preferences": {},
+      "last_update_time": "13437073529694080",
+      "location": 8,
+      "newAllowFileAccess": true,
+      "path": "/home/agent/.local/share/chrome-extensions/ljflmlehinmoeknoonhibbjpldiijjmm",
+      "persistent_script_url_patterns": [
+        "*://docs.google.com/document/*",
+        "https://*.frame.claudeusercontent.com/*"
+      ],
+      "preferences": {},
+      "regular_only_preferences": {},
+      "service_worker_registration_info": {
+        "version": "14.12.0"
+      },
+      "serviceworkerevents": [
+        "action.onClicked",
+        "alarms.onAlarm",
+        "commands.onCommand",
+        "contextMenus.onClicked",
+        "permissions.onAdded",
+        "permissions.onRemoved",
+        "runtime.onConnectExternal",
+        "runtime.onInstalled",
+        "runtime.onStartup",
+        "runtime.onUpdateAvailable",
+        "storage.onChanged",
+        "tabs.onActivated",
+        "tabs.onHighlighted",
+        "tabs.onRemoved",
+        "tabs.onUpdated"
+      ],
+      "uninstall_url": "https://speechify.com/onboarding/uninstall/?extensionId=ljflmlehinmoeknoonhibbjpldiijjmm&appVersion=14.12.0&deviceId=b084b9d7-3972-4302-8c90-794f8247ee62",
+      "was_installed_by_default": false,
+      "was_installed_by_oem": false,
+      "withholding_permissions": false
+    },
+    "mhjfbmdgcfjbbpaeojofohoefgiehjai": {
+      "account_extension_type": 0,
+      "active_permissions": {
+        "api": [
+          "contentSettings",
+          "fileSystem",
+  
+Secure Preferences null
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ pkill -TERM -x chromium; sleep 2; python3 - <<'PY'
+[?2004l[?2004h> import json,pathlib
+[?2004l[?2004h> p=pathlib.Path.home()/'.config/google-chrome/Default/Preferences'
+[?2004l[?2004h> d=json.loads(p.read_text());settings=d['extensions']['settings']
+[?2004l[?2004h> for id in ['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']:
+[?2004l[?2004h>  s=settings[id];print(id,s.get('location'),s.get('state'),s.get('path'));s['location']=4;s['state']=1
+[?2004l[?2004h> p.write_text(json.dumps(d))
+[?2004l[?2004h> PY
+[?2004l[1]+  Done                    google-chrome chrome://extensions/ > /tmp/chrome.log 2>&1
+kgjfgplpablkjnlkjmjdecgdpfankdle 8 None /home/agent/.local/share/chrome-extensions/kgjfgplpablkjnlkjmjdecgdpfankdle
+ljflmlehinmoeknoonhibbjpldiijjmm 8 None /home/agent/.local/share/chrome-extensions/ljflmlehinmoeknoonhibbjpldiijjmm
+fmkadmapgofadopljbjfkapdkoienihi 8 None /home/agent/.local/share/chrome-extensions/fmkadmapgofadopljbjfkapdkoienihi
+laookkfknpbbblfpciffpaejjkokdgca 8 None /home/agent/.local/share/chrome-extensions/laookkfknpbbblfpciffpaejjkokdgca
+aapbdbdomjkkjkaonfhkkikfgjllcleb 8 None /home/agent/.local/share/chrome-extensions/aapbdbdomjkkjkaonfhkkikfgjllcleb
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ google-chrome chrome://extensions/ >/tmp/chrome.log 2>&1 &
+[?2004l[1] 2665
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ /opt/venv/bin/python /tmp/verify.py
+[?2004l[{'id': 'aapbdbdomjkkjkaonfhkkikfgjllcleb', 'name': 'Google Translate', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'laookkfknpbbblfpciffpaejjkokdgca', 'name': 'Momentum', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'fmkadmapgofadopljbjfkapdkoienihi', 'name': 'React Developer Tools', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'ljflmlehinmoeknoonhibbjpldiijjmm', 'name': 'Speechify — Text to Speech', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'kgjfgplpablkjnlkjmjdecgdpfankdle', 'name': 'Zoom Chrome Extension', 'state': 'ENABLED', 'location': 'UNPACKED', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}, {'id': 'mhjfbmdgcfjbbpaeojofohoefgiehjai', 'name': 'Chromium PDF Viewer', 'state': 'ENABLED', 'location': 'UNKNOWN', 'disableReasons': {'blockedByPolicy': False, 'corruptInstall': False, 'custodianApprovalRequired': False, 'disabledByAnotherExtension': False, 'parentDisabledPermissions': False, 'publishedInStoreRequired': False, 'reloading': False, 'suspiciousInstall': False, 'unsupportedDeveloperExtension': False, 'unsupportedManifestVersion': False, 'updateRequired': False}}]
+[?2004h[01;32magent@715dad585543[00m:[01;34m/app[00m$ 

@@ -1,0 +1,10 @@
+{
+  "analysis": "Official packages are downloadable, and the Web Store private API exists. We can inspect the installation error rather than switching to unpacked extensions unnecessarily.",
+  "plan": "Invoke the store's standard installation API for Zoom and capture its result.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/api.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\npage=next(x for x in c.pages if '/detail/kg' in x.url or '/zoom-chrome-extension/' in x.url)\nprint(page.evaluate('Object.keys(chrome.webstorePrivate)'))\nprint(page.evaluate('''()=>new Promise(r=>chrome.webstorePrivate.beginInstallWithManifest3({id:'kgjfgplpablkjnlkjmjdecgdpfankdle',manifest:JSON.stringify({name:'Zoom Chrome Extension',version:'1.9.16',manifest_version:3})},(...args)=>r({args,error:chrome.runtime.lastError})))'''))\nPY\n/opt/venv/bin/python /tmp/api.py\n",
+      "duration": 2
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "We need identify the currently open browser articles and available browser/PDF tooling, then save each article as a title-named PDF in the requested directory.",
+  "plan": "Inspect running processes, browser profiles, and installed tools to locate open tabs and a usable PDF export method.",
+  "commands": [
+    {
+      "keystrokes": "ls -la /app; ps aux | head -35; ls -la /home/user; which chromium chromium-browser google-chrome firefox wkhtmltopdf; env | grep -Ei 'display|browser|chrome'\n",
+      "duration": 0.1
+    }
+  ]
+}

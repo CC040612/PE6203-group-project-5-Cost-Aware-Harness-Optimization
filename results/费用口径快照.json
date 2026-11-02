@@ -1,0 +1,11 @@
+{
+  "basis": "Rates reconstruct the observed Harbor/LiteLLM estimate; not actual subscription billing",
+  "observed_run_date": "2026-10-21/22",
+  "input_noncache_usd_per_million": 2,
+  "cache_read_usd_per_million": 0.1,
+  "output_usd_per_million": 10,
+  "reconstructed_total_usd": 11.5594412,
+  "actual_cash_charge_usd": null,
+  "provider_usage_cost_returned": false,
+  "long_context_tier_applied": "not evidenced by aggregate reconstruction"
+}

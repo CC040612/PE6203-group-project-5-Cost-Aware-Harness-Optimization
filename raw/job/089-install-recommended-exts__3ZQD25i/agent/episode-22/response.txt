@@ -1,0 +1,10 @@
+{
+  "analysis": "Chrome reports Zoom is already installed; the earlier extension-manager check likely preceded installation completion. The normal Web Store workflow is working.",
+  "plan": "Install the remaining four extensions through their official listing buttons, allowing time for downloads, then verify installed state.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/allinstall.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\npage=c.new_page()\nids=['ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']\nfor id in ids:\n page.goto('https://chromewebstore.google.com/detail/'+id);page.wait_for_timeout(1000)\n print(id,page.get_by_role('button').all_text_contents(),flush=True)\n btn=page.get_by_role('button',name='Add to Chrome',exact=True)\n if btn.count(): btn.click()\n page.wait_for_timeout(4000)\n print('after',page.get_by_role('button').all_text_contents(),flush=True)\nPY\n/opt/venv/bin/python /tmp/allinstall.py\n",
+      "duration": 2
+    }
+  ]
+}

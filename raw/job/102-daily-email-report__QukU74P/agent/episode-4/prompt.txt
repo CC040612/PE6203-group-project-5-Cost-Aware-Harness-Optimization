@@ -1,0 +1,36 @@
+New Terminal Output:
+
+agent@1b01909f3e52:/app$ PYTHONPATH=/tmp/report-libs python - <<'PY'
+> import mailbox,email.policy
+> from email.parser import BytesParser
+> from email.utils import parsedate_to_datetime,parseaddr
+> from openpyxl import Workbook,load_workbook
+> from openpyxl.styles import Font,PatternFill
+> from openpyxl.utils import get_column_letter
+> p='/app/.thunderbird/t5q2a5hp.default-release/Mail/Local Folders/daily'
+> messages=list(mailbox.mbox(p,factory=lambda f: BytesParser(policy=email.policy.default).parse(f)))
+> messages=[m for m in messages if not (int(m.get('X-Mozilla-Status','0000'),16)&8)]
+> messages.sort(key=lambda m:parsedate_to_datetime(m['Date']).timestamp())
+> w=Workbook(); s=w.active; s.title='daily'
+> s.append(['sender_name','sender_address','subject','CC','number_of_attachments'])
+> for m in messages[-5:]:
+>  name,address=parseaddr(str(m['From']))
+>  cc=', '.join(str(h) for h in m.get_all('Cc',[]))
+>  attachments=sum(1 for part in m.walk() if part.get_content_disposition()=='attachment' or (part.get_filename() is not None and part.get_content_disposition()
+!='inline'))
+>  s.append([name,address,str(m['Subject']),cc,attachments])
+> for c in s[1]:
+>  c.font=Font(bold=True,color='FFFFFF'); c.fill=PatternFill('solid',fgColor='305496')
+> for i,width in enumerate([34,37,43,36,25],1): s.column_dimensions[get_column_letter(i)].width=width
+> s.freeze_panes='A2'; s.auto_filter.ref=s.dimensions
+> w.save('/app/report.xlsx')
+> r=load_workbook('/app/report.xlsx'); assert r.active.max_row==6 and r.active.max_column==5
+> for row in r.active.values: print(row)
+> PY
+('sender_name', 'sender_address', 'subject', 'CC', 'number_of_attachments')
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (25 JAN 2024)', None, 0)
+('eNotices System', 'enotices.daily.digest@hku.hk', 'HKU Daily Notices (27 JAN 2024)', 'mail.service@intranet.hku.hk', 0)
+('eNotices System', 'enotices.daily.digest@hku.hk', 'HKU Daily Notices (28 JAN 2024)', 'mail.service@intranet.hku.hk', 0)
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (29 JAN 2024)', None, 0)
+('HKU Bulk Email Delivery System', 'mail.service@intranet.hku.hk', 'HKU Daily Email Digest (30 JAN 2024)', None, 0)
+

@@ -1,0 +1,10 @@
+{
+  "analysis": "The task requires extracting a video frame at eight seconds and updating slide 2's actual background, rather than adding a picture shape. The input files are in /app.",
+  "plan": "Check available tools and inspect the presentation's slide 2 XML before extracting the frame and modifying the PPTX package in place.",
+  "commands": [
+    {
+      "keystrokes": "ls -l /app; which ffmpeg; python - <<'PY'\nimport zipfile\np='/app/Robotic_Workshop_Infographics.pptx'\nwith zipfile.ZipFile(p) as z:\n for n in ['ppt/slides/slide2.xml','ppt/slides/_rels/slide2.xml.rels']:\n  print(n); print(z.read(n).decode())\nPY\n",
+      "duration": 0.1
+    }
+  ]
+}

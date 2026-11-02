@@ -1,0 +1,15 @@
+New Terminal Output:
+
+agent@3f82e4733fd5:/app$ xdotool windowfocus 0x20051e key Escape; xdotool windowfocus 0x20021f key ctrl+q
+agent@3f82e4733fd5:/app$ ps -p 169 -o pid,stat,cmd; xwininfo -root -tree
+    PID STAT CMD
+[2]+  Done                    gimp /app/dog_with_background.png > /tmp/gimp.log 2>&1
+
+xwininfo: Window id: 0x21f (the root window) (has no name)
+
+  Root window id: 0x21f (the root window) (has no name)
+  Parent window id: 0x0 (none)
+     1 child:
+     0x400001 (has no name): ()  10x10+-20+-20  +-20+-20
+
+agent@3f82e4733fd5:/app$

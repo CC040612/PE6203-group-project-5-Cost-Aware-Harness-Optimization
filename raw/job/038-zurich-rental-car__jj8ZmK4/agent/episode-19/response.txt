@@ -1,0 +1,5 @@
+{
+  "analysis": "The search is loading.",
+  "plan": "Wait for the generated search URL and results.",
+  "commands": [{"keystrokes":"","duration":2}]
+}

@@ -1,0 +1,138 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/install.py
+Skip to main content
+chrome web store
+Sign in
+Discover
+Extensions
+Themes
+Switch to Chrome?
+
+Google recommends using Chrome when using extensions and themes.
+
+No thanks
+Yes
+Switch to Chrome to install extensions and themes
+Install Chrome
+Zoom Chrome Extension
+Featured
+3.7
+(
+
+1K ratings
+
+)
+Share
+Extension
+Workflow & Planning
+8,000,000 users
+Add to Chrome
+Overview
+
+Schedule Zoom meetings directly from Google Calendar
+
+Schedule Zoom cloud meetings directly from Google Calendar
+
+Zoom, the cloud meeting company, unifies mobile collaboration, cloud video conferencing and simple online meetings into one easy-to-use platform. Our solution o
+ffers the best video, audio and screen-sharing experience across Windows PC, Mac, iOS, Android and H.323/SIP room systems
+
+The Zoom Chrome Extension allows participants to schedule Zoom cloud meetings directly from Google Calendar. With the click of a button, you can start an instan
+t meeting or schedule a future meeting. The meeting URL and information is sent via a Google Calendar  invitation so the attendee can join with a single-click.
+
+
+Zoom Chrome Extension allows you to:
+•  Start an instant meeting
+•  Schedule a meeting
+•  Schedule a meeting for other
+
+Do we do more?
+
+Zoom offers the following:
+•  Unparalleled video, voice and screen sharing quality
+•  Free unlimited minutes for 1-to-1 meetings and 40 minutes for group meetings
+•  Paid service is only $14.99/month with unlimited minutes and meetings
+•  Video gallery view to see all 25 video streams at once
+•  Full online meeting functionality, including desktop and mobile screen sharing
+•  Annotations and share audio, mouse and keyboard controls
+•  Free global teleconferencing
+•  Interoperability between H.323/SIP room systems, desktop, tablet and mobile devices
+
+To learn more about Zoom, please visit <a href="https://zoom.us">https://zoom.us</a>
+
+See more
+3.7 out of 5
+1K ratings
+
+Learn more about results and reviews.
+
+See all reviews
+Details
+Version
+1.9.16
+Updated
+August 27, 2026
+Flag concern
+Offered by
+zoom.us
+Size
+313KiB
+Languages
+3 languages
+Developer
+Zoom Communications, Inc.
+55 Almaden Blvd Ste 600 San Jose, CA 95113 US
+Email
+Phone
+Trader
+This developer has identified itself as a trader per the definition from the European Union and committed to only offer products or services that comply with EU
+ laws.
+D-U-N-S
+053553307
+Privacy
+
+Zoom Chrome Extension has disclosed the following information regarding the collection and usage of your data. More detailed information can be found in the dev
+eloper's privacy policy.
+
+Zoom Chrome Extension handles the following:
+User activity
+See details
+This developer declares that your data is
+Not being sold to third parties, outside of the approved use cases
+Not being used or transferred for purposes that are unrelated to the item's core functionality
+Not being used or transferred to determine creditworthiness or for lending purposes
+Support
+Visit support hub
+Related
+
+Zoom Closer
+
+3.6
+
+This extension automatically closes the launched window from Zoom meetings.
+
+Zoom for Google Chrome
+
+4.3
+
+Zoom in or out on web content using the zoom button and mouse scroll wheel for more comfortable reading. That to each percent value.
+
+Calendly Browser Extension
+
+3.8
+
+Schedule meetings without the hassle. Never get double booked. Calendly works with your calendar to automate appointment scheduling.
+
+LinkedIn Extension
+
+3.9
+
+This extension lights up with a new notification count whenever you have new activity waiting for you at LinkedIn.
+
+About Chrome Web Store
+Developer Dashboard
+Privacy Policy
+Terms of Service
+Help
+['', '', 'No thanks', 'Install Chrome', '', 'Share', 'Add to Chrome', '', '', '', '', '', '', '', '', '', '', '', '', 'See more', '', '', '', '']
+agent@715dad585543:/app$

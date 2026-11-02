@@ -1,0 +1,6 @@
+[
+  {
+    "key": "ctrl+f",
+    "command": "-list.find"
+  }
+]

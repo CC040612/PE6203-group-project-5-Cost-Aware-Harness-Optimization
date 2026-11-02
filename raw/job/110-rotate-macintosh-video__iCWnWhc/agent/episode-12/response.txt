@@ -1,0 +1,10 @@
+{
+  "analysis": "OCR confirms that a vertical flip produces correctly oriented text ('On January 24th'), while a 180-degree rotation leaves it mirrored. The correct fix is vflip.",
+  "plan": "Encode the full video with a vertical flip, retain the original audio without re-encoding, and verify the resulting file.",
+  "commands": [
+    {
+      "keystrokes": "ffmpeg -hide_banner -loglevel error -i ~/Desktop/flipped_1984_Apple_Macintosh_Commercial.mp4 -map 0:v:0 -map 0:a:0 -vf vflip -c:v libx264 -preset medium -crf 18 -c:a copy -movflags +faststart -y ~/1984_Apple_Macintosh_Commercial.mp4 && ffprobe -v error -show_entries format=filename,duration,size -show_entries stream=codec_name,width,height -of json ~/1984_Apple_Macintosh_Commercial.mp4\n",
+      "duration": 1
+    }
+  ]
+}

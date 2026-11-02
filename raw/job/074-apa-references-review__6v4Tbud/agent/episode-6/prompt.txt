@@ -1,0 +1,38 @@
+New Terminal Output:
+
+</w:style>
+
+{"title": ["Does Digital Transformation Rely on Collaborative Dynamics? A Case Study on the Italian Public Digital Strategy"], "author": [{"ORCID": "https://orc
+id.org/0000-0002-5027-7636", "authenticated-orcid": false, "given": "Lorenzo", "family": "Costumato", "sequence": "first", "affiliation": [{"name": "Department
+of Management and Law University of Rome Tor Vergata  Rome Italy"}], "role": [{"role": "author", "vocabulary": "crossref"}]}, {"ORCID": "https://orcid.org/0000-
+0003-0677-3381", "authenticated-orcid": false, "given": "Andrea Bonomi", "family": "Savignon", "sequence": "additional", "affiliation": [{"name": "Department of
+ Management and Law University of Rome Tor Vergata  Rome Italy"}], "role": [{"role": "author", "vocabulary": "crossref"}]}, {"ORCID": "https://orcid.org/0009-00
+09-4361-0785", "authenticated-orcid": false, "given": "Fabiana", "family": "Scalabrini", "sequence": "additional", "affiliation": [{"name": "Department of Manag
+ement and Law University of Rome Tor Vergata  Rome Italy"}], "role": [{"role": "author", "vocabulary": "crossref"}]}, {"ORCID": "https://orcid.org/0009-0005-955
+7-3200", "authenticated-orcid": false, "given": "Luigina", "family": "Paglieri", "sequence": "additional", "affiliation": [{"name": "Department of Management an
+d Law University of Rome Tor Vergata  Rome Italy"}], "role": [{"role": "author", "vocabulary": "crossref"}]}], "published": {"date-parts": [[2026, 4, 12]]}, "co
+ntainer-title": ["Public Administration"], "volume": null, "issue": null, "page": null, "article-number": "padm.70062", "DOI": "10.1111/padm.70062", "publisher"
+: "Wiley"}
+{"title": ["Digital Transformation of the Italian Public Administration: A Case Study"], "author": [{"given": "Pratim", "family": "Datta", "sequence": "first",
+"affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}], "published": {"date-parts": [[2020]]}, "container-title": ["Communications of the A
+ssociation for Information Systems"], "volume": null, "issue": null, "page": "252-272", "article-number": null, "DOI": "10.17705/1cais.04611", "publisher": "Ass
+ociation for Information Systems"}
+{"title": ["A generalised adoption model for services: A cross-country comparison of mobile health (m-health)"], "author": [{"given": "Yogesh K.", "family": "Dw
+ivedi", "sequence": "first", "affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}, {"given": "Mahmud Akhter", "family": "Shareef", "sequen
+ce": "additional", "affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}, {"given": "Antonis C.", "family": "Simintiras", "sequence": "addi
+tional", "affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}, {"given": "Banita", "family": "Lal", "sequence": "additional", "affiliation
+": [], "role": [{"vocabulary": "crossref", "role": "author"}]}, {"given": "Vishanth", "family": "Weerakkody", "sequence": "additional", "affiliation": [], "role
+": [{"vocabulary": "crossref", "role": "author"}]}], "published": {"date-parts": [[2016, 1]]}, "container-title": ["Government Information Quarterly"], "volume"
+: "33", "issue": "1", "page": "174-187", "article-number": null, "DOI": "10.1016/j.giq.2015.06.003", "publisher": "Elsevier BV"}
+{"title": ["Extending the model of internet standards adoption: A cross-country comparison of IPv6 adoption"], "author": [{"given": "Xuequn", "family": "Wang",
+"sequence": "first", "affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}, {"given": "Sebastian", "family": "Zander", "sequence": "additio
+nal", "affiliation": [], "role": [{"vocabulary": "crossref", "role": "author"}]}], "published": {"date-parts": [[2018, 6]]}, "container-title": ["Information &a
+mp; Management"], "volume": "55", "issue": "4", "page": "450-460", "article-number": null, "DOI": "10.1016/j.im.2017.10.005", "publisher": "Elsevier BV"}
+{"title": ["Digital Government Review of Norway"], "author": [{"name": "OECD", "sequence": "first", "affiliation": [], "role": [{"role": "author", "vocabulary":
+ "crossref"}]}], "published": {"date-parts": [[2017, 9, 1]]}, "container-title": ["OECD Digital Government Studies"], "volume": null, "issue": null, "page": nul
+l, "article-number": null, "DOI": "10.1787/9789264279742-en", "publisher": "OECD"}
+{"title": ["Digital Life Norway (DLN) Initiative to foster and boost transdisciplinary biotechnology research and innovation"], "author": [{"name": "Centre for
+Digital Life Norway (DLN)", "sequence": "first", "affiliation": [], "role": [{"role": "author", "vocabulary": "crossref"}]}], "published": {"date-parts": [[2024
+, 1, 12]]}, "container-title": ["Open Access Government"], "volume": "41", "issue": "1", "page": "102-104", "article-number": null, "DOI": "10.56367/oag-041-111
+33", "publisher": "Adjacent Digital Politics Ltd"}
+agent@32f08de7ccee:/app$

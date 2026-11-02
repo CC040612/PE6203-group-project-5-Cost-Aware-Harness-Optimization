@@ -1,0 +1,10 @@
+{
+  "analysis": "The frame was successfully extracted, but the modification script stopped before changing the presentation because lxml is unavailable. Python's built-in XML library can perform the same edit.",
+  "plan": "Rerun the previous script with the standard-library XML parser, preserving namespace prefixes and adapting serialization.",
+  "commands": [
+    {
+      "keystrokes": "fc -ln -1 | sed 's/from lxml import etree as E/import xml.etree.ElementTree as E/; s/,standalone=True//; /rel=\\x27http/i\\for prefix, uri in ns.items(): E.register_namespace(prefix, uri)' > /tmp/update_background.sh\nbash /tmp/update_background.sh\nrm /tmp/update_background.sh\n",
+      "duration": 1
+    }
+  ]
+}

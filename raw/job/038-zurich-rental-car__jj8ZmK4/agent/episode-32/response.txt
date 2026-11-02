@@ -1,0 +1,5 @@
+{
+  "analysis": "The filter is being applied.",
+  "plan": "Wait for menu output.",
+  "commands": [{"keystrokes":"","duration":1}]
+}

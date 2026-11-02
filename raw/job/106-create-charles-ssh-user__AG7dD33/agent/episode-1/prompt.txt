@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@e79de7ee4325:/app$ id; sudo -n true; getent passwd charles; ls -ld /home/test1; command -v bash
+uid=1001(agent) gid=1001(agent) groups=1001(agent)
+drwxr-xr-x 2 root root 4096 Oct 22 02:46 /home/test1
+/usr/bin/bash
+agent@e79de7ee4325:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

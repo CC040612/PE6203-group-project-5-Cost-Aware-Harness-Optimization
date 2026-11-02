@@ -1,0 +1,128 @@
+{
+  "litellm_trace_id": "30f10776-4bc3-439a-9d77-b61f0be68aa8",
+  "litellm_call_id": "fbb68c79-6b02-4a7b-9f84-7bd165bfa3f6",
+  "input": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nHelp me access my outlook account with address `anonym-x2024@outlook.com` and password `password` in Thunderbird. Just fill in the information and stay on that page. I will check it manually later.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"We need to locate Thunderbird and determine how to interact with its account setup screen, then enter the supplied account details without proceeding beyond that page.\",\n  \"plan\": \"Inspect running applications and available desktop automation tools.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@4f49ca72fb28:/app$ ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\nagent         68 34.4  5.1 11521176 409464 ?     Sl   02:58   0:03 /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile\nagent         74  0.0  0.0  21092  2952 ?        Sl   02:58   0:00 /opt/thunderbird/crashhelper 68 6 /tmp/ 8\nagent        248  3.4  1.4 19243184 113440 ?     Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -isForBrowser -prefsHandle 0:2010 -prefMapHandl\ne 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ba67e5cc-6141-4650-b631-60ffb19838b2} -parent\nPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/thunderbird/omni.ja -appDir /opt/thunderbird 1 tab\nagent        250  0.3  0.5 258988 44764 ?        Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -parentBuildID 20260417012335 -prefsHandle 0:23\n46 -prefMapHandle 1:271725 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {e414a685-5f22-49cf-b8ea-ad445c75e7b6} -parentPid 68 -crashReporter 4 -crashHelper\n5 -appDir /opt/thunderbird 2 rdd\n/opt/venv/bin/python3\n/usr/bin/xdotool\n/usr/bin/wmctrl\ntotal 8\ndrwxr-xr-x 1 agent agent 4096 Oct 22 02:57 .\ndrwxr-xr-x 1 root  root  4096 Oct 22 02:58 ..\n:99\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "litellm_params": {
+    "acompletion": true,
+    "api_key": "[REDACTED]",
+    "force_timeout": 600,
+    "verbose": false,
+    "custom_llm_provider": "openai",
+    "api_base": "http://127.0.0.1:58429/v1/",
+    "litellm_call_id": "fbb68c79-6b02-4a7b-9f84-7bd165bfa3f6",
+    "model_alias_map": {},
+    "completion_call_id": "None",
+    "aembedding": "None",
+    "metadata": "None",
+    "model_info": "None",
+    "proxy_server_request": "None",
+    "preset_cache_key": "None",
+    "no-log": "None",
+    "stream_response": {},
+    "input_cost_per_token": "None",
+    "input_cost_per_second": "None",
+    "output_cost_per_token": "None",
+    "output_cost_per_second": "None",
+    "cost_per_query": "None",
+    "cooldown_time": "None",
+    "text_completion": "None",
+    "azure_ad_token_provider": "None",
+    "user_continue_message": "None",
+    "base_model": "None",
+    "litellm_trace_id": "None",
+    "litellm_session_id": "None",
+    "hf_model_name": "None",
+    "custom_prompt_dict": {},
+    "litellm_metadata": "None",
+    "disable_add_transform_inline_image_block": "None",
+    "drop_params": true,
+    "prompt_id": "None",
+    "prompt_variables": "None",
+    "async_call": "None",
+    "ssl_verify": "None",
+    "merge_reasoning_content_in_choices": "None",
+    "api_version": "None",
+    "max_retries": "None",
+    "use_litellm_proxy": false,
+    "litellm_request_debug": false,
+    "tpm": "None",
+    "client_id": "None",
+    "azure_scope": "None",
+    "azure_ad_token": "[REDACTED]",
+    "rpm": "None",
+    "azure_username": "None",
+    "timeout": 600.0,
+    "tenant_id": "None",
+    "azure_password": "[REDACTED]",
+    "client_secret": "[REDACTED]"
+  },
+  "applied_guardrails": [],
+  "model": "gpt-6.1-sol",
+  "messages": [
+    {
+      "role": "user",
+      "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nHelp me access my outlook account with address `anonym-x2024@outlook.com` and password `password` in Thunderbird. Just fill in the information and stay on that page. I will check it manually later.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+      "role": "assistant",
+      "content": "{\n  \"analysis\": \"We need to locate Thunderbird and determine how to interact with its account setup screen, then enter the supplied account details without proceeding beyond that page.\",\n  \"plan\": \"Inspect running applications and available desktop automation tools.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "New Terminal Output:\nagent@4f49ca72fb28:/app$ ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\nagent         68 34.4  5.1 11521176 409464 ?     Sl   02:58   0:03 /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile\nagent         74  0.0  0.0  21092  2952 ?        Sl   02:58   0:00 /opt/thunderbird/crashhelper 68 6 /tmp/ 8\nagent        248  3.4  1.4 19243184 113440 ?     Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -isForBrowser -prefsHandle 0:2010 -prefMapHandl\ne 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ba67e5cc-6141-4650-b631-60ffb19838b2} -parent\nPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/thunderbird/omni.ja -appDir /opt/thunderbird 1 tab\nagent        250  0.3  0.5 258988 44764 ?        Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -parentBuildID 20260417012335 -prefsHandle 0:23\n46 -prefMapHandle 1:271725 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {e414a685-5f22-49cf-b8ea-ad445c75e7b6} -parentPid 68 -crashReporter 4 -crashHelper\n5 -appDir /opt/thunderbird 2 rdd\n/opt/venv/bin/python3\n/usr/bin/xdotool\n/usr/bin/wmctrl\ntotal 8\ndrwxr-xr-x 1 agent agent 4096 Oct 22 02:57 .\ndrwxr-xr-x 1 root  root  4096 Oct 22 02:58 ..\n:99\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "optional_params": {
+    "reasoning_effort": "medium",
+    "extra_body": {}
+  },
+  "start_time": "2026-10-22 10:58:18.418399",
+  "stream": false,
+  "user": "None",
+  "call_type": "acompletion",
+  "completion_start_time": "None",
+  "standard_callback_dynamic_params": {},
+  "stream_options": "None",
+  "reasoning_effort": "medium",
+  "extra_body": {},
+  "custom_llm_provider": "openai",
+  "additional_args": {
+    "complete_input_dict": {
+      "model": "gpt-6.1-sol",
+      "messages": [
+        {
+          "role": "user",
+          "content": "You are an AI assistant tasked with solving command-line tasks in a Linux environment. You will be given a task description and the output from previously executed commands. Your goal is to solve the task by providing batches of shell commands.\n\nFormat your response as JSON with the following structure:\n\n{\n  \"analysis\": \"Analyze the current state based on the terminal output provided. What do you see? What has been accomplished? What still needs to be done?\",\n  \"plan\": \"Describe your plan for the next steps. What commands will you run and why? Be specific about what you expect each command to accomplish.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ls -la\\n\",\n      \"duration\": 0.1\n    },\n    {\n      \"keystrokes\": \"cd project\\n\",\n      \"duration\": 0.1\n    }\n  ],\n  \"task_complete\": true\n}\n\nRequired fields:\n- \"analysis\": Your analysis of the current situation\n- \"plan\": Your plan for the next steps\n- \"commands\": Array of command objects to execute\n\nOptional fields:\n- \"task_complete\": Boolean indicating if the task is complete (defaults to false if not present)\n\nCommand object structure:\n- \"keystrokes\": String containing the exact keystrokes to send to the terminal (required)\n- \"duration\": Number of seconds to wait for the command to complete before the next command will be executed (defaults to 1.0 if not present)\n\nIMPORTANT: The text inside \"keystrokes\" will be used completely verbatim as keystrokes. Write commands exactly as you want them sent to the terminal:\n- You must end every command with a newline (\\n) or it will not execute.\n- For special key sequences, use tmux-style escape sequences:\n  - C-c for Ctrl+C\n  - C-d for Ctrl+D\n\nThe \"duration\" attribute specifies the number of seconds to wait for the command to complete (default: 1.0) before the next command will be executed. On immediate tasks (e.g., cd, ls, echo, cat) set a duration of 0.1 seconds. On commands (e.g., gcc, find, rustc) set a duration of 1.0 seconds. On slow commands (e.g., make, python3 [long running script], wget [file]) set an appropriate duration as you determine necessary.\n\nIt is better to set a smaller duration than a longer duration. It is always possible to wait again if the prior output has not finished, by running {\"keystrokes\": \"\", \"duration\": 10.0} on subsequent requests to wait longer. Never wait longer than 60 seconds; prefer to poll to see intermediate result status.\n\nImportant notes:\n- Each command's keystrokes are sent exactly as written to the terminal\n- Do not include extra whitespace before or after the keystrokes unless it's part of the intended command\n- Extra text before or after the JSON will generate warnings but be tolerated\n- The JSON must be valid - use proper escaping for quotes and special characters within strings\n- Commands array can be empty if you want to wait without taking action\n\nTask Description:\nHelp me access my outlook account with address `anonym-x2024@outlook.com` and password `password` in Thunderbird. Just fill in the information and stay on that page. I will check it manually later.\n\n\nCurrent terminal state:\nCurrent Terminal Screen:\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "role": "assistant",
+          "content": "{\n  \"analysis\": \"We need to locate Thunderbird and determine how to interact with its account setup screen, then enter the supplied account details without proceeding beyond that page.\",\n  \"plan\": \"Inspect running applications and available desktop automation tools.\",\n  \"commands\": [\n    {\n      \"keystrokes\": \"ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\\n\",\n      \"duration\": 0.1\n    }\n  ]\n}"
+        },
+        {
+          "role": "user",
+          "content": "New Terminal Output:\nagent@4f49ca72fb28:/app$ ps aux | grep -i '[t]hunderbird'; which python3 xdotool wmctrl; ls -la /app; printenv DISPLAY\nagent         68 34.4  5.1 11521176 409464 ?     Sl   02:58   0:03 /usr/local/bin/thunderbird -profile /home/agent/.thunderbird/tua-task-profile\nagent         74  0.0  0.0  21092  2952 ?        Sl   02:58   0:00 /opt/thunderbird/crashhelper 68 6 /tmp/ 8\nagent        248  3.4  1.4 19243184 113440 ?     Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -isForBrowser -prefsHandle 0:2010 -prefMapHandl\ne 1:271725 -jsInitHandle 2:242716 -parentBuildID 20260417012335 -sandboxReporter 3 -ipcHandle 4 -initialChannelId {ba67e5cc-6141-4650-b631-60ffb19838b2} -parent\nPid 68 -crashReporter 5 -crashHelper 6 -greomni /opt/thunderbird/omni.ja -appDir /opt/thunderbird 1 tab\nagent        250  0.3  0.5 258988 44764 ?        Sl   02:58   0:00 /opt/thunderbird/thunderbird-bin -contentproc -parentBuildID 20260417012335 -prefsHandle 0:23\n46 -prefMapHandle 1:271725 -sandboxReporter 2 -ipcHandle 3 -initialChannelId {e414a685-5f22-49cf-b8ea-ad445c75e7b6} -parentPid 68 -crashReporter 4 -crashHelper\n5 -appDir /opt/thunderbird 2 rdd\n/opt/venv/bin/python3\n/usr/bin/xdotool\n/usr/bin/wmctrl\ntotal 8\ndrwxr-xr-x 1 agent agent 4096 Oct 22 02:57 .\ndrwxr-xr-x 1 root  root  4096 Oct 22 02:58 ..\n:99\nagent@4f49ca72fb28:/app$\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        }
+      ],
+      "extra_body": {},
+      "reasoning_effort": "medium"
+    }
+  },
+  "log_event_type": "post_api_call",
+  "api_call_start_time": "2026-10-22 10:58:18.420264",
+  "llm_api_duration_ms": 8275.168000000001,
+  "original_response": "{\"id\": \"chatcmpl-resp_0b18d32bbbcf6a60016ad97bcc8f3c87d0876f18f540278040\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"logprobs\": null, \"message\": {\"content\": \"{\\n  \\\"analysis\\\": \\\"Thunderbird is already running on display :99, and desktop automation tools are available.\\\",\\n  \\\"plan\\\": \\\"Inspect window titles and the accessibility tree to find the account setup fields.\\\",\\n  \\\"commands\\\": [\\n    {\\n      \\\"keystrokes\\\": \\\"wmctrl -l; /usr/bin/python3 - <<'PY'\\\\nimport pyatspi\\\\ndef walk(o,d=0):\\\\n try:\\\\n  print(' '*d, o.getRoleName(), repr(o.name))\\\\n  if d<8:\\\\n   for c in o: walk(c,d+1)\\\\n except Exception: pass\\\\nwalk(pyatspi.Registry.getDesktop(0))\\\\nPY\\\\n\\\",\\n      \\\"duration\\\": 0.1\\n    }\\n  ]\\n}\", \"refusal\": null, \"role\": \"assistant\", \"annotations\": null, \"audio\": null, \"function_call\": null, \"tool_calls\": null, \"reasoning_details\": [{\"content\": [], \"encrypted_content\": \"gAAAAABq2XvQM4YXdGDx5-WnV1JcdIa8iAGHLVJb-pU-vryfwLDagTDg8xRk-oKCw3wygfXcSqcI1sK59I62dBxy0N5gtJ6FEbzIcI7y7B804c4aweE_KtqK8klu9ZVoci2SwBmuQUUgGJ7_DSjCnJnfaKOdbkGkIjTVx8mxac1O-fro21Xe5Z0Bh6dMm5KubkcbPffK_V7iBM3Mhaugf3ofm8VZ6N1PhrfFPzEY-5EOBLDIwG9VQdx0XBiyz-C0xdvhR6dv1OB1gfM0d-yicMpKB-O_mDARRb7OMjAOZwqVSENesKfbbzZtxwEsWf1c5P0EE3sPwPtZXnTvJaO4LUt1bJrZCtba1IpyiqA20AefzopZtLvxAtSGnOyiid6RzVxatq8cYUHQyRmXh1cEqiA2qZ3rt2PnoTh__c5fw8KXS76DclAlot0j4j5b1fAjqmY4nDHpSH4ftqDwAKlPMuQwOR_CKq67bDole4xclgJUeUwA35wrv0toKHdUjPMhX9qI6tMxU_gIibdTQa4rkLklhtedhkv5WBqFX24zb1ZLVmlQiynH8xCgJt5T-D_tm8D-JBiZeje0-Mgx7acotd9Lfdb6rHFd-Hwv4uMBzb519-BuwA96z6EEjBUj4SbjGsTLcm7buTx0c12Nh_Xm65RAo4r0yGhMGw4Jwn40b4W7Wso4Ps_MNuVoVxSC5IiZfgXcJOnWRnuzIyqplFPwkVie2ckpa1Cx47vnNUI5iqCy0IZPid4yjdLPpnW8jKPbxusmW-AvWE8d-nym9sjfWEO9UAR6XWkf5oxvLw4xf2-KYMqVS5JtXqIAx_5IC7-2Jqei5O3UUvFiIvYdIMZGdaQaihh00rNZ9A5bywJUkfV0Fr8TsQcFZDddl2PsFmwtYLBAwHpQfCGWUB941O2Z3OXDhQXsGVTVIxpG5zF4QvAVX-kXcnmi4muO45LjZxshEgncGOBiO2nj9WKuD7Ga82y7tSmbASMAF6Wxa0F50FVDllH3VaiopabKb7hQVZLpjWVOVyHgDmUuBsJkTl12d8mGZM3lhJfaUQKAI-83ACFEdOEZcOzsYx8tjd48RqoHn4y8HnAlXgCix_FZs4UhhSk_QzERiOoIHx-u0irzTB11yPwdEXfkWHfsTN3GXhMFIa2_3jjJSJKQGAw_V4HxlpPFtJYcJK6qJQB-YXSyWnlSujoN5eWF25X-Uha8R-5MqEsfHDVc6-chomKPnS1fIxBL7XVPZudNqZa9WF9SrRiyuGGVoeFAU915qSXP7Tq1MJvO1qHhSI_9htw9g-7EF-cEKH8pcTuoVUB-hNu2ad2tzErB7nQGiPrmAqaFn5KKsqH-odhYfIyUe30j4CO-Rap3PjhegVhx3nRMAl5Gw9tWtMdj1cZU0nYmeETskUJedTLHmAA3JBOgXIuOE_2hNr4RATB-I6h-feKLs-lQ25u9oGyL6LkE5lId_NW6I2Ycql8_fn4IXgdeG_923z9iIAbKRxZfaVukgQGNwaRLE2BYuylS4MVgK8GYYUdQFi3wBsawFoiSNSnzm1pKz35vxFHkK_r-Y_vsfNmkXA-jkgeV1DM0aQz99Nr5cqejur_AxizcSU_jg4GJX8Y2YX7Iu2ZRzNWlqXii6PWXUeexVaEAyBm9NOVTiqMTmneU9Qyekjfqpb1jeKHfgLBFJNAAH5JmIY6aHb6n4UxTGzzfRDAj0cSDskp27KuM7RnelgZ-5NQYdHvqzgq6aoyDXu0f_4a1BBrNeOysfxk3TO6_5jGcGSFSbJpmzH1zDqq8HVWbG6TdFcvy8wIn6VUqaGnZbey7H5Jocwq-4_u0FH5ZR75eb-XC07UoubDV14xSnTkzJhJ9n41oOn_YMTO9PFxo235ZuVV-1Xhyvw==\", \"id\": \"rs_0b18d32bbbcf6a60016ad97bcfa6c087d0a62eaf8011b14261\", \"summary\": [], \"type\": \"reasoning\"}]}, \"native_finish_reason\": \"stop\"}], \"created\": 1792637900, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"service_tier\": \"default\", \"system_fingerprint\": null, \"usage\": {\"completion_tokens\": 186, \"prompt_tokens\": 1397, \"total_tokens\": 1583, \"completion_tokens_details\": {\"accepted_prediction_tokens\": null, \"audio_tokens\": null, \"reasoning_tokens\": 20, \"rejected_prediction_tokens\": null}, \"prompt_tokens_details\": {\"audio_tokens\": null, \"cached_tokens\": 0, \"cache_write_tokens\": 0, \"cached_creation_tokens\": 0}}}",
+  "api_key_sha256": "[REDACTED]"
+}

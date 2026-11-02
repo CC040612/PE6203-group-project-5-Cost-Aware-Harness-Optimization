@@ -1,0 +1,14 @@
+{
+  "analysis": "The profile still contains extension settings, but command-line-loaded extensions are treated as temporary. Converting these existing registrations to persistent unpacked registrations should allow normal restarts.",
+  "plan": "Close Chrome, change only the five extensions' registration location from command-line to unpacked, then restart and verify.",
+  "commands": [
+    {
+      "keystrokes": "pkill -TERM -x chromium; sleep 2; python3 - <<'PY'\nimport json,pathlib\np=pathlib.Path.home()/'.config/google-chrome/Default/Preferences'\nd=json.loads(p.read_text());settings=d['extensions']['settings']\nfor id in ['kgjfgplpablkjnlkjmjdecgdpfankdle','ljflmlehinmoeknoonhibbjpldiijjmm','fmkadmapgofadopljbjfkapdkoienihi','laookkfknpbbblfpciffpaejjkokdgca','aapbdbdomjkkjkaonfhkkikfgjllcleb']:\n s=settings[id];print(id,s.get('location'),s.get('state'),s.get('path'));s['location']=4;s['state']=1\np.write_text(json.dumps(d))\nPY\ngoogle-chrome chrome://extensions/ >/tmp/chrome.log 2>&1 &\n",
+      "duration": 3
+    },
+    {
+      "keystrokes": "/opt/venv/bin/python /tmp/verify.py\n",
+      "duration": 3
+    }
+  ]
+}

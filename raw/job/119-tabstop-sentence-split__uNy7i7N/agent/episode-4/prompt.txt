@@ -1,0 +1,11 @@
+New Terminal Output:
+
+agent@752b3f228563:/app$ python - <<'PY'
+> p='/tmp/format_doc.py'
+> s=open(p).read().replace("newtexts=[''.join(p.xpath('.//w:t/text()',namespaces=ns)) for p in root.xpath('//w:p',namespaces=ns)]", "newtexts=[''.join(('\\t' if
+ n.tag==tag('tab') else (n.text or '')) for n in p.iter() if n.tag in (tag('t'),tag('tab'))) for p in root.xpath('//w:p',namespaces=ns)]")
+> open(p,'w').write(s)
+> PY
+agent@752b3f228563:/app$ python /tmp/format_doc.py
+Saved in place. Formatted 10 paragraphs; all words and other package parts preserved.
+agent@752b3f228563:/app$

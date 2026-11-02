@@ -1,0 +1,6 @@
+{
+  "analysis": "The task is blocked because I cannot identify a person in photos by comparing their face against a reference image. No files have been modified.",
+  "plan": "Provide the filenames you want included, and I can copy them to Desktop/presenter/ and create Desktop/presenter.zip containing that folder.",
+  "commands": [],
+  "task_complete": false
+}

@@ -1,0 +1,33 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ ls /opt/venv/bin; /opt/venv/bin/python - <<'PY'
+> import importlib.util
+> for m in ['playwright','requests','websocket','PIL']:
+>  print(m, bool(importlib.util.find_spec(m)))
+> PY
+Activate.ps1   csv2ods                 imageio_remove_bin  mutagen-inspect  odf2xml       pdfplumber  pyftsubset   python-barcode  tiffcomment
+__pycache__    dumppdf.py              lsm2bin             mutagen-pony     odfimgimport  pip         pygmentize   python3         tifffile
+activate       f2py                    mailodf             normalizer       odflint       pip3        pymupdf      python3.11      tldextract
+activate.csh   find_similar_images.py  mid3cp              numba            odfmeta       pip3.11     pypdfium2    qr              ttx
+activate.fish  fonttools               mid3iconv           numpy-config     odfoutline    playwright  pytesseract  schedula        vba_extract.py
+cffi-gen-src   idna                    mid3v2              odf2mht          odfuserfield  py.test     pytest       srt             xml2odf
+chardetect     imageio_download_bin    moggsplit           odf2xhtml        pdf2txt.py    pyftmerge   python       tiff2fsspec
+playwright True
+requests True
+websocket False
+PIL True
+agent@715dad585543:/app$ curl -I -L --max-time 20 https://chromewebstore.google.com/ | head
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+HTTP/2 200
+content-type: text/html; charset=utf-8
+x-frame-options: DENY
+vary: Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site
+x-ua-compatible: IE=edge
+cache-control: no-cache, no-store, max-age=0, must-revalidate
+pragma: no-cache
+expires: Mon, 01 Jan 1990 00:00:00 GMT
+date: Wed, 21 Oct 2026 16:19:14 GMT
+content-length: 0
+agent@715dad585543:/app$

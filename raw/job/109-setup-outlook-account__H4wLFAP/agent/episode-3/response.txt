@@ -1,0 +1,10 @@
+{
+  "analysis": "The application appears to still be initializing its setup content.",
+  "plan": "Wait briefly and inspect actionable controls and text fields again.",
+  "commands": [
+    {
+      "keystrokes": "sleep 2; /usr/bin/python3 - <<'PY'\nimport pyatspi\ndef walk(o,d=0):\n try:\n  r=o.getRoleName()\n  if r in ['entry','password text','push button','heading','document web','page tab','label']: print(r,repr(o.name))\n  for c in o: walk(c,d+1)\n except Exception: pass\nwalk(pyatspi.Registry.getDesktop(0))\nPY\n",
+      "duration": 3
+    }
+  ]
+}

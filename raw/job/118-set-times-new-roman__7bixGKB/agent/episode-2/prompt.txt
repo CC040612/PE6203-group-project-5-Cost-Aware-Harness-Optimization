@@ -1,0 +1,68 @@
+New Terminal Output:
+
+agent@1cf89a095885:/app$ python - <<'PY'
+> from zipfile import ZipFile
+> from lxml import etree as E
+> import os, copy
+> p='/app/Dublin_Zoo_Intro.docx'
+> w='http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+> q=lambda s:'{'+w+'}'+s
+> font='Times New Roman'
+> def setfont(el):
+>  for a in ['asciiTheme','hAnsiTheme','eastAsiaTheme','cstheme','csTheme']:
+>   el.attrib.pop(q(a),None)
+>  for a in ['ascii','hAnsi','eastAsia','cs']:
+>   el.set(q(a),font)
+> def stripped(root):
+>  root=copy.deepcopy(root)
+>  for el in list(root.iter(q('rFonts'))):
+>   el.getparent().remove(el)
+>  for el in list(root.iter(q('rPr'))):
+>   if len(el)==0 and not el.attrib and not el.text:
+>    el.getparent().remove(el)
+>  return E.tostring(root,method='c14n')
+> with ZipFile(p) as z:
+>  entries=z.infolist()
+>  original={i.filename:z.read(i.filename) for i in entries}
+> updated=dict(original)
+> for name,data in original.items():
+>  if not(name.startswith('word/') and name.endswith('.xml')): continue
+>  root=E.fromstring(data)
+>  before=stripped(root)
+>  for el in root.iter(q('rFonts')): setfont(el)
+>  for run in root.iter(q('r')):
+>   props=run.find(q('rPr'))
+>   if props is None:
+>    props=E.Element(q('rPr')); run.insert(0,props)
+>   fonts=props.find(q('rFonts'))
+>   if fonts is None:
+>    fonts=E.Element(q('rFonts')); props.insert(0,fonts)
+>   setfont(fonts)
+>  if name=='word/styles.xml':
+>   defaults=root.find(q('docDefaults'))
+>   if defaults is not None:
+>    rp=defaults.find(q('rPrDefault')+'/'+q('rPr'))
+>    if rp is not None:
+>     fonts=rp.find(q('rFonts'))
+>     if fonts is None:
+>      fonts=E.Element(q('rFonts')); rp.insert(0,fonts)
+>     setfont(fonts)
+>  assert stripped(root)==before, 'Non-font change: '+name
+>  if E.tostring(root)!=E.tostring(E.fromstring(data)):
+>   updated[name]=E.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+> tmp=p+'.tmp'
+> with ZipFile(tmp,'w') as z:
+>  for info in entries: z.writestr(info,updated[info.filename])
+> with ZipFile(tmp) as z:
+>  assert z.testzip() is None
+>  root=E.fromstring(z.read('word/document.xml'))
+>  for run in root.iter(q('r')):
+>   fonts=run.find(q('rPr')+'/'+q('rFonts'))
+>   assert all(fonts.get(q(a))==font for a in ['ascii','hAnsi','eastAsia','cs'])
+> os.replace(tmp,p)
+> print('Saved:',p)
+> print('Modified font properties only in:',', '.join(n for n in original if original[n]!=updated[n]))
+> PY
+Saved: /app/Dublin_Zoo_Intro.docx
+Modified font properties only in: word/styles.xml, word/document.xml
+agent@1cf89a095885:/app$

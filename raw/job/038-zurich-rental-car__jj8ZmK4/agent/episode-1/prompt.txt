@@ -1,0 +1,41 @@
+New Terminal Output:
+agent@c20a90688c47:/app$ date -I; ls -la /app; ls /tmp; env | grep -Ei 'chrome|browser|playwright|display'
+2026-10-21
+total 8
+drwxr-xr-x 1 agent agent 4096 Oct 21 15:23 .
+drwxr-xr-x 1 root  root  4096 Oct 21 15:25 ..
+chrome_state.log             playwright-artifacts-69ySYm  playwright-artifacts-h1zW5e  playwright-artifacts-pOjFjX  tua-dbus-session
+dbus.log                     playwright-artifacts-9Ov1jh  playwright-artifacts-jh5DAd  playwright-artifacts-u3kdvZ  xvfb.log
+get-asciinema-timestamp.sh   playwright-artifacts-IjW6gG  playwright-artifacts-kZset1  playwright-artifacts-xYwl3h
+playwright-artifacts-2I8Twl  playwright-artifacts-TlURrt  playwright-artifacts-lczvmU  playwright-artifacts-yXWIJp
+playwright-artifacts-4M5kfL  playwright-artifacts-fznZRK  playwright-artifacts-m5iMfp  tmux-1000
+DISPLAY=:99
+agent@c20a90688c47:/app$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

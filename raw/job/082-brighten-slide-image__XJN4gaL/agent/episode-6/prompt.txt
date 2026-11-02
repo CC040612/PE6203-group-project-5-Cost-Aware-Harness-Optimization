@@ -1,0 +1,22 @@
+New Terminal Output:
+
+/opt/venv/bin/python3
+pip 23.0.1 from /usr/lib/python3/dist-packages/pip (python 3.11)
+agent@c918d826cef3:/app$ /opt/venv/bin/python - <<'PY'
+> import zipfile,io
+> from PIL import Image,ImageEnhance,ImageStat
+> p='/home/agent/Desktop/background.png'
+> with zipfile.ZipFile('/home/agent/Desktop/PPT-Template_widescreen.pptx') as z:
+>  im=Image.open(io.BytesIO(z.read('ppt/media/image3.png')))
+>  im.load()
+> print('Source:', im.size, im.mode)
+> out=ImageEnhance.Brightness(im).enhance(1.25)
+> out.save(p,'PNG')
+> with Image.open(p) as check:
+>  check.verify()
+> print('Saved:',p)
+> print('Mean RGB before:',ImageStat.Stat(im.convert('RGB')).mean)
+> print('Mean RGB after:',ImageStat.Stat(out.convert('RGB')).mean)
+> PY
+Source: (2433, 1622) RGBA
+

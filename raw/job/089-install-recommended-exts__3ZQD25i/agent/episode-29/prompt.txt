@@ -1,0 +1,103 @@
+New Terminal Output:
+
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/load.py
+['onUserSiteSettingsChanged', 'onProfileStateChanged', 'onItemStateChanged', 'addHostPermission', 'addUserSpecifiedSites', 'autoUpdate', 'choosePath', 'deleteEx
+tensionErrors', 'dismissSafetyHubExtensionsMenuNotification', 'getExtensionInfo', 'getExtensionSize', 'getExtensionsInfo', 'getMatchingExtensionsForSite', 'getP
+rofileConfiguration', 'getUserAndExtensionSitesByEtld', 'getUserSiteSettings', 'inspect', 'installDroppedFile', 'loadDirectory', 'loadUnpacked', 'notifyDragInst
+allInProgress', 'openDevTools', 'openReviewPage', 'packDirectory', 'reload', 'removeHostPermission', 'removeMultipleExtensions', 'removeUserSpecifiedSites', 're
+pairExtension', 'requestFileSource', 'setShortcutHandlingSuspended', 'showOptions', 'showPath', 'showSiteSettings', 'updateExtensionCommand', 'updateExtensionCo
+nfiguration', 'updateProfileConfiguration', 'updateSiteAccess', 'uploadExtensionToAccount', 'CommandScope', 'ErrorLevel', 'ErrorType', 'EventType', 'ExtensionSt
+ate', 'ExtensionType', 'FileType', 'HostAccess', 'Location', 'PackStatus', 'SafetyCheckWarningReason', 'SelectType', 'SiteSet', 'ViewType']
+ok
+Traceback (most recent call last):
+  File "/tmp/load.py", line 7, in <module>
+    print(path.name,e.evaluate('''path=>new Promise(r=>chrome.developerPrivate.loadUnpacked({failQuietly:true,useDragInstall:true,draggedPath:path},(...args)=>r
+({args,error:chrome.runtime.lastError})))''',str(path)),flush=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py", line 8536, in evaluate
+    self._sync(
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_page.py", line 468, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_frame.py", line 278, in evaluate
+    await self._channel.send(
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venv/lib/python3.11/site-packages/playwright/_impl/_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Error in invocation of developerPrivate.loadUnpacked(optional developerPrivate.LoadUnpackedOptions opt
+ions, optional function callback): Error at parameter 'options': Unexpected property: 'useDragInstall'.
+    at eval (eval at evaluate (:313:29), <anonymous>:1:46)
+    at new Promise (<anonymous>)
+    at eval (eval at evaluate (:313:29), <anonymous>:1:7)
+    at UtilityScript.evaluate (<anonymous>:320:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+agent@715dad585543:/app$ cat > /tmp/keys.py <<'PY'
+exec(open('/tmp/download.py').read().split('for id in ids:')[0])
+import struct,hashlib,base64
+def var(b,i):
+ n=s=0
+ while True:
+  v=b[i];i+=1;n|=(v&127)<<s
+  if v<128:return n,i
+  s+=7
+def fields(b):
+ i=0
+ while i<len(b):
+  tag,i=var(b,i);typ=tag&7
+  if typ==2:
+   n,i=var(b,i);yield tag>>3,b[i:i+n];i+=n
+  elif typ==0:_,i=var(b,i)
+  else:raise ValueError(typ)
+for id in ids:
+ path=pathlib.Path.home()/'.local/share/chrome-extensions'/id/'manifest.json';m=json.loads(path.read_text())
+ if m.get('key'):continue
+ b=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'&u
+c'}).content
+ n=struct.unpack('<I',b[cat > /tmp/keys.py <<'PY'8:12])[0]
+ for tag,proof in fields(b[12:12+n]):
+  if tag not in [2,3]:continue
+  for t,key in fields(proof):
+   if t!=1:continue
+   raw=hashlib.sha256(key).hexdigest()[:32];kid=''.join(chr(ord('a')+int(x,16)) for x in raw)
+   if kid==id:
+    m
+> exec(open('/tmp/download.py').read().split('for id in ids:')[0])
+> import struct,hashlib,base64
+> def var(b,i):
+>  n=s=0
+>  while True:
+>   v=b[i];i+=1;n|=(v&127)<<s
+>   if v<128:return n,i
+>   s+=7
+> def fields(b):
+>  i=0
+>  while i<len(b):
+>   tag,i=var(b,i);typ=tag&7
+>   if typ==2:
+>    n,i=var(b,i);yield tag>>3,b[i:i+n];i+=n
+>   elif typ==0:_,i=var(b,i)
+>   else:raise ValueError(typ)
+> for id in ids:
+>  path=pathlib.Path.home()/'.local/share/chrome-extensions'/id/'manifest.json';m=json.loads(path.read_text())
+>  if m.get('key'):continue
+>  b=requests.get('https://clients2.google.com/service/update2/crx',params={'response':'redirect','prodversion':'155.0.0.0','acceptformat':'crx3','x':'id='+id+'
+&uc'}).content
+>  n=struct.unpack('<I',b[8:12])[0]
+>  for tag,proof in fields(b[12:12+n]):
+>   if tag not in [2,3]:continue
+>   for t,key in fields(proof):
+>    if t!=1:continue
+>    raw=hashlib.sha256(key).hexdigest()[:32];kid=''.join(chr(ord('a')+int(x,16)) for x in raw)
+>    if kid==id:
+>     m['key']=base64.b64encode(key).decode();path.write_text(json.dumps(m));print('key restored',id,flush=True)
+> PY
+agent@715dad585543:/app$ /opt/venv/bin/python /tmp/keys.py
+key restored fmkadmapgofadopljbjfkapdkoienihi
+key restored laookkfknpbbblfpciffpaejjkokdgca
+

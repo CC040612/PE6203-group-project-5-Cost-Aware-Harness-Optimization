@@ -1,0 +1,10 @@
+{
+  "analysis": "The listing has an Add to Chrome control, though the store also displays a browser compatibility notice.",
+  "plan": "Attempt the normal install action and inspect any confirmation dialog.",
+  "commands": [
+    {
+      "keystrokes": "cat > /tmp/click.py <<'PY'\nexec(open('/tmp/store.py').read().split('print(page.url)')[0])\nx=page.get_by_role('button',name='Add to Chrome',exact=True)\nprint('enabled',x.is_enabled())\nx.click(timeout=5000)\npage.wait_for_timeout(2000)\nprint(page.locator('body').inner_text()[:2500])\nPY\n/opt/venv/bin/python /tmp/click.py\n",
+      "duration": 3
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "analysis": "The location and calendar interaction is in progress.",
+  "plan": "Wait for the calendar inspection.",
+  "commands": [
+    {
+      "keystrokes": "",
+      "duration": 1
+    }
+  ]
+}

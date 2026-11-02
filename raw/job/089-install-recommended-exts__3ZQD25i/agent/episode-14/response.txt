@@ -1,0 +1,5 @@
+{
+  "analysis": "The extension manager inspection is running.",
+  "plan": "Wait for its results.",
+  "commands": [{"keystrokes": "", "duration": 2}]
+}
